@@ -29,10 +29,69 @@ for (int peluru = 10; peluru > 0; peluru -= 3) {
 ```
 Dalam *Tracing Loop* di coretan kertas buram, mulailah berteriak manual: "Peluru 10 $\\rightarrow$ sisa 7 $\\rightarrow$ sisa 4 $\\rightarrow$ sisa 1 $\\rightarrow$ sisa -2 (STOP/BUNUH DIRI SINTAKTIKAL!)."
 
+---
+
+## ⏳ B. Macam-Macam Mesin Waktu Lainnya (While & Do-While)
+
+Selain `for`, Juri C++ punya dua mesin waktu alternatif yang sering dipakai kalau mereka "Malas Ngitung Pakai Batasan Angka Mutlak".
+
+### 1. `while` (Sang Penjaga Pintu Setia)
+Beda dengan `for` yang mesinnnya lengkap di atas, `while` **hanya punya 1 syarat (Si Penjaga Pintu Peluit)**. Dia tidak peduli di dalam nanti kamu jalan ke depan, mundur, atau guling-guling, selama *syarat pintunya* murni terpenuhi, dia akan mutar selamanya!
+
+**Analogi Lampu Merah:**
+```cpp
+int bensin = 5;
+while (bensin > 0) {
+    printf("Ngegas!\n");
+    bensin--;  // JANGAN LUPA DITURUNIN!
+}
+```
+*Tracing Logika:* Syarat `bensin > 0`. Selama mobil ada bensinnya terus aja maju!
+**Jebakan Kematian OSN-K (`Infinite Loop`):** Hampir $20\%$ soal *tracing* yang bikin stress adalah saat mesin `while` **LUPA MENGURANGI/MENAMBAH VARIABEL PEMBANDINGNYA!**
+Jika di kode di atas teks `bensin--;` dihapus, maka mesin ini akan berputar abadi sampai matahari runtuh! (Dan jawaban di pilgan OSN-K biasanya tertulis: `"Program tidak akan berhenti / TLE"`).
+
+### 2. `do-while` (Lakukan Dulu, Mati Belakangan!)
+Ini adalah mesin Paling Konyol! Mesin ini **memaksa nyemplung ke kolam SATU KALI WAJIB SATU KALI MURNI**... dan baru mikir ngecek keamanan airnya belakangan sesudah basah kuyup!
+
+**Analogi Nebeng Temen Kebut-kebutan:**
+```cpp
+int keberanian = 0;
+do {
+    printf("Naik Rollercoaster!\n");
+} while (keberanian > 100);
+```
+*Tracing Logika OSN-K:*
+Apakah `keberanian` si Budi di atas $100$? Jelas tidak, batinnya $0$ (Pengecut murni).
+TAPI! Karena ini pakai `do`, Budi **DIPAKSA NAIK ROLLERCOASTER DULUAN SATU KALI!** (`printf` dieksekusi). 
+Setelah selesai muntah-muntah 1 kali putaran, mesin di bawah baru mengecek penjaga pintunya: `while (keberanian > 100)`. Apakah iya? Oalah ternyata ngga berani. Budi pun berhenti!
+*(Jika memakai `while` biasa, Budi TIDAK AKAN PERNAH NAIK SEKALIPUN!)*
 
 ---
 
-## 🎵 B. Tombol Gaib: Break vs Continue (Playlist Spotify)
+## 🪆 C. Perulangan Bersarang (Nested Loops & Jam Pasir)
+
+Di level lanjut, juri menaruh mesin `for` di DALAM mesin `for` yang lain! (Inception!).
+```cpp
+for (int hari = 1; hari <= 3; hari++) {        // SIKLUS LUAR (Lambat)
+    for (int jam = 1; jam <= 2; jam++) {       // SIKLUS DALAM (Berputar Gila-gilaan)
+        printf("Hari %d, Jam %d\n", hari, jam);
+    }
+}
+```
+**Analogi Jam Pasir & Jarum Jam:**
+Jarum Pendek (Hari) menunjuk angka $1$. 
+Lalu turun ke Jarum Panjang (Jam). Jarum panjang WAJIB BERPUTAR SIKSA CEPAT MENGHABISKAN SELURUH AMUNISINYA ($1$ dan $2$) SEBELUM DIIZINKAN KEMBALI NAIK KE ATAS MEMUTAR JARUM PENDEK KE ANGKA $2$!
+
+*Jejak Kertas OSN-K mu harus begini:*
+- `H = 1` $\rightarrow$ Turun ke dalam. `J` berputar: $1$, lalu $2$ (Stop).
+- Naik ke atas. `H` maju jadi `2`. Turun ke dalam. `J` **DIPUTAR ULANG DARI AWAL!**: $1$, lalu $2$ (Stop).
+- Naik ke atas. `H` maju jadi `3`. Turun ke dalam. `J` dihajar ulangi lagi: $1$, lalu $2$ (Stop).
+Total output baris yang keluar adalah $3 \times 2 = 6$ baris!
+Inilah algoritma pencetak Segitiga Bintang (`*`) dan array Matriks $2D$ yang akan nge-*lag*-in otak *tracing* mu nanti.
+
+---
+
+## 🎵 D. Tombol Gaib: Break vs Continue (Playlist Spotify)
 
 Di dalam lorong gelap perulangan, sang juri C++ kadang meletakkan gerbang penyeleksi:
 
