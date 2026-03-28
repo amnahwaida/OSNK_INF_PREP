@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 07 Graf Sederhana](../07-graf-sederhana.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 07. Graf Sederhana - Bagian 1: Kenalan Dulu Sama Graf
 
 [< Kembali ke Indeks Materi](../07-graf-sederhana.md) | [Bagian 2: Rumus & Trik Penting >](./07-graf-part-2.md)

@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 06 Logika Dan Antrian](../06-logika-dan-antrian.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 06. Logika & Antrian - Latihan Soal Bagian 4 (151-200)
 
 ### Soal #164: Logika NAND (NOT AND)

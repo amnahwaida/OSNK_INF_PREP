@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 06 Logika Dan Antrian](../06-logika-dan-antrian.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 06. Logika & Antrian - Latihan Soal Bagian 3 (101-150)
 
 ### Soal #114: Logika "Lampu Kamar Mandi"

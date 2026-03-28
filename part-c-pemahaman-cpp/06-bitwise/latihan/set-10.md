@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal Part C - Modul 06 - Set 10
 
 ### Soal 226 (Left Shift Power)

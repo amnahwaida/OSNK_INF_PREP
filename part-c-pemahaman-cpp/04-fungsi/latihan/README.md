@@ -1,6 +1,11 @@
 # 📂 Bank Soal Modul 04: Fungsi & Parameter
 
-Fokus: Memahami Pass-by-Value (Fotokopi) vs Pass-by-Reference (Asli).
+🔙 **Kembali ke Materi:** [Materi Modul 04](../materi.md)  
+🏠 **Menu Utama Part C:** [Kembali ke Index](../../README.md)
+
+---
+
+Selamat berlatih! Gunakan coretan kertas untuk melakukan *tracing* sebelum melihat kunci jawaban.
 
 - [Set 01 (Soal 1-25)](./set-01.md)
 - [Set 02 (Soal 26-50)](./set-02.md)

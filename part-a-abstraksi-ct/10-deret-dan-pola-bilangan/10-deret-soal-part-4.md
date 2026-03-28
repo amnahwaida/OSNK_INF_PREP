@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 10 Deret Dan Pola Bilangan](../10-deret-dan-pola-bilangan.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 10. Deret & Pola Bilangan - Latihan Soal Pilihan Ganda Bagian 4
 ## Topik: Sandi Komputer Sigma (Membaca Algoritma For-Loop Tersembunyi)
 

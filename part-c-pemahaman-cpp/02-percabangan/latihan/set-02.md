@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal Part C - Modul 02 - Set 02
 
 ### Soal 26 (Nested If-Else)

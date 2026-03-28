@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 05 Algorithm Design](../05-algorithm-design.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 05. Algorithm Design - Bagian 6 (Soal 251-300)
 
 [< Bagian 5 (201-250)](05-algorithm-design-part-5.md) | [🏠 Indeks](../05-algorithm-design.md)

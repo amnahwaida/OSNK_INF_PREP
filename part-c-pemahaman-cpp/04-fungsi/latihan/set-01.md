@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal Part C - Modul 04 - Set 01
 
 ### Soal 1 (Global vs Local)

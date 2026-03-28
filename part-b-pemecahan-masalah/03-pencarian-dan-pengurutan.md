@@ -118,3 +118,9 @@ Lanjut kita menuju level terkeras dalam memecahkan masalah. Kalau soalnya nggak 
 ---
 [< Modul Part B Sebelumnya: Algoritma Greedy](./02-algoritma-greedy.md)
 [< Kembali ke Indeks Part B](./README.md)
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 03: Pencarian & Pengurutan (300 Soal)](./03-pencarian-dan-pengurutan/README.md)**

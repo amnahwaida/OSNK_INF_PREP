@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latian Soal: Simulasi & Brute Force (Part 2 / 6)
 
 Berikut adalah kompilasi simulasi soal OSN untuk materi **Simulasi & Brute Force**. Setiap nomor dibekali Kunci Jawaban "Diagnosis Mesin" di balik tirai tersembunyi.

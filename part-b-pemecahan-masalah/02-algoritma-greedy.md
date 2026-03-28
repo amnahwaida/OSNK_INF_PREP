@@ -141,3 +141,9 @@ Tapi sebelum menyentuh ilmu sihir tingkat tinggi macam Dynamic Programming, mari
 ---
 [< Modul Part B Sebelumnya: Brute Force](./01-simulasi-dan-brute-force.md)
 [< Kembali ke Indeks Part B](./README.md)
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 02: Algoritma Greedy (300 Soal)](./02-algoritma-greedy/README.md)**

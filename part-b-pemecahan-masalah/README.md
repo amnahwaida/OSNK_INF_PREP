@@ -1,3 +1,5 @@
+🏠 **Beranda Utama:** [Kembali ke Root](../README.md)
+
 # 🚀 Part B: Pemecahan Masalah Komputasional
 
 > **Fokus**: Menjadi "Compiler Manusia" 🤖. Menyelesaikan simulasi algoritma (Looping, Array, Greedy, Dynamic Programming) langsung di atas kertas tanpa bantuan IDE/C++.

@@ -186,4 +186,12 @@ int hasil_akhir = (disita_guru + jatah_nongkrong) * (uang_jajan % 2);
 
 Gampang dan cantik bukan? Ingat selalu permen dan sisa kelereng di kepala saat mencoret soal ini!
 
-⏩ **Lanjut ke Modul Kedua:** [Logika Percabangan (Razia BP)](./02-percabangan-dan-boolean-logika.md)
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 01: Tipe Data & Operator (300 Soal)](./latihan/README.md)**
+
+---
+
+⏩ **Lanjut ke Modul Kedua:** [Logika Percabangan (Razia BP)](../02-percabangan/materi.md)

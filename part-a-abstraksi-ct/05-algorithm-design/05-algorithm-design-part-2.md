@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 05 Algorithm Design](../05-algorithm-design.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 05. Algorithm Design - Bagian 2 (Soal 51-100)
 
 [< Bagian 1 (1-50)](05-algorithm-design-part-1.md) | [🏠 Indeks](../05-algorithm-design.md) | [Bagian 3 (101-150) >](05-algorithm-design-part-3.md)

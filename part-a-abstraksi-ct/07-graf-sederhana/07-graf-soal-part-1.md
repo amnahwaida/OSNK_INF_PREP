@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 07 Graf Sederhana](../07-graf-sederhana.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 07. Graf Sederhana - Latihan Soal Bagian 1 (Soal 1-50)
 ## Topik: Dasar-Dasar Graf, Vertex, Edge, Degree, Jenis Graf
 

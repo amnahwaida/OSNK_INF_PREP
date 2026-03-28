@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal Part C - Modul 02 - Set 07
 
 ### Soal 151 (Short-Circuit OR)

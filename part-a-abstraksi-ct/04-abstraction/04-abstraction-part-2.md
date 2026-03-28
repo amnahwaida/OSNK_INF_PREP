@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 04 Abstraction](../04-abstraction.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 04. Abstraksi - Bagian 2 (Soal 51-100)
 
 [< Bagian 1 (1-50)](04-abstraction-part-1.md) | [🏠 Indeks](../04-abstraction.md) | [Bagian 3 (101-150) >](04-abstraction-part-3.md)

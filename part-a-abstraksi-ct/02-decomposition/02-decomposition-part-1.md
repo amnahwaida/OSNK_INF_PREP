@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 02 Decomposition](../02-decomposition.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 02. Decomposition - Bagian 1 (Soal 1-50)
 
 [🏠 Indeks](../02-decomposition.md) | [Bagian 2 (51-100) >](02-decomposition-part-2.md)

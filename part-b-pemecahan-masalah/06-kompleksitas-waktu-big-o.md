@@ -127,3 +127,9 @@ Buktikan kemampuan asimtotik matamu layaknya server grader juri yang mendeteksi 
 4. **[Latihan Soal Part 4 (Soal 151-200)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-4.md)**
 5. **[Latihan Soal Part 5 (Soal 201-250)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-5.md)**
 6. **[Latihan Soal Part 6 (Soal 251-300)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-6.md)**
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 06: Kompleksitas Waktu (300 Soal)](./06-kompleksitas-waktu-big-o/README.md)**

@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 07 Graf Sederhana](../07-graf-sederhana.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 07. Graf Sederhana - Bagian 2: Rumus & Trik Penting untuk OSN-K
 
 [< Bagian 1: Kenalan Dulu](./07-graf-part-1.md) | [< Kembali ke Indeks](../07-graf-sederhana.md) | [Bagian 3: Algoritma Jelajah Graf >](./07-graf-part-3.md)

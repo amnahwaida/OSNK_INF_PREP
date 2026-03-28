@@ -1,3 +1,5 @@
+🏠 **Beranda Utama:** [Kembali ke Root](../README.md)
+
 # 🔹 Part A: Abstraksi Berpikir Komputasional
 
 > **Fokus**: Pola pikir Bebras, logika, dan penyederhanaan masalah.

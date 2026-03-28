@@ -34,6 +34,13 @@ graph TD
 - **Jalur Kanan (Merah/Bahaya):** Saat parameter PAKAI simbol `&`, mesin menyerahkan kunci brankas asli! Fungsi langsung memegang benda nyata. Setiap coretan di dalam fungsi **menembus balik ke variabel asli** di `main`.
 - Kunci OSN-K: Selalu periksa ada atau tidaknya simbol `&` di parameter fungsi sebelum mulai tracing!
 
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 04: Fungsi (300 Soal)](./latihan/README.md)**
+
 ---
 
 ## 🖨️ A. Pass By Value (Trik Pemalasan Nyontek Fotokopi)

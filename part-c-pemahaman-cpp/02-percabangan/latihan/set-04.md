@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal Part C - Modul 02 - Set 04
 
 ### Soal 76 (Short-Circuit OR)

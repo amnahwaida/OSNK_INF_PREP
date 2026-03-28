@@ -5,6 +5,13 @@ Lambang-lambang tersebut bukan mencari sisa bagi (Modulo) atau mengecek kesamaan
 
 Dalam Bitwise, komputer mencopot topeng angka Desimal harianmu (angka $5, 12, 18$, dll), menyulap mereka menjadi sejajar bohlam **Biner 0 dan 1**, dan menekan saklarnya satu persatu vertikal menembus ke bawah.
 
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 06: Bitwise (300 Soal)](./latihan/README.md)**
+
 ---
 
 ## 💡 A. Bohlam AND (`&`) dan OR (`|`) Vertikal

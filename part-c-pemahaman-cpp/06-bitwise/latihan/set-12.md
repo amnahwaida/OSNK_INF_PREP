@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal Part C - Modul 06 - Set 12
 
 ### Soal 276 (Bitwise AND/OR)

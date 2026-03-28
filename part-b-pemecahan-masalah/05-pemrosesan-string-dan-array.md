@@ -106,3 +106,9 @@ Oleh karena itu, tarik napas lagi dan mari kita dobrak Pintu Babak Terakhir OSN-
 ---
 [< Modul Part B Sebelumnya: Dynamic Programming (DP)](./04-dynamic-programming-dasar.md)
 [< Kembali ke Indeks Part B](./README.md)
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 05: String & Array (300 Soal)](./05-pemrosesan-string-dan-array/README.md)**

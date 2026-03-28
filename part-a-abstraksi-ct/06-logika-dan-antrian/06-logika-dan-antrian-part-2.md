@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 06 Logika Dan Antrian](../06-logika-dan-antrian.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 06. Logika & Antrian - Latihan Soal Bagian 2 (51-100)
 
 ### Soal #64: Logika Gerbang Logika Bertingkat

@@ -145,3 +145,9 @@ Mari meluncur ke **[Modul 05: Pemrosesan String & Array Murni OSN-K!](./05-pemro
 ---
 [< Modul Part B Sebelumnya: Pencarian & Pengurutan Manual Algoritma](./03-pencarian-dan-pengurutan.md)
 [< Kembali ke Indeks Part B](./README.md)
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 04: Dynamic Programming (300 Soal)](./04-dynamic-programming-dasar/README.md)**

@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 03 Pattern Recognition](../03-pattern-recognition.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 03. Pengenalan Pola - Bagian 3 (Soal 101-150)
 
 [< Bagian 2 (51-100)](03-pattern-recognition-part-2.md) | [🏠 Indeks](../03-pattern-recognition.md) | [Bagian 4 (151-200) >](03-pattern-recognition-part-4.md)

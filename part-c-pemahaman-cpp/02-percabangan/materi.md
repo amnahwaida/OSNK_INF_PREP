@@ -5,6 +5,13 @@ Kode di OSN-K penuh dengan blok pengawal keamanan yang disebut **Percabangan (`i
 
 Mesin C++ itu **Super Kaku** dan **Super Egois Pemalas**. Mari kita bongkar anatomi kedua sikap buruk mesin ini supaya kamu tidak terjebak men-Trace cabang yang salah.
 
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 02: Percabangan (300 Soal)](./latihan/README.md)**
+
 ---
 
 ## 🚦 A. Gembok Persyaratan (Kaku dan Buta Masa Lalu)

@@ -4,6 +4,13 @@ Kamu sudah lulus dari ujian *Simulasi Brute Force* di Part B kemarin! Di Part C 
 
 Dalam membaca soal *"Compiler Manusia"*, sering kali juri sengaja menyisipkan tombol gaib bernama `break` dan `continue` untuk mengecoh simulasi iterasi *looping*-mu. Mari kita bongkar saklar rahasiannya!
 
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 03: Perulangan (300 Soal)](./latihan/README.md)**
+
 ---
 
 ## 🏃 A. Aturan Main Mesin Lari (Looping Mutlak)

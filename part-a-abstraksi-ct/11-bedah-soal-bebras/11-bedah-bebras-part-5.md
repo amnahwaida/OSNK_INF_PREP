@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 11 Bedah Soal Bebras](../11-bedah-soal-bebras.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 11. Bedah Soal Bebras CAPSTONE - Latihan Soal Bagian 5
 ## Topik Utama: MASTERCLASS BEDAH LOGIKA (Deduksi Bersarang & Eliminasi Mastermind)
 

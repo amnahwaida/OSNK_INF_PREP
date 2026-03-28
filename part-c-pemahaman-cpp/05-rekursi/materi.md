@@ -3,6 +3,13 @@
 Selamat datang di "Bos Terakhir" ujian tertulis kodingan OSN-K! Hampir **25% waktu ujianmu** akan terkuras ludes hanya untuk menebak angka *output* dari sebuah kode misterius sepanjang 5 baris yang memanggil namanya sendiri berulang-ulang tiada henti. 
 Ini dinamakan **Rekursi (Recursion)**.
 
+
+---
+
+### 📝 Latihan Soal Tracing
+Sudah paham teorinya? Uji ketajaman matamu di sini:
+👉 **[Bank Soal Modul 05: Rekursi (300 Soal)](./latihan/README.md)**
+
 ---
 
 ## 🔁 A. Membedah Paradoks Rekursi (Teka-Teki Minta Uang)

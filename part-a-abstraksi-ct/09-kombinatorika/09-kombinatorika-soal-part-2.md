@@ -1,3 +1,8 @@
+🔙 **Kembali ke Materi:** [Materi 09 Kombinatorika](../09-kombinatorika.md)  
+🏠 **Menu Utama Part A:** [Kembali ke Index](../README.md)
+
+---
+
 # 09. Kombinatorika - Latihan Soal Bagian 2
 ## Topik: Permutasi Dasar & Formasi
 

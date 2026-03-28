@@ -1,6 +1,11 @@
 # 📂 Bank Soal Modul 05: Rekursi & Call Stack
 
-Fokus: Memahami alur mundur (backtracking) dan base case.
+🔙 **Kembali ke Materi:** [Materi Modul 05](../materi.md)  
+🏠 **Menu Utama Part C:** [Kembali ke Index](../../README.md)
+
+---
+
+Selamat berlatih! Gunakan coretan kertas untuk melakukan *tracing* sebelum melihat kunci jawaban.
 
 - [Set 01 (Soal 1-25)](./set-01.md)
 - [Set 02 (Soal 26-50)](./set-02.md)

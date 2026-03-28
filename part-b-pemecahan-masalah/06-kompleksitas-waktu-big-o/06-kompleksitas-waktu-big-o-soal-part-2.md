@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latihan Soal: Time Complexity Big O (Part 2 / 6)
 
 Berikut adalah masterclass bank soal simulasi OSN-K untuk materi **Time Complexity Big O**. Pastikan melacaknya dengan ketelitian Compiler Manusia!

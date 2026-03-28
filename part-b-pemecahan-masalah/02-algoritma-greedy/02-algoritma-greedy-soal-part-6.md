@@ -1,3 +1,7 @@
+🔙 **[Kembali ke Daftar Soal](./README.md)**
+
+---
+
 # Latian Soal: Algoritma Greedy (Part 6 / 6)
 
 Berikut adalah kompilasi simulasi soal OSN untuk materi **Algoritma Greedy**. Setiap nomor dibekali Kunci Jawaban "Diagnosis Mesin" di balik tirai tersembunyi.

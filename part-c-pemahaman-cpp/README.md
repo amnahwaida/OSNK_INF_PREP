@@ -1,3 +1,5 @@
+🏠 **Beranda Utama:** [Kembali ke Root](../README.md)
+
 # Part C: Pemahaman Kode C++ (Compiler Manusia)
 
 Selamat datang di Tahap Akhir Simulasi OSN-K Informatika! 🏆
