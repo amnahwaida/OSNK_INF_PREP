@@ -100,6 +100,8 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
+ ---
+ 
  ## 🚚 E. Operator Assignment (Pindah Barang)
  
  Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
@@ -120,7 +122,35 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## 🔤 F. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## ⚖️ F. Operator Perbandingan (Timbangan Benar-Salah)
+ 
+ Setelah pandai menghitung, kamu akan sering disuruh membandingkan dua angka. Di sini, hasilnya bukan lagi angka, tapi **Benar (`true`)** atau **Salah (`false`)**.
+ 
+ - `==` (Sama dengan): `"Apakah dia kembaran?"`. (Ingat: `=` pindah barang, `==` tanya kabar).
+ - `!=` (Tidak sama dengan): `"Apakah mereka musuhan?"`.
+ - `<`, `>`, `<=`, `>=`: Seperti di sekolah, tapi di kodingan hasilnya berubah jadi sinyal Logika.
+ 
+ > [!IMPORTANT]
+ > Di OSN-K, Hati-hati dengan `if (a = 5)`. Juri jahat suka sengaja menghilangkan satu tanda `=`. Jika tertulis `=`, itu artinya laci `a` **dipaksa** jadi 5, dan kondisinya dianggap **Benar**! Selalu cari `==` untuk perbandingan murni.
+ 
+ ---
+ 
+ ## 🗑️ G. Jebakan Laci Bekas (Garbage Value)
+ 
+ Apa yang terjadi jika kamu membuat laci tapi tidak menaruh angka apa-apa?
+ ```cpp
+ int saldo;
+ cout << saldo;
+ ```
+ **Analogi Laci Bekas Penghuni Lama:**
+ Bayangkan kamu menyewa loker di sekolah, tapi tidak mengisinya. Saat kamu buka laci itu besok, eh ternyata di dalamnya ada **"Sampah"** berupa angka acak yang sangat besar (misal: `-858993460`).
+ 
+ Komputer tidak otomatis mengosongkan laci. Ia membiarkan angka sisa dari program lain tertinggal di sana.
+ - **Pelajaran:** Selalu biasakan memberi nilai awal (**Inisialisasi**) saat membuat variabel, misalnya: `int saldo = 0;`. 
+ 
+ ---
+ 
+ ## 🔤 H. Perang Kasta Tipe Data (Char, Int, Float, Double)
 
 Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta dan cara bergaul yang sangat aneh di dalam mesin C++. Mari kita bedah lebih dalam apa yang terjadi jika mereka saling bertabrakan (Type Casting).
 
@@ -199,7 +229,7 @@ Selalu ingat: **Koma hanya selamat jika operasinya dikawal oleh minimal satu ele
 
 ---
 
-## 🌍 G. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+## 🌍 I. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
 
 Di kodingan OSN-K, juri sangat benci melihatmu bahagia. Mereka suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
 
@@ -220,7 +250,7 @@ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSI
 
 ---
  
- ## 📦 H. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 J. Analogi Tambahan: Gudang Rahasia Komputer
  
  Jika analogi di atas masih membuatmu penasaran, mari kita lihat dari sudut pandang lain yang sering ditemui di kehidupan sehari-hari:
  
