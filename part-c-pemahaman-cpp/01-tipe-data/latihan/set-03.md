@@ -2,530 +2,238 @@
 
 ---
 
-# Latihan Soal Part C - Modul 01 - Set 03
-
-### Soal 51
-```cpp
-// Semen: Casting
-double val = 16.71;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **16**
-2. Mengubah 16.71 jadi integer (pangkas koma) jadi 16.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 16]
-```
+# Latihan Soal Part C - Modul 01 - Set 03 (Premium Edition)
 
 ---
-### Soal 52
+
+### Soal 21: Voucher Sakti (Modulo Kelipatan)
 ```cpp
-// Besi: Pembagian
-int besi = 79, bagi = 6;
-int hasil = besi / bagi;
+// Skenario: Validasi kode voucher jika habis dibagi 11
+int kode_vou = 121;
+bool is_valid = (kode_vou % 11 == 0);
+int status = is_valid;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `status`?
+2. Jika kode adalah **122**, berapakah nilai `status`?
 
-**Jawaban & Diagnosis:**
-1. **13**
-2. Membagi 79 Besi ke 6 bagian. Hasil bulat: 13.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 13]
-```
+**Jawaban:**
+1. **1** (True)
+2. **0** (False)
+
+**📖 Analisis Mendalam:**
+Sama seperti deteksi genap-ganjil, Modulo digunakan untuk mengecek kelipatan angka tertentu. Jika sisa bagi 0, maka ia kelipatan angka tersebut.
+</details>
 
 ---
-### Soal 53
+
+### Soal 22: Sewa Bus (Is it enough?)
 ```cpp
-// Kayu: Modulo
-int kayu = 22, bagi = 7;
-int sisa = kayu % bagi;
+// Skenario: 45 orang ingin naik bus kapasitas 12
+int orang = 45;
+int bus_cap = 12;
+int bus_perlu = orang / bus_cap;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `bus_perlu`?
+2. Apakah `bus_perlu` cukup menampung semua orang? Mengapa?
 
-**Jawaban & Diagnosis:**
-1. **1**
-2. 22 Kayu dibagi 7 sisa 1.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 54
-```cpp
-// Paku: Casting
-double val = 12.21;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **12**
-2. Mengubah 12.21 jadi integer (pangkas koma) jadi 12.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 12]
-```
-
----
-### Soal 55
-```cpp
-// Cat: Pembagian
-int cat = 32, bagi = 7;
-int hasil = cat / bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. Membagi 32 Cat ke 7 bagian. Hasil bulat: 4.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
-```
-
----
-### Soal 56
-```cpp
-// Kuas: Modulo
-int kuas = 39, bagi = 8;
-int sisa = kuas % bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **7**
-2. 39 Kuas dibagi 8 sisa 7.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 7]
-```
-
----
-### Soal 57
-```cpp
-// Tang: Casting
-double val = 24.61;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **24**
-2. Mengubah 24.61 jadi integer (pangkas koma) jadi 24.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
-
----
-### Soal 58
-```cpp
-// Obeng: Pembagian
-int obeng = 42, bagi = 6;
-int hasil = obeng / bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **7**
-2. Membagi 42 Obeng ke 6 bagian. Hasil bulat: 7.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 7]
-```
-
----
-### Soal 59
-```cpp
-// Palu: Modulo
-int palu = 54, bagi = 8;
-int sisa = palu % bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. 54 Palu dibagi 8 sisa 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 60
-```cpp
-// Gergaji: Casting
-double val = 81.51;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **81**
-2. Mengubah 81.51 jadi integer (pangkas koma) jadi 81.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 81]
-```
-
----
-### Soal 61
-```cpp
-// Bor: Pembagian
-int bor = 55, bagi = 3;
-int hasil = bor / bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **18**
-2. Membagi 55 Bor ke 3 bagian. Hasil bulat: 18.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 18]
-```
-
----
-### Soal 62
-```cpp
-// Baut: Modulo
-int baut = 51, bagi = 5;
-int sisa = baut % bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. 51 Baut dibagi 5 sisa 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 63
-```cpp
-// Sekrup: Casting
-double val = 10.51;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. Mengubah 10.51 jadi integer (pangkas koma) jadi 10.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
-
----
-### Soal 64
-```cpp
-// KunciInggris: Pembagian
-int kunciinggris = 66, bagi = 3;
-int hasil = kunciinggris / bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **22**
-2. Membagi 66 KunciInggris ke 3 bagian. Hasil bulat: 22.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 22]
-```
-
----
-### Soal 65
-```cpp
-// Gembok: Modulo
-int gembok = 13, bagi = 2;
-int sisa = gembok % bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. 13 Gembok dibagi 2 sisa 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 66
-```cpp
-// Rantai: Casting
-double val = 37.51;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **37**
-2. Mengubah 37.51 jadi integer (pangkas koma) jadi 37.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 37]
-```
-
----
-### Soal 67
-```cpp
-// Tali: Pembagian
-int tali = 24, bagi = 6;
-int hasil = tali / bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. Membagi 24 Tali ke 6 bagian. Hasil bulat: 4.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
-```
-
----
-### Soal 68
-```cpp
-// Karet: Modulo
-int karet = 35, bagi = 2;
-int sisa = karet % bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. 35 Karet dibagi 2 sisa 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 69
-```cpp
-// Plastik: Casting
-double val = 28.21;
-int res = (int)val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **28**
-2. Mengubah 28.21 jadi integer (pangkas koma) jadi 28.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 28]
-```
-
----
-### Soal 70
-```cpp
-// Kertas: Pembagian
-int kertas = 84, bagi = 7;
-int hasil = kertas / bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **12**
-2. Membagi 84 Kertas ke 7 bagian. Hasil bulat: 12.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 12]
-```
-
----
-### Soal 71
-```cpp
-// Kardus: Modulo
-int kardus = 67, bagi = 4;
-int sisa = kardus % bagi;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **3**
-2. 67 Kardus dibagi 4 sisa 3.
+2. **Belum cukup.** (Tampung 36 orang, sisa 9 orang terlantar).
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 3]
-```
+**📖 Analisis Mendalam:**
+Inilah bahaya pembagian `int`. Di dunia nyata kita butuh 4 bus, tapi di C++, `45 / 12` adalah 3. Dibutuhkan trik `+1` atau pembulatan ke atas.
+</details>
 
 ---
-### Soal 72
+
+### Soal 23: Rata-Rata (The .0 Power)
 ```cpp
-// Plastik: Casting
-double val = 23.21;
-int res = (int)val;
+int a=10, b=20, c=25;
+double avg_A = (a + b + c) / 3;
+double avg_B = (a + b + c) / 3.0;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `avg_A`?
+2. Berapakah nilai `avg_B`?
 
-**Jawaban & Diagnosis:**
-1. **23**
-2. Mengubah 23.21 jadi integer (pangkas koma) jadi 23.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 23]
-```
+**Jawaban:**
+1. **18.0**
+2. **18.333...**
+
+**📖 Analisis Mendalam:**
+Di `avg_A`, `55 / 3` menghasilkan `18` (int), baru kemudian jadi `18.0`. Di `avg_B`, `55 / 3.0` menghasilkan `18.333` (double).
+</details>
 
 ---
-### Soal 73
+
+### Soal 24: Rahasia Karakter Angka (Digit to Int)
 ```cpp
-// Kaca: Pembagian
-int kaca = 45, bagi = 2;
-int hasil = kaca / bagi;
+// Mengubah karakter '7' menjadi angka 7 utuh
+char c = '7'; // ASCII 55
+int n = c - '0'; // '0' ASCII 48
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `n`?
+2. Apa yang terjadi jika kita hitung `c + 1`?
 
-**Jawaban & Diagnosis:**
-1. **22**
-2. Membagi 45 Kaca ke 2 bagian. Hasil bulat: 22.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 22]
-```
+**Jawaban:**
+1. **7**
+2. **56** (Atau karakter '8')
+
+**📖 Analisis Mendalam:**
+Trik `karakter - '0'` adalah cara standar di OSN-K untuk menarik nilai numerik asli dari sebuah karakter.
+</details>
 
 ---
-### Soal 74
+
+### Soal 25: Simbol Matematika (ASCII Symbol)
 ```cpp
-// Logam: Modulo
-int logam = 24, bagi = 3;
-int sisa = logam % bagi;
+// ASCII '!' = 33, ASCII '\"' = 34
+char s = '!';
+char s_baru = s + 1;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Simbol apakah yang tersimpan di `s_baru`?
+2. Berapakah nilai numerik dari `s_baru`?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. 24 Logam dibagi 3 sisa 0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
+**Jawaban:**
+1. **'"'** (Petik dua)
+2. **34**
+
+**📖 Analisis Mendalam:**
+Tabel ASCII tidak hanya berisi huruf, tapi juga simbol-simbol yang berdekatan yang bisa dimanipulasi dengan angka.
+</details>
 
 ---
-### Soal 75
+
+### Soal 26: Pajak PPN (VAT 11%)
 ```cpp
-// Kain: Casting
-double val = 53.71;
-int res = (int)val;
+int harga = 10000;
+int total_A = harga * 1.11;
+int total_B = harga + (harga * 11 / 100);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `total_A`?
+2. Berapakah nilai `total_B`? 
 
-**Jawaban & Diagnosis:**
-1. **53**
-2. Mengubah 53.71 jadi integer (pangkas koma) jadi 53.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 53]
-```
+**Jawaban:**
+1. **11100**
+2. **11100**
+
+**📖 Analisis Mendalam:**
+Keduanya menghasilkan nilai yang sama karena `10000 * 0.11` adalah angka bulat. Namun waspadalah jika harganya ganjil, `total_B` mungkin kehilangan angka kecil di pembagian `/ 100`.
+</details>
 
 ---
+
+### Soal 27: Campurkan Kopi (Space Leftover)
+```cpp
+// Skenario: Wadah 100L diisi 35L kopi bertahap
+int wadah = 100;
+int isi = 35;
+int sisa_ruang = wadah % isi;
+```
+**Pertanyaan:**
+1. Berapakah nilai `sisa_ruang`?
+2. Berapa kali "pengisian 35L" bisa dilakukan sampai wadah meluap?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **30** (Sisa ruang setelah 2x isi)
+2. **2 kali** (Total 70L, isi ke-3 butuh 105L -> Meluap).
+
+**📖 Analisis Mendalam:**
+Modulo di sini mencari kapasitas sisa setelah pengisian kelipatan tertentu.
+</details>
+
+---
+
+### Soal 28: Pagination (Tombol Next)
+```cpp
+// Halaman: (total + size - 1) / size
+int total_data = 21;
+int data_per_hal = 10;
+int hal_sekarang = (total_data + data_per_hal - 1) / data_per_hal;
+```
+**Pertanyaan:**
+1. Berapakah nilai `hal_sekarang`?
+2. Mengapa rumusnya harus ditambah `data_per_hal - 1`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **3**
+2. Untuk memaksa pembagian integer melakukan **pembulatan ke atas**.
+
+**📖 Analisis Mendalam:**
+Data 21 dibagi 10 aslinya 2.1, tapi kita butuh 3 halaman. Rumus ini (21+10-1)/10 = 30/10 = 3. Trik wajib OSN! 
+</details>
+
+---
+
+### Soal 29: Luas Bundaran (Loss of PI)
+```cpp
+int r = 10;
+int luas_A = 3.14 * r * r;
+double luas_B = 3.14 * (r * r);
+```
+**Pertanyaan:**
+1. Berapakah nilai `luas_A`?
+2. Berapakah nilai `luas_B`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **314**
+2. **314.0**
+
+**📖 Analisis Mendalam:**
+Meskipun hasilnya sama (314), `luas_A` menyimpannya sebagai `int` (kehilangan fleksibilitas koma di kemudian hari), sedangkan `luas_B` menyimpannya dengan presisi `double`.
+</details>
+
+---
+
+### Soal 30: Modulo Negatif (C++ Rule)
+```cpp
+// Aturan: Tanda % ikut angka kiri!
+int x = -10 % 3;
+int y = 10 % -3;
+```
+**Pertanyaan:**
+1. Berapakah nilai `x`?
+2. Berapakah nilai `y`? (Ini sangat menjebak!)
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **-1**
+2. **1**
+
+**📖 Analisis Mendalam:**
+Di C++, operator `%` bukan operasi Matematika murni. C++ akan mengikuti tanda operan kiri (dividend). `-10 % 3` negatif, `10 % -3` positif. Ingat ini baik-baik! 
+</details>
