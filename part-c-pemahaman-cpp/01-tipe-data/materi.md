@@ -281,9 +281,10 @@
  printf("Dapat %d, Sisa %d", bagian, sisa);
  ```
  **Diagnosis Logika:**
- 1. `permen / anak` $\rightarrow 11 \div 3 = 3$. (Koma hangus).
- 2. `permen % anak` $\rightarrow$ Sisa pembagiannya adalah **2**.
- 3. Output: **Dapat 3, Sisa 2**.
+ 1. **Baris 1-2**: Kita memesan dua laci `permen` (isi 11) dan `anak` (isi 3).
+ 2. **Baris 3 (Pembagian `int`)**: Robot menghitung $11 \div 3 = 3.666...$. Namun, karena laci `bagian` adalah tipe `int` (loker semen), robot **memotong paksa** desimalnya. Hasil akhir: **3**.
+ 3. **Baris 4 (Modulo)**: Robot mencari sisa bagi. $11 \pmod 3$. Perkalian terdekat adalah $3 \times 3 = 9$. Maka sisanya adalah $11 - 9 = 2$. Hasil akhir: **2**.
+ 4. **Output**: Mengambil isi laci `bagian` dan `sisa`. Tercetak: **Dapat 3, Sisa 2**.
  </details>
  
  <details>
@@ -296,9 +297,11 @@
  printf("a=%d, b=%d, c=%d", a, b, c);
  ```
  **Diagnosis Logika:**
- 1. `int b = a++` $\rightarrow$ `b` ambil 10 dulu. Baru `a` naik jadi 11.
- 2. `int c = ++a` $\rightarrow$ `a` naik jadi 12 dulu. Baru `c` ambil 12.
- 3. Output: **a=12, b=10, c=12**.
+ 1. **Baris 1**: `a` berisi 10.
+ 2. **Baris 2 (`a++`)**: Ini adalah *Post-Increment*. Robot akan memberikan nilai `a` yang **sekarang** (10) ke laci `b`. Setelah `b` terisi 10, barulah `a` naik menjadi 11.
+ 3. **Baris 3 (`++a`)**: Ini adalah *Pre-Increment*. Robot harus menaikkan nilai `a` **terlebih dahulu** sebelum memakainya. Nilai `a` yang tadinya 11 naik menjadi 12. Nilai baru ini (12) kemudian diberikan ke laci `c`.
+ 4. **Kondisi Akhir**: `a` = 12, `b` = 10, `c` = 12.
+ 5. **Output**: **a=12, b=10, c=12**.
  </details>
  
  <details>
@@ -311,9 +314,11 @@
  printf("%.0lf", hasil);
  ```
  **Diagnosis Logika:**
- 1. `'A'` (ASCII 65) $+ 5 = 70$.
- 2. `%.0lf` membuang desimalnya.
- 3. Output: **70**.
+ 1. **Konversi ASCII**: Robot melihat `'A'`. Ia mencari di tabel kamus ASCII dan menemukan kodenya adalah **65**.
+ 2. **Penjumlahan**: Robot menghitung $65 + 5 = 70$.
+ 3. **Promosi Kasta**: Karena laci `hasil` bertipe `double` (kasta tinggi), robot menyimpan angka 70 tadi dalam bentuk desimal: **70.000000...**.
+ 4. **Formatting**: Perintah `%.0lf` menyuruh robot: "Cetak angka koma ini, tapi jangan tampilkan satu pun angka di belakang titiknya."
+ 5. **Output**: **70**.
  </details>
  
  <details>
@@ -327,9 +332,11 @@
  printf("%d", hasil);
  ```
  **Diagnosis Logika:**
- 1. `x * 2` (2 Miliar) TIDAK lebih besar dari `y` (2 Miliar). Hasilnya **SALAH (0)**.
- 2. `0 + 10 = 10`.
- 3. Output: **10**.
+ 1. **Eksponen**: `1e9` adalah 1 Miliar ($1.000 .000 .000$).
+ 2. **Perbandingan**: Robot menghitung `x * 2` yaitu 2 Miliar. Apakah 2 Miliar **lebih besar dari** 2 Miliar? Jawabannya **TIDAK/SALAH**.
+ 3. **Nilai Boelan**: Karena salah, laci `cek` berisi angka **0** (False).
+ 4. **Matematika Logika**: Robot menghitung `hasil = 0 + 10`. Hasil akhirnya adalah **10**.
+ 5. **Output**: **10**.
  </details>
  
  <details>
@@ -350,14 +357,19 @@
  printf("ans = %d", ans);
  ```
  **Diagnosis Logika Sang Juara:**
- 1. `a = 67 ('C') - 65 ('A') = 2`.
- 2. `++a` $\rightarrow$ `a` jadi 3.
- 3. `x++ % 3` $\rightarrow$ `10 % 3 = 1`. (Baru setelah itu `x` jadi 11).
- 4. `b = 3 + 1 = 4`.
- 5. `res = (4 * 2.0) - (2) = 6.0`.
- 6. `6 > 5` adalah **Benar (1)**.
- 7. `ans = 1 + 11 = 12`.
- 8. Output: **ans = 12**.
+ 1. **Step 1 (ASCII Math)**: `'C'` adalah 67, `'A'` adalah 65. Maka `a = 67 - 65 = 2`.
+ 2. **Step 2 (Complex Increment)**:
+    - **`++a`**: `a` naik dari 2 menjadi **3**.
+    - **`x++ % 3`**: Robot memakai nilai `x` yang sekarang (**10**) untuk di-modulo 3. Hasilnya adalah **1**. Setelah operasi ini selesai, barulah `x` naik menjadi **11**.
+    - **`b = 3 + 1 = 4`**.
+ 3. **Step 3 (The Math Engine)**:
+    - **`sqrt(4.0)`** adalah 2.0. Maka `b * 2.0` = $4 \times 2 = 8$.
+    - **`y / 500.000.000`** $\rightarrow$ 1 Miliar / 500 Juta = **2**.
+    - **`res = 8 - 2 = 6`**.
+ 4. **Step 4 (Final Verdict)**: 
+    - **`res > 5`**: Apakah 6 > 5? **YA (BENAR/1)**. Maka laci `final_cek` berisi 1.
+    - **`ans = 1 + 11 = 12`** (Ingat, `x` sudah jadi 11 di Step 2).
+ 5. **Output**: **ans = 12**.
  </details>
  
  ---
