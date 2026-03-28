@@ -139,5 +139,18 @@ Masalahnya lagi mati lampu (gelap gulita). Kamu harus ngambil kaos kaki secara a
 **Jawaban:** $8 + 6 + 2 = 16$ kaos kaki yang harus diambil secara acak. Logika Invers yang asyik, bukan?
 
 ---
+
+## 📝 Daftar Isi Latihan (300 Soal Pilihan Ganda)
+
+Untuk memperkuat logikamu dalam menghitung probabilitas dan susunan, silakan kerjakan 300 latihan soal Kombinatorika (dalam format Pilihan Ganda) yang dibagi menjadi 6 bagian ini:
+
+1. **[Bagian 1 (Soal 1-50)](./09-kombinatorika/09-kombinatorika-soal-part-1.md)** — Aturan Penjumlahan & Perkalian (Kasus "Atau" vs "Dan").
+2. **[Bagian 2 (Soal 51-100)](./09-kombinatorika/09-kombinatorika-soal-part-2.md)** — Permutasi Dasar & Susunan Kursi Jabatan.
+3. **[Bagian 3 (Soal 101-150)](./09-kombinatorika/09-kombinatorika-soal-part-3.md)** — Permutasi Unsur Kembar (Anagram Kata) & Siklis (Meja Bundar).
+4. **[Bagian 4 (Soal 151-200)](./09-kombinatorika/09-kombinatorika-soal-part-4.md)** — Kombinasi Dasar (Memilih Tim & Jabat Tangan).
+5. **[Bagian 5 (Soal 201-250)](./09-kombinatorika/09-kombinatorika-soal-part-5.md)** — Kombinasi Lanjut Bersyarat (Multigrup Pria/Wanita & Pilihan Wajib).
+6. **[Bagian 6 (Soal 251-300)](./09-kombinatorika/09-kombinatorika-soal-part-6.md)** — Prinsip Sarang Merpati / *Pigeonhole Principle* (Skenario Terburuk).
+
+---
 [< Materi Sebelumnya: Teori Himpunan](./08-teori-himpunan.md) | [Materi Berikutnya: Deret & Pola Bilangan >](./10-deret-dan-pola-bilangan.md)
 [< Kembali ke Beranda Materi](../README.md)
