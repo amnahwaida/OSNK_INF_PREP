@@ -72,6 +72,20 @@ Jadi, jangan tertipu kalau nanti di soal OSN-K kamu disodorkan soal Cerita yang 
 
 Begitu kamu tahu "oh ini aslinya soal Kombinatorika (Slot Kosong)", maka dalam 30 detik kamu pasti bisa mencoret opsi jebakan dan mendapatkan jawaban pastinya.
 
+---
+
+## ⚔️ Simulasi Tarung: Bedah 100 Soal Bebras OSN-K
+
+Untuk mengasah insting diagnosis *"Pemindai Wujud Asli"* milikmu, mari kita asah langsung ke dalam 100 Soal Cerita Bergambar pilihan yang sudah dilengkapi dengan kunci bedah forensik langkah demi langkah:
+
+1. **[Bedah Part 1 (Soal 1-20)](./11-bedah-soal-bebras/11-bedah-bebras-part-1.md)** — Menelanjangi Graf pada kasus Labirin, Peta, & Jembatan.
+2. **[Bedah Part 2 (Soal 21-40)](./11-bedah-soal-bebras/11-bedah-bebras-part-2.md)** — Membongkar Kombinatorika pada kasus Sandi, Penyusunan Objek, & Sarang Merpati.
+3. **[Bedah Part 3 (Soal 41-60)](./11-bedah-soal-bebras/11-bedah-bebras-part-3.md)** — Menerjemahkan soal Himpunan & De Morgan pada kasus Klasifikasi Genetik/Sifat.
+4. **[Bedah Part 4 (Soal 61-80)](./11-bedah-soal-bebras/11-bedah-bebras-part-4.md)** — Mengubah manuver Robot/Mesin menjadi pencarian suku Deret Matematis ($U_n$ dan $S_n$).
+5. **[Bedah Part 5 (Soal 81-100)](./11-bedah-soal-bebras/11-bedah-bebras-part-5.md)** — Masterclass Deduksi (Tabel Kebenaran Ksatria/Pembohong & Eliminasi Paksa Brankas Mastermind).
+
+---
+
 Selamat! Kamu sudah menyelesaikan seluruh amunisi teori **Part A (Abstraksi Berpikir Komputasional)**. Di tahap ini, insting membaca pola dan pemodelan matematis-mu sudah setajam silet.
 
 Ambil nafas panjang, sedia secangkir kopi, dan... 
