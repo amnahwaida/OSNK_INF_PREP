@@ -85,7 +85,8 @@
  Di bahasa C++, kamu tidak bisa sembarangan menaruh barang ke udara kosong. Kamu butuh **"Kotak Loker"** (Variabel). Kotak ini ada label nama tipe datanya, yang paling sering memakan korban adalah:
  
  - `int` (Kotak Semen): Cuma bisa diisi **Bilangan Bulat** antara minus 2 miliar sampai plus 2 miliar.
- - `long long` (Peti Kemas): Sama kayak `int`, cuma kapasitasnya raksasa (sampai triliunan `10^18`).
+ - `long long` (Peti Kemas): Sama kayak `int`, cuma kapasitasnya raksasa (sampai triliunan `1e18`).
+ - `bool` (Saklar Lampu): Tipe data paling sederhana. Cuma punya dua kemungkinan: **`true`** (Benar/1) atau **`false`** (Salah/0).
  
  ### ⚠️ Jebakan Batman #1: Integer Division (Membagi Tanpa Ampun)
  
