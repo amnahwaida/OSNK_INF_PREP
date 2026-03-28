@@ -6,701 +6,751 @@
 
 ### Soal 76
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(2)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=2.
-2. Hasil akhir: 4.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 77
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 78
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **24**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=4.
-2. Hasil akhir: 24.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 79
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 80
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(2)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=2.
-2. Hasil akhir: 2.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 81
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 82
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **8**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=3.
-2. Hasil akhir: 8.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 83
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(5)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **15**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(5) --> f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=5.
-2. Hasil akhir: 15.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 84
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **10**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=4.
-2. Hasil akhir: 10.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 85
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=4.
-2. Hasil akhir: 10.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 86
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(5)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **32**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(5) --> f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=5.
-2. Hasil akhir: 32.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 87
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(5)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **32**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(5) --> f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=5.
-2. Hasil akhir: 32.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 88
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 89
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=4.
-2. Hasil akhir: 10.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 90
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 91
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 92
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **16**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=4.
-2. Hasil akhir: 16.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 93
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(5)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **32**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(5) --> f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=5.
-2. Hasil akhir: 32.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 94
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 95
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(3)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Lihat Tracing.
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=3.
-2. Hasil akhir: 6.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 96
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(2)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=2.
-2. Hasil akhir: 2.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 97
 ```cpp
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **24**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Fact dengan n=4.
-2. Hasil akhir: 24.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 98
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(2)
+// panggil: tangga(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. Lihat Tracing.
+1. **10**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(2) --> f(1) --> f(0)
+Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=2.
-2. Hasil akhir: 3.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 99
 ```cpp
-int f(int n) {
-  if(n==0) return 1;
-  return 2 * f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(5)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **32**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(5) --> f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Power dengan n=5.
-2. Hasil akhir: 32.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 100
 ```cpp
-int f(int n) {
-  if(n==0) return 0;
-  return n + f(n-1);
+int tangga(int n) {
+  if (n <= 1) return 1;
+  return n + tangga(n-1);
 }
-// f(4)
+// panggil: tangga(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Lihat Tracing.
+1. **6**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0)
+Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. Rekursi Sum dengan n=4.
-2. Hasil akhir: 10.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
+2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
+3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
+4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---

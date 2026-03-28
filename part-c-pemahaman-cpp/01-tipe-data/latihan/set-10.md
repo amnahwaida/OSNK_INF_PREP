@@ -6,685 +6,713 @@
 
 ### Soal 226
 ```cpp
-int x = 79, y = 3;
-int res = x / y;
+char huruf_awal = 'B';
+char kode_rahasia = huruf_awal + 2;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **26**
-2. Lihat Tracing.
+1. **D**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["x=79"] --> B["y=3"]
-B --> C["x/y == 26"]
+A["'B' (66)"] --> B["Geser 2"]
+B --> C["'D' (68)"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. x=79, y=3.
-2. 79/3 = 26.33. Karena `int`, desimal dibuang.
-3. Hasil: 26.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Batin Karakter**: Huruf 'B' memiliki nilai ASCII **66**.
+2. **Operasi Geser**: Menambah huruf dengan angka akan menggeser posisinya di tabel ASCII: 66 + 2 = 68.
+3. **Identitas Baru**: Angka 68 adalah identitas untuk huruf **'D'**.
+4. **Hasil Akhir**: `kode_rahasia` berisi **'D'**.
 
 ---
 ### Soal 227
 ```cpp
-char ch = 'B';
-ch = ch + (2);
+double saldo_bank = 17.12;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **D**
-2. Lihat Tracing.
+1. **17**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["'B' (66)"] --> B["2"]
-B --> C["'D' (68)"]
+A["saldo=17.12"] --> B["Pangkas Desimal"]
+B --> C["tunai=17"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. ch='B' (ASCII 66).
-2. 66 + (2) = 68.
-3. Hasil: 'D'.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `17.12` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **17**.
 
 ---
 ### Soal 228
 ```cpp
-int n = 30;
-int m = 2;
-int res = n % m;
+char huruf_awal = 'm';
+char kode_rahasia = huruf_awal + 3;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Lihat Tracing.
+1. **p**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=30, m=2"] --> B["n % m"]
-B --> C["Sisa: 0"]
+graph LR
+A["'m' (109)"] --> B["Geser 3"]
+B --> C["'p' (112)"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=30, m=2.
-2. 30 dibagi 2 sisa 0.
-3. Hasil: 0.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Batin Karakter**: Huruf 'm' memiliki nilai ASCII **109**.
+2. **Operasi Geser**: Menambah huruf dengan angka akan menggeser posisinya di tabel ASCII: 109 + 3 = 112.
+3. **Identitas Baru**: Angka 112 adalah identitas untuk huruf **'p'**.
+4. **Hasil Akhir**: `kode_rahasia` berisi **'p'**.
 
 ---
 ### Soal 229
 ```cpp
-int n = 5;
-int m = 2;
-int res = n % m;
+char huruf_awal = 'B';
+char kode_rahasia = huruf_awal + 3;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Lihat Tracing.
+1. **E**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=5, m=2"] --> B["n % m"]
-B --> C["Sisa: 1"]
+graph LR
+A["'B' (66)"] --> B["Geser 3"]
+B --> C["'E' (69)"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=5, m=2.
-2. 5 dibagi 2 sisa 1.
-3. Hasil: 1.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Batin Karakter**: Huruf 'B' memiliki nilai ASCII **66**.
+2. **Operasi Geser**: Menambah huruf dengan angka akan menggeser posisinya di tabel ASCII: 66 + 3 = 69.
+3. **Identitas Baru**: Angka 69 adalah identitas untuk huruf **'E'**.
+4. **Hasil Akhir**: `kode_rahasia` berisi **'E'**.
 
 ---
 ### Soal 230
 ```cpp
-double val = 65.53;
-int res = (int)val;
+int roti = 90;
+int anak = 6;
+int dapet_tiap_anak = roti / anak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **65**
-2. Lihat Tracing.
+1. **15**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["val=65.53"] --> B["Cast to int"]
-B --> C["res=65"]
+A["roti=90"] --> B["anak=6"]
+B --> C["Hasil bagi: 15"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=65.53.
-2. Desimal dihilangkan.
-3. Hasil: 65.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Inisialisasi**: Pak Dengklek punya `roti` sebanyak 90 dan ingin dibagi ke 6 `anak`.
+2. **Operasi Pembagian**: Rumus `roti / anak` dijalankan. Secara matematis hasilnya 15.00.
+3. **Hukum Tipe Data**: Karena hasilnya disimpan ke loker `int`, C++ membuang sisa 0 biji dan hanya mengambil bagian bulatnya.
+4. **Hasil Akhir**: `dapet_tiap_anak` bernilai **15**.
 
 ---
 ### Soal 231
 ```cpp
-int n = 35;
-int m = 2;
-int res = n % m;
+int roti = 63;
+int anak = 8;
+int dapet_tiap_anak = roti / anak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Lihat Tracing.
+1. **7**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=35, m=2"] --> B["n % m"]
-B --> C["Sisa: 1"]
+graph LR
+A["roti=63"] --> B["anak=8"]
+B --> C["Hasil bagi: 7"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=35, m=2.
-2. 35 dibagi 2 sisa 1.
-3. Hasil: 1.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Inisialisasi**: Pak Dengklek punya `roti` sebanyak 63 dan ingin dibagi ke 8 `anak`.
+2. **Operasi Pembagian**: Rumus `roti / anak` dijalankan. Secara matematis hasilnya 7.88.
+3. **Hukum Tipe Data**: Karena hasilnya disimpan ke loker `int`, C++ membuang sisa 7 biji dan hanya mengambil bagian bulatnya.
+4. **Hasil Akhir**: `dapet_tiap_anak` bernilai **7**.
 
 ---
 ### Soal 232
 ```cpp
-int n = 42;
-int m = 10;
-int res = n % m;
+int stok_buku = 70;
+int rak = 3;
+int sisa_buku = stok_buku % rak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. Lihat Tracing.
+1. **1**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-A["n=42, m=10"] --> B["n % m"]
-B --> C["Sisa: 2"]
+A["buku=70, rak=3"] --> B["Modulo %"]
+B --> C["Sisa: 1"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=42, m=10.
-2. 42 dibagi 10 sisa 2.
-3. Hasil: 2.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Konteks**: Menyusun 70 buku ke 3 rak secara merata.
+2. **Mekanisme Modulo**: Operator `%` bukan menghitung hasil bagi, tapi sisa yang tidak muat masuk rak.
+3. **Perhitungan**: 70 dibagi 3 sisa **1**.
+4. **Hasil Akhir**: `sisa_buku` adalah **1**.
 
 ---
 ### Soal 233
 ```cpp
-char ch = 'A';
-ch = ch + (1);
+int permen = 100;
+int anak = 3;
+int dapet_tiap_anak = permen / anak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **B**
-2. Lihat Tracing.
+1. **33**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["'A' (65)"] --> B["1"]
-B --> C["'B' (66)"]
+A["permen=100"] --> B["anak=3"]
+B --> C["Hasil bagi: 33"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. ch='A' (ASCII 65).
-2. 65 + (1) = 66.
-3. Hasil: 'B'.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Inisialisasi**: Pak Dengklek punya `permen` sebanyak 100 dan ingin dibagi ke 3 `anak`.
+2. **Operasi Pembagian**: Rumus `permen / anak` dijalankan. Secara matematis hasilnya 33.33.
+3. **Hukum Tipe Data**: Karena hasilnya disimpan ke loker `int`, C++ membuang sisa 1 biji dan hanya mengambil bagian bulatnya.
+4. **Hasil Akhir**: `dapet_tiap_anak` bernilai **33**.
 
 ---
 ### Soal 234
 ```cpp
-int n = 7;
-int m = 2;
-int res = n % m;
+double saldo_bank = 29.34;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Lihat Tracing.
+1. **29**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=7, m=2"] --> B["n % m"]
-B --> C["Sisa: 1"]
+graph LR
+A["saldo=29.34"] --> B["Pangkas Desimal"]
+B --> C["tunai=29"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=7, m=2.
-2. 7 dibagi 2 sisa 1.
-3. Hasil: 1.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `29.34` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **29**.
 
 ---
 ### Soal 235
 ```cpp
-double val = 52.32;
-int res = (int)val;
+double saldo_bank = 28.69;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **52**
-2. Lihat Tracing.
+1. **28**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["val=52.32"] --> B["Cast to int"]
-B --> C["res=52"]
+A["saldo=28.69"] --> B["Pangkas Desimal"]
+B --> C["tunai=28"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=52.32.
-2. Desimal dihilangkan.
-3. Hasil: 52.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `28.69` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **28**.
 
 ---
 ### Soal 236
 ```cpp
-int n = 45, b = 5;
-int res = n / b;
+double saldo_bank = 24.67;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Lihat Tracing.
+1. **24**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["n=45"] --> B["b=5"]
-B --> C["n/b == 9"]
+A["saldo=24.67"] --> B["Pangkas Desimal"]
+B --> C["tunai=24"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=45, b=5.
-2. 45/5 = 9.00. Karena `int`, desimal dibuang.
-3. Hasil: 9.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `24.67` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **24**.
 
 ---
 ### Soal 237
 ```cpp
-double val = 74.49;
-int res = (int)val;
+int stok_buku = 79;
+int rak = 4;
+int sisa_buku = stok_buku % rak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **74**
-2. Lihat Tracing.
+1. **3**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["val=74.49"] --> B["Cast to int"]
-B --> C["res=74"]
+graph TD
+A["buku=79, rak=4"] --> B["Modulo %"]
+B --> C["Sisa: 3"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=74.49.
-2. Desimal dihilangkan.
-3. Hasil: 74.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Konteks**: Menyusun 79 buku ke 4 rak secara merata.
+2. **Mekanisme Modulo**: Operator `%` bukan menghitung hasil bagi, tapi sisa yang tidak muat masuk rak.
+3. **Perhitungan**: 79 dibagi 4 sisa **3**.
+4. **Hasil Akhir**: `sisa_buku` adalah **3**.
 
 ---
 ### Soal 238
 ```cpp
-char ch = 'm';
-ch = ch + (2);
+int stok_buku = 34;
+int rak = 4;
+int sisa_buku = stok_buku % rak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **o**
-2. Lihat Tracing.
+1. **2**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["'m' (109)"] --> B["2"]
-B --> C["'o' (111)"]
+graph TD
+A["buku=34, rak=4"] --> B["Modulo %"]
+B --> C["Sisa: 2"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. ch='m' (ASCII 109).
-2. 109 + (2) = 111.
-3. Hasil: 'o'.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Konteks**: Menyusun 34 buku ke 4 rak secara merata.
+2. **Mekanisme Modulo**: Operator `%` bukan menghitung hasil bagi, tapi sisa yang tidak muat masuk rak.
+3. **Perhitungan**: 34 dibagi 4 sisa **2**.
+4. **Hasil Akhir**: `sisa_buku` adalah **2**.
 
 ---
 ### Soal 239
 ```cpp
-int a = 83, m = 7;
-int res = a / m;
+int permen = 67;
+int anak = 8;
+int dapet_tiap_anak = permen / anak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **11**
-2. Lihat Tracing.
+1. **8**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["a=83"] --> B["m=7"]
-B --> C["a/m == 11"]
+A["permen=67"] --> B["anak=8"]
+B --> C["Hasil bagi: 8"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. a=83, m=7.
-2. 83/7 = 11.86. Karena `int`, desimal dibuang.
-3. Hasil: 11.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Inisialisasi**: Pak Dengklek punya `permen` sebanyak 67 dan ingin dibagi ke 8 `anak`.
+2. **Operasi Pembagian**: Rumus `permen / anak` dijalankan. Secara matematis hasilnya 8.38.
+3. **Hukum Tipe Data**: Karena hasilnya disimpan ke loker `int`, C++ membuang sisa 3 biji dan hanya mengambil bagian bulatnya.
+4. **Hasil Akhir**: `dapet_tiap_anak` bernilai **8**.
 
 ---
 ### Soal 240
 ```cpp
-int n = 19;
-int m = 5;
-int res = n % m;
+char huruf_awal = 'a';
+char kode_rahasia = huruf_awal + 2;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Lihat Tracing.
+1. **c**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=19, m=5"] --> B["n % m"]
-B --> C["Sisa: 4"]
+graph LR
+A["'a' (97)"] --> B["Geser 2"]
+B --> C["'c' (99)"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=19, m=5.
-2. 19 dibagi 5 sisa 4.
-3. Hasil: 4.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Batin Karakter**: Huruf 'a' memiliki nilai ASCII **97**.
+2. **Operasi Geser**: Menambah huruf dengan angka akan menggeser posisinya di tabel ASCII: 97 + 2 = 99.
+3. **Identitas Baru**: Angka 99 adalah identitas untuk huruf **'c'**.
+4. **Hasil Akhir**: `kode_rahasia` berisi **'c'**.
 
 ---
 ### Soal 241
 ```cpp
-double val = 74.17;
-int res = (int)val;
+int roti = 57;
+int anak = 6;
+int dapet_tiap_anak = roti / anak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **74**
-2. Lihat Tracing.
+1. **9**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["val=74.17"] --> B["Cast to int"]
-B --> C["res=74"]
+A["roti=57"] --> B["anak=6"]
+B --> C["Hasil bagi: 9"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=74.17.
-2. Desimal dihilangkan.
-3. Hasil: 74.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Inisialisasi**: Pak Dengklek punya `roti` sebanyak 57 dan ingin dibagi ke 6 `anak`.
+2. **Operasi Pembagian**: Rumus `roti / anak` dijalankan. Secara matematis hasilnya 9.50.
+3. **Hukum Tipe Data**: Karena hasilnya disimpan ke loker `int`, C++ membuang sisa 3 biji dan hanya mengambil bagian bulatnya.
+4. **Hasil Akhir**: `dapet_tiap_anak` bernilai **9**.
 
 ---
 ### Soal 242
 ```cpp
-int n = 19;
-int m = 10;
-int res = n % m;
+double saldo_bank = 47.19;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Lihat Tracing.
+1. **47**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=19, m=10"] --> B["n % m"]
-B --> C["Sisa: 9"]
+graph LR
+A["saldo=47.19"] --> B["Pangkas Desimal"]
+B --> C["tunai=47"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=19, m=10.
-2. 19 dibagi 10 sisa 9.
-3. Hasil: 9.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `47.19` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **47**.
 
 ---
 ### Soal 243
 ```cpp
-double val = 35.23;
-int res = (int)val;
+int stok_buku = 72;
+int rak = 3;
+int sisa_buku = stok_buku % rak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **35**
-2. Lihat Tracing.
+1. **0**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["val=35.23"] --> B["Cast to int"]
-B --> C["res=35"]
+graph TD
+A["buku=72, rak=3"] --> B["Modulo %"]
+B --> C["Sisa: 0"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=35.23.
-2. Desimal dihilangkan.
-3. Hasil: 35.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Konteks**: Menyusun 72 buku ke 3 rak secara merata.
+2. **Mekanisme Modulo**: Operator `%` bukan menghitung hasil bagi, tapi sisa yang tidak muat masuk rak.
+3. **Perhitungan**: 72 dibagi 3 sisa **0**.
+4. **Hasil Akhir**: `sisa_buku` adalah **0**.
 
 ---
 ### Soal 244
 ```cpp
-int n = 49;
-int m = 10;
-int res = n % m;
+char huruf_awal = 'm';
+char kode_rahasia = huruf_awal + 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Lihat Tracing.
+1. **n**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=49, m=10"] --> B["n % m"]
-B --> C["Sisa: 9"]
+graph LR
+A["'m' (109)"] --> B["Geser 1"]
+B --> C["'n' (110)"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=49, m=10.
-2. 49 dibagi 10 sisa 9.
-3. Hasil: 9.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Batin Karakter**: Huruf 'm' memiliki nilai ASCII **109**.
+2. **Operasi Geser**: Menambah huruf dengan angka akan menggeser posisinya di tabel ASCII: 109 + 1 = 110.
+3. **Identitas Baru**: Angka 110 adalah identitas untuk huruf **'n'**.
+4. **Hasil Akhir**: `kode_rahasia` berisi **'n'**.
 
 ---
 ### Soal 245
 ```cpp
-int n = 42;
-int m = 3;
-int res = n % m;
+char huruf_awal = 'B';
+char kode_rahasia = huruf_awal + 2;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Lihat Tracing.
+1. **D**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["n=42, m=3"] --> B["n % m"]
-B --> C["Sisa: 0"]
+graph LR
+A["'B' (66)"] --> B["Geser 2"]
+B --> C["'D' (68)"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. n=42, m=3.
-2. 42 dibagi 3 sisa 0.
-3. Hasil: 0.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Batin Karakter**: Huruf 'B' memiliki nilai ASCII **66**.
+2. **Operasi Geser**: Menambah huruf dengan angka akan menggeser posisinya di tabel ASCII: 66 + 2 = 68.
+3. **Identitas Baru**: Angka 68 adalah identitas untuk huruf **'D'**.
+4. **Hasil Akhir**: `kode_rahasia` berisi **'D'**.
 
 ---
 ### Soal 246
 ```cpp
-int a = 87, y = 5;
-int res = a / y;
+double saldo_bank = 34.04;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **17**
-2. Lihat Tracing.
+1. **34**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["a=87"] --> B["y=5"]
-B --> C["a/y == 17"]
+A["saldo=34.04"] --> B["Pangkas Desimal"]
+B --> C["tunai=34"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. a=87, y=5.
-2. 87/5 = 17.40. Karena `int`, desimal dibuang.
-3. Hasil: 17.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `34.04` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **34**.
 
 ---
 ### Soal 247
 ```cpp
-char ch = 'B';
-ch = ch + (-2);
+int stok_buku = 46;
+int rak = 4;
+int sisa_buku = stok_buku % rak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **@**
-2. Lihat Tracing.
+1. **2**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["'B' (66)"] --> B["-2"]
-B --> C["'@' (64)"]
+graph TD
+A["buku=46, rak=4"] --> B["Modulo %"]
+B --> C["Sisa: 2"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. ch='B' (ASCII 66).
-2. 66 + (-2) = 64.
-3. Hasil: '@'.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Konteks**: Menyusun 46 buku ke 4 rak secara merata.
+2. **Mekanisme Modulo**: Operator `%` bukan menghitung hasil bagi, tapi sisa yang tidak muat masuk rak.
+3. **Perhitungan**: 46 dibagi 4 sisa **2**.
+4. **Hasil Akhir**: `sisa_buku` adalah **2**.
 
 ---
 ### Soal 248
 ```cpp
-double val = 69.39;
-int res = (int)val;
+double saldo_bank = 41.79;
+int uang_kertas = (int)saldo_bank;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **69**
-2. Lihat Tracing.
+1. **41**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["val=69.39"] --> B["Cast to int"]
-B --> C["res=69"]
+A["saldo=41.79"] --> B["Pangkas Desimal"]
+B --> C["tunai=41"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=69.39.
-2. Desimal dihilangkan.
-3. Hasil: 69.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Gelas ke Laci**: `saldo_bank` adalah `double` (angka berkoma).
+2. **Type Casting**: Perintah `(int)` secara paksa mengubahnya menjadi bilangan bulat.
+3. **Efek**: Bagian desimal `41.79` menderita pelenyapan.
+4. **Hasil Akhir**: `uang_kertas` berisi **41**.
 
 ---
 ### Soal 249
 ```cpp
-double val = 33.30;
-int res = (int)val;
+int kelereng = 23;
+int anak = 9;
+int dapet_tiap_anak = kelereng / anak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **33**
-2. Lihat Tracing.
+1. **2**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["val=33.30"] --> B["Cast to int"]
-B --> C["res=33"]
+A["kelereng=23"] --> B["anak=9"]
+B --> C["Hasil bagi: 2"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. val=33.30.
-2. Desimal dihilangkan.
-3. Hasil: 33.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Inisialisasi**: Pak Dengklek punya `kelereng` sebanyak 23 dan ingin dibagi ke 9 `anak`.
+2. **Operasi Pembagian**: Rumus `kelereng / anak` dijalankan. Secara matematis hasilnya 2.56.
+3. **Hukum Tipe Data**: Karena hasilnya disimpan ke loker `int`, C++ membuang sisa 5 biji dan hanya mengambil bagian bulatnya.
+4. **Hasil Akhir**: `dapet_tiap_anak` bernilai **2**.
 
 ---
 ### Soal 250
 ```cpp
-int x = 65, m = 9;
-int res = x / m;
+int stok_buku = 60;
+int rak = 7;
+int sisa_buku = stok_buku % rak;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Mengapa demikian?
+2. Deskripsikan langkah robot compiler saat memproses kode ini!
 
 **Jawaban & Diagnosis:**
-1. **7**
-2. Lihat Tracing.
+1. **4**
+2. Baca bagian 'Analisis Mendalam' di bawah.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["x=65"] --> B["m=9"]
-B --> C["x/m == 7"]
+graph TD
+A["buku=60, rak=7"] --> B["Modulo %"]
+B --> C["Sisa: 4"]
 ```
 
-**📖 Penjelasan:**
-**Langkah Tracing:**
-1. x=65, m=9.
-2. 65/9 = 7.22. Karena `int`, desimal dibuang.
-3. Hasil: 7.
+**📖 Penjelasan Komprehensif:**
+**Analisis Mendalam (Compiler Manusia):**
+1. **Konteks**: Menyusun 60 buku ke 7 rak secara merata.
+2. **Mekanisme Modulo**: Operator `%` bukan menghitung hasil bagi, tapi sisa yang tidak muat masuk rak.
+3. **Perhitungan**: 60 dibagi 7 sisa **4**.
+4. **Hasil Akhir**: `sisa_buku` adalah **4**.
 
 ---
