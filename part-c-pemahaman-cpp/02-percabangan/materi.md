@@ -6,7 +6,7 @@
  
  ---
  
- ## 📋 A. Pemanasan: Hukum Kurung Kurawal `{ }` (Wilayah Kekuasaan)
+ ## 📋 A. Hukum Kurung Kurawal `{ }` (Wilayah Kekuasaan)
  
  Masalah nomor satu pemula adalah mengira `if` berkuasa atas banyak baris di bawahnya. 
  - **Aturan Emas:** Jika tidak ada `{ }`, si `if` **HANYA** memimpin **satu baris** (sampai ketemu titik koma `;` pertama).
@@ -29,7 +29,7 @@
  3. **`else`**: Jaring pengaman terakhir. Kalau semua saringan di atas gagal, secara otomatis masuk ke sini.
  
  **Analogi "Pintu VIP":**
- Begitu kamu masuk lewat pintu `if`, pengawal langsung **membakar habis** pintu `else if` dan `else`. Kamu tidak bisa (dan tidak perlu) menengok ke pintu-pintu lain lagi.
+ Begitu kamu masuk lewat pintu `if`, pengawal langsung **membakar habis** pintu `else if` and `else`. Kamu tidak bisa (dan tidak perlu) menengok ke pintu-pintu lain lagi.
  
  ---
  
@@ -214,6 +214,46 @@
  4. Angka `2` dianggap **TRUE**, maka `y += x` dikerjakan.
  5. `y = 5 + 2 = 7`.
  6. Hasil akhir: **`x = 2, y = 7`**.
+ 
+ ---
+ 
+ ### 👹 Siap Di Uji Tracing? (MOD LEVEL: THE ULTIMATE BOSS)
+ 
+ ```cpp
+ int a = 5, b = 10, c = 0;
+ 
+ if (a > 10 && (b++ > 0)) {
+     c = 100;
+ } else if (a < b < 0) {
+     c = 200;
+ } else {
+     if (a = 2) {
+         switch (b) {
+             case 10: 
+                 if (b > 5)
+                     if (b < 10) c = 1;
+                 else c = 2; // Dangling Else!
+             case 5: c += 10; break;
+         }
+     }
+     c = (c == 12) ? c + 3 : c + 1;
+ }
+ printf("a = %d, b = %d, c = %d", a, b, c);
+ ```
+ **Diagnosis Logika Sang Juara:**
+ 1. `if (a > 10)` ($5 > 10$) is **FALSE**. Karena konektor `&&`, mesin malas membaca sisi kanan. `b++` dibuang! Nilai `b` tetap **10**.
+ 2. `else if (a < b < 0)` $\rightarrow$ `5 < 10` is **1**. Lalu `1 < 0` is **FALSE**. Lari ke `else`.
+ 3. Di dalam `else`: `if (a = 2)`. Cuci otak! `a` sekarang **2**. Angka 2 adalah **TRUE**.
+ 4. `switch (b)` (Beri nilai `10`):
+    - `case 10`:
+      - `if (b > 5)` ($10 > 5$) is **TRUE**.
+      - `if (b < 10)` ($10 < 10$) is **FALSE**.
+      - `else c = 2` menempel pada `if` terdekat. Jadi `c` diisi **2**.
+      - **TIDAK ADA BREAK!** Mesin kebelet lari ke `case 5`.
+    - `case 5`: `c += 10` $\rightarrow 2 + 10 = 12$. Lalu `break` (pintu keluar).
+ 5. Perintah terakhir: `c = (c == 12) ? c + 3 : c + 1;`.
+    - Karena `c` adalah 12, maka ambil jalur kiri: `12 + 3 = 15`.
+ 6. Hasil akhir: **`a = 2, b = 10, c = 15`**.
  
  ---
  
