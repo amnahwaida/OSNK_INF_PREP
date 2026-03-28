@@ -103,7 +103,30 @@ int main() {
 
 ---
 
-### Siap Di Uji Tracing?
+## 🦖 C. Jebakan Batman: Parameter Vector & String
+ 
+ Ini adalah jebakan maut di OSN-K Nasional (seperti soal **OSNK 2024**). 
+ 
+ Kamu mungkin tahu bahwa Array tradisional (`int A[]`) selalu dikirim pakai alamat asli (otomatis Reference). **TAPI, di C++, `std::vector` dan `std::string` secara default dikirim pakai Fotokopi (Value)!**
+ 
+ ```cpp
+ void rahasia(vector<int> v) { // TIDAK pakai &, berarti Fotokopi!
+     v.push_back(100);
+ }
+ 
+ int main() {
+     vector<int> v = {1, 2, 3};
+     rahasia(v);
+     cout << v.size(); // Tetap 3!
+ }
+ ```
+ 
+ > [!CAUTION]
+ > **Hati-hati:** Jika kamu melihat fungsi yang menerima `vector<int> V` (tanpa tanda `&`), berapapun banyak kamu `push_back` atau `pop_back` di dalam fungsi itu, **Vector aslinya di `main` tidak akan berubah sama sekali!** Juri sangat suka menipu ketelitianmu di sini.
+ 
+ ---
+ 
+ ### Siap Di Uji Tracing?
 
 Kamu ditunjuk menjadi Inspektur Fungsi C++ dengan soal maut berikut ini:
 

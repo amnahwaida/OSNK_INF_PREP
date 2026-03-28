@@ -93,6 +93,27 @@
  
  ---
  
+ ## 🧮 E. Rahasia ASCII: Angka di Balik Huruf
+ 
+ **Temuan OSN-K:** Sering kali juri meminta kamu mengubah karakter angka `'5'` menjadi nilai integer `5`, atau mengubah huruf kecil menjadi besar.
+ 
+ **Trik Pengurangan Nol (`'5' - '0'`):**
+ Karena urutan kode ASCII angka itu berurutan, kamu bisa mendapatkan nilai asli sebuah karakter angka dengan menguranginya dengan karakter `'0'`.
+ ```cpp
+ char c = '7';
+ int angka = c - '0'; // angka bernilai 7 (Integer)
+ ```
+ 
+ **Trik Huruf Besar & Kecil:**
+ Jarak antara `'a'` (kecil) dan `'A'` (besar) selalu **32**.
+ - `'a' - 32` = `'A'`
+ - `'A' + 32` = `'a'`
+ 
+ > [!TIP]
+ > Jika kamu melihat operasi matematika pada `string` seperti `s[i] - '0'`, jangan bingung! Itu hanyalah cara C++ untuk "memeras" nilai angka murni dari sebuah teks.
+ 
+ ---
+ 
  ⏩ **Lanjut ke Modul Selanjutnya:** [Dinamis Vector & Matrix 2D (Loker yang Bisa Melar)](../08-vector/materi.md)
  
  [< Kembali ke Part C](../README.md)

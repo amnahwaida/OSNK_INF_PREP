@@ -156,6 +156,28 @@
  
  ---
  
+ ## ⚡ H. Teknik Sort & Matriks Dinamis
+ 
+ **Temuan OSN-K:** Sering kali data diberikan berantakan, dan program akan memanggil `sort()` sebelum melakukan Binary Search. 
+ 
+ **1. Mengurutkan Data (`std::sort`)**
+ Meskipun kamu tidak diminta menulis fungsi sort, kamu harus tahu bahwa C++ bisa mengurutkan vector secepat kilat.
+ ```cpp
+ #include <algorithm>
+ sort(v.begin(), v.end()); // Mengurutkan dari kecil ke besar
+ ```
+ Jika kamu melihat baris ini di soal, langsung urutkan angka-angka di vector tersebut di kertas burammu sebelum lanjut ke baris berikutnya!
+ 
+ **2. Membuat Matriks Dinamis**
+ Terkadang juri membuat matriks yang ukurannya ditentukan oleh variabel `n` dan `m`.
+ ```cpp
+ vector<vector<int>> matriks(n, vector<int>(m, 0));
+ ```
+ **Analogi Rak Pesanan Khusus:**
+ Baris di atas artinya: "Buat rak dengan `n` laci, di mana setiap laci sudah berisi map plastik yang sanggup menampung `m` kertas (dan semua kertasnya masih kosong/bernilai 0)."
+ 
+ ---
+ 
  🏁 **Selamat!** Kamu telah menyelesaikan seluruh materi **Pemahaman Kode C++**. 
  Sekarang kamu siap menghadapi **[Paket Simulasi OSN-K](../../simulasi-osnk/README.md)** yang sesungguhnya!
  
