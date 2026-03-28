@@ -14,25 +14,25 @@ Untuk bisa meramal *output* tersebut dengan presisi $100\%$, kita akan membedah 
 
 ## 📚 Indeks Materi Part C
 
-### 1. [Tipe Data & Operator Dasar (Loker Kelas & Pembagian Permen)](./01-tipe-data-dan-operator-dasar.md)
+### 1. [Tipe Data & Operator Dasar (Loker Kelas & Pembagian Permen)](./01-tipe-data/materi.md)
 Bagaimana komputer menyimpan identitas barang? Mengapa membagi angka `5 / 2` di C++ hasilnya malah `2` (bukan $2.5$)? Kita bahas sifat kejam kotak *Integer*, ilmu manipulasi sisa bagi (*Modulo* `%`), hingga rahasia Karakter Asing (Huruf/`char` adalah Angka Terselubung), dan hukum kasta tertinggi Variable Scope (Ketua OSIS vs Ketua Kelas).
 
-### 2. [Percabangan & Logika Boolean (Razia Guru BP)](./02-percabangan-dan-boolean-logika.md)
+### 2. [Percabangan & Logika Boolean (Razia Guru BP)](./02-percabangan/materi.md)
 Kapan blok kode dieksekusi dan kapan diabaikan? Memahami gerbang logika `If-Else` dan sifat egois evaluasi sirkuit pendek (`Short-Circuit && dan ||`). Kalau rambutmu sudah panjang (Salah di syarat pertama), Guru BP tidak sudi lagi mengecek warna sepatumu di syarat kedua!
 
-### 3. [Perulangan & Array (Trek Lari & Playlist Spotify)](./03-perulangan-dan-manipulasi-array.md)
+### 3. [Perulangan & Array (Trek Lari & Playlist Spotify)](./03-perulangan/materi.md)
 Membedah putaran `For`, `While`, dan `Do-While`. Memahami batas akhir iterasi sebuah Array (`Index Out of Bounds`). Termasuk membedah kekuatan gaib tombol `Break` (Hancurkan mesin lagunya, berhenti lari!) vs tombol `Continue` (Lagu ini jelek, letih, tolong di-Skip ke lagu sebelahnya!).
 
-### 4. [Fungsi & Parameter (Nyontek PR Tip-Ex)](./04-fungsi-dan-parameter-referensi.md)
+### 4. [Fungsi & Parameter (Nyontek PR Tip-Ex)](./04-fungsi/materi.md)
 OSN-K sangat memuja trik jebakan lempar-lemparan fungsi. Bedakan antara *Pass-by-Value* (Minta tolong dikirim Fotokopian PR-nya, jadi kalau dirobek gak ngaruh ke aslinya) versus *Pass-by-Reference* simbol `&` (Meminjamkan BUKU ASLI PR-mu kepada teman, jika dia coret-coret Tip-Ex maka tugasmu ikut bocor dan berubah!).
 
-### 5. [Rekursi & Call Stack (Tugas Rantai Minta Uang Jajan)](./05-rekursi-dan-call-stack.md)
+### 5. [Rekursi & Call Stack (Tugas Rantai Minta Uang Jajan)](./05-rekursi/materi.md)
 Bos terakhir kodingan OSN-K! "Fungsi yang memanggil dirinya sendiri". Jangan dihafal lurus, tapi proyeksikan layaknya *Tumpukan Piring (LIFO)* yang mundur berantai. Adik minta Ibu, Ibu minta Ayah, Ayah ke Mesin ATM. Rekursi takkan tercetak ke layar sebelum "Uang Ayah cair dari ATM" (Base Case tercapai).
 
-### 6. [Operasi Bitwise Tingkat Lanjut (Cheat Code Tombol Rahasia)](./06-operasi-bitwise-dasar.md)
+### 6. [Operasi Bitwise Tingkat Lanjut (Cheat Code Tombol Rahasia)](./06-bitwise/materi.md)
 Array dimanipulasi dengan operator planet luar `&, |, ^, <<, >>`. Kita singkirkan desimal matematika dan pakai analogi *Saklar Lampu LED*. Membongkar trik sakti `XOR (^)` si pembalik keadaan yang setia (tombol ditekan ganjil menyala, ditekan genap kembali mati alias lenyap!).
 
 ---
 
 Sudah memanaskan ujung pensil burammu? 
-Ayo kita mulai menerjemahkan bahasa alien pertama: **[01 - Tipe Data & Operator Dasar](./01-tipe-data-dan-operator-dasar.md)**!
+Ayo kita mulai menerjemahkan bahasa alien pertama: **[01 - Tipe Data & Operator Dasar](./01-tipe-data/materi.md)**!
