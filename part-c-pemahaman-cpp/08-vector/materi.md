@@ -134,6 +134,28 @@
  
  ---
  
+ ## 🥛 G. Logika Tukar Isi (Swap Logic)
+ 
+ **Temuan KSN-K 2021:** Sering kali juri ingin mengacak-acak isi array. Cara paling dasar adalah dengan menukar dua elemen. Tapi di komputer, kita tidak bisa menukar dua benda dengan dua tangan sekaligus. Kita butuh bantuan "Gelas Ketiga".
+ 
+ **Analogi Gelas Jus & Susu:**
+ Kamu punya Gelas A berisi **Jus** dan Gelas B berisi **Susu**. Kamu ingin menukarnya.
+ 1. Ambil gelas kosong **Temp**.
+ 2. Tuang Jus dari **A** ke **Temp**. (Sekarang A kosong).
+ 3. Tuang Susu dari **B** ke **A**. (Sekarang B kosong).
+ 4. Tuang Jus dari **Temp** ke **B**.
+ 
+ ```cpp
+ int temp = v[i];
+ v[i] = v[j];
+ v[j] = temp;
+ ```
+ 
+ **Trik Cepat Menghitung:**
+ Jangan pusing dengan variabel `temp`. Jika kamu melihat pola 3 baris di atas, itu hanyalah perintah untuk **Tukar Posisi**. Langsung saja coret angka di kertas burammu dan pindahkan posisinya.
+ 
+ ---
+ 
  🏁 **Selamat!** Kamu telah menyelesaikan seluruh materi **Pemahaman Kode C++**. 
  Sekarang kamu siap menghadapi **[Paket Simulasi OSN-K](../../simulasi-osnk/README.md)** yang sesungguhnya!
  

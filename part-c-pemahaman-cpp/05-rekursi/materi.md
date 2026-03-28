@@ -190,6 +190,39 @@ Maka nilai `fungsiBurung(5)` sama persis dengan angka Deret Fibonacci ke-5, yait
  > - Untuk $K=2$, jawabannya selalu terpaku pada angka perpangkatan 2 terdekat.
  > - Untuk $K$ lain, jika ditanya nilai $N$ yang menghasilkan output maksimal, carilah nilai $N$ yang merupakan $K^M$ atau mendekati pola tertentu.
  
+ ## 📐 F. Rekursi Kombinatorika (Segitiga Pascal)
+ 
+ **Temuan KSN-K 2021:** Pernahkah kamu melihat fungsi rekursi yang memanggil dirinya sendiri **dua kali** tapi dengan angka yang berkurang satu persatu? Jika polanya pas, itu bukan sekadar kodingan, tapi rumus matematika **Kombinasi**!
+ 
+ ```cpp
+ int pilih(int n, int k) {
+     if (k == 0 || k == n) return 1;
+     return pilih(n - 1, k - 1) + pilih(n - 1, k);
+ }
+ ```
+ 
+ **Analogi Memilih Tim Futsal:**
+ Bayangkan kamu punya 5 teman (`n=5`) dan harus memilih 2 orang (`k=2`) untuk masuk tim.
+ - **Opsi 1:** Kamu pilih temanmu si "Budi" (berarti sisa 4 teman, tinggal pilih 1 lagi). $\rightarrow$ `pilih(n-1, k-1)`
+ - **Opsi 2:** Kamu **tidak** pilih si "Budi" (berarti sisa 4 teman, tapi masih harus pilih 2 orang lagi). $\rightarrow$ `pilih(n-1, k)`
+ 
+ **Cara "Curang" Mencari Jawaban:**
+ Daripada menggambar pohon rekursi yang sangat lebar, gunakan **Segitiga Pascal**!
+ 
+ | n \ k | 0 | 1 | 2 | 3 |
+ |---|---|---|---|---|
+ | **0** | 1 | | | |
+ | **1** | 1 | 1 | | |
+ | **2** | 1 | 2 | 1 | |
+ | **3** | 1 | 3 | 3 | 1 |
+ | **4** | 1 | 4 | 6 | 4 |
+ | **5** | 1 | 5 | **10** | 10 |
+ 
+ *Contoh:* Berapa `pilih(5, 2)`? Lihat baris `n=5` kolom `k=2`. Hasilnya adalah **10**. 
+ 
+ > [!IMPORTANT]
+ > Di OSN-K, jika kamu melihat `return f(n-1, k-1) + f(n-1, k)`, segera buat Segitiga Pascal di kertas burammu. Ini adalah pola **Kombinasi ($^nC_k$)**. Tidak perlu pusing menjumlahkan angka satu-satu di setiap cabang rekursi!
+ 
  ---
  
  Ini esensi olimpiade rahasia sesungguhnya: **Soal yang terlihat menghabiskan 3 galon tinta pulpen rekursi... nyatanya bisa dijawab dalam 3 Detik berbekal insting Pola Kriptografi Matematika Murni!**

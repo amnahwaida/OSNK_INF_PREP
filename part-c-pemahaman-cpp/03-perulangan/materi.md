@@ -259,6 +259,93 @@ Perilaku program memuntahkan *Garbage Value* atau berpotensi kiamat OS (Segmenta
  
  ---
  
+ ---
+ 
+ ## 🚀 G. Rumus Cepat Perulangan Bersarang (Nested Loop)
+ 
+ **Temuan KSN-K 2021:** Sering muncul soal di mana satu loop berada di dalam loop lain, dan batas loop dalamnya bergantung pada indeks loop luarnya. Jangan dihitung satu per satu jika angkanya sampai 100!
+ 
+ ### 📈 1. Pola Deret Aritmetika (Loop Bertingkat)
+ ```cpp
+ int counter = 0;
+ for (int i = 1; i <= n; i++) {
+     for (int j = 1; j <= i; j++) {
+         counter++;
+     }
+ }
+ ```
+ **Analogi Tumpukan Bata:**
+ Putaran pertama `i=1` jalan 1x. Putaran `i=2` jalan 2x. Putaran `i=n` jalan `n`x. 
+ Totalnya adalah: $1 + 2 + 3 + \dots + n$.
+ 
+ **Rumus Sakti:** 
+ $$\text{Total} = \frac{n \times (n+1)}{2}$$
+ 
+ *Contoh:* Jika `n = 10`, maka hasilnya adalah $\frac{10 \times 11}{2} = \mathbf{55}$. 
+ 
+ ### ⏹️ 2. Pola Persegi (Loop Bebas)
+ Jika loop dalam tidak peduli dengan `i`:
+ ```cpp
+ for (int i = 1; i <= n; i++) {
+     for (int j = 1; j <= m; j++) {
+         counter++;
+     }
+ }
+ ```
+ **Rumus:** $n \times m$.
+ 
+ > [!IMPORTANT]
+ > Di OSN-K, jika kamu melihat loop bersarang dua tingkat yang bentuknya "segitiga" (j <= i), langsung gunakan rumus $\frac{n(n+1)}{2}$. Ini akan menghemat waktu berhargamu minimal 5 menit!
+ 
+ ---
+ 
+ ---
+ 
+ ## 🚀 G. Rumus Cepat Perulangan Bersarang (Nested Loop)
+ 
+ **Temuan KSN-K 2021:** Pernahkah kamu melihat *loop* di dalam *loop* yang jumlah putarannya berubah-ubah? Jika angka akhirnya besar (misal sampai 100), menelusurinya satu per satu akan memakan waktu satu jam! Kita butuh rumus "curang" yang legal di olimpiade.
+ 
+ ### 📈 1. Pola Segitiga (Loop Bertingkat)
+ Perhatikan kode "bertingkat" berikut:
+ ```cpp
+ int total = 0;
+ for (int i = 1; i <= n; i++) {
+     for (int j = 1; j <= i; j++) {
+         total++;
+     }
+ }
+ ```
+ **Analogi Tumpukan Bata:**
+ Bayangkan kamu sedang membangun tumpukan bata berbentuk segitiga:
+ - Baris 1 (`i=1`): Kamu taruh **1** bata (`j` jalan 1x).
+ - Baris 2 (`i=2`): Kamu taruh **2** bata (`j` jalan 2x).
+ - Baris 3 (`i=3`): Kamu taruh **3** bata (`j` jalan 3x).
+ - ... sampai baris ke-`n`.
+ 
+ Total batanya adalah: $1 + 2 + 3 + \dots + n$.
+ 
+ **Rumus Sakti Si Pintar Gauss:** 
+ $$\text{Total Putaran} = \frac{n \times (n+1)}{2}$$
+ 
+ *Contoh:* Jika `n = 10`, daripada menghitung $1+2+3 \dots +10$, langsung saja: $\frac{10 \times 11}{2} = \mathbf{55}$. 
+ 
+ ### ⏹️ 2. Pola Persegi (Loop Mandiri)
+ Jika loop dalam **TIDAK** bergantung pada si `i`:
+ ```cpp
+ for (int i = 1; i <= n; i++) {
+     for (int j = 1; j <= m; j++) {
+         total++;
+     }
+ }
+ ```
+ **Analogi Ubin Lantai:**
+ Kamu punya ruangan dengan panjang `n` ubin dan lebar `m` ubin. Total ubinnya tinggal dikalikan saja: **$n \times m$**.
+ 
+ > [!IMPORTANT]
+ > Di OSN-K, jika kamu melihat loop bersarang di mana batas `j` adalah `i` (`j <= i`), jangan panik! Ingat saja **Analogi Segitiga** dan gunakan rumus $\frac{n(n+1)}{2}$. Ini trik rahasia untuk menyelesaikan soal 5 menit hanya dalam 5 detik!
+ 
+ ---
+ 
  ### Siap Di Uji Tracing?
 
 Kamu ditunjuk menjadi Komandan Compiler pada sebaris kodingan OSN Murni berikut:
