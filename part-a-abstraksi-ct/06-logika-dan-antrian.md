@@ -41,11 +41,37 @@ Ada beberapa operator yang sering muncul di OSN-K:
 
 ### 4. Hukum Logika Penting (De Morgan)
 
-Seringkali kita perlu membalikkan sebuah logika yang kompleks. Gunakan aturan sederhana ini:
-*   **NOT (A AND B)** sama dengan **(NOT A) OR (NOT B)**
-*   **NOT (A OR B)** sama dengan **(NOT A) AND (NOT B)**
+Hukum De Morgan adalah "senjata rahasia" untuk menyederhanakan logika yang rumit, terutama saat ada tanda kurung dan negasi (NOT).
 
-*Analogi:* "Saya TIDAK (makan nasi DAN minum teh)" berarti "Saya TIDAK makan nasi ATAU saya TIDAK minum teh".
+#### Aturan Emas:
+1.  **NOT (A AND B)** $\equiv$ **(NOT A) OR (NOT B)**
+2.  **NOT (A OR B)** $\equiv$ **(NOT A) AND (NOT B)**
+
+*Cara menghafalnya:* Saat NOT masuk ke dalam kurung, ia menempel ke setiap variabel, dan operatornya **BERBALIK** (AND jadi OR, OR jadi AND).
+
+#### Mengapa Ini Benar? (Bukti Tabel Kebenaran)
+Mari kita buktikan Hukum #1: `NOT (A AND B)` vs `(NOT A) OR (NOT B)`.
+
+| A | B | A AND B | **NOT (A AND B)** | NOT A | NOT B | **(NOT A) OR (NOT B)** |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| T | T | T | **F** | F | F | **F** |
+| T | F | F | **T** | F | T | **T** |
+| F | T | F | **T** | T | F | **T** |
+| F | F | F | **T** | T | T | **T** |
+
+*Lihat kolom ke-4 dan ke-7: Hasilnya identik!*
+
+#### Contoh Kasus Informatika (Programming):
+Bayangkan kamu sedang coding sistem keamanan. Kamu ingin menampilkan pesan error jika user **TIDAK** mengisi (Email **DAN** Password).
+*   **Logika 1:** `if NOT (email_isi AND password_isi)`
+*   **Logika 2 (De Morgan):** `if (NOT email_isi) OR (NOT password_isi)`
+
+Keduanya sama! Pesan error muncul jika email kosong **ATAU** password kosong.
+
+#### Contoh Kasus Kehidupan:
+Ibumu bilang: "Jangan (makan es krim DAN minum es)".
+Artinya, kamu boleh makan salah satu, tapi tidak boleh keduanya sekaligus.
+Secara logika De Morgan: "Kamu (TIDAK makan es krim) ATAU (TIDAK minum es)".
 
 ### 5. Relasi dengan Kehidupan & Informatika
 
