@@ -106,6 +106,31 @@ for (int lagu = 1; lagu <= 10; lagu++) {
 Bagi *Compiler Manusia* pemula, `break` dan `continue` ini sering tertukar definisinya.
 Mari perjelas perbedaannya memakai analogi **Aplikasi Spotify**:
 
+```mermaid
+graph TD
+    A[Mulai Putar Lagu ke-1] --> B{Batas Lagu <= 10?}
+    B -- Ya --> C[Cek Kondisi]
+    B -- Tidak --> D(((Selesai Mutlak)))
+    
+    C --> E{"if (lagu == 4) break"}
+    E -- True (Ini lagu 4) --> D
+    E -- False --> F{"if (lagu == 2) continue"}
+    
+    F -- True (Ini lagu 2) --> G([Tombol NEXT! Abaikan sisa bawah])
+    G --> H[Tambahkan lagu++]
+    H --> B
+    
+    F -- False --> I[Nyanyi Lagu Ini]
+    I --> H
+    
+    style E fill:#ffcccc,stroke:#333
+    style F fill:#ccffcc,stroke:#333
+    style D fill:#ff0000,color:#fff
+```
+**📖 Cara Membaca Grafik "*Break vs Continue*":**
+- Saat Loop mencapai `lagu = 2` (Kotak F), mesin membentur dinding `continue`. Panah akan memaksa mesin lompat menyeberang langsung ke atas (`lagu++`) tanpa sempat menyanyikan lagunya. *"Lagu 2 Di-Skip!"*
+- Saat Loop menyentuh `lagu = 4` (Kotak E), mesin menabrak tembok sakratul maut `break`. Panah merah akan menyeret mesin KELUAR dari seluruh sistem *Looping* (Kotak D/Selesai). Perulangan resmi tamat di hari itu juga, `lagu=5` ke atas takkan pernah disentuh!
+
 ### ⏩ 1. CONTINUE (Skip ke Lagu Selanjutnya!)
 `continue` artinya kamu membatalkan sisa bait program pada putaran spesifik *saat ini* SAJA, lalu langsung lompat ke kepala iterasi atas buat **memutar lagu berikutnya**.
 

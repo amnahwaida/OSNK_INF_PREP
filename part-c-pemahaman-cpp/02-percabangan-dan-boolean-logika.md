@@ -54,6 +54,23 @@ Apa rahasianya? Mesin C++ itu sifatnya egois memikirkan jalan pintas (**Short-Ci
 Bayangkan peraturan BP Sekolah: 
 > *"Kamu akan diusir pulang `JIKA (Rambut Gondrong && Kaos Kaki Bebas)`."*
 
+```mermaid
+graph TD
+    A[Mulai Razia] --> B{"Apakah Rambut Pendek/Cukur Rapi?"}
+    B -- Nyata Pendek (False Gondrong) --> C([Langsung Disuruh Masuk Kelas!])
+    B -- Gondrong (True Gondrong) --> D{"Cek Syarat Kedua: Kaos Kaki Bebas?"}
+    D -- Hitam Sesuai (False Bebas) --> C
+    D -- Warna Warni (True Bebas) --> E(((Diusir Pulang!)))
+    
+    style C fill:#ccffcc,stroke:#333
+    style E fill:#ffcccc,stroke:#333
+```
+**📖 Cara Membaca Grafik "*Short-Circuit AND*":**
+- Saat murid masuk (Mulai Razia), Juru Cek **hanya mengecek Kotak B (Rambut)**.
+- Jika syarat pertama sudah salah (Ternyata rambutnya pendek / *False Gondrong*), panah merah penalti langsung menembak ke titik putus **Kotak Hijau C**. 
+- Perhatikan bahwa jika jalurnya ke Ciri-Ciri Hijau, **Kotak D (Syarat Kaos Kaki) SAMA SEKALI TIDAK PERNAH DILEWATI/DIBACA!** 
+- Itulah sifat "Sirkuit-Pendek" *AND*. Kalau syarat ganda di kiri udah gagal, syarat kanan murni diabaikan abadi.
+
 Sistem kerja Guru BP (C++): Beliau narik murid satu-satu. Cek kepalanya. Eh ternyata rambut sang murid **Pendek / Cukur Rapi (FALSE untuk gondrong)**. 
 Apakah Guru BP sudi menengok melihat sepatu/kaos kaki murid itu? **NGGAK PENTING!** Tentu aja NGGAK! Toh, rambutnya aja udah nggak gondrong, syarat `&& (DAN DUA-DUANYA)` udah pasti ambyar gagal total. Guru BP langsung tendang murid itu untuk masuk kelas tanpa melirik kaos kaki!
 
@@ -63,6 +80,22 @@ Dalam `A && B`, **JIKA KONDISI `A` SUDAH FALSE (SALAH)**, C++ **BUTA DAN MENOLAK
 ### 2. Kemalasan OR (`||`) -> *Event Undian Mobil*
 Bayangkan syarat dapat Mobil di Mall: 
 > *"Kamu berhak menang `JIKA (Kupon Nomor 1 Tembus || Kupon Nomor 2 Tembus)`."*
+
+```mermaid
+graph TD
+    A[Buka Amplop] --> B{"Kupon No. 1 Gosok"}
+    B -- JACKPOT! (1 Milyar) --> C(((Langsung Kasih Hadiah Mobil!)))
+    B -- Zonk (Kosong) --> D{"Kupon No. 2 Gosok?"}
+    D -- JACKPOT! --> C
+    D -- Zonk (Kosong) --> E([Pulang Jalan Kaki!])
+    
+    style C fill:#ccffcc,stroke:#333
+    style E fill:#ffcccc,stroke:#333
+```
+**📖 Cara Membaca Grafik "*Short-Circuit OR*":**
+- Kita membuka Kupon 1 (Kotak B). Jika langsung tembus **JACKPOT**, panah lari secepat kilat ke Kotak Hijau C (Menang Mobil!).
+- Panah dari B langsung ke C membuktikan bahwa **Kotak D (Kupon Ke-2) SAMA SEKALI BELUM DIGOSOK ATAU DIBACA**. Ya kan? Buat apa digosok lagi, hadiahnya udah di tangan!
+- Inilah sifat pemalas "*Sirkuit-Pendek OR*". Syarat Kanan (`B` dari `A || B`) Kapan baru dibaca? Hanya jika dan hanya jika Syarat Kiri menderita kegagalan/ZONK.
 
 Sistem C++: Menggosok Kupon Nomor 1. Eh, isinya **JACKPOT!! (TRUE)**.
 Apakah sistem masih capek-capek menggosok melihat isi Kupon Nomor 2? **TIDAK PERLU!** Karena syarat `||` (ATAU), asal ada SATU saja yang nyantol lunas, seluruh gerbang tol langsung terbuka lebar kegirangan!

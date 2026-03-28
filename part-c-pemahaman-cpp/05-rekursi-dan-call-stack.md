@@ -40,6 +40,31 @@ int UangJajan(int n) {
 Juri bertanya: Berapa hasil `UangJajan(4)`?
 **Cara Menggambar Pohon LIFO di Kertasmu:**
 
+```mermaid
+graph TD
+    A["UangJajan(4) <br> (Masih Kosong)"] --> B["4 * UangJajan(3)"]
+    B --> C["3 * UangJajan(2)"]
+    C --> D["2 * UangJajan(1)"]
+    D --> E["1 * UangJajan(0)"]
+    
+    E -- "Mendarat di Base Case (0)" --> F(("NILAI 1 LUNAS CAIR!"))
+    
+    style F fill:#ffff00,stroke:#333,stroke-width:4px
+    
+    F -. "Naik Mendaratkan Nilai" .-> E
+    E -. "Nilai (1*1) = 1" .-> D
+    D -. "Nilai (2*1) = 2" .-> C
+    C -. "Nilai (3*2) = 6" .-> B
+    B -. "Nilai (4*6) = 24" .-> A
+    
+    style A fill:#ccffcc,stroke:#333
+```
+**📖 Cara Membaca Pohon Rekursi (Panah Padat Turun $\rightarrow$ Panah Putus Naik):**
+- Komputer akan terjun bebas mengikuti **Panah Turun (Garis Padat)** terus ke bawah. Saat turun, mesin *hanya berhutang* menumpuk fungsi tanpa bisa menghitung hasil akhirnya.
+- Setelah kening membentur **Lingkaran Kuning Base Case** (`0` bernilai `1`), hutangnya lunas cair!
+- Mesin lalu akan balik arah memanjat menaiki anak tangga ke atas alias **Panah Putus-Putus (Return Phase)** sambil mengalikan bekal nilai dari bawah.
+- Hasil berlabuh di pucuk teratas pohon (Kotak Hijau) menghasilkan `24`.
+
 - Mulai *Root* Atas: `UangJajan(4) = 4 * UangJajan(3)` (Nilai belum lunas, ngutang nunggu UangJajan 3).
 - Turun Ranting: `UangJajan(3) = 3 * UangJajan(2)` (Ngutang nunggu UangJajan 2).
 - Turun Ranting: `UangJajan(2) = 2 * UangJajan(1)` (Ngutang).
