@@ -36,6 +36,15 @@
  2. **`cout << laci;` (Output)**: Corong keluar ke Layar.
  3. **`endl` atau `"\n"` (Tombol Enter)**: Berfungsi untuk pindah ke baris baru.
  
+ ### ⚠️ Jebakan Kecepatan: `endl` vs `"\n"`
+ Muridmu mungkin sering melihat `endl` di sekolah. Hati-hati! Di kodingan OSN-K yang datanya sangat banyak, memakai `endl` bisa membuat programmu **TLE** (Terlalu Lambat)!
+ - **`endl` (Lompat Sambil Ngosongin)**: Selain membuat baris baru, ia memaksa komputer mengosongkan aliran data (*Flush*) ke layar setiap saat. Ini **LAMBAT SEKALI**.
+ - **`"\n"` (Lompat Saja)**: Ia hanya menyuruh kursor pindah ke baris baru tanpa mengganggu sisa aliran data. Ini **SANGAT CEPAT**.
+ 
+ **Analogi "Kurir Paket"**: 
+ - `endl` itu seperti kurir yang setelah mengantar 1 paket langsung pulang ke gudang dulu baru berangkat lagi.
+ - `"\n"` itu seperti kurir yang membawa semua paket dalam satu mobil, mengantarnya ke baris-baris alamat yang berbeda tanpa harus pulang ke gudang setiap saat.
+ 
  ### ⚡ Mantra Pelicin (Fast I/O)
  Di soal OSN-K yang datanya sangat besar (ratusan ribu baris), `cin` dan `cout` seringkali terasa "lelet". Agar secepat kilat, kita butuh mantra sakti di awal fungsi `main`:
  ```cpp
