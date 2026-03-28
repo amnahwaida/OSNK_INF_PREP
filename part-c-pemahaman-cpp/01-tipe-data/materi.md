@@ -11,11 +11,12 @@ Mari kita bedah dua konsep penjebak massal: **Sifat Kejam Kotak Integer** dan **
  
  ## 📋 A. Pemanasan: Aturan Dasar Menulis Kode
  
- Sebelum kita masuk ke angka, ada 3 aturan "Sopan Santun" di C++ yang wajib muridmu tahu:
+ Sebelum kita masuk ke angka, ada 4 aturan "Sopan Santun" di C++ yang wajib muridmu tahu:
  
- 1. **Titik Koma (`;`) adalah Titik**: Setiap satu perintah selesai, wajib diakhiri `;`. Tanpa ini, C++ akan bingung mana awal dan mana akhir kalimat.
- 2. **Komentar (`//`) adalah Catatan**: Tulis apapun setelah `//` tidak akan dibaca oleh komputer. Ini tempat kita curhat atau memberi petunjuk untuk diri sendiri.
- 3. **Nama Loker (Variabel)**: Nama laci tidak boleh pakai **Spasi** dan tidak boleh diawali **Angka**. (Contoh: `uang jajan` ❌, `uang_jajan` ✅).
+ 1. **Titik Koma (`;`) adalah Titik**: Setiap satu perintah selesai, wajib diakhiri `;`. 
+ 2. **Komentar (`//`) adalah Catatan**: Tulis apapun setelah `//` tidak akan dibaca oleh komputer. 
+ 3. **C++ itu Beda Huruf (Case Sensitive)**: `Uang` dan `uang` adalah dua laci yang **BERBEDA**. Hati-hati dengan huruf kapital!
+ 4. **Nama Loker (Variabel)**: Tidak boleh ada **Spasi** dan tidak boleh diawali **Angka**.
  
  ---
  
@@ -23,15 +24,11 @@ Mari kita bedah dua konsep penjebak massal: **Sifat Kejam Kotak Integer** dan **
  
  ## 🚪 B. Pintu Masuk & Keluar (Input `cin` & Output `cout`)
  
- Variabel adalah laci, tapi bagaimana cara memasukkan barang ke dalamnya dari dunia nyata? C++ punya dua "Pintu" utama:
+ Variabel adalah laci, tapi bagaimana cara memasukkan barang ke dalamnya? 
  
- 1. **`cin >> laci;` (Input)**: Bayangkan ada **Ban Berjalan** dari keyboard. Tanda `>>` adalah corong yang mengalirkan apa yang kamu ketik ke dalam laci. 
- 2. **`cout << "Teks";` (Output)**: Tanda `<<` adalah corong yang menyemburkan isi laci atau teks ke arah **Layar Monitor**.
- 
- > [!TIP]
- > **Cara Hafal Panahnya:** 
- > - `cin >>` $\rightarrow$ Panah masuk ke variabel. 
- > - `cout <<` $\rightarrow$ Panah keluar dari teks/variabel menuju layar.
+ 1. **`cin >> laci;` (Input)**: Corong masuk dari Keyboard.
+ 2. **`cout << laci;` (Output)**: Corong keluar ke Layar.
+ 3. **`endl` atau `"\n"` (Tombol Enter)**: Berfungsi untuk pindah ke baris baru. Tanpa ini, semua tulisanmu akan menempel seperti kereta api panjang tanpa ujung!
  
  ---
  
@@ -287,6 +284,15 @@ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSI
  - **Analogi:** Ingat mainan balok anak-anak yang harus memasukkan bentuk ke lubang yang pas? 
  - `int` adalah **Lubang Kotak**, sedangkan `double` adalah **Balok Bintang** yang punya banyak sudut (koma). 
  - Kamu bisa memaksa balok bintang masuk ke lubang kotak, tapi kamu harus **memotong/mengamplas** semua sudut bintangnya sampai rata. Hasilnya? Bentuk bintang yang indah tadi (komanya) hilang selamanya, tersisa kotak polos saja. 
+ 
+ ---
+ 
+ ## 📜 L. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ 
+ Sebagai penutup, ingatlah 3 filosofi ini saat kamu menelusuri (*tracing*) kode:
+ 1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. Jangan pernah melompat kecuali disuruh perintah khusus.
+ 2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika kamu memasukkan angka baru, angka lama langsung terhapus selamanya.
+ 3. **Aturan Persiapan**: Kamu tidak bisa memakai bahan (variabel) sebelum kamu menyiapkannya (deklarasi).
  
  ---
  
