@@ -1,531 +1,215 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
-# Latihan Soal Part C - Modul 06 - Set 03
+# Latihan Soal Part C - Modul 06 - Set 03 (Premium Edition)
 
-### Soal 51
+---
+
+### Soal 21: Mengecek Bit ke-n (Bit Checking)
 ```cpp
-// Ohm: Shift Left
-int val = 4;
-int res = val << 1;
+int x = 13; // 1101
+int n = 2;
+int res = (x >> n) & 1;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `res`?
+2. Bit ke-2 (dari kanan mulai 0) pada angka 13 bernilai berapa?
 
-**Jawaban & Diagnosis:**
-1. **8**
-2. 4 digeser kiri 1x = dikali 2 = 8.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Bit-Grid:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 8]
+graph TD
+A["1 1 0 1"] -- "Shift 2 ke kanan" --> B["0 0 1 1"]
+B -- "& 0 0 0 1" --> C["0 0 0 1"]
 ```
 
----
-### Soal 52
-```cpp
-// Hz: AND Mask
-int val = 5;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **1**
-2. Mengecek bit terakhir dari 5 (0b101). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
+2. **1** (Urutannya: bit 0=1, bit 1=0, bit 2=1, bit 3=1).
+</details>
 
 ---
-### Soal 53
+
+### Soal 22: Menyalakan Lampu (Set Bit)
 ```cpp
-// Khz: XOR Toggle
-int val = 5;
-int res = val ^ val;
+int x = 8; // 1000
+int res = x | (1 << 0);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `res`?
+2. Bit posisi mana yang dinyalakan?
 
-**Jawaban & Diagnosis:**
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **9** (1001)
+2. **Bit ke-0** (paling kanan).
+</details>
+
+---
+
+### Soal 23: Matikan Lampu (Clear Bit)
+```cpp
+int x = 15; // 1111
+int res = x & ~(1 << 1);
+```
+**Pertanyaan:**
+1. Berapakah nilai `res`?
+2. Apa hasil biner dari `~(1 << 1)`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Bit-Grid:**
+```mermaid
+graph TD
+A["1 << 1: 0 0 1 0"]
+B["NOT: 1 1 0 1"]
+C["15: 1 1 1 1"]
+D["AND: 1 1 0 1"]
+```
+
+**Jawaban:**
+1. **13**
+2. **...11111101** (Semua 1 kecuali di posisi bit 1).
+</details>
+
+---
+
+### Soal 24: Saklar Rahasia (Toggle Bit)
+```cpp
+int x = 5; // 0101
+int res = x ^ (1 << 2);
+```
+**Pertanyaan:**
+1. Berapakah nilai `res`?
+2. Apa yang terjadi jika perintah yang sama dijalankan dua kali?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **1** (0101 XOR 0100 = 0001)
+2. **Balik ke nilai semula.** XOR adalah operasi *reversible* (bisa dibolak-balik). Jika bit yang sama di-XOR lagi, ia akan kembali ke status asalnya.
+</details>
+
+---
+
+### Soal 25: Filter 4-Bit Rendah (Lower Nibble)
+```cpp
+int x = 255; // 1111 1111
+int res = x & 15; // 15 desimal = 1111 biner
+```
+**Pertanyaan:**
+1. Berapakah nilai `res`?
+2. Mengapa angka 15 digunakan untuk mengambil 4 bit pertama?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **15**
+2. Karena 15 dalam biner adalah `0000 1111`. Saat di-AND, semua bit 1 di atas bit ke-3 akan dipaksa menjadi 0, menyisakan hanya 4 bit terbawah.
+</details>
+
+---
+
+### Soal 26: Filter 4-Bit Tinggi (Upper Nibble)
+```cpp
+unsigned char x = 0xAB; // 1010 1011
+int res = (x & 0xF0) >> 4;
+```
+**Pertanyaan:**
+1. Berapakah nilai `res`?
+2. Apa isi dari `0xF0` dalam biner?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **10** (A dalam Hex)
+2. **1111 0000**.
+</details>
+
+---
+
+### Soal 27: Detektor Bit Spesifik
+```cpp
+int n = 12; // 1100
+bool aktif = (n & (1 << 3));
+```
+**Pertanyaan:**
+1. Berapakah nilai `aktif` (true/false)?
+2. Bit ke berapa yang sedang dicek oleh `(1 << 3)`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **true** (Karena bit ke-3 pada 1100 adalah 1. Hasil AND-nya adalah 8, yang dianggap `true` dalam C++).
+2. **Bit ke-3** (nilai 8).
+</details>
+
+---
+
+### Soal 28: Reset Semua Lampu
+```cpp
+int x = 12345;
+int res = x & 0;
+```
+**Pertanyaan:**
+1. Berapakah nilai `res`?
+2. Operator apa lagi yang bisa menghasilkan 0 jika digunakan dengan `x` itu sendiri?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
 1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
+2. **XOR.** `x ^ x` juga menghasilkan 0.
+</details>
 
 ---
-### Soal 54
+
+### Soal 29: Nyalakan Semua (8-Bit Max)
 ```cpp
-// Mhz: Shift Left
-int val = 12;
-int res = val << 1;
+unsigned char x = 5;
+unsigned char res = x | 255;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `res`?
+2. Apa biner dari 255?
 
-**Jawaban & Diagnosis:**
-1. **24**
-2. 12 digeser kiri 1x = dikali 2 = 24.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
+**Jawaban:**
+1. **255**
+2. **1111 1111**
+</details>
 
 ---
-### Soal 55
+
+### Soal 30: Penjumlahan Terisolasi
 ```cpp
-// Ghz: AND Mask
-int val = 3;
-int res = val & 1;
+int a = 5, b = 6;
+int res = (a & 1) + (b & 1);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `res`?
+2. Apa yang sedang dihitung oleh kode ini secara harfiah?
 
-**Jawaban & Diagnosis:**
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
 1. **1**
-2. Mengecek bit terakhir dari 3 (0b11). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 56
-```cpp
-// Thz: XOR Toggle
-int val = 10;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 57
-```cpp
-// Byte: Shift Left
-int val = 9;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **18**
-2. 9 digeser kiri 1x = dikali 2 = 18.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 18]
-```
-
----
-### Soal 58
-```cpp
-// Kb: AND Mask
-int val = 15;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. Mengecek bit terakhir dari 15 (0b1111). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 59
-```cpp
-// Mb: XOR Toggle
-int val = 2;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 60
-```cpp
-// Gb: Shift Left
-int val = 5;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. 5 digeser kiri 1x = dikali 2 = 10.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
-
----
-### Soal 61
-```cpp
-// Tb: AND Mask
-int val = 15;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. Mengecek bit terakhir dari 15 (0b1111). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 62
-```cpp
-// Pb: XOR Toggle
-int val = 15;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 63
-```cpp
-// Eb: Shift Left
-int val = 12;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **24**
-2. 12 digeser kiri 1x = dikali 2 = 24.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
-
----
-### Soal 64
-```cpp
-// Zb: AND Mask
-int val = 5;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. Mengecek bit terakhir dari 5 (0b101). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 65
-```cpp
-// Yb: XOR Toggle
-int val = 12;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 66
-```cpp
-// Bit: Shift Left
-int val = 11;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **22**
-2. 11 digeser kiri 1x = dikali 2 = 22.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 22]
-```
-
----
-### Soal 67
-```cpp
-// Nibble: AND Mask
-int val = 7;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. Mengecek bit terakhir dari 7 (0b111). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 68
-```cpp
-// Word: XOR Toggle
-int val = 11;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 69
-```cpp
-// Dword: Shift Left
-int val = 7;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **14**
-2. 7 digeser kiri 1x = dikali 2 = 14.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 14]
-```
-
----
-### Soal 70
-```cpp
-// Qword: AND Mask
-int val = 5;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. Mengecek bit terakhir dari 5 (0b101). Hasil: 1.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 1]
-```
-
----
-### Soal 71
-```cpp
-// Ptr: XOR Toggle
-int val = 1;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 72
-```cpp
-// Ref: Shift Left
-int val = 14;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **28**
-2. 14 digeser kiri 1x = dikali 2 = 28.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 28]
-```
-
----
-### Soal 73
-```cpp
-// Addr: AND Mask
-int val = 4;
-int res = val & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Mengecek bit terakhir dari 4 (0b100). Hasil: 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 74
-```cpp
-// Mem: XOR Toggle
-int val = 10;
-int res = val ^ val;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. XOR dengan diri sendiri selalu 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 75
-```cpp
-// Ram: Shift Left
-int val = 4;
-int res = val << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **8**
-2. 4 digeser kiri 1x = dikali 2 = 8.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 8]
-```
-
----
+   - (5 & 1) = 1 (Ganjil)
+   - (6 & 1) = 0 (Genap)
+   - 1 + 0 = 1.
+2. Menghitung **berapa banyak angka ganjil** di antara variabel `a` dan `b`.
+</details>

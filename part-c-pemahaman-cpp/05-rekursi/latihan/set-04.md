@@ -1,606 +1,302 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
-# Latihan Soal Part C - Modul 05 - Set 04
+# Latihan Soal Part C - Modul 05 - Set 04 (Premium Edition)
 
-### Soal 76
+---
+
+### Soal 31: Pembalik Kata (Reverse String)
 ```cpp
-// Pause: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
+void balik(string s, int i) {
+    if (i < 0) return;
+    cout << s[i];
+    balik(s, i - 1);
 }
-// s(3);
+
+int main() {
+    balik("KODE", 3);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Apa output program tersebut?
+2. Karakter mana yang pertama kali dicetak?
 
-**Jawaban & Diagnosis:**
-1. **6**
-2. Jumlah deret 1 s/d 3 adalah 6.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Call Stack:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 6]
+A["i=3 (E)"] --> B["i=2 (D)"] --> C["i=1 (O)"] --> D["i=0 (K)"]
 ```
+
+**Jawaban:**
+1. **EDOK**
+2. **'E'** (indeks ke-3).
+</details>
 
 ---
-### Soal 77
+
+### Soal 32: Penghitung Huruf Vokal
 ```cpp
-// Resume: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+bool vokal(char c) {
+    return (c=='a'||c=='A'); // Sederhana saja
 }
-// f(3);
+
+int hitung(string s, int i) {
+    if (i == s.length()) return 0;
+    int tambah = vokal(s[i]) ? 1 : 0;
+    return tambah + hitung(s, i + 1);
+}
+
+int main() {
+    int x = hitung("Awan", 0);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `x`?
+2. Berapa kali fungsi `hitung` dipanggil?
 
-**Jawaban & Diagnosis:**
-1. **6**
-2. Faktorial dari 3 adalah 6.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Jawaban:**
+1. **2** (huruf 'A' dan 'a').
+2. **5 kali** (indeks 0, 1, 2, 3, dan indeks 4 untuk Base Case).
+</details>
+
+---
+
+### Soal 33: Jumlah Isi Loker (Array Sum)
+```cpp
+int jum(int a[], int n) {
+    if (n < 0) return 0;
+    return a[n] + jum(a, n - 1);
+}
+
+int main() {
+    int loker[] = {10, 5, 20};
+    int total = jum(loker, 2);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `total`?
+2. Tunjukkan alur penjumlahannya dari Base Case ke atas!
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flow:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
+graph TD
+A["jum(2): 20 + f(1)"] --> B["jum(1): 5 + f(0)"]
+B --> C["jum(0): 10 + f(-1)"]
+C --> D["jum(-1): 0"]
+D -- 0 --> C -- 10 --> B -- 15 --> A -- 35 --> Main
 ```
+
+**Jawaban:**
+1. **35**
+2. $0 \rightarrow 0+10 \rightarrow 10+5 \rightarrow 15+20 = 35$.
+</details>
 
 ---
-### Soal 78
+
+### Soal 34: Pencari Nilai Terkecil (Min Array)
 ```cpp
-// Next: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
+int cari_min(int a[], int n) {
+    if (n == 0) return a[0];
+    int m = cari_min(a, n - 1);
+    return (a[n] < m) ? a[n] : m;
 }
-// s(2);
+
+int main() {
+    int data[] = {40, 10, 30};
+    int r = cari_min(data, 2);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `r`?
+2. Saat `n = 1`, apa nilai yang dibandingkan?
 
-**Jawaban & Diagnosis:**
-1. **3**
-2. Jumlah deret 1 s/d 2 adalah 3.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 3]
-```
-
----
-### Soal 79
-```cpp
-// Prev: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(2);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **2**
-2. Faktorial dari 2 adalah 2.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 2]
-```
-
----
-### Soal 80
-```cpp
-// Start: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(3);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Jumlah deret 1 s/d 3 adalah 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 81
-```cpp
-// End: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(2);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **2**
-2. Faktorial dari 2 adalah 2.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 2]
-```
-
----
-### Soal 82
-```cpp
-// Open: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(3);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Jumlah deret 1 s/d 3 adalah 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 83
-```cpp
-// Close: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(4);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **24**
-2. Faktorial dari 4 adalah 24.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
-
----
-### Soal 84
-```cpp
-// Read: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(4);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **10**
-2. Jumlah deret 1 s/d 4 adalah 10.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
+2. **a[1] (yaitu 10)** dibandingkan dengan **m (yaitu 40)**.
+</details>
 
 ---
-### Soal 85
+
+### Soal 35: Detektor Urutan (Is Sorted)
 ```cpp
-// Write: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+bool urut(int a[], int n) {
+    if (n <= 1) return true;
+    return (a[n-1] >= a[n-2]) && urut(a, n - 1);
 }
-// f(2);
+
+int main() {
+    int data[] = {5, 8, 2};
+    bool res = urut(data, 3);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `res` (true/false)?
+2. Pada langkah mana fungsi ini mulai menghasilkan `false`?
 
-**Jawaban & Diagnosis:**
-1. **2**
-2. Faktorial dari 2 adalah 2.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Trace:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 2]
+graph TD
+A["urut(3): 2 >= 8? (F)"] -- "Short Circuit" --> B["Langsung Return False"]
 ```
+
+**Jawaban:**
+1. **false**
+2. Pada pemanggilan pertama (`n = 3`), karena `a[2] < a[1]` (2 < 8).
+</details>
 
 ---
-### Soal 86
+
+### Soal 36: Perkalian Array
 ```cpp
-// Copy: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
+int kali(int a[], int n) {
+    if (n < 0) return 1;
+    return a[n] * kali(a, n - 1);
 }
-// s(3);
+
+int main() {
+    int data[] = {2, 3, 4};
+    int total = kali(data, 2);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `total`?
+2. Mengapa Base Case mengembalikan 1, bukan 0?
 
-**Jawaban & Diagnosis:**
-1. **6**
-2. Jumlah deret 1 s/d 3 adalah 6.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
+**Jawaban:**
+1. **24** (4 * 3 * 2 * 1)
+2. Karena jika dikalikan dengan 0, maka seluruh hasil akhirnya akan selalu menjadi 0. Angka 1 adalah **identitas perkalian**.
+</details>
 
 ---
-### Soal 87
+
+### Soal 37: Panjang String Manual
 ```cpp
-// Move: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int hitung(char* s) {
+    if (*s == '\0') return 0;
+    return 1 + hitung(s + 1);
 }
-// f(4);
+
+int main() {
+    int n = hitung("C++");
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `n`?
+2. Apa yang dimaksud dengan `s + 1` pada parameter fungsi tersebut?
 
-**Jawaban & Diagnosis:**
-1. **24**
-2. Faktorial dari 4 adalah 24.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
-
----
-### Soal 88
-```cpp
-// Del: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(4);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. Jumlah deret 1 s/d 4 adalah 10.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
-
----
-### Soal 89
-```cpp
-// Ren: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(3);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Faktorial dari 3 adalah 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 90
-```cpp
-// List: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(2);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **3**
-2. Jumlah deret 1 s/d 2 adalah 3.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 3]
-```
+2. **Pointer arithmetic.** Menggeser alamat memori ke karakter berikutnya dalam string.
+</details>
 
 ---
-### Soal 91
+
+### Soal 38: Filter Huruf (Clean Trace)
 ```cpp
-// Find: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+void bersihkan(string s, int i) {
+    if (i == s.length()) return;
+    if (s[i] != '*') cout << s[i];
+    bersihkan(s, i + 1);
 }
-// f(4);
+
+int main() {
+    bersihkan("A*B*C", 0);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Apa output program tersebut?
+2. Apa yang dilewati oleh fungsi tersebut?
 
-**Jawaban & Diagnosis:**
-1. **24**
-2. Faktorial dari 4 adalah 24.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
+**Jawaban:**
+1. **ABC**
+2. Karakter bintang (`*`).
+</details>
 
 ---
-### Soal 92
+
+### Soal 39: ⚠️ Rekursi dalam Loop
 ```cpp
-// Replace: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
+int total = 0;
+void loop_rec(int n) {
+    if (n <= 0) return;
+    for(int i=0; i<n; i++) total++;
+    loop_rec(n - 1);
 }
-// s(4);
+
+int main() {
+    loop_rec(3);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `total` akhir?
+2. Berapa kali loop `for` berjalan secara total?
 
-**Jawaban & Diagnosis:**
-1. **10**
-2. Jumlah deret 1 s/d 4 adalah 10.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
+**Jawaban:**
+1. **6** (3 + 2 + 1)
+2. **3 kali** (panggilan pertama loop n=3, kedua n=2, ketiga n=1).
+</details>
 
 ---
-### Soal 93
+
+### Soal 40: Binary Search Rec (Simple)
 ```cpp
-// Select: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
+int b_search(int a[], int l, int r, int t) {
+    if (l > r) return -1;
+    int m = (l + r) / 2;
+    if (a[m] == t) return m;
+    if (a[m] > t) return b_search(a, l, m - 1, t);
+    return b_search(a, m + 1, r, t);
 }
-// f(4);
+
+int main() {
+    int data[] = {10, 20, 30, 40, 50};
+    int idx = b_search(data, 0, 4, 40);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `idx`?
+2. Berapa kali fungsi `b_search` dipanggil (termasuk main)?
 
-**Jawaban & Diagnosis:**
-1. **24**
-2. Faktorial dari 4 adalah 24.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Trace:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
+graph TD
+A["mid=(0+4)/2=2, a[2]=30 < 40"] --> B["low=3, r=4"]
+B --> C["mid=(3+4)/2=3, a[3]=40 == 40"]
+C -- "Found at 3" --> Main
 ```
 
----
-### Soal 94
-```cpp
-// Edit: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(3);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Jumlah deret 1 s/d 3 adalah 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 95
-```cpp
-// Undo: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(3);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Faktorial dari 3 adalah 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 96
-```cpp
-// Redo: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(2);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **3**
-2. Jumlah deret 1 s/d 2 adalah 3.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 3]
-```
-
----
-### Soal 97
-```cpp
-// Faktorial: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(2);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **2**
-2. Faktorial dari 2 adalah 2.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 2]
-```
-
----
-### Soal 98
-```cpp
-// Tangga: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(4);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. Jumlah deret 1 s/d 4 adalah 10.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
-
----
-### Soal 99
-```cpp
-// Pohon: Faktorial
-int f(int n) {
-  if(n<=1) return 1;
-  return n * f(n-1);
-}
-// f(4);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **24**
-2. Faktorial dari 4 adalah 24.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 24]
-```
-
----
-### Soal 100
-```cpp
-// Stack: Deret
-int s(int n) {
-  if(n==0) return 0;
-  return n + s(n-1);
-}
-// s(2);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **3**
-2. Jumlah deret 1 s/d 2 adalah 3.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 3]
-```
-
----
+2. **2 kali.** (Panggilan awal, lalu panggilan ke bagian kanan array).
+</details>

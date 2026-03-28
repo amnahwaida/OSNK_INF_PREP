@@ -23,13 +23,17 @@ for (int i = 0; i < 2; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Matrix Expansion):**
 ```mermaid
 graph TD
-A["i=0"] --> B["j=0,1,2 (3x)"]
-B --> C["i=1"]
-C --> D["j=0,1,2 (3x)"]
-D --> E["Total: 6"]
+subgraph "Lapis i = 0"
+A1["j = 0 (cnt=1)"] --> A2["j = 1 (cnt=2)"] --> A3["j = 2 (cnt=3)"]
+end
+subgraph "Lapis i = 1"
+B1["j = 0 (cnt=4)"] --> B2["j = 1 (cnt=5)"] --> B3["j = 2 (cnt=6)"]
+end
+A3 --> B1
+B3 -- "i=2: (F)" --> End["Total: 6"]
 ```
 
 **Jawaban:**
@@ -37,7 +41,7 @@ D --> E["Total: 6"]
 2. **6 kali** (2 kali iterasi luar, tiap iterasi luar melakukan 3 iterasi dalam).
 
 **📖 Analisis Mendalam:**
-Nested loop bekerja seperti perkalian. Jumlah total eksekusi adalah `baris * kolom`.
+Nested loop bekerja seperti perkalian. Jumlah total eksekusi adalah `baris * kolom`. Setiap kali `i` bertambah, loop `j` akan di-reset dan berjalan penuh dari 0 sampai 2.
 </details>
 
 ---
@@ -59,14 +63,15 @@ for (int i = 1; i <= 3; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Dynamic Limit Trace):**
 ```mermaid
 graph TD
-A["i=1"] --> B["j=1 (Sum: 1)"]
-B --> C["i=2"]
-C --> D["j=1,2 (Sum: 1+3=4)"]
-D --> E["i=3"]
-E --> F["j=1,2,3 (Sum: 4+6=10)"]
+I1["i = 1"] --> J1_1["j = 1 (total=1)"]
+J1_1 --> I2["i = 2"]
+I2 --> J2_1["j = 1 (total=2)"] --> J2_2["j = 2 (total=4)"]
+J2_2 --> I3["i = 3"]
+I3 --> J3_1["j = 1 (total=5)"] --> J3_2["j = 2 (total=7)"] --> J3_3["j = 3 (total=10)"]
+J3_3 -- "i=4: (F)" --> End["Hasil: 10"]
 ```
 
 **Jawaban:**
@@ -77,7 +82,7 @@ E --> F["j=1,2,3 (Sum: 4+6=10)"]
 Iterasi 1: `j=1` (1). 
 Iterasi 2: `j=1,2` (1+2=3). 
 Iterasi 3: `j=1,2,3` (1+2+3=6). 
-Total akhir: `1 + 3 + 6 = 10`.
+Total akhir: `1 + 3 + 6 = 10`. Perhatikan bagaimana loop dalam menjadi semakin panjang seiring bertambahnya `i`.
 </details>
 
 ---
@@ -132,12 +137,17 @@ for (int i = 1; i <= 2; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Manual Cell Multiplier):**
 ```mermaid
 graph LR
-A["(1*1) + (1*2)"] --> B["1 + 2 = 3"]
-B --> C["(2*1) + (2*2)"]
-C --> D["3 + 2 + 4 = 9"]
+subgraph "Baris i=1"
+R1["(1*1)=1"] --> R2["(1*2)=2"]
+end
+subgraph "Baris i=2"
+R3["(2*1)=2"] --> R4["(2*2)=4"]
+end
+R2 --> R3
+R4 --> End["Sum: 1+2+2+4 = 9"]
 ```
 
 **Jawaban:**
@@ -202,13 +212,12 @@ for (int i = 0; i < n; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Nested Decrement Trace):**
 ```mermaid
 graph TD
-A["i=0: j < 0 (F)"]
-A --> B["i=1: j=0 (1x)"]
-B --> C["i=2: j=0,1 (2x)"]
-C --> D["Total: 3x"]
+I0["i=0: j < 0? (F) -> No Body"] --> I1["i=1: j=0 (sisa=15)"]
+I1 --> I2["i=2: j=0 (sisa=10) --> j=1 (sisa=5)"]
+I2 -- "i=3: (F)" --> End["Hasil Sisa: 5"]
 ```
 
 **Jawaban:**
@@ -296,17 +305,26 @@ for (int i = 0; i < 3; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Nested Break Boundary):**
 ```mermaid
 graph TD
-A["i=0: j=0,1 (break)"] --> B["i=1: j=0,1 (break)"]
-B --> C["i=2: j=0,1 (break)"]
-C --> D["Total: 6"]
+subgraph "i = 0"
+A1["j=0: cnt=1"] --> A2["j=1: cnt=2, break!"]
+end
+subgraph "i = 1"
+B1["j=0: cnt=3"] --> B2["j=1: cnt=4, break!"]
+end
+subgraph "i = 2"
+C1["j=0: cnt=5"] --> C2["j=1: cnt=6, break!"]
+end
+A2 --> B1
+B2 --> C1
+C2 -- "i=3: (F)" --> End["Hasil: 6"]
 ```
 
 **Jawaban:**
 1. **6**
-2. **Tidak.** `break` hanya keluar dari loop terdekat di mana ia berada. Loop luar (`i`) tetap berlanjut ke iterasi berikutnya.
+2. **Tidak.** `break` hanya menghancurkan loop terdalam (`j`). Meskipun loop `j` berbatas sampai 3, ia selalu hancur di angka 1. Namun loop `i` tetap berlanjut sampai angka 2.
 </details>
 
 ---

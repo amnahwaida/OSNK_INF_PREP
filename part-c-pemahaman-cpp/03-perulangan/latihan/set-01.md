@@ -24,15 +24,27 @@ for (int i = 1; i <= 5; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Manual Trace):**
 ```mermaid
 graph TD
-Start --> Init["i = 1"]
-Init --> Cond{"i <= 5?"}
-Cond -- T --> Body["total += i"]
-Body --> Inc["i++"]
-Inc --> Cond
-Cond -- F --> End
+Start --> Init["i = 1, total = 0"]
+Init --> C1{"1 <= 5? (T)"}
+C1 -- T --> B1["total = 0 + 1 = 1"]
+B1 --> I1["i = 2"]
+I1 --> C2{"2 <= 5? (T)"}
+C2 -- T --> B2["total = 1 + 2 = 3"]
+B2 --> I2["i = 3"]
+I2 --> C3{"3 <= 5? (T)"}
+C3 -- T --> B3["total = 3 + 3 = 6"]
+B3 --> I3["i = 4"]
+I3 --> C4{"4 <= 5? (T)"}
+C4 -- T --> B4["total = 6 + 4 = 10"]
+B4 --> I4["i = 5"]
+I4 --> C5{"5 <= 5? (T)"}
+C5 -- T --> B5["total = 10 + 5 = 15"]
+B5 --> I5["i = 6"]
+I5 --> C6{"6 <= 5? (F)"}
+C6 -- F --> End["Hasil: 15"]
 ```
 
 **Jawaban:**
@@ -40,7 +52,7 @@ Cond -- F --> End
 2. **5 kali**
 
 **📖 Analisis Mendalam:**
-Ini adalah struktur dasar loop `for`. Iterasi berhenti tepat saat `i` menjadi 6, karena kondisi `6 <= 5` bernilai false.
+Ini adalah struktur dasar loop `for`. Iterasi berhenti tepat saat `i` menjadi 6, karena kondisi `6 <= 5` bernilai false. Perhatikan bahwa perintah `i++` dijalankan **setelah** isi loop selesai, baru kemudian dicek kembali ke kondisi.
 </details>
 
 ---
@@ -63,12 +75,13 @@ while (energi > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (State Changes):**
 ```mermaid
-graph TD
-A{"energi > 0?"} -- T --> B["Energi - 5, Putaran + 1"]
-B --> A
-A -- F --> End
+graph LR
+A["Energi: 15, Putaran: 0"] -- "15 > 0? (T)" --> B["Energi: 10, Putaran: 1"]
+B -- "10 > 0? (T)" --> C["Energi: 5, Putaran: 2"]
+C -- "5 > 0? (T)" --> D["Energi: 0, Putaran: 3"]
+D -- "0 > 0? (F)" --> End["Berhenti"]
 ```
 
 **Jawaban:**
@@ -76,7 +89,7 @@ A -- F --> End
 2. **0**
 
 **📖 Analisis Mendalam:**
-Loop `while` mengecek kondisi di awal. Putaran terjadi 3 kali: (15->10, 10->5, 5->0). Saat energi 0, kondisi `0 > 0` salah, dan loop berhenti.
+Loop `while` mengecek kondisi di awal. Putaran terjadi 3 kali: (15->10, 10->5, 5->0). Saat energi tepat menyentuh angka 0, kondisi `0 > 0` sudah tidak terpenuhi, sehingga loop langsung berhenti sebelum sempat melakukan putaran ke-4.
 </details>
 
 ---
@@ -96,10 +109,15 @@ for (int i = 0; i <= 5; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (The Extra Iteration):**
 ```mermaid
-graph LR
-A["i: 0, 1, 2, 3, 4, 5"] --> B["6 Iterasi"]
+graph TD
+A["i=0: count=1"] --> B["i=1: count=2"]
+B --> C["i=2: count=3"]
+C --> D["i=3: count=4"]
+D --> E["i=4: count=5"]
+E --> F["i=5: count=6"]
+F -- "i=6: 6<=5? (F)" --> End["Berhenti"]
 ```
 
 **Jawaban:**
@@ -107,7 +125,7 @@ A["i: 0, 1, 2, 3, 4, 5"] --> B["6 Iterasi"]
 2. Karena loop dimulai dari **0** dan berhenti di **<= 5** (inklusif).
 
 **📖 Analisis Mendalam:**
-Ini adalah jebakan klasik *Off-by-One*. Jika ingin 5 kali iterasi, gunakan `i < 5` (jika mulai dari 0) atau `i <= 5` (jika mulai dari 1).
+Ini adalah jebakan klasik *Off-by-One*. Banyak siswa mengira `i=0` sampai `i=5` adalah 5 kali, padahal jika dihitung manual (0, 1, 2, 3, 4, 5) totalnya ada 6 angka. Jika ingin 5 kali iterasi, gunakan `i < 5` atau mulailah dari `i = 1`.
 </details>
 
 ---
@@ -128,13 +146,15 @@ while (t > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Reverse Trace):**
 ```mermaid
 graph TD
-A{"3 > 0?"} -- T --> B["t = 2"]
-B --> C{"2 > 0?"} -- T --> D["t = 1"]
-D --> E{"1 > 0?"} -- T --> F["t = 0"]
-F --> G{"0 > 0? (F)"} --> End
+A["t = 3"] -- "3 > 0? (T)" --> B["t = 2"]
+B -- "2 > 0? (T)" --> C["t = 1"]
+C -- "1 > 0? (T)" --> D["t = 0"]
+D -- "0 > 0? (F)" --> E["Loop Berhenti"]
+E --> F["Baris Baru: t += 10"]
+F --> G["Hasil Akhir: t = 10"]
 ```
 
 **Jawaban:**
@@ -161,11 +181,15 @@ for (int i = 0; i < 4; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Exponential Accumulation):**
 ```mermaid
 graph LR
-A["1 * 2"] --> B["2 * 2"] --> C["4 * 2"] --> D["8 * 2"]
-D --> E["16"]
+Start --> I0["hasil = 1"]
+I0 --> I1["i=0: hasil = 1 * 2 = 2"]
+I1 --> I2["i=1: hasil = 2 * 2 = 4"]
+I2 --> I3["i=2: hasil = 4 * 2 = 8"]
+I3 --> I4["i=3: hasil = 8 * 2 = 16"]
+I4 -- "i=4: (F)" --> End["Hasil: 16"]
 ```
 
 **Jawaban:**
@@ -248,11 +272,13 @@ for (int thn = 0; thn < 2; thn++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Step-2 Trace):**
 ```mermaid
 graph TD
-A["Start: 100k"] --> B["Thn 1: 100k + 10k = 110k"]
-B --> C["Thn 2: 110k + 11k = 121k"]
+Start --> T0["uang = 100k, thn = 0"]
+T0 --> T1["Thn 0: uang = 100k + 10k = 110k"]
+T1 --> T2["Thn 1: uang = 110k + 11k = 121k"]
+T2 -- "thn 2: (F)" --> End["Hasil: 121k"]
 ```
 
 **Jawaban:**
@@ -308,14 +334,15 @@ for (int i = 1; i <= 5; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Decision Filter):**
 ```mermaid
 graph TD
-A["i: 1"] --> B["total = 1"]
-B --> C["i: 2"] --> D["total = 3"]
-D --> E["i: 3 (Skip)"]
-E --> F["i: 4"] --> G["total = 7"]
-G --> H["i: 5"] --> I["total = 12"]
+Start --> I1["i = 1: 1 != 3 (T) -> total = 1"]
+I1 --> I2["i = 2: 2 != 3 (T) -> total = 3"]
+I2 --> I3["i = 3: 3 != 3 (F) -> SKIP"]
+I3 --> I4["i = 4: 4 != 3 (T) -> total = 7"]
+I4 --> I5["i = 5: 5 != 3 (T) -> total = 12"]
+I5 -- "i=6: (F)" --> End["Hasil: 12"]
 ```
 
 **Jawaban:**

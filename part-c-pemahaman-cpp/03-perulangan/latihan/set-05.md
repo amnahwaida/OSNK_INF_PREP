@@ -24,11 +24,13 @@ for (int i = 0; i < 3; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (The "Glass" Shift):**
 ```mermaid
 graph TD
-A["i=0: h=2, a=1, b=2"] --> B["i=1: h=3, a=2, b=3"]
-B --> C["i=2: h=5, a=3, b=5"]
+Start["a=1, b=1, h=0"] --> I0["i=0: h=1+1=2 | a=1, b=2"]
+I0 --> I1["i=1: h=1+2=3 | a=2, b=3"]
+I1 --> I2["i=2: h=2+3=5 | a=3, b=5"]
+I2 -- "i=3: (F)" --> End["Hasil h: 5"]
 ```
 
 **Jawaban:**
@@ -36,7 +38,7 @@ B --> C["i=2: h=5, a=3, b=5"]
 2. **a = 3, b = 5**
 
 **📖 Analisis Mendalam:**
-Ini adalah logika "Geser Gelas" untuk Fibonacci. Setiap iterasi menjumlahkan dua angka terakhir dan menggeser posisinya ke depan.
+Ini adalah logika "Geser Gelas" untuk Fibonacci. Setiap iterasi menjumlahkan dua angka terakhir dan menggeser posisinya ke depan. Perhatikan bagaimana nilai `a` mengambil nilai `b` lama, dan `b` mengambil nilai `hasil` yang baru.
 </details>
 
 ---
@@ -60,16 +62,17 @@ for (int i = 2; i < n; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Prime Brute Force):**
 ```mermaid
 graph LR
-A["7%2=1"] --> B["7%3=1"] --> C["7%4=3"]
-C --> D["..."] --> E["Stop (prima=true)"]
+Start["n=7, p=T"] --> C2["7%2=1? (T)"] --> C3["7%3=1? (T)"]
+C3 --> C4["7%4=3? (T)"] --> C5["7%5=2? (T)"]
+C5 --> C6["7%6=1? (T)"] --> End["Stop: p tetap T"]
 ```
 
 **Jawaban:**
 1. **true**
-2. Karena angka 1 pasti bisa membagi semua bilangan, sehingga tidak berguna untuk mendeteksi ke-prima-an.
+2. Karena angka 1 pasti bisa membagi semua bilangan, sehingga tidak berguna untuk mendeteksi ke-prima-an. Loop berhenti sebelum menyentuh `n` itu sendiri.
 </details>
 
 ---
@@ -126,12 +129,13 @@ while (n > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Digit Slicing):**
 ```mermaid
 graph TD
-A["123 % 10 = 3"] --> B["Sum=3, n=12"]
-B --> C["12 % 10 = 2"] --> D["Sum=5, n=1"]
-D --> E["1 % 10 = 1"] --> F["Sum=6, n=0"]
+Start["n = 123, sum = 0"] --> S1["123%10 = 3 | sum=3, n=12"]
+S1 --> S2["12%10 = 2 | sum=5, n=1"]
+S2 --> S3["1%10 = 1 | sum=6, n=0"]
+S3 --> End["Loop Stop (n=0)"]
 ```
 
 **Jawaban:**
@@ -139,7 +143,7 @@ D --> E["1 % 10 = 1"] --> F["Sum=6, n=0"]
 2. **0**
 
 **📖 Analisis Mendalam:**
-Kombinasi `% 10` dan `/ 10` adalah trik maut untuk "mempreteli" angka per digit dari belakang ke depan.
+Kombinasi `% 10` (mengambil angka terakhir) dan `/ 10` (membuang angka terakhir) adalah trik maut untuk "mempreteli" angka per digit dari belakang ke depan di dalam loop.
 </details>
 
 ---
@@ -227,15 +231,22 @@ for (int i = 0; i < 2; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Inner Variable Scope):**
 ```mermaid
 graph TD
-A["i=0: c='A'->'B'"] --> B["i=1: c='A'->'B'->'C'"]
+subgraph "Iterasi i=0"
+I0["c='A'"] --> J0["j=0: c='B'"]
+end
+subgraph "Iterasi i=1"
+I1["c='A' (Reset)"] --> J1_0["j=0: c='B'"] --> J1_1["j=1: c='C'"]
+end
+J0 --> I1
+J1_1 --> End["Hasil c: 'C'"]
 ```
 
 **Jawaban:**
 1. **'C'**
-2. Karena deklarasi `char c = 'A'` berada **di dalam** loop `i`, maka setiap ganti baris, variabel `c` lama dihancurkan dan dibuat baru dari 'A'.
+2. Karena deklarasi `char c = 'A'` berada **di dalam** loop `i`, maka setiap ganti baris, variabel `c` lama dihancurkan dan dibuat baru dari 'A'. Ini menjelaskan kenapa hasilnya bukan 'D' atau 'E'.
 </details>
 
 ---
@@ -258,16 +269,33 @@ for (int i = 0; i < 5; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Double Break Analysis):**
 ```mermaid
 graph TD
-A["i=0: j=0..4 (x=5)"] --> B["i=1: j=0 (x=6 > 5!)"]
-B --> C["break(j)"] --> D["i=2: j=0 (x=7 > 5!)"]
-D --> E["i=3: break(i)"]
+subgraph "i=0 (x=0)"
+A_J["j: 0...4 (x=5)"]
+end
+subgraph "i=1 (x=5)"
+B_J["j: 0 (x=6) -> if(6>5) -> BREAK(j)"]
+end
+subgraph "i=2 (x=6)"
+C_J["j: 0 (x=7) -> if(7>5) -> BREAK(j)"]
+end
+subgraph "i=3"
+D_I["if(3==3) -> BREAK(i)"]
+end
+A_J --> B_J --> C_J --> D_I
+D_I --> End["Total x = 7 -> Tunggu, Mari Trace: 5+1+1+1=8?"]
 ```
+*Koreksi Trace:*
+1. i=0, j=0..4. x jadi 5.
+2. i=1, j=0. x jadi 6. x>5 (T), break j.
+3. i=2, j=0. x jadi 7. x>5 (T), break j.
+4. i=3, break i.
+Hasil akhir x = 7. (Ada kesalahan hitung di kunci jawaban sebelumnya!)
 
 **Jawaban:**
-1. **8**
+1. **7**
 2. **3 kali** (i=0, i=1, i=2). Tepat saat `i=3`, loop luar hancur.
 </details>
 
@@ -289,10 +317,13 @@ while (pop < 50) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Geometric Growth Trace):**
 ```mermaid
 graph LR
-A["10"] --> B["20"] --> C["40"] --> D["80"]
+Start["H0: pop=10"] -- "10 < 50? (T)" --> H1["H1: pop=20"]
+H1 -- "20 < 50? (T)" --> H2["H2: pop=40"]
+H2 -- "40 < 50? (T)" --> H3["H3: pop=80"]
+H3 -- "80 < 50? (F)" --> End["Hasil: 80"]
 ```
 
 **Jawaban:**
@@ -319,17 +350,27 @@ for (int i = 1; i <= 3; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Diagonal Exclusion):**
 ```mermaid
 graph TD
-A["Matriks 3x3 = 9 Titik"] --> B["Garis Diagonal = 3 Titik"]
-B --> C["9 - 3 = 6 Titik"]
+subgraph "Baris i=1"
+B1["(1,1) SKIP"] --> B2["(1,2) +1"] --> B3["(1,3) +1"]
+end
+subgraph "Baris i=2"
+C1["(2,1) +1"] --> C2["(2,2) SKIP"] --> C3["(2,3) +1"]
+end
+subgraph "Baris i=3"
+D1["(3,1) +1"] --> D2["(3,2) +1"] --> D3["(3,3) SKIP"]
+end
+B3 --> C1
+C3 --> D1
+D3 --> End["Total 1: 6"]
 ```
 
 **Jawaban:**
 1. **6**
-2. Menghitung jumlah elemen yang **bukan** berada pada diagonal utama.
+2. Menghitung jumlah elemen yang **bukan** berada pada diagonal utama di dalam matriks 3x3. (Total 9 elemen - 3 elemen diagonal = 6).
 
 **📖 Pesan Penutup:**
-Selamat! Kamu telah menuntaskan 50 soal Perulangan. Jika kamu bisa menyelesaikan semua soal di Set 05 ini tanpa salah, kamu sudah sangat siap menghadapi OSN-K Informatika di bagian Pemahaman Kode! 🚀
+Selamat! Kamu telah menuntaskan 50 soal Perulangan dengan visualisasi **Human Compiler** tingkat tinggi. Jika kamu bisa mengikuti trace diagram di atas, kamu sudah memiliki logika eksekusi yang sangat kuat untuk OSN-K Informatika! 🚀
 </details>

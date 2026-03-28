@@ -1,21 +1,29 @@
-# 📂 Bank Soal Modul 05: Rekursi & Call Stack
+# 📂 Bank Soal Modul 05: Rekursi & Call Stack (Premium Edition)
 
 🔙 **Kembali ke Materi:** [Materi Modul 05](../materi.md)  
 🏠 **Menu Utama Part C:** [Kembali ke Index](../../README.md)
 
 ---
 
-Selamat berlatih! Gunakan coretan kertas untuk melakukan *tracing* sebelum melihat kunci jawaban.
+### 📖 Panduan Membaca Diagram Rekursi
+Untuk membantu kamu memahami alur "batin" komputer saat menjalankan fungsi rekursif, setiap soal dilengkapi dengan **Mermaid Call Stack Diagram**.
 
-- [Set 01 (Soal 1-25)](./set-01.md)
-- [Set 02 (Soal 26-50)](./set-02.md)
-- [Set 03 (Soal 51-75)](./set-03.md)
-- [Set 04 (Soal 76-100)](./set-04.md)
-- [Set 05 (Soal 101-125)](./set-05.md)
-- [Set 06 (Soal 126-150)](./set-06.md)
-- [Set 07 (Soal 151-175)](./set-07.md)
-- [Set 08 (Soal 176-200)](./set-08.md)
-- [Set 09 (Soal 201-225)](./set-09.md)
-- [Set 10 (Soal 226-250)](./set-10.md)
-- [Set 11 (Soal 251-275)](./set-11.md)
-- [Set 12 (Soal 276-300)](./set-12.md)
+1.  **Node (Kotak)**: Mewakili satu panggilan fungsi (misal: `f(3)`).
+2.  **Panah Turun**: Panggilan rekursif baru (membuka stack baru).
+3.  **Panah Naik / Return**: Fungsi selesai dan mengembalikan nilai ke pemanggilnya.
+4.  **Base Case**: Kotak yang biasanya berwarna berbeda atau menjadi ujung dari rantai panah, menandakan rekursi berhenti.
+
+---
+
+### ✍️ Daftar Set Soal
+Selamat berlatih! Kualitas soal di sini telah ditingkatkan untuk menguji pemahaman mendalam kamu mengenai *Stack LIFO* dan *Base Case*.
+
+- **[Set 01: Dasar Rekursi & Pencabangan](./set-01.md)** (Faktorial, Sum, & Logika Dasar)
+- **[Set 02: Tracing Call Stack (LIFO)](./set-02.md)** (Urutan Cetak: Pre-order vs Post-order)
+- **[Set 03: Rekursi Pohon (Tree Recursion)](./set-03.md)** (Fibonacci & Eksponensial)
+- **[Set 04: Rekursi String & Array](./set-04.md)** (Membalik Data & Searching)
+- **[Set 05: Jebakan Rekursi (Hazards)](./set-05.md)** (Infinite Loop & Stack Overflow)
+
+---
+> [!TIP]
+> **Tips Belajar**: Selalu gambar "Pohon Rekursi" di kertas coretanmu. Jangan hanya menebak hasil akhirnya!

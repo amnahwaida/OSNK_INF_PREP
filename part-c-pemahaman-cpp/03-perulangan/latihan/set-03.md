@@ -24,13 +24,13 @@ for (int i = 1; i <= 20; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Pre-Break Sequence):**
 ```mermaid
-graph TD
-A["i=1...12"] --> B{"i == 13? (F)"}
-B --> C["i=13"] --> D{"i == 13? (T)"}
-D -- T --> E["break!"]
-E --> F["Exit Loop"]
+graph LR
+A["i=1...12: (F)"] --> B["i=13: target=13"]
+B --> C["Kondisi: if(13==13) (T)"]
+C --> D["PERINTAH: break!"]
+D --> E["STOP (i=14...20 dilewati)"]
 ```
 
 **Jawaban:**
@@ -38,7 +38,7 @@ E --> F["Exit Loop"]
 2. **13 kali**
 
 **📖 Analisis Mendalam:**
-`break` menghentikan loop seketika. Meskipun batasnya sampai 20, mesin berhenti tepat saat menemukan angka 13.
+`break` menghentikan loop seketika. Meskipun batasnya sampai 20, mesin berhenti tepat saat menemukan angka 13. Sisa angka (14, 15, dst) tidak pernah disentuh oleh komputer.
 </details>
 
 ---
@@ -59,13 +59,14 @@ for (int i = 1; i <= 5; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Skip Sequence):**
 ```mermaid
 graph TD
-A["i=1"] --> B["total=1"]
-B --> C["i=2"] --> D{"Genap? (T)"}
-D -- T --> E["continue (Skip)"]
-E --> F["i=3"] --> G["total=4"]
+I1["i=1 (Ganjil) --> total=1"] --> I2["i=2 (Genap) --> CONTINUE (Skip)"]
+I2 --> I3["i=3 (Ganjil) --> total=1+3=4"]
+I4["i=4 (Genap) --> CONTINUE (Skip)"] --> I5["i=5 (Ganjil) --> total=4+5=9"]
+I3 --> I4
+I5 --> End["Hasil: 9"]
 ```
 
 **Jawaban:**
@@ -90,17 +91,18 @@ for (int i = 1; i <= 3; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (The Wall):**
 ```mermaid
 graph LR
-A["i=1"] --> B["x=1"]
-B --> C["i=2"] --> D{"i==2? (T)"}
-D -- T --> E["break!"]
+A["i=1"] --> B["x = 0 + 1 = 1"]
+B --> C["i=2"] --> D{"if (2 == 2)? (T)"}
+D -- T --> E["BREAK!"]
+E -- "x+=2 dilewati" --> End["Hasil x: 1"]
 ```
 
 **Jawaban:**
 1. **1**
-2. **Tidak.** Karena perintah `break` berada di atas `x += i`. Begitu `i == 2`, mesin langsung kabur.
+2. **Tidak.** Karena perintah `break` berada di atas `x += i`. Begitu `i == 2`, mesin langsung kabur sebelum sempat menjumlahkan angka tersebut.
 </details>
 
 ---
@@ -186,13 +188,14 @@ while (n < 3) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (While-Increment Trace):**
 ```mermaid
 graph TD
-A["n=0 -> 1"] --> B["total=10"]
-B --> C["n=1 -> 2"] --> D{"n==2? (T)"}
-D -- T --> E["Skip to Cond"]
-E --> F["n=2 -> 3"] --> G["total=20"]
+Start --> W1["n:0 -> 1"] --> T1["total = 10"]
+T1 --> W2["n:1 -> 2"] --> C1{"if(2==2)? (T)"}
+C1 -- T --> S1["CONTINUE (Skip total+=10)"]
+S1 --> W3["n:2 -> 3"] --> T3["total = 10 + 10 = 20"]
+T3 -- "n < 3? (F)" --> End["Hasil: 20"]
 ```
 
 **Jawaban:**
@@ -200,7 +203,7 @@ E --> F["n=2 -> 3"] --> G["total=20"]
 2. **Infinite Loop.** Karena `n` tidak akan pernah bertambah jika ia terus menerus dilewati oleh `continue`.
 
 **📖 Analisis Mendalam:**
-Pada loop `while`, posisi increment sangat krusial jika menggunakan `continue`. Di `for`, increment sudah otomatis dilakukan di header.
+Pada loop `while`, posisi increment sangat krusial jika menggunakan `continue`. Di `for`, increment sudah otomatis dilakukan di header, sehingga lebih aman dari jebakan *Infinite Loop* saat melakukan skip.
 </details>
 
 ---
@@ -316,14 +319,14 @@ for (int i = 1; i <= 4; i++) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Double Constraint Trace):**
 ```mermaid
 graph TD
-A["i=1"] --> B["sum=1"]
-B --> C["i=2"] --> D["sum=3"]
-D --> E["i=3 (Cont)"] --> F["Skip"]
-F --> G["i=4"] --> H["sum=7"]
-H --> I{"sum > 5? (T)"} --> J["break"]
+I1["i=1: sum=1, 1>5?(F)"] --> I2["i=2: sum=3, 3>5?(F)"]
+I2 --> I3["i=3: CONTINUE (Skip)"]
+I3 --> I4["i=4: sum=7, 7>5?(T)"]
+I4 -- T --> B["BREAK!"]
+B --> End["Hasil Akhir sum: 7"]
 ```
 
 **Jawaban:**

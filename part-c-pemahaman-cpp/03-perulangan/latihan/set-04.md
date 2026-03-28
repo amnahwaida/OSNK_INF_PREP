@@ -28,20 +28,24 @@ do {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Side-by-Side Logic):**
 ```mermaid
 graph TD
-A["count_A (while)"] --> B{"10 < 5? (F)"}
-B -- F --> C["count_A = 0"]
-D["count_B (do-while)"] --> E["count_B = 1"]
-E --> F{"10 < 5? (F)"}
-F -- F --> G["count_B = 1"]
+subgraph "Loop A: while(x < 5)"
+A_Init["x=10, cnt=0"] --> A_Cond{"10 < 5? (F)"}
+A_Cond -- F --> A_End["Hasil cnt_A: 0"]
+end
+subgraph "Loop B: do...while(y < 5)"
+B_Init["y=10, cnt=0"] --> B_Body["cnt_B = 1"]
+B_Body --> B_Cond{"10 < 5? (F)"}
+B_Cond -- F --> B_End["Hasil cnt_B: 1"]
+end
 ```
 
 **Jawaban:**
 1. **0**
 2. **1**
-3. `while` mengecek kondisi **sebelum** masuk, sedangkan `do-while` mengecek **setelah** menjalankan isi loop minimal satu kali.
+3. `while` mengecek kondisi **sebelum** masuk (pintu terkunci), sedangkan `do-while` mengecek **setelah** menjalankan isi loop minimal satu kali (pintu masuk dulu baru dicek tiketnya).
 </details>
 
 ---
@@ -133,13 +137,15 @@ while (menu != 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Menu Logic Switch):**
 ```mermaid
 graph TD
-A["While: menu=1"] --> B["Aksi=10, menu=2"]
-B --> C["While: menu=2"]
-C --> D["Aksi=15, menu=0"]
-D --> E["While: menu=0 (Stop)"]
+Start --> W1["While: 1 != 0? (T)"]
+W1 --> S1["Case 1: aksi=10, menu=2"]
+S1 --> W2["While: 2 != 0? (T)"]
+W2 --> S2["Case 2: aksi=15, menu=0"]
+S2 --> W3["While: 0 != 0? (F)"]
+W3 -- F --> End["Hasil aksi: 15"]
 ```
 
 **Jawaban:**
@@ -195,12 +201,14 @@ while (tabungan < 100) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Until Condition Trace):**
 ```mermaid
 graph TD
-A["H1: tab=40"] --> B["H2: tab=80"]
-B --> C["H3: tab=120"]
-C --> D{"120 < 100? (F)"}
+Start --> W1["0 < 100? (T)"] --> H1["H1: tab=40"]
+H1 --> W2["40 < 100? (T)"] --> H2["H2: tab=80"]
+H2 --> W3["80 < 100? (T)"] --> H3["H3: tab=120"]
+H3 --> W4["120 < 100? (F)"]
+W4 -- F --> End["Hasil: 120"]
 ```
 
 **Jawaban:**
@@ -225,12 +233,25 @@ while (i < 5) ;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart (The Semicolon Wall):**
+```mermaid
+graph TD
+A["Inisialisasi: i = 0"] --> B{"while (0 < 5)? (T)"}
+B -- T --> C["Titik Koma (;) -> Do Nothing"]
+C -- "Lompat Balik" --> B
+subgraph "AREA INFINITE LOOP"
+B
+C
+end
+D["{ i++; }"] -- "Terisolasi" --- B
+```
+
 **Jawaban:**
 1. **Infinite Loop.** Program akan "hang" atau macet.
 2. Karena ada titik koma `;` tepat setelah `while (i < 5)`.
 
 **📖 Analisis Mendalam:**
-Titik koma tersebut dianggap sebagai **Null Statement** (isi loop kosong). Akibatnya, mesin terus mengecek `0 < 5` selamanya tanpa pernah menambah `i`. Blok `{ i++; }` dianggap kode terpisah yang tidak punya hubungan dengan loop.
+Titik koma tersebut dianggap sebagai **Null Statement** (isi loop kosong). Akibatnya, mesin terus mengecek `0 < 5` selamanya tanpa pernah menambah `i`. Blok `{ i++; }` dianggap kode terpisah yang tidak punya hubungan dengan loop. Ini adalah jebakan sintaksis yang paling mematikan bagi pemula.
 </details>
 
 ---
@@ -250,16 +271,17 @@ while (a != b) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Euclidean Subtraction):**
 ```mermaid
 graph TD
-A["12, 8"] --> B["12 > 8? (T)"]
-B --> C["a = 12 - 8 = 4"]
-C --> D["4, 8"]
-D --> E["4 > 8? (F)"]
-E --> F["b = 8 - 4 = 4"]
-F --> G["4, 4"]
-G --> H{"4 != 4? (F)"}
+T1["a=12, b=8"] --> C1{"12 != 8? (T)"}
+C1 -- T --> D1["12 > 8? (T) -> a=4"]
+D1 --> T2["a=4, b=8"]
+T2 --> C2{"4 != 8? (T)"}
+C2 -- T --> D2["4 > 8? (F) -> b=4"]
+D2 --> T3["a=4, b=4"]
+T3 --> C3{"4 != 4? (F)"}
+C3 -- F --> End["FPB = 4"]
 ```
 
 **Jawaban:**
@@ -285,13 +307,12 @@ while (!ready) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
+**Mermaid Flowchart (Flag Logic Trace):**
 ```mermaid
-graph TD
-A["!F (T)"] --> B["timer=5"]
-B --> C["!F (T)"] --> D["timer=10"]
-D --> E["!F (T)"] --> F["timer=15, ready=T"]
-F --> G{"!T (F)"}
+graph LR
+W1["!F (T) -> timer: 5"] --> W2["!F (T) -> timer: 10"]
+W2 --> W3["!F (T) -> timer: 15, ready: T"]
+W3 --> W4["!T (F) -> Out"]
 ```
 
 **Jawaban:**
