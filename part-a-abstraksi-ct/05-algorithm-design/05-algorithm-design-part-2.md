@@ -1,6 +1,6 @@
 # 05. Algorithm Design - Bagian 2 (Soal 51-100)
 
-[< Bagian 1 (1-50)](05-algorithm-design-part-1.md) | [🏠 Indeks](05-algorithm-design.md) | [Bagian 3 (101-150) >](05-algorithm-design-part-3.md)
+[< Bagian 1 (1-50)](05-algorithm-design-part-1.md) | [🏠 Indeks](../05-algorithm-design.md) | [Bagian 3 (101-150) >](05-algorithm-design-part-3.md)
 
 ---
 ### Soal #51: Algoritma "Kelipatan 5"
@@ -960,4 +960,4 @@ Sistem perlu memastikan input valid sebelum menjalankan proses aritmatika.
 </details>
 
 ---
-[< Bagian 1 (1-50)](05-algorithm-design-part-1.md) | [🏠 Indeks](05-algorithm-design.md) | [Bagian 3 (101-150) >](05-algorithm-design-part-3.md)
+[< Bagian 1 (1-50)](05-algorithm-design-part-1.md) | [🏠 Indeks](../05-algorithm-design.md) | [Bagian 3 (101-150) >](05-algorithm-design-part-3.md)

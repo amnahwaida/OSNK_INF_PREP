@@ -73,12 +73,12 @@ Berikut adalah bank soal latihan untuk mengasah logika algoritmamu.
 
 Untuk memudahkan pembacaan dan menghindari kendala rendering pada GitHub, bank soal ini dibagi menjadi beberapa bagian:
 
-1. [Bagian 1: Soal 1 - 50](05-algorithm-design-part-1.md)
-2. [Bagian 2: Soal 51 - 100](05-algorithm-design-part-2.md)
-3. [Bagian 3: Soal 101 - 150](05-algorithm-design-part-3.md)
-4. [Bagian 4: Soal 151 - 200](05-algorithm-design-part-4.md)
-5. [Bagian 5: Soal 201 - 250](05-algorithm-design-part-5.md)
-6. [Bagian 6: Soal 251 - 300](05-algorithm-design-part-6.md)
+1. [Bagian 1: Soal 1 - 50](05-algorithm-design/05-algorithm-design-part-1.md)
+2. [Bagian 2: Soal 51 - 100](05-algorithm-design/05-algorithm-design-part-2.md)
+3. [Bagian 3: Soal 101 - 150](05-algorithm-design/05-algorithm-design-part-3.md)
+4. [Bagian 4: Soal 151 - 200](05-algorithm-design/05-algorithm-design-part-4.md)
+5. [Bagian 5: Soal 201 - 250](05-algorithm-design/05-algorithm-design-part-5.md)
+6. [Bagian 6: Soal 251 - 300](05-algorithm-design/05-algorithm-design-part-6.md)
 
 ---
 

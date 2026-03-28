@@ -1,6 +1,6 @@
 # 05. Algorithm Design - Bagian 6 (Soal 251-300)
 
-[< Bagian 5 (201-250)](05-algorithm-design-part-5.md) | [🏠 Indeks](05-algorithm-design.md)
+[< Bagian 5 (201-250)](05-algorithm-design-part-5.md) | [🏠 Indeks](../05-algorithm-design.md)
 
 ---
 ### Soal #251: Algoritma "Searching" (Linear vs Binary)
@@ -936,5 +936,5 @@ Inilah akhir dari disain algoritma materi "Algorithm Design" kita. Kamu hebat!
 </details>
 
 ---
-[< Bagian 5 (201-250)](05-algorithm-design-part-5.md) | [🏠 Indeks](05-algorithm-design.md)
+[< Bagian 5 (201-250)](05-algorithm-design-part-5.md) | [🏠 Indeks](../05-algorithm-design.md)
 

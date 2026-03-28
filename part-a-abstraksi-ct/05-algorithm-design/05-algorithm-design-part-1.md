@@ -1,6 +1,6 @@
 # 05. Algorithm Design - Bagian 1 (Soal 1-50)
 
-[🏠 Indeks](05-algorithm-design.md) | [Bagian 2 (51-100) >](05-algorithm-design-part-2.md)
+[🏠 Indeks](../05-algorithm-design.md) | [Bagian 2 (51-100) >](05-algorithm-design-part-2.md)
 
 ---
 ### Soal #1: Algoritma Mencari Kaus Kaki
@@ -947,4 +947,4 @@ Implementasi manajemen energi otomatis.
 
 
 ---
-[🏠 Indeks](05-algorithm-design.md) | [Bagian 2 (51-100) >](05-algorithm-design-part-2.md)
+[🏠 Indeks](../05-algorithm-design.md) | [Bagian 2 (51-100) >](05-algorithm-design-part-2.md)
