@@ -125,6 +125,21 @@
  - `a++` $\rightarrow$ "Tambah isi laci `a` sebanyak 1 biji." (Sama dengan `a = a + 1`).
  - `a--` $\rightarrow$ "Kurangi isi laci `a` sebanyak 1 biji." (Sama dengan `a = a - 1`).
  
+ ### ⚠️ Jebakan Batman #3: Pre vs Post (Kapan Nilainya Berubah?)
+ Juri OSN-K **SANGAT SUKA** menggunakan jebakan ini:
+ - **`++a` (Pre-increment)**: "Tambah dulu, baru dipakai."
+ - **`a++` (Post-increment)**: "Pakai nilai sekarang dulu, baru tambah di baris berikutnya."
+ 
+ **Analogi Gaji vs Komisi:**
+ - `++a` (Gaji Awal): Bos kasih kamu uang dulu, baru kamu disuruh belanja.
+ - `a++` (Komisi Akhir): Kamu belanja dulu pakai uang lama, baru pas pulang Bos kasih bonus uang tambahan.
+ 
+ ```cpp
+ int a = 5;
+ int b = a++; // b jadi 5 (a ditaruh ke b dulu, baru a naik jadi 6)
+ int c = ++a; // c jadi 7 (a naik jadi 7 dulu, baru a ditaruh ke c)
+ ```
+ 
  ---
  
  ## ⚖️ H. Operator Perbandingan (Timbangan Benar-Salah)
@@ -140,7 +155,20 @@
  
  ---
  
- ## 🗑️ I. Jebakan Laci Bekas (Garbage Value)
+ ## 🚦 I. Operator Logika (Filter Berlapis)
+ 
+ Jika perbandingan di atas adalah satu pintu, maka operator logika adalah **Pintu Berlapis**.
+ 
+ - `&&` (DAN / AND): Harus **Semua Benar** baru lolos.
+ - `||` (ATAU / OR): Asal ada **Satu Benar** langsung lolos.
+ - `!` (TIDAK / NOT): Kacamata kebalikan (Benar jadi Salah, Salah jadi Benar).
+ 
+ **Kasta Operator Logika:**
+ `!` (Kasta Tertinggi) $\rightarrow$ `&&` $\rightarrow$ `||` (Kasta Terendah).
+ 
+ ---
+ 
+ ## 🗑️ J. Jebakan Laci Bekas (Garbage Value)
  
  Apa yang terjadi jika kamu membuat laci tapi tidak menaruh angka apa-apa?
  ```cpp
@@ -197,7 +225,7 @@
  
  ---
  
- ## 🌍 K. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+ ## 🌍 L. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
  
  Di kodingan OSN-K, juri suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
  
@@ -215,7 +243,7 @@
  
  ---
  
- ## 📦 L. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 M. Analogi Tambahan: Gudang Rahasia Komputer
  
  ### 🛁 1. Long Long vs Int: Gayung vs Bak Mandi
  Kamu butuh **Bak Mandi** (`long long`) saat hasil hitunganmu sangat banyak (misal hasil perkalian `100.000 * 100.000`) agar airnya tidak tumpah lari ke mana-mana (*Overflow*).
@@ -225,7 +253,7 @@
  
  ---
  
- ## 📜 M. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ ## 📜 N. Rangkuman: Cara Berpikir C++ (Resep Masakan)
  
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
