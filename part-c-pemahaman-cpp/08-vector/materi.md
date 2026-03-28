@@ -88,6 +88,52 @@
  
  ---
  
+ ## 🔍 E. Teknik Pencarian Biner (Binary Search)
+ 
+ **Temuan OSN-K 2024:** Sering ada fungsi rekursif yang membagi rentang `[kiri, kanan]` menjadi dua menggunakan `mid`. 
+ 
+ **Analogi Merobek Buku:**
+ Jika kamu mencari halaman 50 di buku setebal 100 halaman, kamu buka tengahnya (halaman 50). Kalau ketemu, selesai! Kalau kegedean, cari di sebelah kiri. Kalau kekecilan, cari di sebelah kanan.
+ 
+ ```cpp
+ bool binCheck(vector<int> A, int L, int R, int X) {
+     if (L > R) return false;
+     int mid = (L + R) / 2;
+     if (A[mid] == X) return true;
+     if (A[mid] > X) return binCheck(A, L, mid - 1, X);
+     else return binCheck(A, mid + 1, R, X);
+ }
+ ```
+ 
+ **Trik Kecepatan OSN-K:** 
+ - Jika data jumlahnya $N=1024$, Binary Search hanya butuh **10 langkah** ($\log_2 1024$).
+ - Jika waktu untuk $N=1000$ adalah 20 detik dan $N=2000$ adalah 22 detik, itu ciri khas **Logarithmic Scaling**. Waktunya cuma nambah dikit meskipun datanya dobel!
+ 
+ ---
+ 
+ ## 🤝 F. Logika Dua Penunjuk (Two-Pointers & Merge)
+ 
+ **Temuan OSN-K 2022:** Menggabungkan dua baris antrean terurut menjadi satu barisan panjang.
+ 
+ **Analogi Resleting:**
+ Kamu punya dua baris resleting. Kamu bandingkan gigi terdepan dari kedua baris. Mana yang lebih kecil, dia yang masuk ke barisan baru duluan. Terus begitu sampai semua gigi terpakai.
+ 
+ ```cpp
+ while (i < 5 && j < 5) {
+     if (A[i] <= B[j]) {
+         C[k] = A[i]; i++;
+     } else {
+         C[k] = B[j]; j++;
+     }
+     k++;
+ }
+ ```
+ 
+ > [!TIP]
+ > Jika ada dua indeks (seperti `i` dan `j`) yang berjalan di dua array berbeda secara bersamaan, itu adalah **Two-Pointers**. Fokuslah pada siapa yang "kalah" (nilainya lebih kecil) karena dialah yang akan berpindah indeks.
+ 
+ ---
+ 
  🏁 **Selamat!** Kamu telah menyelesaikan seluruh materi **Pemahaman Kode C++**. 
  Sekarang kamu siap menghadapi **[Paket Simulasi OSN-K](../../simulasi-osnk/README.md)** yang sesungguhnya!
  

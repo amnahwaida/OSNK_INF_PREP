@@ -218,6 +218,47 @@ Perilaku program memuntahkan *Garbage Value* atau berpotensi kiamat OS (Segmenta
  
  ---
  
+ ---
+ 
+ ## 🔢 F. Manipulasi Digit & Faktor (Number Theory)
+ 
+ **Prasyarat (Prerequisite):** Kamu harus hafal di luar kepala bahwa:
+ - `n % 10` $\rightarrow$ Mengambil angka paling belakang (satuan).
+ - `n / 10` $\rightarrow$ Membuang angka paling belakang.
+ 
+ Di OSN-K 2024, sering muncul soal yang meminta kamu menghitung jumlah digit atau mencari pembagi. Jangan di-tracing manual satu per satu angkanya, tapi kenali polanya!
+ 
+ ### 🧮 1. Menghitung Jumlah Digit (Sum of Digits)
+ Kode ini sangat legendaris di C++:
+ ```cpp
+ int X = 123;
+ int total = 0;
+ while (X > 0) {
+     total += (X % 10);
+     X /= 10;
+ }
+ ```
+ **Tracing Human Compiler:**
+ 1. `X = 123` $\rightarrow$ `total = 0 + 3 = 3`, `X = 12`.
+ 2. `X = 12` $\rightarrow$ `total = 3 + 2 = 5`, `X = 1`.
+ 3. `X = 1` $\rightarrow$ `total = 5 + 1 = 6`, `X = 0`.
+ *Hasil:* **total = 6**. (Sesuai $1+2+3$).
+ 
+ ### ⚔️ 2. Mencari Pembagi (Divisor Finding)
+ Biasanya muncul dalam pola `if (N % i == 0)`.
+ ```cpp
+ int N = 30;
+ for (int i = 1; i <= N; i++) {
+     if (N % i == 0) cout << i << " ";
+ }
+ ```
+ **Trik OSN-K:** Jika angka `N` sangat besar, pembagi selalu berpasangan. Jika `1` pembagi `30`, maka `30/1 = 30` juga pembagi. Jika `2` pembagi, maka `15` juga pembagi. Ini membantu kamu menebak output tanpa harus iterasi sampai habis.
+ 
+ > [!TIP]
+ > Jika di soal OSN-K kamu melihat loop `while (X > 0)` dengan `X /= 10`, itu adalah sinyal kuat bahwa juri sedang membedah isi angka tersebut digit demi digit.
+ 
+ ---
+ 
  ### Siap Di Uji Tracing?
 
 Kamu ditunjuk menjadi Komandan Compiler pada sebaris kodingan OSN Murni berikut:

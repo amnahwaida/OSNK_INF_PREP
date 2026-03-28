@@ -171,6 +171,27 @@ Maka nilai `fungsiBurung(5)` sama persis dengan angka Deret Fibonacci ke-5, yait
  
  ---
  
+ ## 🎩 E. Pengenalan Pola: Masalah Josephus
+ 
+ **Temuan OSN-K 2024:** Juri memberikan fungsi rekursi yang sangat mengerikan jika dihitung manual sampai $N=70$. Namun, jika kamu jeli, ini adalah pola matematika klasik.
+ 
+ ```cpp
+ int pndk(int N, int K) {
+     if (N == 1) return 1;
+     else return (pndk(N - 1, K) + K - 1) % N + 1;
+ }
+ ```
+ 
+ **Analogi Permainan Eliminasi:**
+ Bayangkan ada $N$ orang duduk melingkar. Setiap orang ke-$K$ akan dikeluarkan. Siapa orang terakhir yang selamat? Rumus di atas adalah cara tercepat mengetahuinya tanpa harus menggambar lingkaran dan mencoret-coret nama.
+ 
+ > [!IMPORTANT]
+ > **Pola Khas:** Jika kamu melihat struktur `(f(N-1, K) + K - 1) % N + 1`, itu adalah **Josephus**. 
+ > - Untuk $K=2$, jawabannya selalu terpaku pada angka perpangkatan 2 terdekat.
+ > - Untuk $K$ lain, jika ditanya nilai $N$ yang menghasilkan output maksimal, carilah nilai $N$ yang merupakan $K^M$ atau mendekati pola tertentu.
+ 
+ ---
+ 
  Ini esensi olimpiade rahasia sesungguhnya: **Soal yang terlihat menghabiskan 3 galon tinta pulpen rekursi... nyatanya bisa dijawab dalam 3 Detik berbekal insting Pola Kriptografi Matematika Murni!**
 
 ⏩ **Lanjut ke Modul Klimaks Akhir:** [Operasi Bitwise Tingkat Lanjut (Saklar Biner Rahasia)](./06-operasi-bitwise-dasar.md)
