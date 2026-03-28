@@ -193,5 +193,367 @@ Ingat: "Setiap bagian kecil harus bisa berdiri sendiri dan mudah diuji."
 Memecah operasi besar menjadi fungsi-fungsi kecil membuat kode lebih rapi, mudah diperbaiki, dan bisa digunakan kembali.
 </details>
 
+### Soal #08: Membuat Sandwich
+Kamu ingin membuat sandwich lapis tiga yang sempurna. Langkah dekomposisi mana yang paling tepat untuk sub-masalah **"Persiapan Bahan"**?
+A. Menyiapkan roti, mentega, keju, dan selada di atas meja.
+B. Memakan sandwich setelah selesai dibuat.
+C. Membersihkan piring setelah makan.
+D. Membeli sandwich di toko terdekat.
+
+<details>
+<summary>💡 Hint</summary>
+Pikirkan tahap sebelum perakitan dilakukan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. Menyiapkan roti, mentega, keju, dan selada.**
+Menyiapkan bahan adalah komponen awal sebelum proses pembuatan sandwich dimulai.
+</details>
+
+### Soal #09: Menulis Makalah Penelitian
+Seorang siswa SMA diminta menulis makalah tentang pemanasan global. Dekomposisi tugas yang benar adalah...
+A. Menulis langsung dari bab 1 sampai selesai dalam satu jam.
+B. Membagi tugas menjadi: Riset data, Membuat Outline, Menulis Draft, dan Revisi.
+C. Membaca makalah orang lain dan menyalinnya.
+D. Menunggu ide muncul sendiri tanpa melakukan riset.
+
+<details>
+<summary>💡 Hint</summary>
+Proses menulis ilmiah membutuhkan tahapan yang sistematis.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Riset, Outline, Menulis Draft, dan Revisi.**
+Membagi penulisan menjadi fase-fase tersebut membuat prosesnya lebih teratur dan berkualitas.
+</details>
+
+### Soal #10: Pengembangan Aplikasi Sekolah
+Tim IT sekolah ingin membuat aplikasi "E-Kantin". Manakah sub-masalah yang merupakan bagian dari **"Sistem Pembayaran"**?
+A. Menampilkan menu makanan hari ini.
+B. Mengintegrasikan saldo kartu siswa dengan transaksi kantin.
+C. Desain logo aplikasi yang menarik.
+D. Menghitung jumlah kalori dalam setiap makanan.
+
+<details>
+<summary>💡 Hint</summary>
+Fokus pada aspek pertukaran nilai/uang.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Integrasi saldo dengan transaksi.**
+Saldo dan transaksi adalah bagian inti dari sub-masalah pembayaran.
+</details>
+
+### Soal #11: Panitia Upacara 17 Agustus
+Sebagai panitia upacara, kamu membagi tugas menjadi Seksi Upacara, Seksi Perlengkapan, dan Seksi Konsumsi. Manakah tugas yang masuk dalam **Seksi Perlengkapan**?
+A. Menentukan petugas pengibar bendera.
+B. Menyiapkan sound system, tiang bendera, dan podium.
+C. Membeli nasi kotak untuk peserta upacara.
+D. Mengatur barisan siswa di lapangan.
+
+<details>
+<summary>💡 Hint</summary>
+Fokus pada alat dan benda fisik yang dibutuhkan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Sound system, tiang bendera, dan podium.**
+Benda-benda fisik pendukung upacara adalah tanggung jawab seksi perlengkapan.
+</details>
+
+### Soal #12: Melacak Bug (Debugging)
+Program kalkulatormu error saat melakukan pembagian dengan angka nol. Dekomposisi pengecekan yang harus kamu lakukan adalah...
+A. Mengecek seluruh ribuan baris kode dari awal.
+B. Fokus mengecek fungsi `pembagian()` dan menambahkan validasi input.
+C. Menghapus seluruh program dan membuat baru.
+D. Mengganti warna latar belakang aplikasi agar terlihat lebih bagus.
+
+<details>
+<summary>💡 Hint</summary>
+Gunakan dekomposisi untuk mengisolasi lokasi kesalahan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Fokus mengecek fungsi pembagian().**
+Isolasi masalah pada bagian yang relevan adalah manfaat utama dekomposisi dalam coding.
+</details>
+
+### Soal #13: Desain Sistem Perpustakaan
+Dalam merancang sistem manajemen perpustakaan digital, manakah dekomposisi yang tepat untuk fitur **"Manajemen Anggota"**?
+A. Pendaftaran anggota baru, pembaruan data, dan penghapusan akun.
+B. Pencarian judul buku berdasarkan kategori.
+C. Menghitung denda keterlambatan buku.
+D. Menampilkan riwayat peminjaman buku.
+
+<details>
+<summary>💡 Hint</summary>
+Pikirkan segala hal yang berkaitan dengan identitas pengguna.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. Pendaftaran, pembaruan data, dan penghapusan akun.**
+Ketiga hal tersebut mengelola siklus hidup data anggota.
+</details>
+
+### Soal #14: Menghitung Luas Bangun Kompleks
+Kamu diminta menghitung luas sebuah bangun datar berbentuk "L". Dekomposisi matematika yang paling mudah adalah...
+A. Mengukur keliling bangun tersebut.
+B. Membagi bangun "L" menjadi dua buah persegi panjang yang lebih kecil.
+C. Menebak luasnya berdasarkan perasaan.
+D. Mencari rumus luas bangun "L" di buku yang mungkin tidak ada.
+
+<details>
+<summary>💡 Hint</summary>
+Pecah bangun asing menjadi bangun yang kamu sudah tahu rumusnya.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Membagi menjadi dua persegi panjang.**
+Ini adalah penerapan dekomposisi dalam geometri untuk memudahkan perhitungan.
+</details>
+
+### Soal #15: Manajemen Restoran
+Manajer restoran membagi tim menjadi "Front of House" (Pelayanan) dan "Back of House" (Dapur). Manakah tugas **Back of House**?
+A. Menyambut tamu di pintu depan.
+B. Mencuci piring dan memasak pesanan makanan.
+C. Menyajikan minuman ke meja pelanggan.
+D. Mengantarkan tagihan pembayaran.
+
+<details>
+<summary>💡 Hint</summary>
+Fokus pada kegiatan di area produksi makanan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Mencuci piring dan memasak.**
+Aktivitas produksi dan kebersihan area belakang adalah tugas tim dapur.
+</details>
+
+### Soal #16: Robot Penyilah Sampah
+Sebuah robot diprogram untuk memilah sampah menjadi: Organik, Plastik, dan Kertas. Manakah sub-masalah dari fase **"Identifikasi Sampah"**?
+A. Menggerakkan lengan robot ke tempat sampah plastik.
+B. Mendeteksi tekstur dan material benda menggunakan sensor.
+C. Membuang sampah ke laut.
+D. Menghitung total berat sampah yang sudah dipilah.
+
+<details>
+<summary>💡 Hint</summary>
+Identifikasi berarti "mengenali" sebelum melakukan aksi.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Mendeteksi tekstur dan material menggunakan sensor.**
+Sensor membantu robot mengidentifikasi jenis sampah sebelum dipindahkan.
+</details>
+
+### Soal #17: Membangun Rumah Pohon
+Dekomposisi langkah pembangunan rumah pohon yang paling logis adalah...
+A. Mengecat dinding dulu, lalu mencari pohon yang kuat.
+B. Mencari pohon kuat, membuat lantai dasar, membangun dinding, lalu atap.
+C. Membeli sofa empuk untuk di dalam rumah pohon.
+D. Mengajak teman untuk bermain di pohon yang belum ada rumahnya.
+
+<details>
+<summary>💡 Hint</summary>
+Urutan logis (Algorithm Design) seringkali dimulai dari dekomposisi struktur yang benar.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Pohon kuat -> Lantai -> Dinding -> Atap.**
+Ini adalah dekomposisi struktur fisik bangunan dari bawah ke atas.
+</details>
+
+### Soal #18: Puzzle 1000 Keping
+Strategi dekomposisi yang biasa digunakan untuk menyelesaikan puzzle raksasa adalah...
+A. Mencoba memasangkan dua keping secara acak sampai ketemu.
+B. Memilah kepingan berdasarkan warna atau mencari kepingan bagian pinggir (frame).
+C. Melihat gambar di kotak puzzle saja tanpa menyusunnya.
+D. Langsung menempelkan semua kepingan dengan lem.
+
+<details>
+<summary>💡 Hint</summary>
+Cari bagian yang paling mudah diidentifikasi atau kelompokkan berdasarkan ciri tertentu.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Memilah berdasarkan warna atau Frame.**
+Mengelompokkan kepingan adalah dekomposisi masalah besar menjadi grup-grup kecil yang lebih mudah dicari pasangannya.
+</details>
+
+### Soal #19: Turnamen Olahraga Sekolah
+Panitia OSIS membagi turnamen futsal menjadi: Registrasi, Jadwal Pertandingan, dan Logistik Pertandingan. Manakah tugas **Logistik Pertandingan**?
+A. Menyiapkan bola, gawang, peluit wasit, dan rompi pemain.
+B. Mencatat skor akhir pertandingan di papan skor.
+C. Menerima uang pendaftaran dari tiap kelas.
+D. Menentukan siapa yang melawan siapa di babak final.
+
+<details>
+<summary>💡 Hint</summary>
+Logistik berhubungan dengan kebutuhan barang dan peralatan operasional.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. Bola, gawang, peluit, dan rompi.**
+Peralatan fisik untuk kelancaran pertandingan adalah bagian dari logistik.
+</details>
+
+### Soal #20: Membuat Video YouTube
+Seorang YouTuber melakukan dekomposisi proses pembuatan konten. Manakah yang termasuk dalam sub-masalah **"Post-Production"**?
+A. Menulis skrip dan ide konten.
+B. Merekam video menggunakan kamera dan mikrofon.
+C. Melakukan editing, menambahkan musik, dan color grading.
+D. Membagikan link video ke media sosial.
+
+<details>
+<summary>💡 Hint</summary>
+Post-production berarti proses "setelah" rekaman selesai.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**C. Editing, musik, dan color grading.**
+Semua kegiatan pengolahan hasil rekaman masuk kedaam post-production.
+</details>
+
+### Soal #21: Analisis Kalimat Kompleks
+Dalam pelajaran Bahasa Indonesia, kamu diminta menganalisis kalimat: "Budi memakan roti yang dibelikan ibunya saat mereka pergi ke pasar kemarin." 
+Dekomposisi kalimat ini untuk memahami strukturnya adalah...
+A. Mencari antonim dari kata "makan".
+B. Memecah kalimat menjadi: Induk kalimat (Budi makan roti) dan anak kalimat (yang dibelikan ibunya...).
+C. Membaca kalimat tersebut berulang-ulang dengan suara keras.
+D. Menghitung jumlah huruf vokal dalam kalimat tersebut.
+
+<details>
+<summary>💡 Hint</summary>
+Memecah kalimat menjadi struktur subjek, predikat, objek, dan keterangan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Memecah menjadi Induk dan Anak kalimat.**
+Dekomposisi linguistik membantu memahami hubungan antar bagian dalam kalimat kompleks.
+</details>
+
+### Soal #22: Masalah Koneksi Internet
+Internet di rumahmu tiba-tiba mati. Dekomposisi pengecekan yang sistematis adalah...
+A. Langsung menelepon penyedia layanan internet (ISP) untuk marah-marah.
+B. Cek lampu indikator modem, cek kabel LAN/Wi-Fi, lalu cek perangkat lain (HP/Laptop).
+C. Membeli router baru yang lebih mahal.
+D. Mematikan listrik seluruh rumah agar modem ikut mati.
+
+<details>
+<summary>💡 Hint</summary>
+Cek dari bagian yang paling dekat/mudah dijangkau sebelum ke yang lebih luas.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Lampu modem -> Kabel -> Perangkat lain.**
+Isolasi masalah per komponen membantu menemukan penyebab internet mati dengan cepat.
+</details>
+
+### Soal #23: Desain Profil Media Sosial
+Jika kamu diminta mendesain halaman profil pengguna, dekomposisi elemen visualnya adalah...
+A. Mengatur server agar aplikasi tidak lag.
+B. Membagi menjadi: Foto profil, Header/Banner, Bio, dan Daftar Postingan.
+C. Mencari teman sebanyak-banyaknya di aplikasi tersebut.
+D. Menentukan harga langganan premium.
+
+<details>
+<summary>💡 Hint</summary>
+Fokus pada komponen yang muncul di layar (UI components).
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Foto profil, Header, Bio, dan Postingan.**
+Ini adalah dekomposisi elemen antarmuka pengguna (UI) pada halaman profil.
+</details>
+
+### Soal #24: Perhitungan Anggaran Bulanan
+Andi ingin menabung 500rb per bulan. Ia melakukan dekomposisi pengeluaran menjadi: Makan, Transportasi, Hiburan, dan Tabungan. 
+Manakah yang merupakan sub-masalah dari **"Evaluasi Pengeluaran"**?
+A. Menghitung total biaya makan dalam sebulan.
+B. Meminta uang tambahan ke orang tua.
+C. Membeli barang bermerek yang sedang diskon.
+D. Menuliskan cita-cita masa depan di buku harian.
+
+<details>
+<summary>💡 Hint</summary>
+Evaluasi berarti meninjau kembali apa yang sudah dikeluarkan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. Menghitung total biaya makan.**
+Menghitung pengeluaran per kategori adalah langkah awal dalam mengevaluasi apakah anggaran sudah sesuai target.
+</details>
+
+### Soal #25: Acara Donor Darah
+Panitia donor darah membagi tugas menjadi: Registrasi, Pemeriksaan Kesehatan, dan Area Donor. Tugas **Pemeriksaan Kesehatan** adalah...
+A. Mencatat nama dan alamat pendonor.
+B. Mengecek tekanan darah dan kadar hemoglobin.
+C. Memberikan susu dan telur setelah donor.
+D. Membuang jarum suntik bekas ke tempat sampah medis.
+
+<details>
+<summary>💡 Hint</summary>
+Fokus pada tahap pengecekan kelayakan pendonor secara medis.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Mengecek tekanan darah dan hemoglobin.**
+Ini adalah langkah krusial untuk menentukan apakah seseorang boleh mendonorkan darahnya.
+</details>
+
+### Soal #26: Mengurutkan Kartu (Sorting)
+Kamu memiliki setumpuk kartu acak dan ingin mengurutkannya dari A sampai K. Langkah dekomposisi pertamamu adalah...
+A. Membuang kartu yang gambarnya tidak bagus.
+B. Membagi kartu menjadi 4 tumpukan berdasarkan lambangnya (Hati, Sekop, Wajik, Keriting).
+C. Mengocok kembali kartu tersebut secara terus-menerus.
+D. Memberikan kartu tersebut kepada orang lain untuk diurutkan.
+
+<details>
+<summary>💡 Hint</summary>
+Membagi masalah besar (52 kartu) menjadi kelompok kecil (13 kartu per lambang).
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Membagi berdasarkan lambang.**
+Mengelompokkan berdasarkan ciri tertentu adalah langkah awal dekomposisi dalam algoritma pengurutan.
+</details>
+
+### Soal #27: Analisis Eksperimen Sains
+Dalam praktikum biologi tentang pertumbuhan tanaman, dekomposisi pengamatanmu meliputi...
+A. Hanya melihat hasil akhirnya setelah satu bulan.
+B. Mencatat tinggi batang, jumlah daun, dan warna daun setiap 3 hari sekali.
+C. Membeli tanaman plastik agar tidak perlu disiram.
+D. Menggambar sketsa tanaman saat kamu merasa bosan.
+
+<details>
+<summary>💡 Hint</summary>
+Pecah pengamatan menjadi parameter-parameter yang bisa diukur secara rutin.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Mencatat tinggi batang, jumlah daun, dan warna daun.**
+Parameter-parameter tersebut adalah sub-bagian dari data pertumbuhan tanaman yang sedang diteliti.
+</details>
+
 ---
 [< Kembali ke Beranda Materi](../README.md) | [Materi Selanjutnya: Pattern Recognition](./03-pattern-recognition.md)
