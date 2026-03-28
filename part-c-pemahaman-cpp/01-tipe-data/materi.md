@@ -443,6 +443,38 @@
  
  ---
  
+ ### 👑 Uji Tracing (Level 5: THE ULTIMATE BOSS)
+ 
+ ```cpp
+ char c = 'C'; 
+ int x = 10;
+ long long y = 1e9;
+ double z = 4.0;
+ 
+ int a = c - 'A'; 
+ int b = ++a + (x++ % 3); 
+ int res = (b * sqrt(z)) - (y / 500000000); 
+ bool final_cek = (res > 5); 
+ int ans = final_cek + x; 
+ 
+ printf("ans = %d", ans);
+ ```
+ **Diagnosis Logika Sang Juara:**
+ 1. **ASCII Action**: `c` ('C') adalah 67. `'A'` adalah 65. Maka `a = 67 - 65 = 2`.
+ 2. **Double Action**: 
+    - `++a` membuat `a` naik jadi **3**.
+    - `x++ % 3` $\rightarrow$ `x` (10) dimodulo 3 hasilnya **1**. Setelah ini, `x` baru naik jadi **11**.
+    - `b = 3 + 1 = 4`.
+ 3. **Math Combo**: 
+    - `sqrt(4.0)` adalah 2.0. Maka `4 * 2.0 = 8.0`.
+    - `y / 5e8` $\rightarrow 1 \text{ Miliar} / 500 \text{ Juta} = 2$.
+    - `res = 8.0 - 2 = 6`.
+ 4. **Logic Power**: `res > 5` ($6 > 5$) adalah **BENAR (1)**.
+ 5. **Final Step**: `ans = 1 + 11 = 12`.
+ 6. Output: **ans = 12**.
+ 
+ ---
+ 
  ### 📝 Latihan Soal Tracing
  👉 **[Bank Soal Modul 01: Tipe Data & Operator (300 Soal)](./latihan/README.md)**
  
