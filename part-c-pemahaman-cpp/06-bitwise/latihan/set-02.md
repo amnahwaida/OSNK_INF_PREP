@@ -6,682 +6,526 @@
 
 ### Soal 26
 ```cpp
-int status_lampu = 2;
-int toggle = status_lampu ^ status_lampu;
+// Mult: XOR Toggle
+int val = 14;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=2"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 27
 ```cpp
-int power_up = 3;
-int hasil_shift = power_up << 2;
+// Div: Shift Left
+int val = 8;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **16**
+2. 8 digeser kiri 1x = dikali 2 = 16.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=3"] --> B["Geser Kiri 2x"]
-B --> C["Hasil: 12"]
+A[Trace] --> B[Result: 16]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 3 dengan 2 pangkat 2.
-3. **Hasil**: 3 * 4 = **12**.
 
 ---
 ### Soal 28
 ```cpp
-int power_up = 3;
-int hasil_shift = power_up << 2;
+// Alu: AND Mask
+int val = 12;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Mengecek bit terakhir dari 12 (0b1100). Hasil: 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=3"] --> B["Geser Kiri 2x"]
-B --> C["Hasil: 12"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 3 dengan 2 pangkat 2.
-3. **Hasil**: 3 * 4 = **12**.
 
 ---
 ### Soal 29
 ```cpp
-int power_up = 4;
-int hasil_shift = power_up << 1;
+// Cpu: XOR Toggle
+int val = 6;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **8**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=4"] --> B["Geser Kiri 1x"]
-B --> C["Hasil: 8"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 4 dengan 2 pangkat 1.
-3. **Hasil**: 4 * 2 = **8**.
 
 ---
 ### Soal 30
 ```cpp
-int power_up = 3;
-int hasil_shift = power_up << 2;
+// Bus: Shift Left
+int val = 3;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. 3 digeser kiri 1x = dikali 2 = 6.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=3"] --> B["Geser Kiri 2x"]
-B --> C["Hasil: 12"]
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 3 dengan 2 pangkat 2.
-3. **Hasil**: 3 * 4 = **12**.
 
 ---
 ### Soal 31
 ```cpp
-int power_up = 3;
-int hasil_shift = power_up << 2;
+// Line: AND Mask
+int val = 3;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **1**
+2. Mengecek bit terakhir dari 3 (0b11). Hasil: 1.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=3"] --> B["Geser Kiri 2x"]
-B --> C["Hasil: 12"]
+A[Trace] --> B[Result: 1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 3 dengan 2 pangkat 2.
-3. **Hasil**: 3 * 4 = **12**.
 
 ---
 ### Soal 32
 ```cpp
-int sensor_angka = 3;
-int cek_ganjil = sensor_angka & 1;
+// Signal: XOR Toggle
+int val = 14;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["angka=3 (0b11)"] --> B["Lampu Terakhir & 1"]
-B --> C["Hasil: 1"]
+graph LR
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Bit Ganjil**: Bit paling kanan menentukan ganjil atau genap. 
-2. **Tracing**: 3 (0b11) di-AND-kan dengan 1 (0b1).
-3. **Logika**: Hanya jika bit terakhir 1, hasilnya 1 (Artinya Ganjil).
-4. **Hasil**: `cek_ganjil` bernilai **1**.
 
 ---
 ### Soal 33
 ```cpp
-int status_lampu = 3;
-int toggle = status_lampu ^ status_lampu;
+// Wave: Shift Left
+int val = 6;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **12**
+2. 6 digeser kiri 1x = dikali 2 = 12.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=3"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 12]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 34
 ```cpp
-int status_lampu = 2;
-int toggle = status_lampu ^ status_lampu;
+// Freq: AND Mask
+int val = 3;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **1**
+2. Mengecek bit terakhir dari 3 (0b11). Hasil: 1.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=2"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 35
 ```cpp
-int status_lampu = 1;
-int toggle = status_lampu ^ status_lampu;
+// Phase: XOR Toggle
+int val = 12;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=1"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 36
 ```cpp
-int power_up = 3;
-int hasil_shift = power_up << 2;
+// Ampl: Shift Left
+int val = 13;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **26**
+2. 13 digeser kiri 1x = dikali 2 = 26.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=3"] --> B["Geser Kiri 2x"]
-B --> C["Hasil: 12"]
+A[Trace] --> B[Result: 26]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 3 dengan 2 pangkat 2.
-3. **Hasil**: 3 * 4 = **12**.
 
 ---
 ### Soal 37
 ```cpp
-int status_lampu = 2;
-int toggle = status_lampu ^ status_lampu;
+// Res: AND Mask
+int val = 1;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **1**
+2. Mengecek bit terakhir dari 1 (0b1). Hasil: 1.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=2"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 38
 ```cpp
-int status_lampu = 3;
-int toggle = status_lampu ^ status_lampu;
+// Cap: XOR Toggle
+int val = 14;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=3"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 39
 ```cpp
-int status_lampu = 2;
-int toggle = status_lampu ^ status_lampu;
+// Ind: Shift Left
+int val = 13;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **26**
+2. 13 digeser kiri 1x = dikali 2 = 26.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=2"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 26]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 40
 ```cpp
-int power_up = 1;
-int hasil_shift = power_up << 1;
+// Diode: AND Mask
+int val = 10;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Mengecek bit terakhir dari 10 (0b1010). Hasil: 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=1"] --> B["Geser Kiri 1x"]
-B --> C["Hasil: 2"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 1 dengan 2 pangkat 1.
-3. **Hasil**: 1 * 2 = **2**.
 
 ---
 ### Soal 41
 ```cpp
-int status_lampu = 2;
-int toggle = status_lampu ^ status_lampu;
+// Trans: XOR Toggle
+int val = 1;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=2"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 42
 ```cpp
-int power_up = 1;
-int hasil_shift = power_up << 2;
+// Ic: Shift Left
+int val = 2;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. 2 digeser kiri 1x = dikali 2 = 4.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=1"] --> B["Geser Kiri 2x"]
-B --> C["Hasil: 4"]
+A[Trace] --> B[Result: 4]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 1 dengan 2 pangkat 2.
-3. **Hasil**: 1 * 4 = **4**.
 
 ---
 ### Soal 43
 ```cpp
-int sensor_angka = 3;
-int cek_ganjil = sensor_angka & 1;
+// Chip: AND Mask
+int val = 9;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Mengecek bit terakhir dari 9 (0b1001). Hasil: 1.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["angka=3 (0b11)"] --> B["Lampu Terakhir & 1"]
-B --> C["Hasil: 1"]
+graph LR
+A[Trace] --> B[Result: 1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Bit Ganjil**: Bit paling kanan menentukan ganjil atau genap. 
-2. **Tracing**: 3 (0b11) di-AND-kan dengan 1 (0b1).
-3. **Logika**: Hanya jika bit terakhir 1, hasilnya 1 (Artinya Ganjil).
-4. **Hasil**: `cek_ganjil` bernilai **1**.
 
 ---
 ### Soal 44
 ```cpp
-int status_lampu = 5;
-int toggle = status_lampu ^ status_lampu;
+// Pcb: XOR Toggle
+int val = 7;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=5"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 45
 ```cpp
-int sensor_angka = 5;
-int cek_ganjil = sensor_angka & 1;
+// Board: Shift Left
+int val = 10;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **20**
+2. 10 digeser kiri 1x = dikali 2 = 20.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["angka=5 (0b101)"] --> B["Lampu Terakhir & 1"]
-B --> C["Hasil: 1"]
+graph LR
+A[Trace] --> B[Result: 20]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Bit Ganjil**: Bit paling kanan menentukan ganjil atau genap. 
-2. **Tracing**: 5 (0b101) di-AND-kan dengan 1 (0b1).
-3. **Logika**: Hanya jika bit terakhir 1, hasilnya 1 (Artinya Ganjil).
-4. **Hasil**: `cek_ganjil` bernilai **1**.
 
 ---
 ### Soal 46
 ```cpp
-int sensor_angka = 3;
-int cek_ganjil = sensor_angka & 1;
+// Schema: AND Mask
+int val = 5;
+int res = val & 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Mengecek bit terakhir dari 5 (0b101). Hasil: 1.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["angka=3 (0b11)"] --> B["Lampu Terakhir & 1"]
-B --> C["Hasil: 1"]
+graph LR
+A[Trace] --> B[Result: 1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Bit Ganjil**: Bit paling kanan menentukan ganjil atau genap. 
-2. **Tracing**: 3 (0b11) di-AND-kan dengan 1 (0b1).
-3. **Logika**: Hanya jika bit terakhir 1, hasilnya 1 (Artinya Ganjil).
-4. **Hasil**: `cek_ganjil` bernilai **1**.
 
 ---
 ### Soal 47
 ```cpp
-int status_lampu = 3;
-int toggle = status_lampu ^ status_lampu;
+// Power: XOR Toggle
+int val = 7;
+int res = val ^ val;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. XOR dengan diri sendiri selalu 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["lampu=3"] --> B["XOR Diri Sendiri"]
-B --> C["Hasil: 0 (Padam)"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **XOR Self**: Angka apa pun jika di-XOR dengan dirinya sendiri akan saling meniadakan.
-2. **Magic Logic**: Bit yang sama menghasilkan 0.
-3. **Hasil**: `toggle` mutlak bernilai **0**.
 
 ---
 ### Soal 48
 ```cpp
-int sensor_angka = 2;
-int cek_ganjil = sensor_angka & 1;
+// Volt: Shift Left
+int val = 13;
+int res = val << 1;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-A["angka=2 (0b10)"] --> B["Lampu Terakhir & 1"]
-B --> C["Hasil: 0"]
-```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Bit Ganjil**: Bit paling kanan menentukan ganjil atau genap. 
-2. **Tracing**: 2 (0b10) di-AND-kan dengan 1 (0b1).
-3. **Logika**: Hanya jika bit terakhir 1, hasilnya 1 (Artinya Ganjil).
-4. **Hasil**: `cek_ganjil` bernilai **0**.
-
----
-### Soal 49
-```cpp
-int sensor_angka = 4;
-int cek_ganjil = sensor_angka & 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-A["angka=4 (0b100)"] --> B["Lampu Terakhir & 1"]
-B --> C["Hasil: 0"]
-```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Bit Ganjil**: Bit paling kanan menentukan ganjil atau genap. 
-2. **Tracing**: 4 (0b100) di-AND-kan dengan 1 (0b1).
-3. **Logika**: Hanya jika bit terakhir 1, hasilnya 1 (Artinya Ganjil).
-4. **Hasil**: `cek_ganjil` bernilai **0**.
-
----
-### Soal 50
-```cpp
-int power_up = 1;
-int hasil_shift = power_up << 1;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
-
-**Jawaban & Diagnosis:**
-1. **2**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **26**
+2. 13 digeser kiri 1x = dikali 2 = 26.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["angka=1"] --> B["Geser Kiri 1x"]
-B --> C["Hasil: 2"]
+A[Trace] --> B[Result: 26]
 ```
 
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Shift Kiri**: Menggeser bit ke kiri dan menambah nol di belakang.
-2. **Ekuivalen**: Sama dengan mengali 1 dengan 2 pangkat 1.
-3. **Hasil**: 1 * 2 = **2**.
+---
+### Soal 49
+```cpp
+// Amp: AND Mask
+int val = 9;
+int res = val & 1;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhirnya?
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+
+**Jawaban & Diagnosis:**
+1. **1**
+2. Mengecek bit terakhir dari 9 (0b1001). Hasil: 1.
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[Trace] --> B[Result: 1]
+```
+
+---
+### Soal 50
+```cpp
+// Watt: XOR Toggle
+int val = 3;
+int res = val ^ val;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhirnya?
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+
+**Jawaban & Diagnosis:**
+1. **0**
+2. XOR dengan diri sendiri selalu 0.
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[Trace] --> B[Result: 0]
+```
 
 ---

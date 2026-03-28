@@ -6,801 +6,526 @@
 
 ### Soal 226
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Puasa: Counter
+int n=3, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Loop berjalan 3 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 227
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Zakat: Akumulasi
+int total_zakat = 0;
+for(int i=1; i<=3; i++) total_zakat += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Menghitung total dari 1 sampai 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 228
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=6; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Haji: Counter
+int n=4, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **4**
+2. Loop berjalan 4 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..6"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 4]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 229
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Umroh: Akumulasi
+int total_umroh = 0;
+for(int i=1; i<=5; i++) total_umroh += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Menghitung total dari 1 sampai 5.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 230
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Sadaqah: Counter
+int n=5, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **5**
+2. Loop berjalan 5 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 5]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 231
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=5; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Infaq: Akumulasi
+int total_infaq = 0;
+for(int i=1; i<=5; i++) total_infaq += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Menghitung total dari 1 sampai 5.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..5"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 232
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=6; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Donasi: Counter
+int n=6, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Loop berjalan 6 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..6"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 233
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// BaktiSocial: Akumulasi
+int total_baktisocial = 0;
+for(int i=1; i<=6; i++) total_baktisocial += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **21**
+2. Menghitung total dari 1 sampai 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 21]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 234
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=6; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Relawan: Counter
+int n=4, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **4**
+2. Loop berjalan 4 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..6"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 4]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 235
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Amal: Akumulasi
+int total_amal = 0;
+for(int i=1; i<=3; i++) total_amal += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Menghitung total dari 1 sampai 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 236
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=5; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Ibadah: Counter
+int n=3, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Loop berjalan 3 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..5"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 237
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Dzikir: Akumulasi
+int total_dzikir = 0;
+for(int i=1; i<=3; i++) total_dzikir += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Menghitung total dari 1 sampai 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 238
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Doa: Counter
+int n=4, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Loop berjalan 4 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 4]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 239
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=6; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Ngaji: Akumulasi
+int total_ngaji = 0;
+for(int i=1; i<=4; i++) total_ngaji += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **10**
+2. Menghitung total dari 1 sampai 4.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..6"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 240
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Tadarus: Counter
+int n=5, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **5**
+2. Loop berjalan 5 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 5]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 241
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=6; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Hafalan: Akumulasi
+int total_hafalan = 0;
+for(int i=1; i<=5; i++) total_hafalan += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Menghitung total dari 1 sampai 5.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..6"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 242
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Setoran: Counter
+int n=5, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **5**
+2. Loop berjalan 5 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 5]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 243
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Ustadz: Akumulasi
+int total_ustadz = 0;
+for(int i=1; i<=6; i++) total_ustadz += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **21**
+2. Menghitung total dari 1 sampai 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 21]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 244
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=5; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Kiai: Counter
+int n=6, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Loop berjalan 6 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..5"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 245
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Santri: Akumulasi
+int total_santri = 0;
+for(int i=1; i<=5; i++) total_santri += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Menghitung total dari 1 sampai 5.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 246
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Pesantren: Counter
+int n=5, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **5**
+2. Loop berjalan 5 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 5]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 247
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=3; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Madrasah: Akumulasi
+int total_madrasah = 0;
+for(int i=1; i<=5; i++) total_madrasah += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Menghitung total dari 1 sampai 5.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..3"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 248
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=5; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Sekolah: Counter
+int n=3, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Loop berjalan 3 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..5"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3, 5].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **9**.
 
 ---
 ### Soal 249
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Kampus: Akumulasi
+int total_kampus = 0;
+for(int i=1; i<=4; i++) total_kampus += i;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **10**
+2. Menghitung total dari 1 sampai 4.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---
 ### Soal 250
 ```cpp
-int tabungan = 0;
-for(int hari=1; hari<=4; hari++) {
-  if (hari % 2 == 0) continue;
-  tabungan += hari;
-}
+// Kuliah: Counter
+int n=3, count=0;
+while(n > 0) { count++; n--; }
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Loop berjalan 3 kali sampai n=0.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["Start: tabungan=0"] --> B["Loop hari 1..4"]
-B -- Ganjil --> C["Tambah ke tabungan"]
-B -- Genap --> D["Skip (Continue)"]
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Misi**: Menghitung tabungan yang hanya diisi pada hari ganjil saja.
-2. **Tracing**: Hari ganjil yang masuk adalah [1, 3].
-3. **Alur**: `continue` memaksa mesin melompati hari genap.
-4. **Hasil Akhir**: Total `tabungan` adalah **4**.
 
 ---

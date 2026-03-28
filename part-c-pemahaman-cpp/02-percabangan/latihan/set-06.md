@@ -6,738 +6,551 @@
 
 ### Soal 126
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Piutang: Short-Circuit OR
+int piutang = 50, v = 0;
+if (piutang < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Piutang 50 < 50? Tidak (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---
 ### Soal 127
 ```cpp
-int skor_siswa = 86, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Investasi: Short-Circuit AND
+int investasi = 62, v = 0;
+if (investasi > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Investasi 62 > 50? Ya (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=86"] --> B["skor > 75?"]
-B -- Ya --> C["Cek Absensi"]
-B -- Ya --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 86, statusnya LULUS.
-2. **Short-Circuit**: Karena lulus syarat 1, mesin lanjut cek absensi.
-3. **Hasil Akhir**: hasil = **1**.
 
 ---
 ### Soal 128
 ```cpp
-int skor_siswa = 53, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Saham: Short-Circuit OR
+int saham = 56, v = 0;
+if (saham < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Saham 56 < 50? Tidak (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=53"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 53, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 129
 ```cpp
-bool lunas = false;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Emas: Short-Circuit AND
+int emas = 88, v = 0;
+if (emas > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Emas 88 > 50? Ya (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=false"] --> B["!lunas?"]
-B -- Ya --> C["Short-Circuit OR!"]
-B -- Ya --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai True (BELUM BAYAR).
-3. **Dampak**: Karena sudah True, denda tidak dicek (denda tetap 0).
-4. **Hasil**: `total_denda` = **1**.
 
 ---
 ### Soal 130
 ```cpp
-int skor_siswa = 84, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Kurs: Short-Circuit OR
+int kurs = 46, v = 0;
+if (kurs < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. Kurs 46 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=84"] --> B["skor > 75?"]
-B -- Ya --> C["Cek Absensi"]
-B -- Ya --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 84, statusnya LULUS.
-2. **Short-Circuit**: Karena lulus syarat 1, mesin lanjut cek absensi.
-3. **Hasil Akhir**: hasil = **1**.
 
 ---
 ### Soal 131
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Pajak: Short-Circuit AND
+int pajak = 22, v = 0;
+if (pajak > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Pajak 22 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---
 ### Soal 132
 ```cpp
-int skor_siswa = 46, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Diskon: Short-Circuit OR
+int diskon = 37, v = 0;
+if (diskon < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. Diskon 37 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=46"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 46, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 133
 ```cpp
-int skor_siswa = 61, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Voucher: Short-Circuit AND
+int voucher = 30, v = 0;
+if (voucher > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Voucher 30 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=61"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 61, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 134
 ```cpp
-int skor_siswa = 54, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Kupon: Short-Circuit OR
+int kupon = 93, v = 0;
+if (kupon < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Kupon 93 < 50? Tidak (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=54"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 54, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 135
 ```cpp
-bool lunas = false;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Reward: Short-Circuit AND
+int reward = 33, v = 0;
+if (reward > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Reward 33 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=false"] --> B["!lunas?"]
-B -- Ya --> C["Short-Circuit OR!"]
-B -- Ya --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai True (BELUM BAYAR).
-3. **Dampak**: Karena sudah True, denda tidak dicek (denda tetap 0).
-4. **Hasil**: `total_denda` = **1**.
 
 ---
 ### Soal 136
 ```cpp
-bool lunas = false;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Poin: Short-Circuit OR
+int poin = 40, v = 0;
+if (poin < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. Poin 40 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=false"] --> B["!lunas?"]
-B -- Ya --> C["Short-Circuit OR!"]
-B -- Ya --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai True (BELUM BAYAR).
-3. **Dampak**: Karena sudah True, denda tidak dicek (denda tetap 0).
-4. **Hasil**: `total_denda` = **1**.
 
 ---
 ### Soal 137
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Ranking: Short-Circuit AND
+int ranking = 21, v = 0;
+if (ranking > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Ranking 21 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---
 ### Soal 138
 ```cpp
-bool lunas = false;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Skor: Short-Circuit OR
+int skor = 39, v = 0;
+if (skor < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. Skor 39 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=false"] --> B["!lunas?"]
-B -- Ya --> C["Short-Circuit OR!"]
-B -- Ya --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai True (BELUM BAYAR).
-3. **Dampak**: Karena sudah True, denda tidak dicek (denda tetap 0).
-4. **Hasil**: `total_denda` = **1**.
 
 ---
 ### Soal 139
 ```cpp
-int skor_siswa = 48, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Winrate: Short-Circuit AND
+int winrate = 88, v = 0;
+if (winrate > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Winrate 88 > 50? Ya (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=48"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 48, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 140
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// KDR: Short-Circuit OR
+int kdr = 77, v = 0;
+if (kdr < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. KDR 77 < 50? Tidak (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---
 ### Soal 141
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Ping: Short-Circuit AND
+int ping = 31, v = 0;
+if (ping > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Ping 31 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---
 ### Soal 142
 ```cpp
-int skor_siswa = 62, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// FPS: Short-Circuit OR
+int fps = 10, v = 0;
+if (fps < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. FPS 10 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=62"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 62, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 143
 ```cpp
-int skor_siswa = 53, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Lag: Short-Circuit AND
+int lag = 96, v = 0;
+if (lag > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Lag 96 > 50? Ya (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=53"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 53, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 144
 ```cpp
-int skor_siswa = 68, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Crash: Short-Circuit OR
+int crash = 18, v = 0;
+if (crash < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. Crash 18 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=68"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 68, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 145
 ```cpp
-int skor_siswa = 83, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Update: Short-Circuit AND
+int update = 14, v = 0;
+if (update > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Update 14 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=83"] --> B["skor > 75?"]
-B -- Ya --> C["Cek Absensi"]
-B -- Ya --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 83, statusnya LULUS.
-2. **Short-Circuit**: Karena lulus syarat 1, mesin lanjut cek absensi.
-3. **Hasil Akhir**: hasil = **1**.
 
 ---
 ### Soal 146
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Patch: Short-Circuit OR
+int patch = 71, v = 0;
+if (patch < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Patch 71 < 50? Tidak (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---
 ### Soal 147
 ```cpp
-int skor_siswa = 41, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Server: Short-Circuit AND
+int server = 56, v = 0;
+if (server > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=1**
+2. Server 56 > 50? Ya (v naik).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=41"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=1, v=1]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 41, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 148
 ```cpp
-bool lunas = false;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// Client: Short-Circuit OR
+int client = 25, v = 0;
+if (client < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **1**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. Client 25 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=false"] --> B["!lunas?"]
-B -- Ya --> C["Short-Circuit OR!"]
-B -- Ya --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai True (BELUM BAYAR).
-3. **Dampak**: Karena sudah True, denda tidak dicek (denda tetap 0).
-4. **Hasil**: `total_denda` = **1**.
 
 ---
 ### Soal 149
 ```cpp
-int skor_siswa = 50, absensi = 85;
-if (skor_siswa > 75 && absensi > 80) hasil = 1;
-else hasil = 0;
+// Database: Short-Circuit AND
+int database = 49, v = 0;
+if (database > 50 && ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=0, v=0**
+2. Database 49 > 50? Tidak (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["skor=50"] --> B["skor > 75?"]
-B -- Tidak --> C["Cek Absensi"]
-B -- Tidak --> D["EVALUASI SELESAI"]
+graph LR
+A[Trace] --> B[Result: res=0, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika &&**: Syarat pertama adalah `skor_siswa > 75`. Karena nilaimu 50, statusnya GAGAL.
-2. **Short-Circuit**: Karena sudah gagal di skor, mesin malas (short-circuit) dan tidak peduli absensi.
-3. **Hasil Akhir**: hasil = **0**.
 
 ---
 ### Soal 150
 ```cpp
-bool lunas = true;
-int total_denda = 0;
-if (!lunas || ++total_denda > 5) status = 0;
+// API: Short-Circuit OR
+int api = 25, v = 0;
+if (api < 50 || ++v > 0) res = 1;
+else res = 0;
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **res=1, v=0**
+2. API 25 < 50? Ya (v=0).
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["lunas=true"] --> B["!lunas?"]
-B -- Tidak --> C["Short-Circuit OR!"]
-B -- Tidak --> D["++total_denda"]
+graph LR
+A[Trace] --> B[Result: res=1, v=0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Logika ||**: Operator OR mencari satu saja kebenaran. 
-2. **Tracing**: `!lunas` bernilai False (SUDAH LUNAS).
-3. **Dampak**: Karena False, mesin harus ngecek syarat kedua, denda naik jadi 1.
-4. **Hasil**: `total_denda` = **0**.
 
 ---

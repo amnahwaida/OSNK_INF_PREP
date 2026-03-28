@@ -6,751 +6,601 @@
 
 ### Soal 276
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Pause: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Jumlah deret 1 s/d 2 adalah 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 277
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Resume: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **24**
+2. Faktorial dari 4 adalah 24.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 24]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 278
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Next: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(4);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 279
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Prev: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Faktorial dari 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 280
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Start: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(4);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 281
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// End: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Faktorial dari 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 282
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Open: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **10**
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 283
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Close: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **24**
+2. Faktorial dari 4 adalah 24.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 24]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 284
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Read: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **10**
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 285
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Write: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **2**
+2. Faktorial dari 2 adalah 2.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 2]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 286
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Copy: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **10**
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 287
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Move: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **2**
+2. Faktorial dari 2 adalah 2.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 2]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 288
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Del: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **10**
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 289
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Ren: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(3);
+// f(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **24**
+2. Faktorial dari 4 adalah 24.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 24]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 290
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// List: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Jumlah deret 1 s/d 2 adalah 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 291
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Find: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **2**
+2. Faktorial dari 2 adalah 2.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 2]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 292
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Replace: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Jumlah deret 1 s/d 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 293
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Select: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Faktorial dari 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 294
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Edit: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Jumlah deret 1 s/d 2 adalah 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 295
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Undo: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Faktorial dari 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 296
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Redo: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(4);
+// s(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Jumlah deret 1 s/d 4 adalah 10.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 10]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 297
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Faktorial: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(3);
+// f(4);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **24**
+2. Faktorial dari 4 adalah 24.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 24]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 298
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Tangga: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
 1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+2. Jumlah deret 1 s/d 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---
 ### Soal 299
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Pohon: Faktorial
+int f(int n) {
+  if(n<=1) return 1;
+  return n * f(n-1);
 }
-// panggil: tangga(4);
+// f(3);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **6**
+2. Faktorial dari 3 adalah 6.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_4 --> Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 6]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 4 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=4, n=3...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **10**.
 
 ---
 ### Soal 300
 ```cpp
-int tangga(int n) {
-  if (n <= 1) return 1;
-  return n + tangga(n-1);
+// Stack: Deret
+int s(int n) {
+  if(n==0) return 0;
+  return n + s(n-1);
 }
-// panggil: tangga(3);
+// s(2);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **3**
+2. Jumlah deret 1 s/d 2 adalah 3.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-Lantai_3 --> Lantai_2 --> Lantai_1 --> Lantai_0
+graph LR
+A[Trace] --> B[Result: 3]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Analogi Tangga**: Kita menuruni lantai 3 satu per satu.
-2. **Call Stack**: Mesin mengingat setiap lantai yang dilewati (n=3, n=2...).
-3. **Landing**: Sampai di lantai 1 (Base Case), mesin mulai menjumlahkan seluruh energi yang dikeluarkan.
-4. **Hasil Akhir**: Nilai kembalian total adalah **6**.
 
 ---

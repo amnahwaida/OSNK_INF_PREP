@@ -6,701 +6,551 @@
 
 ### Soal 176
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 13; mesin_foto(uang);
+// Gps: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int gps=38;
+reset(gps);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **13**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Gps' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=13"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 13"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **13**.
 
 ---
 ### Soal 177
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 39; mesin_ajaib(saldo);
+// Sms: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int sms=50;
+ubah(sms);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **49**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **50**
+2. Value 'Sms' dikirim fotokopinya. Aslinya tetap 50.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=39"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 49"]
+A[Trace] --> B[Result: 50]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **49**.
 
 ---
 ### Soal 178
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 10; mesin_foto(uang);
+// Call: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int call=47;
+reset(call);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **10**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Call' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=10"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 10"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **10**.
 
 ---
 ### Soal 179
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 14; mesin_foto(uang);
+// Mail: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int mail=15;
+ubah(mail);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **14**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Value 'Mail' dikirim fotokopinya. Aslinya tetap 15.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=14"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 14"]
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **14**.
 
 ---
 ### Soal 180
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 27; mesin_ajaib(saldo);
+// Chat: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int chat=34;
+reset(chat);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **37**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Chat' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=27"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 37"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **37**.
 
 ---
 ### Soal 181
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 46; mesin_foto(uang);
+// Video: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int video=62;
+ubah(video);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **46**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **62**
+2. Value 'Video' dikirim fotokopinya. Aslinya tetap 62.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=46"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 46"]
+A[Trace] --> B[Result: 62]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **46**.
 
 ---
 ### Soal 182
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 28; mesin_ajaib(saldo);
+// Photo: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int photo=56;
+reset(photo);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **38**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Photo' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=28"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 38"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **38**.
 
 ---
 ### Soal 183
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 19; mesin_foto(uang);
+// Audio: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int audio=42;
+ubah(audio);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **19**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **42**
+2. Value 'Audio' dikirim fotokopinya. Aslinya tetap 42.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=19"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 19"]
+A[Trace] --> B[Result: 42]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **19**.
 
 ---
 ### Soal 184
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 21; mesin_ajaib(saldo);
+// Music: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int music=60;
+reset(music);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **31**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Music' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=21"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 31"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **31**.
 
 ---
 ### Soal 185
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 47; mesin_foto(uang);
+// Movie: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int movie=16;
+ubah(movie);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **47**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **16**
+2. Value 'Movie' dikirim fotokopinya. Aslinya tetap 16.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=47"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 47"]
+A[Trace] --> B[Result: 16]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **47**.
 
 ---
 ### Soal 186
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 38; mesin_foto(uang);
+// Game: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int game=68;
+reset(game);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **38**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Game' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=38"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 38"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **38**.
 
 ---
 ### Soal 187
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 38; mesin_foto(uang);
+// App: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int app=46;
+ubah(app);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **38**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **46**
+2. Value 'App' dikirim fotokopinya. Aslinya tetap 46.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=38"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 38"]
+A[Trace] --> B[Result: 46]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **38**.
 
 ---
 ### Soal 188
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 29; mesin_foto(uang);
+// Web: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int web=56;
+reset(web);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **29**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Web' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=29"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 29"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **29**.
 
 ---
 ### Soal 189
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 47; mesin_ajaib(saldo);
+// Cloud: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int cloud=15;
+ubah(cloud);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **57**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **15**
+2. Value 'Cloud' dikirim fotokopinya. Aslinya tetap 15.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=47"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 57"]
+A[Trace] --> B[Result: 15]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **57**.
 
 ---
 ### Soal 190
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 21; mesin_foto(uang);
+// Ssh: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int ssh=26;
+reset(ssh);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **21**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Ssh' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=21"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 21"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **21**.
 
 ---
 ### Soal 191
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 26; mesin_ajaib(saldo);
+// Ftp: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int ftp=54;
+ubah(ftp);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **36**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **54**
+2. Value 'Ftp' dikirim fotokopinya. Aslinya tetap 54.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=26"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 36"]
+A[Trace] --> B[Result: 54]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **36**.
 
 ---
 ### Soal 192
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 42; mesin_ajaib(saldo);
+// Http: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int http=35;
+reset(http);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **52**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Http' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=42"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 52"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **52**.
 
 ---
 ### Soal 193
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 20; mesin_ajaib(saldo);
+// Tcp: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int tcp=72;
+ubah(tcp);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **30**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **72**
+2. Value 'Tcp' dikirim fotokopinya. Aslinya tetap 72.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=20"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 30"]
+A[Trace] --> B[Result: 72]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **30**.
 
 ---
 ### Soal 194
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 14; mesin_ajaib(saldo);
+// Udp: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int udp=90;
+reset(udp);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **24**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Udp' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=14"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 24"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **24**.
 
 ---
 ### Soal 195
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 18; mesin_ajaib(saldo);
+// Icmp: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int icmp=88;
+ubah(icmp);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **28**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **88**
+2. Value 'Icmp' dikirim fotokopinya. Aslinya tetap 88.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=18"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 28"]
+A[Trace] --> B[Result: 88]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **28**.
 
 ---
 ### Soal 196
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 46; mesin_foto(uang);
+// Arp: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int arp=12;
+reset(arp);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **46**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Arp' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=46"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 46"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **46**.
 
 ---
 ### Soal 197
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 15; mesin_ajaib(saldo);
+// Dns: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int dns=58;
+ubah(dns);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **25**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **58**
+2. Value 'Dns' dikirim fotokopinya. Aslinya tetap 58.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=15"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 25"]
+A[Trace] --> B[Result: 58]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **25**.
 
 ---
 ### Soal 198
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 38; mesin_ajaib(saldo);
+// Dhcp: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int dhcp=94;
+reset(dhcp);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **48**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Dhcp' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=38"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 48"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **48**.
 
 ---
 ### Soal 199
 ```cpp
-void mesin_foto(int a) { a = a + 100; }
-// main: int uang = 40; mesin_foto(uang);
+// Nat: Pass-by-Value
+void ubah(int x) { x = 0; }
+// main: int nat=80;
+ubah(nat);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **40**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **80**
+2. Value 'Nat' dikirim fotokopinya. Aslinya tetap 80.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["uang_asli=40"] --> B["Kirim Fotokopi"]
-B --> C["mesin_ubah(foto)"]
-C --> D["uang_asli tetap 40"]
+A[Trace] --> B[Result: 80]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Value**: Variabel `uang` hanya mengirim salinannya ke fungsi.
-2. **Efek**: Fungsi mengacak-acak salinan tersebut (tambah 100), tapi tidak menyentuh dompet aslimu.
-3. **Hasil Akhir**: Nilai `uang` di main tetap **40**.
 
 ---
 ### Soal 200
 ```cpp
-void mesin_ajaib(int &a) { a = a + 10; }
-// main: int saldo = 12; mesin_ajaib(saldo);
+// Vpn: Pass-by-Reference
+void reset(int &x) { x = 0; }
+// main: int vpn=72;
+reset(vpn);
 ```
 **Pertanyaan:**
 1. Berapakah hasil akhirnya?
-2. Deskripsikan langkah robot compiler saat memproses kode ini!
+2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
 
 **Jawaban & Diagnosis:**
-1. **22**
-2. Baca bagian 'Analisis Mendalam' di bawah.
+1. **0**
+2. Reference '&' dikirim alamat aslinya. 'Vpn' ter-reset jadi 0.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["saldo_asli=12"] --> B["Kirim Alamat &"]
-B --> C["mesin_ubah(asli)"]
-C --> D["saldo_asli jadi 22"]
+A[Trace] --> B[Result: 0]
 ```
-
-**📖 Penjelasan Komprehensif:**
-**Analisis Mendalam (Compiler Manusia):**
-1. **Pass-by-Reference**: Tanda `&` memberikan kunci akses langsung ke variabel `saldo`.
-2. **Efek**: Apa pun yang dilakukan fungsi pada `a` langsung merubah isi fisik memori `saldo`.
-3. **Hasil Akhir**: `saldo` bertambah jadi **22**.
 
 ---
