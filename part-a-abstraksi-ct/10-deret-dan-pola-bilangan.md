@@ -135,5 +135,18 @@ Daripada nebak-nebak buah manggis, mari kita ubah kata-katanya jadi rumus:
 Kasus terpecahkan! Model matematika ini bikin kamu jadi dukun sakti yang bisa nebak isi dunia nyata meskipun nggak keliatan langsung.
 
 ---
+
+## 📝 Daftar Isi Latihan (300 Soal)
+
+Agar makin tajam insting detektif dan aljabarmu, silakan kerjakan 300 latihan soal berikut (dibagi ke 6 bagian):
+
+1. **[Bagian 1 (Soal 1-50)](./10-deret-dan-pola-bilangan/10-deret-soal-part-1.md)** — Ilmu Titen (Mengenal Pola Fibonacci & Kuadrat).
+2. **[Bagian 2 (Soal 51-100)](./10-deret-dan-pola-bilangan/10-deret-soal-part-2.md)** — Deret Aritmetika (Mencari Ketinggian Tangga / $U_n$).
+3. **[Bagian 3 (Soal 101-150)](./10-deret-dan-pola-bilangan/10-deret-soal-part-3.md)** — Menjumlahkan Deret ($S_n$) dengan Trik Pasangan Gauss.
+4. **[Bagian 4 (Soal 151-200)](./10-deret-dan-pola-bilangan/10-deret-soal-part-4.md)** — Mengenal Notasi Sigma & Ekuivalensinya dengan *For-loop* Koding.
+5. **[Bagian 5 (Soal 201-250)](./10-deret-dan-pola-bilangan/10-deret-soal-part-5.md)** — Pemodelan Aljabar Lanjut (Detektif Ayam & Kambing/SPLDV).
+6. **[Bagian 6 (Soal 251-300)](./10-deret-dan-pola-bilangan/10-deret-soal-part-6.md)** — Pola Bilangan Tingkat 2 & Substitusi Harga Barang OSN-K.
+
+---
 [< Materi Sebelumnya: Kombinatorika](./09-kombinatorika.md)
 [< Kembali ke Beranda Materi](../README.md)
