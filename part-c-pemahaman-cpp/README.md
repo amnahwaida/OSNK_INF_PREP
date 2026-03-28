@@ -15,7 +15,7 @@ Untuk bisa meramal *output* tersebut dengan presisi $100\%$, kita akan membedah 
 ## 📚 Indeks Materi Part C
 
 ### 1. [Tipe Data & Operator Dasar (Loker Kelas & Pembagian Permen)](./01-tipe-data-dan-operator-dasar.md)
-Bagaimana komputer menyimpan identitas barang? Mengapa membagi angka `5 / 2` di C++ hasilnya malah `2` (bukan $2.5$)? Kita bahas sifat kejam kotak *Integer* dan seni memanipulasi sisa bagi (*Modulo* `%`) layaknya bagi-bagi kelereng mutlak tanpa pecahan.
+Bagaimana komputer menyimpan identitas barang? Mengapa membagi angka `5 / 2` di C++ hasilnya malah `2` (bukan $2.5$)? Kita bahas sifat kejam kotak *Integer*, ilmu manipulasi sisa bagi (*Modulo* `%`), hingga rahasia Karakter Asing (Huruf/`char` adalah Angka Terselubung), dan hukum kasta tertinggi Variable Scope (Ketua OSIS vs Ketua Kelas).
 
 ### 2. [Percabangan & Logika Boolean (Razia Guru BP)](./02-percabangan-dan-boolean-logika.md)
 Kapan blok kode dieksekusi dan kapan diabaikan? Memahami gerbang logika `If-Else` dan sifat egois evaluasi sirkuit pendek (`Short-Circuit && dan ||`). Kalau rambutmu sudah panjang (Salah di syarat pertama), Guru BP tidak sudi lagi mengecek warna sepatumu di syarat kedua!

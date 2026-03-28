@@ -68,6 +68,64 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
 
 ---
 
+## 🔤 C. Rahasia Tipe Data Lainnya (Karakter, Pecahan, & Saklar)
+
+Selain kotak semen (`int`), kamu akan sering diteriaki oleh jenis kotak aneh lainnya di OSN-K:
+
+### 1. `char` (Kartu Pelajar & Rahasia Sandi ASCII)
+`char` hanya bisa menyimpan **Satu Huruf Tunggal** (misal `'A'`, `'x'`, `'9'`). Tapi hati-hati! Di dunia C++, huruf itu sebenarnya **Hanyalah Angka Berbaju Kostum**!
+Komputer menggunakan tabel *ASCII* (American Standard Code).
+- `'A'` itu secara batin setara dengan angka **65**.
+- `'a'` bernilai **97**.
+- Huruf `'0'` (sebagai teks) BUKANLAH bernilai nol mutlak! Dia bernilai **48** di batinnya.
+
+Karena huruf sejatinya adalah angka, Juri C++ bisa seenaknya menyuruhmu **Menambah/Mengurang Huruf layaknya Matematika!!**
+```cpp
+char huruf = 'C';
+char huruf_baru = huruf + 2; 
+```
+*Tracing Logika (Maju Alfabet):* `'C'` ditambah 2 langkah ke depan? Murni melompat abjad $\rightarrow$ `'C' \rightarrow 'D' \rightarrow 'E'`. Hasil akhirnya mutlak mencetak huruf **`E`**. (Inilah jantung dari kode pertahanan Sandi Caesar Chiper di OSN-K!).
+
+### 2. `bool` (Saklar Lampu: Hidup/Mati)
+`bool` (Boolean) cuma bisa nampung 2 takdir: **`true` (1)** atau **`false` (0)**.
+- **Jebakan Batman OSN-K:** Di dunia C++, **SEMUA ANGKA SELAIN `0` DIANGGAP `TRUE`!**
+```cpp
+int nyawa = -15;
+if (nyawa) {
+   // Blok ini AKAN DIJALANKAN! Kenapa? 
+   // Karena -15 itu BUKAN 0! Selain 0, maka saklar otomatis bernilai TRUE!
+}
+```
+
+### 3. `double` / `float` (Gelas Air Minum Berkomah)
+Kalau kamu paksa menyiram pecahan ke kotak `int`, komanya dibakar. Nah, kalau kamu butuh komonya diselamatkan, pakailah `double`. Dia kayak Gelas Air Minum yang rela meneteskan nol koma sisa debunya.
+- **Syarat Mutlak Pak Dengklek:** Pembagian koma *hanya* akan muncul jika ADA SALAH SATU elemen di rumusnya yang memang pakai koma.
+```cpp
+double hasil1 = 5 / 2;     // Hasilnya 2.0 (Karena 5 dan 2 diotak int, komanya keburu dibakar sebelum masuk gelas).
+double hasil2 = 5.0 / 2;   // Hasilnya 2.5 (Aman! Ada pengawal '5.0' menjaga takdir pecahannya).
+```
+
+---
+
+## 🌍 D. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+
+Di kodingan OSN-K, juri sangat benci melihatmu bahagia. Mereka suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
+
+**Analogi Ketua OSIS (Global) vs Ketua Kelas (Lokal):**
+```cpp
+int uang = 100; // GLOBAL (Ketua OSIS, semua murid kenal dia)
+
+void cek_dompet() {
+    int uang = 5; // LOKAL (Ketua Kelas 12A)
+    printf("%d", uang);
+}
+```
+**Hukum Kesopanan C++:** "Orang Dalam Lebih Berkuasa".
+Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSIS (`100`) dan ada ketua kelasnya sendiri (`5`). Siapa yang lebih ia taati? Tentu saja yang terdekat! Fungsi itu akan mencetak mutlak **`5`**. Uang `100` di luar sana sama sekali tak dianggap (Tertimpa bayangan/ *Shadowing*).
+*Aturan Emas Tracing:* Selalu lirik letak kurung kurawal `{ }` saat mencatat variabel. Jangan sampai nilai variabel tetangga kecoret!
+
+---
+
 ### Siap Di Uji Tracing?
 Diberikan kutipan variabel *Compiler Manusia* berikut ini:
 ```cpp
