@@ -32,6 +32,32 @@ Berapa kemungkinan paket makan siang yang ada di mejamu?
 
 ---
 
+## ❗ Intermezzo: Tanda Seru Berkekuatan Super (Faktorial)
+
+Sebelum kita masuk ke Permutasi dan Kombinasi yang penuh dengan angka aneh, kamu WAJIB kenal dulu dengan simbol ajaib ini: `!` (dibaca: **Faktorial**).
+
+Di matematika, kalau kamu melihat sebuah angka positif diikuti tanda seru, itu artinya angka tersebut lagi menyuruhmu: *"Tolong kalikan aku secara berurutan mengecil sampai mentok di angka 1 dong!"*
+
+**Contoh Ganti Gigi (Gampang):**
+- $3! = 3 \times 2 \times 1 = 6$
+- $4! = 4 \times 3 \times 2 \times 1 = 24$
+- $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$
+
+*(Catatan Sakti: Di level OSN-K, coba hafalin nilai dari $1!$ sampai $6!$ minimal biar ngitungnya nggak pakai mikir).*
+
+**Pengecualian Unik (Wajib Diingat Seumur Hidup):**
+- $1! = 1$
+- $\mathbf{0! = 1}$
+*(Lho kok nol difaktorialin jadinya dibulatkan 1?! Benar, itu adalah hukum alam dari pakar matematika seluruh dunia. Anggap saja nggak ada cara nyusun apa-apa = 1 cara, yaitu nggak ngapa-ngapain. Intinya, kalau ketemu 0! langsung tembak angka 1, jangan dikali nol ya!)*
+
+**Trik Kilat OSN-K (Cara Coret Angka Besar):**
+Kalau kamu ketemu perhitungan pembagian faktorial berjejer, JANGAN PERNAH JABARKAN SEMUANYA. Malesin banget!
+Cukup jabarkan sampai dia ketemu angka kembarannya di bawah, lalu **CORET!**
+Contoh: $\frac{6!}{4!} = \frac{6 \times 5 \times 4!}{4!}$
+*(Coret $4!$ di atas dan di bawah)* $\rightarrow = 6 \times 5 = \mathbf{30}$. Beres dalam 2 detik!
+
+---
+
 ## 🔄 2. Permutasi (Yang Penting Pangkat & Jabatan!)
 
 **Permutasi** itu ibarat main "Kursi Jabatan". Cara menyusun benda/orang, di mana **URUTAN ITU SANGAT BERPENGARUH KE HASIL.**
