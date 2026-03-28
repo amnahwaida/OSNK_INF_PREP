@@ -164,5 +164,18 @@ Namanya di *database* bukan lagi Himpunan, tapi **Operasi JOIN**. Lihat terjemah
 Intinya: Menguasai himpunan berarti kamu sudah siap *berpikir* persis layaknya mesin pencari Google saat memfilter data miliaran halaman! 😎
 
 ---
+
+## 📝 Daftar Isi Latihan (300 Soal)
+
+Untuk memperkuat logikamu tanpa menghafal, silakan kerjakan 300 latihan soal Set Theory yang dibagi menjadi 6 bagian ini:
+
+1. **[Bagian 1 (Soal 1-50)](./08-teori-himpunan/08-teori-himpunan-soal-part-1.md)** — Dasar Operasi Himpunan ($\cup, \cap, -, ^c$) & Kardinalitas.
+2. **[Bagian 2 (Soal 51-100)](./08-teori-himpunan/08-teori-himpunan-soal-part-2.md)** — Inklusi-Eksklusi: Logika 2 Lingkaran.
+3. **[Bagian 3 (Soal 101-150)](./08-teori-himpunan/08-teori-himpunan-soal-part-3.md)** — Inklusi-Eksklusi: Soal Persentase & Kombinasi Makanan.
+4. **[Bagian 4 (Soal 151-200)](./08-teori-himpunan/08-teori-himpunan-soal-part-4.md)** — Inklusi-Eksklusi: Pengantar 3 Lingkaran & Membaca Udel Diagram Venn.
+5. **[Bagian 5 (Soal 201-250)](./08-teori-himpunan/08-teori-himpunan-soal-part-5.md)** — Soal Cerita Lanjut & Pemetaan Wilayah 3 Lingkaran.
+6. **[Bagian 6 (Soal 251-300)](./08-teori-himpunan/08-teori-himpunan-soal-part-6.md)** — Logika Database SQL Lanjut (`AND, OR, NOT`) yang ekuivalen dengan aturan himpunan.
+
+---
 [< Materi Sebelumnya: Graf Sederhana](./07-graf-sederhana.md) | [Materi Berikutnya: Kombinatorika >](./09-kombinatorika.md)
 [< Kembali ke Beranda Materi](../README.md)
