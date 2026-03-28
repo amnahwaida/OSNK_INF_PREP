@@ -36,6 +36,19 @@
  2. **`cout << laci;` (Output)**: Corong keluar ke Layar.
  3. **`endl` atau `"\n"` (Tombol Enter)**: Berfungsi untuk pindah ke baris baru.
  
+ ### 🧱 Rantai Kereta (Chaining cin/cout)
+ Kamu tidak harus menulis `cin` satu per satu. Kamu bisa menyambungnya seperti gerbong kereta:
+ ```cpp
+ int a, b, c;
+ cin >> a >> b >> c; // Sekali sedot 3 angka!
+ ```
+ **Hati-hati: Jebakan Menempel!**
+ Saat mencetak dua angka, robot C++ tidak otomatis memberimu spasi.
+ ```cpp
+ cout << a << b; // Jika a=10, b=20, hasilnya: 1020 (Satu angka baru yang aneh!)
+ cout << a << " " << b; // Hasilnya: 10 20 (Rapi dan Benar).
+ ```
+ 
  ### ⚠️ Jebakan Kecepatan: `endl` vs `"\n"`
  Muridmu mungkin sering melihat `endl` di sekolah. Hati-hati! Di kodingan OSN-K yang datanya sangat banyak, memakai `endl` bisa membuat programmu **TLE** (Terlalu Lambat)!
  - **`endl` (Lompat Sambil Ngosongin)**: Selain membuat baris baru, ia memaksa komputer mengosongkan aliran data (*Flush*) ke layar setiap saat. Ini **LAMBAT SEKALI**.
@@ -104,6 +117,14 @@
  - `int` (Kotak Semen): Cuma bisa diisi **Bilangan Bulat** antara minus 2 miliar sampai plus 2 miliar.
  - `long long` (Peti Kemas): Sama kayak `int`, cuma kapasitasnya raksasa (sampai triliunan `1e18`).
  - `bool` (Saklar Lampu): Tipe data paling sederhana. Cuma punya dua kemungkinan: **`true`** (Benar/1) atau **`false`** (Salah/0).
+ 
+ ### 🔒 Loker Tertutup (Konstanta `const`)
+ Terkadang ada angka yang **tidak boleh diubah** apa pun yang terjadi (misalnya nilai Maksimal atau nilai Modulo). Kita menyegelnya dengan kata sakti `const`:
+ ```cpp
+ const int MAX_N = 100;
+ MAX_N = 200; // <--- ERROR! Robot akan marah karena segelnya dirusak.
+ ```
+ **Analogi "Segel Pabrik"**: Memakai `const` seperti memberi segel di pintu loker. Siapapun bisa melihat isi angkanya, tapi tidak ada yang bisa mengganti isinya.
  
  ### ⚠️ Jebakan Batman #1: Integer Division (Membagi Tanpa Ampun)
  
