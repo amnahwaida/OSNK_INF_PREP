@@ -271,7 +271,70 @@
  
  ---
  
- ### 🧠 Uji Tracing (Level 5: THE ULTIMATE BOSS)
+ ### 🧠 Uji Tracing (Level 1: Pembagi Permen)
+ 
+ ```cpp
+ int permen = 11;
+ int anak = 3;
+ int bagian = permen / anak;
+ int sisa = permen % anak;
+ printf("Dapat %d, Sisa %d", bagian, sisa);
+ ```
+ **Diagnosis Logika:**
+ 1. `permen / anak` $\rightarrow 11 \div 3 = 3$. (Koma dibakar).
+ 2. `permen % anak` $\rightarrow$ Sisa pembagiannya adalah **2**.
+ 3. Output: **Dapat 3, Sisa 2**.
+ 
+ ---
+ 
+ ### 🧗 Uji Tracing (Level 2: Pre-Post Gaji)
+ 
+ ```cpp
+ int a = 10;
+ int b = a++;
+ int c = ++a;
+ printf("a=%d, b=%d, c=%d", a, b, c);
+ ```
+ **Diagnosis Logika:**
+ 1. `int b = a++` $\rightarrow$ `b` mengambil nilai 10. `a` naik jadi 11.
+ 2. `int c = ++a` $\rightarrow$ `a` naik jadi 12. `c` mengambil nilai 12.
+ 3. Output: **a=12, b=10, c=12**.
+ 
+ ---
+ 
+ ### 🌋 Uji Tracing (Level 3: Kasta Ksatria)
+ 
+ ```cpp
+ char huruf = 'A';
+ int angka = 5;
+ double hasil = huruf + angka;
+ printf("%.0lf", hasil);
+ ```
+ **Diagnosis Logika:**
+ 1. `'A'` (ASCII 65) $+ 5 = 70$.
+ 2. `double` memaksa hasil jadi `70.0`.
+ 3. `%.0lf` membuang nol di belakang koma.
+ 4. Output: **70**.
+ 
+ ---
+ 
+ ### 👹 Uji Tracing (Level 4: Kiamat Eksponen)
+ 
+ ```cpp
+ long long x = 1e9;
+ int y = 2000000000;
+ bool cek = (x * 2 > y);
+ int hasil = cek + 10;
+ printf("%d", hasil);
+ ```
+ **Diagnosis Logika:**
+ 1. `x * 2` ($2 \times 10^9$) tidak lebih besar dari `y` (2 Miliar). Hasilnya **SALAH (0)**.
+ 2. `0 + 10 = 10`.
+ 3. Output: **10**.
+ 
+ ---
+ 
+ ### 👑 Uji Tracing (Level 5: THE ULTIMATE BOSS)
  
  ```cpp
  char c = 'C'; 
@@ -279,15 +342,28 @@
  long long y = 1e9;
  double z = 4.0;
  
- int a = c - 'A'; // 67 - 65 = 2
- int b = ++a + (x++ % 3); // 3 + (1) = 4. (x jadi 11)
- int res = (b * sqrt(z)) - (y / 500000000); // 8 - 2 = 6
- bool final_cek = (res > 5); // True (1)
- int ans = final_cek + x; // 1 + 11 = 12
+ int a = c - 'A'; 
+ int b = ++a + (x++ % 3); 
+ int res = (b * sqrt(z)) - (y / 500000000); 
+ bool final_cek = (res > 5); 
+ int ans = final_cek + x; 
  
  printf("ans = %d", ans);
  ```
- **Output: ans = 12**
+ **Diagnosis Logika Sang Juara:**
+ 1. `a = 67 ('C') - 65 ('A') = 2`.
+ 2. `++a` $\rightarrow$ `a` jadi 3.
+ 3. `x++ % 3` $\rightarrow$ `10 % 3 = 1`. (Setelah ini baru `x` jadi 11).
+ 4. `b = 3 + 1 = 4`.
+ 5. `res = (4 * 2.0) - (2) = 6`.
+ 6. `6 > 5` adalah **Benar (1)**.
+ 7. `ans = 1 + 11 = 12`.
+ 8. Output: **ans = 12**.
+ 
+ ---
+ 
+ ### 📝 Latihan Soal Tracing
+ 👉 **[Bank Soal Modul 01: Tipe Data & Operator (300 Soal)](./latihan/README.md)**
  
  ---
  
