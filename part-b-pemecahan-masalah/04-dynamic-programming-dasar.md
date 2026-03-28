@@ -6,7 +6,23 @@ Terdengar sangat seram dan ilmiah, bukan? Padahal konsep intinya hanya satu: **J
 
 Ya, DP hanyalah seni mencatat/menyimpan ingatan masa lalu ke dalam "buku catatan" (sebuah *Array/Tabel*), supaya kalau di masa depan kita ditanya rahasia pertanyaan yang sama, kita tinggal contek langsung bukunya tanpa perlu *ngotret* hitung-hitungan lagi!
 
-Mari kita bedah sihir ini.
+### 💡 Analogi Paling Gampang Memahami DP di Muka Bumi:
+
+Coba ambil secarik kertas dan tulis deretan angka ini:
+`1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = ?`
+Berapa hasilnya? Kamu akan menghitungnya manual satu per satu dengan telunjuk jarimu pelan-pelan: *"Satu, dua, tiga... ah, hasilnya **8**!"*
+
+Sekarang, bayangkan saya iseng menaruhkan satu tambahan angka `+ 1` lagi di pojok kanan ujung kertasmu:
+`1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = ?`
+Berapa hasilnya sekarang? Kamu akan LANGSUNG teriak: **"9!"**
+
+Pertanyaannya: **Apakah barusan kamu merepotkan dirimu menghitung ulang dari angka `1` paling kiri lagi?** Tentu TIDAK!
+Kenapa? Karena otakmu dengan cerdik **MENGINGAT** bahwa total kumpulan angka di sebelah kirinya tadi adalah **8**. Jadi kamu tinggal melanjutkan `8 + 1 = 9`.
+
+**SELAMAT! KAMU BARU SAJA MELAKUKAN DYNAMIC PROGRAMMING!** 🥳
+Itulah inti utama DP: Mengingat hasil perhitungan dari masa lalu, agar tidak perlu capek-capek menghitung ulang dari nol di masa depan.
+
+Mari kita bedah sihir ini ke dalam studi kasus OSN Informatika sesungguhnya.
 
 ---
 
