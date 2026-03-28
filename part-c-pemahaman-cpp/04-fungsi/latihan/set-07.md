@@ -6,797 +6,662 @@
 
 ### Soal 151
 ```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
+int f(int x) { return x * 2; }
+// main: int a = 14; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **32**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+A["f(14) -> 28"] --> B["f(2) -> 4"]
+B --> C["Sum: 32"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. f(14) = 28.
+2. f(2) = 4.
+3. Jumlah: 32.
 
 ---
 ### Soal 152
 ```cpp
-int a = 20, b = 3, c = 2;
-int res = (a / b) / c;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=20, y=2; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=2, y=2**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["20/3"] --> B["6"]
-B --> C["/2"]
-C --> D["3"]
+A["x=20, y=2"] --> B["Ref &a, Val b"]
+B --> C["x jadi 2, y tetap 2"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
-2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
-3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
-4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 153
 ```cpp
-char c = 'A';
-c = c + 2;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=5, y=17; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=17, y=17**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["'A'"] --> B["+ 2"]
-B --> C["'C'"]
+A["x=5, y=17"] --> B["Ref &a, Val b"]
+B --> C["x jadi 17, y tetap 17"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
-3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 154
 ```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=1, y=10; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=10, y=10**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+graph LR
+A["x=1, y=10"] --> B["Ref &a, Val b"]
+B --> C["x jadi 10, y tetap 10"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 155
 ```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
+int f(int x) { return x * 2; }
+// main: int a = 4; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **12**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+A["f(4) -> 8"] --> B["f(2) -> 4"]
+B --> C["Sum: 12"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. f(4) = 8.
+2. f(2) = 4.
+3. Jumlah: 12.
 
 ---
 ### Soal 156
 ```cpp
-int x = 51;
-int res = x % 5;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=15, y=18; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=18, y=18**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["x=51"] --> B["x%2==0?"]
-B -- Ya --> C["Genap"]
-B -- Tidak --> D["Ganjil"]
-A --> E["x%5"]
-E --> F["Sisa: 1"]
+graph LR
+A["x=15, y=18"] --> B["Ref &a, Val b"]
+B --> C["x jadi 18, y tetap 18"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Kita punya angka 51. Operator `% 2` mengecek sisa bagi dengan 2.
-2. Karena 51 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
-3. Untuk `x % 5`, bayangkan membagi 51 kelereng ke 5 anak. Tiap anak dapat 10 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 157
 ```cpp
-int a = 1, v = 0;
-if (a == 1 && ++v > 0) {}
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=10, y=16; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=16, y=16**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["a==1?"] -- "True" --> B["v++"]
-B --> C["Target: 1"]
+graph LR
+A["x=10, y=16"] --> B["Ref &a, Val b"]
+B --> C["x jadi 16, y tetap 16"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
-2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
-3. Perintah `++v` dijalankan, sehingga `v` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 158
 ```cpp
-int x = 65;
-int res = x % 5;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=20, y=14; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=14, y=14**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["x=65"] --> B["x%2==0?"]
-B -- Ya --> C["Genap"]
-B -- Tidak --> D["Ganjil"]
-A --> E["x%5"]
-E --> F["Sisa: 0"]
+graph LR
+A["x=20, y=14"] --> B["Ref &a, Val b"]
+B --> C["x jadi 14, y tetap 14"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Kita punya angka 65. Operator `% 2` mengecek sisa bagi dengan 2.
-2. Karena 65 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
-3. Untuk `x % 5`, bayangkan membagi 65 kelereng ke 5 anak. Tiap anak dapat 13 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 159
 ```cpp
-int a = 0, v = 0;
-if (a == 1 && ++v > 0) {}
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=7, y=17; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=17, y=17**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-A["a==1?"] -- "False" --> B["Skip v++"]
-B --> C["Target: 0"]
+graph LR
+A["x=7, y=17"] --> B["Ref &a, Val b"]
+B --> C["x jadi 17, y tetap 17"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
-2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal.
-3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++v` tidak pernah dijalankan, sehingga `v` tetap **0**.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 160
 ```cpp
-char c = 'A';
-c = c + 5;
+int f(int x) { return x * 2; }
+// main: int a = 19; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **42**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["'A'"] --> B["+ 5"]
-B --> C["'F'"]
+graph TD
+A["f(19) -> 38"] --> B["f(2) -> 4"]
+B --> C["Sum: 42"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 5` menghasilkan nilai baru **70**.
-3. Jika kita melihat tabel ASCII, angka 70 adalah identitas untuk huruf **'F'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. f(19) = 38.
+2. f(2) = 4.
+3. Jumlah: 42.
 
 ---
 ### Soal 161
 ```cpp
-int a = 20, b = 3, c = 2;
-int res = (a / b) / c;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=12, y=10; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=10, y=10**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["20/3"] --> B["6"]
-B --> C["/2"]
-C --> D["3"]
+A["x=12, y=10"] --> B["Ref &a, Val b"]
+B --> C["x jadi 10, y tetap 10"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
-2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
-3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
-4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 162
 ```cpp
-char c = 'A';
-c = c + 5;
+int f(int x) { return x * 2; }
+// main: int a = 4; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **12**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["'A'"] --> B["+ 5"]
-B --> C["'F'"]
+graph TD
+A["f(4) -> 8"] --> B["f(2) -> 4"]
+B --> C["Sum: 12"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 5` menghasilkan nilai baru **70**.
-3. Jika kita melihat tabel ASCII, angka 70 adalah identitas untuk huruf **'F'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. f(4) = 8.
+2. f(2) = 4.
+3. Jumlah: 12.
 
 ---
 ### Soal 163
 ```cpp
-int x = 87;
-int res = x % 5;
+int f(int x) { return x * 2; }
+// main: int a = 10; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **24**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-A["x=87"] --> B["x%2==0?"]
-B -- Ya --> C["Genap"]
-B -- Tidak --> D["Ganjil"]
-A --> E["x%5"]
-E --> F["Sisa: 2"]
+A["f(10) -> 20"] --> B["f(2) -> 4"]
+B --> C["Sum: 24"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Kita punya angka 87. Operator `% 2` mengecek sisa bagi dengan 2.
-2. Karena 87 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
-3. Untuk `x % 5`, bayangkan membagi 87 kelereng ke 5 anak. Tiap anak dapat 17 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+1. f(10) = 20.
+2. f(2) = 4.
+3. Jumlah: 24.
 
 ---
 ### Soal 164
 ```cpp
-int x = 41;
-int res = x % 5;
+int f(int x) { return x * 2; }
+// main: int a = 1; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **6**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-A["x=41"] --> B["x%2==0?"]
-B -- Ya --> C["Genap"]
-B -- Tidak --> D["Ganjil"]
-A --> E["x%5"]
-E --> F["Sisa: 1"]
+A["f(1) -> 2"] --> B["f(2) -> 4"]
+B --> C["Sum: 6"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Kita punya angka 41. Operator `% 2` mengecek sisa bagi dengan 2.
-2. Karena 41 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
-3. Untuk `x % 5`, bayangkan membagi 41 kelereng ke 5 anak. Tiap anak dapat 8 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+1. f(1) = 2.
+2. f(2) = 4.
+3. Jumlah: 6.
 
 ---
 ### Soal 165
 ```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=2, y=16; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=16, y=16**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+graph LR
+A["x=2, y=16"] --> B["Ref &a, Val b"]
+B --> C["x jadi 16, y tetap 16"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 166
 ```cpp
-char c = 'A';
-c = c + 1;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=17, y=5; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=5, y=5**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["'A'"] --> B["+ 1"]
-B --> C["'B'"]
+A["x=17, y=5"] --> B["Ref &a, Val b"]
+B --> C["x jadi 5, y tetap 5"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 1` menghasilkan nilai baru **66**.
-3. Jika kita melihat tabel ASCII, angka 66 adalah identitas untuk huruf **'B'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 167
 ```cpp
-int a = 20, b = 3, c = 2;
-int res = (a / b) / c;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=3, y=9; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=9, y=9**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["20/3"] --> B["6"]
-B --> C["/2"]
-C --> D["3"]
+A["x=3, y=9"] --> B["Ref &a, Val b"]
+B --> C["x jadi 9, y tetap 9"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
-2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
-3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
-4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 168
 ```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
+int f(int x) { return x * 2; }
+// main: int a = 4; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **12**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+A["f(4) -> 8"] --> B["f(2) -> 4"]
+B --> C["Sum: 12"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. f(4) = 8.
+2. f(2) = 4.
+3. Jumlah: 12.
 
 ---
 ### Soal 169
 ```cpp
-char c = 'A';
-c = c + 4;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=8, y=6; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=6, y=6**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["'A'"] --> B["+ 4"]
-B --> C["'E'"]
+A["x=8, y=6"] --> B["Ref &a, Val b"]
+B --> C["x jadi 6, y tetap 6"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 4` menghasilkan nilai baru **69**.
-3. Jika kita melihat tabel ASCII, angka 69 adalah identitas untuk huruf **'E'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 170
 ```cpp
-char c = 'A';
-c = c + 2;
+int f(int x) { return x * 2; }
+// main: int a = 18; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **40**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A["'A'"] --> B["+ 2"]
-B --> C["'C'"]
+graph TD
+A["f(18) -> 36"] --> B["f(2) -> 4"]
+B --> C["Sum: 40"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
-3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. f(18) = 36.
+2. f(2) = 4.
+3. Jumlah: 40.
 
 ---
 ### Soal 171
 ```cpp
-char c = 'A';
-c = c + 1;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=20, y=16; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=16, y=16**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["'A'"] --> B["+ 1"]
-B --> C["'B'"]
+A["x=20, y=16"] --> B["Ref &a, Val b"]
+B --> C["x jadi 16, y tetap 16"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
-2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 1` menghasilkan nilai baru **66**.
-3. Jika kita melihat tabel ASCII, angka 66 adalah identitas untuk huruf **'B'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 172
 ```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
+int f(int x) { return x * 2; }
+// main: int a = 3; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **10**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+A["f(3) -> 6"] --> B["f(2) -> 4"]
+B --> C["Sum: 10"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. f(3) = 6.
+2. f(2) = 4.
+3. Jumlah: 10.
 
 ---
 ### Soal 173
 ```cpp
-int a = 20, b = 3, c = 2;
-int res = (a / b) / c;
+void swap(int &a, int b) { int t=a; a=b; b=t; }
+// main: int x=6, y=11; swap(x, y);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **x=11, y=11**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A["20/3"] --> B["6"]
-B --> C["/2"]
-C --> D["3"]
+A["x=6, y=11"] --> B["Ref &a, Val b"]
+B --> C["x jadi 11, y tetap 11"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
-2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
-3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
-4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+1. x dilempar secara `reference` (&), maka nilainya berubah.
+2. y dilempar secara `value`, maka aslinya aman.
 
 ---
 ### Soal 174
 ```cpp
-int a = 20, b = 3, c = 2;
-int res = (a / b) / c;
+int f(int x) { return x * 2; }
+// main: int a = 10; a = f(a) + f(2);
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
 
 **Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A["20/3"] --> B["6"]
-B --> C["/2"]
-C --> D["3"]
-```
-
-**📖 Penjelasan Komprehensif:**
-**Langkah Tracing:**
-1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
-2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
-3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
-4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
-
----
-### Soal 175
-```cpp
-int f(int n) {
-  if (n==0) return 1;
-  return n * f(n-1);
-}
-```
-**Pertanyaan:**
-1. Berapakah hasil akhir dari variabel utama?
-2. Jelaskan alur eksekusi kodenya!
-3. Apa jebakan yang mungkin ada di soal ini?
-
-**Jawaban & Diagnosis:**
-1. **Hasil sudah tertera dalam diagnosis.**
-2. **Lihat 'Langkah Tracing' di bawah.**
-3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+1. **24**
+2. Lihat Tracing.
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2)
-f(2) --> f(1)
-f(1) --> f(0)
-f(0) -- "Return 1" --> f(1)
-f(1) -- "Return 1" --> f(2)
-f(2) -- "Return 6" --> f(3)
+A["f(10) -> 20"] --> B["f(2) -> 4"]
+B --> C["Sum: 24"]
 ```
 
-**📖 Penjelasan Komprehensif:**
+**📖 Penjelasan:**
 **Langkah Tracing:**
-1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
-2. Setiap panggilan tertahan di 'Call Stack' (antrian).
-3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
-4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+1. f(10) = 20.
+2. f(2) = 4.
+3. Jumlah: 24.
+
+---
+### Soal 175
+```cpp
+int f(int x) { return x * 2; }
+// main: int a = 10; a = f(a) + f(2);
+```
+**Pertanyaan:**
+1. Berapakah hasil akhirnya?
+2. Mengapa demikian?
+
+**Jawaban & Diagnosis:**
+1. **24**
+2. Lihat Tracing.
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["f(10) -> 20"] --> B["f(2) -> 4"]
+B --> C["Sum: 24"]
+```
+
+**📖 Penjelasan:**
+**Langkah Tracing:**
+1. f(10) = 20.
+2. f(2) = 4.
+3. Jumlah: 24.
 
 ---
