@@ -109,6 +109,68 @@ Ah! Ini adalah wujud murni Kodingan **DERET FIBONACCI!**
 
 Maka nilai `fungsiBurung(5)` sama persis dengan angka Deret Fibonacci ke-5, yaitu angka mutlak **5**! Tidak perlu menggambar pohon capek-capek berjam-jam kalau insting pengenalan Pola Dinamis-mu sudah tajam lewat Part B!
 
-Ini esensi olimpiade rahasia sesungguhnya: **Soal yang terlihat menghabiskan 3 galon tinta pulpen rekursi... nyatanya bisa dijawab dalam 3 Detik berbekal insting Pola Kriptografi Matematika Murni!**
+
+---
+ 
+ ## 📐 C. Rekursi Teori Bilangan (Euclidean GCD)
+ 
+ **Prasyarat (Prerequisite):** Kamu harus paham operator Sisa Bagi (Modulo `%`). Ingat: `10 % 3 = 1`.
+ 
+ Di OSN-K 2025, soal rekursi sering menyamar menjadi algoritme pencari **FPB (Faktor Persekutuan Terbesar)**. Di dunia koding, ini disebut **Euclidean Algorithm**.
+ 
+ ```cpp
+ int MERAH(int a, int b) {
+     if (b == 0) return a;
+     return MERAH(b, a % b);
+ }
+ ```
+ 
+ **Analogi Penyederhanaan Pecahan:**
+ Bayangkan kamu punya pecahan $\frac{24}{9}$. Untuk menyederhanakannya, kamu terus membagi pembilang dengan penyebut sampai sisa baginya nol. 
+ 
+ *Tracing Triffic:* `MERAH(24, 9)`
+ 1. `MERAH(24, 9)` $\rightarrow$ `a=24, b=9`. Belum nol? Lanjut ke `MERAH(9, 24 % 9)` $\rightarrow$ `MERAH(9, 6)`.
+ 2. `MERAH(9, 6)` $\rightarrow$ `a=9, b=6`. Belum nol? Lanjut ke `MERAH(6, 9 % 6)` $\rightarrow$ `MERAH(6, 3)`.
+ 3. `MERAH(6, 3)` $\rightarrow$ `a=6, b=3`. Belum nol? Lanjut ke `MERAH(3, 6 % 3)` $\rightarrow$ `MERAH(3, 0)`.
+ 4. `MERAH(3, 0)` $\rightarrow$ `b=0`! **BASE CASE!** Kembalikan nilai `a` yaitu **3**.
+ 
+ > [!IMPORTANT]
+ > Jika kamu melihat pola `return f(b, a % b)`, jangan pusing menghitung pohon. Itu adalah mesin pencari **FPB**. Jawaban akhirnya pasti angka terbesar yang bisa membagi `a` dan `b` sekaligus.
+ 
+ ---
+ 
+ ## 🗣️ D. Rekursi Berantai (Mutual Recursion)
+ 
+ Ini adalah level psikotes C++. Ada dua fungsi yang tidak memanggil dirinya sendiri, tapi **memanggil temannya secara bergantian**.
+ 
+ **Analogi Debat Kusir:**
+ - **Si A:** "Eh, tanya si B deh!"
+ - **Si B:** "Eh, tanya si A lagi aja!"
+ 
+ ```cpp
+ bool apakahGenap(int n); // Deklarasi dulu
+ 
+ bool apakahGanjil(int n) {
+     if (n == 0) return false;
+     return apakahGenap(n - 1); // Tanya temennya
+ }
+ 
+ bool apakahGenap(int n) {
+     if (n == 0) return true;
+     return apakahGanjil(n - 1); // Tanya temennya lagi
+ }
+ ```
+ 
+ **Cara Tracing (Human Compiler):**
+ Cukup ikuti aliran bola pingpongnya. Jika kamu panggil `apakahGenap(2)`:
+ 1. `apakahGenap(2)` $\rightarrow$ panggil `apakahGanjil(1)`.
+ 2. `apakahGanjil(1)` $\rightarrow$ panggil `apakahGenap(0)`.
+ 3. `apakahGenap(0)` $\rightarrow$ `n=0`, kembalikan `true`.
+ 
+ *Hasilnya:* **true** (Angka 2 benar-benar genap).
+ 
+ ---
+ 
+ Ini esensi olimpiade rahasia sesungguhnya: **Soal yang terlihat menghabiskan 3 galon tinta pulpen rekursi... nyatanya bisa dijawab dalam 3 Detik berbekal insting Pola Kriptografi Matematika Murni!**
 
 ⏩ **Lanjut ke Modul Klimaks Akhir:** [Operasi Bitwise Tingkat Lanjut (Saklar Biner Rahasia)](./06-operasi-bitwise-dasar.md)

@@ -25,7 +25,7 @@ Kapan blok kode dieksekusi dan kapan diabaikan? Memahami gerbang logika `If-Else
 👉 **[Latihan Soal](./02-percabangan/latihan/)**
 
 ### 3. [Perulangan & Array](./03-perulangan/materi.md) (Trek Lari & Playlist Spotify)
-Membedah putaran `For`, `While`, dan `Do-While`. Memahami batas akhir iterasi sebuah Array (`Index Out of Bounds`). Termasuk membedah kekuatan gaib tombol `Break` (Hancurkan mesin lagunya, berhenti lari!) vs tombol `Continue` (Lagu ini jelek, letih, tolong di-Skip ke lagu sebelahnya!).
+Membedah putaran `For`, `While`, dan `Do-While`. Memahami batas akhir iterasi sebuah Array (`Index Out of Bounds`). Termasuk membedah kekuatan gaib tombol `Break` vs `Continue`. **Materi Baru OSN 2025:** Teknik **Prefix Sum** (Kantong Tabungan) untuk mencari jumlah cepat di dalam deretan angka.
 👉 **[Latihan Soal](./03-perulangan/latihan/)**
 
 ### 4. [Fungsi & Parameter](./04-fungsi/materi.md) (Nyontek PR Tip-Ex)
@@ -33,12 +33,20 @@ OSN-K sangat memuja trik jebakan lempar-lemparan fungsi. Bedakan antara *Pass-by
 👉 **[Latihan Soal](./04-fungsi/latihan/)**
 
 ### 5. [Rekursi & Call Stack](./05-rekursi/materi.md) (Tugas Rantai Minta Uang Jajan)
-Bos terakhir kodingan OSN-K! "Fungsi yang memanggil dirinya sendiri". Jangan dihafal lurus, tapi proyeksikan layaknya *Tumpukan Piring (LIFO)* yang mundur berantai. Adik minta Ibu, Ibu minta Ayah, Ayah ke Mesin ATM. Rekursi takkan tercetak ke layar sebelum "Uang Ayah cair dari ATM" (Base Case tercapai).
+Bos terakhir kodingan OSN-K! "Fungsi yang memanggil dirinya sendiri". Jangan dihafal lurus, tapi proyeksikan layaknya *Tumpukan Piring (LIFO)*. **Materi Baru OSN 2025:** Membedah **Euclidean Algorithm (GCD/FPB)** secara rekursif dan **Mutual Recursion** (Fungsi yang saling memanggil layaknya debat kusir!).
 👉 **[Latihan Soal](./05-rekursi/latihan/)**
 
-### 6. [Operasi Bitwise Tingkat Lanjut](./06-bitwise/materi.md) (Cheat Code Tombol Rahasia)
-Array dimanipulasi dengan operator planet luar `&, |, ^, <<, >>`. Kita singkirkan desimal matematika dan pakai analogi *Saklar Lampu LED*. Membongkar trik sakti `XOR (^)` si pembalik keadaan yang setia (tombol ditekan ganjil menyala, ditekan genap kembali mati alias lenyap!).
+### 6. [Operasi Bitwise](./06-bitwise/materi.md) (Cheat Code Tombol Rahasia)
+Array dimanipulasi dengan operator planet luar `&, |, ^, <<, >>`. Kita singkirkan desimal matematika dan pakai analogi *Saklar Lampu LED*. Membongkar trik sakti `XOR (^)` si pembalik keadaan yang setia.
 👉 **[Latihan Soal](./06-bitwise/latihan/)**
+
+### 7. [Manipulasi String](./07-string/materi.md) (Pesan Tersembunyi di Balik Kalimat)
+**Materi Baru OSN 2025:** C++ `string` bukan sekadar teks, tapi barisan karakter yang bisa diakses layaknya lemari. Kita akan belajar cara membaca `.length()`, membalik kata secara mental, hingga mendeteksi karakter ganda tanpa bantuan mata!
+👉 **[Latihan Soal](#)**
+
+### 8. [Dinamis Vector & Matrix 2D](./08-vector/materi.md) (Loker yang Bisa Melar)
+**Materi Baru OSN 2025:** Lupakan array statis yang kaku! Kita masuk ke dunia `std::vector` yang bisa `push_back()` sesuka hati. Kita juga akan membedah **Matriks 2D** (Vector of Vectors) yang sering muncul di soal-soal "Rahasia Petak" OSN-K terbaru.
+👉 **[Latihan Soal](#)**
 
 ---
 

@@ -122,20 +122,16 @@ root/
 │   └── latihan/
 │       ├── format-1-studi-3-soal.md
 │       └── bank-soal-part-b.md
-├── part-c-cpp-comprehension/
+├── part-c-pemahaman-cpp/
 │   ├── README.md                # Navigasi Part C
-│   ├── 01-sintaks-cpp-wajib.md
-│   ├── 02-teknik-dry-run.md
-│   ├── 03-melacak-variabel.md
-│   ├── 04-loop-and-condition.md
-│   ├── 05-fungsi-dan-rekursi.md
-│   ├── 06-array-dan-string.md
-│   ├── 07-memprediksi-output.md
-│   ├── kode-contoh/
-│   │   ├── snippet-01-basic.md
-│   │   ├── snippet-02-loop.md
-│   │   ├── snippet-03-recursion.md
-│   │   └── snippet-04-array.md
+│   ├── 01-tipe-data/            # Int, Float, Boolean, ASCII
+│   ├── 02-percabangan/          # IF, Else, Switch, Nested
+│   ├── 03-perulangan/           # For, While, Prefix Sum [NEW]
+│   ├── 04-fungsi/               # Parameter, Return, Void
+│   ├── 05-rekursi/              # Base Case, GCD, Mutual [NEW]
+│   ├── 06-bitwise/              # AND, OR, XOR, Shift
+│   ├── 07-string/               # Indexing, Pattern [NEW]
+│   ├── 08-vector/               # push_back, Matrix 2D [NEW]
 │   └── latihan/
 │       ├── format-1-kode-3-soal.md
 │       └── bank-soal-part-c.md

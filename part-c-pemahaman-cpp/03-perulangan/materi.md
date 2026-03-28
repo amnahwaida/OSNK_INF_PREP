@@ -172,7 +172,53 @@ Perilaku program memuntahkan *Garbage Value* atau berpotensi kiamat OS (Segmenta
 
 ---
 
-### Siap Di Uji Tracing?
+## 💰 E. Teknik Kantong Tabungan (Prefix Sum)
+ 
+ **Prasyarat (Prerequisite):** Kamu harus sudah paham cara kerja `for` loop dan cara meng-update nilai variabel (misal: `total = total + angka`).
+ 
+ Di OSN-K 2025, muncul sebuah trik baru yang sering diselipkan dalam soal perulangan. Juri tidak lagi hanya bertanya berapa hasil akhir loop, tapi mereka membuat sebuah **"Daftar Tabungan"** di mana setiap elemen adalah jumlah dari elemen-elemen sebelumnya. Teknik ini disebut **Prefix Sum**.
+ 
+ ### 🏺 1. Analogi Kantong Tabungan
+ Bayangkan kamu menabung selama 5 hari:
+ - Hari 1: Masukkan 10rb
+ - Hari 2: Masukkan 20rb
+ - Hari 3: Masukkan 5rb
+ 
+ Jika ditanya: "Berapa isi kantongmu di hari ke-3?", jawabannya bukan 5rb, melainkan **10 + 20 + 5 = 35rb**. 
+ 
+ Di C++, kodenya biasanya terlihat seperti ini:
+ ```cpp
+ int A[] = {10, 20, 5, 15, 10};
+ int B[6]; // Kantong tabungan
+ B[0] = 0; // Hari ke-0, tabungan masih kosong
+ 
+ for (int i = 0; i < 5; i++) {
+     B[i+1] = B[i] + A[i];
+ }
+ ```
+ 
+ ### 🔍 2. Cara Tracing Prefix Sum (Human Compiler)
+ Jangan menghitung totalnya satu-satu setiap kali ditanya. Buatlah tabel tabungan kumulatif:
+ 
+ | `i` | `A[i]` (Uang Baru) | `B[i]` (Tabungan Lama) | `B[i+1]` (Tabungan Baru) |
+ |---|---|---|---|
+ | 0 | 10 | 0 | 0 + 10 = **10** |
+ | 1 | 20 | 10 | 10 + 20 = **30** |
+ | 2 | 5 | 30 | 30 + 5 = **35** |
+ | 3 | 15 | 35 | 35 + 15 = **50** |
+ | 4 | 10 | 50 | 50 + 10 = **60** |
+ 
+ ### ⚡ 3. Kenapa Ini Penting? (Trik Cepat Soal OSN-K)
+ Jika juri bertanya: **"Berapa jumlah elemen dari indeks 1 sampai 3?"** (yaitu 20 + 5 + 15).
+ Kamu tidak perlu menjumlahkan manual lagi! Cukup lihat tabel tabunganmu:
+ `Tabungan[Hari4] - Tabungan[Hari1]` $\rightarrow$ `50 - 10 = 40`.
+ 
+ > [!TIP]
+ > **Pola Hafalan OSN-K:** Jika kamu melihat kode di dalam loop yang polanya `B[i] = B[i-1] + A[i]`, itu tandanya juri sedang membangun **Prefix Sum**. Siapkan tabel akumulasi di kertas burammu segera!
+ 
+ ---
+ 
+ ### Siap Di Uji Tracing?
 
 Kamu ditunjuk menjadi Komandan Compiler pada sebaris kodingan OSN Murni berikut:
 
