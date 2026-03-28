@@ -1,556 +1,338 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
-# Latihan Soal Part C - Modul 04 - Set 01
+# Latihan Soal Part C - Modul 04 - Set 01 (Premium Edition)
 
-### Soal 1
+---
+
+### Soal 1: Pemanggil Void (Basic Call)
 ```cpp
-// PR: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int pr=80;
-ubah(pr);
+void sapa() {
+    // Mencetak "Halo"
+}
+
+int main() {
+    int x = 10;
+    sapa();
+    x += 5;
+    return 0;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `x` di akhir fungsi `main`?
+2. Apakah fungsi `sapa()` mengubah nilai `x`?
 
-**Jawaban & Diagnosis:**
-1. **80**
-2. Value 'PR' dikirim fotokopinya. Aslinya tetap 80.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 80]
+graph TD
+A["main: x = 10"] --> B["panggil sapa()"]
+B --> C["sapa: (eksekusi)"]
+C --> D["kembali ke main"]
+D --> E["main: x = 15"]
 ```
 
----
-### Soal 2
-```cpp
-// Laporan: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int laporan=71;
-reset(laporan);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Laporan' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 3
-```cpp
-// Data: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int data=62;
-ubah(data);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **62**
-2. Value 'Data' dikirim fotokopinya. Aslinya tetap 62.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 62]
-```
-
----
-### Soal 4
-```cpp
-// Uang: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int uang=45;
-reset(uang);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Uang' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 5
-```cpp
-// Saldo: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int saldo=34;
-ubah(saldo);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **34**
-2. Value 'Saldo' dikirim fotokopinya. Aslinya tetap 34.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 34]
-```
-
----
-### Soal 6
-```cpp
-// Poin: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int poin=22;
-reset(poin);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Poin' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 7
-```cpp
-// Skor: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int skor=15;
-ubah(skor);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **15**
-2. Value 'Skor' dikirim fotokopinya. Aslinya tetap 15.
+2. **Tidak.** Fungsi `sapa()` tidak memiliki akses ke variabel `x` yang ada di dalam `main`.
+
+**📖 Analisis Mendalam:**
+Ini adalah contoh fungsi `void` (tidak mengembalikan nilai). Alur eksekusi melompat ke `sapa`, lalu kembali ke baris berikutnya di `main`. Variabel di dalam fungsi yang berbeda bersifat terisolasi.
+</details>
+
+---
+
+### Soal 2: Pengembalian Nilai (Return Type)
+```cpp
+int tambah(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int hasil = tambah(3, 4);
+    hasil = tambah(hasil, 2);
+    return 0;
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `hasil` akhir?
+2. Berapa kali fungsi `tambah` dipanggil?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["panggil tambah(3,4)"] --> B["return 7"]
+B --> C["panggil tambah(7,2)"]
+C --> D["return 9"]
+```
+
+**Jawaban:**
+1. **9**
+2. **2 kali**
+
+**📖 Analisis Mendalam:**
+Fungsi `int` mengembalikan sebuah nilai yang bisa disimpan kembali ke dalam variabel atau digunakan langsung sebagai argumen fungsi lain.
+</details>
+
+---
+
+### Soal 3: ⚠️ Return Prematur (Early Return)
+```cpp
+int cek(int n) {
+    if (n > 10) return 1;
+    return 0;
+    return 2; // Baris ini?
+}
+
+int main() {
+    int x = cek(15);
+    int y = cek(5);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `x`?
+2. Berapakah nilai `y`?
+3. Apakah `return 2` akan pernah dieksekusi?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"cek(15): 15 > 10?"} -- T --> B["return 1"]
+C{"cek(5): 5 > 10?"} -- F --> D["return 0"]
+```
+
+**Jawaban:**
+1. **1**
+2. **0**
+3. **Tidak.** Begitu komputer bertemu kata `return`, fungsi langsung berhenti dan keluar. Kode di bawahnya menjadi "dead code".
+</details>
+
+---
+
+### Soal 4: Parameter Terisolasi (Local Scope)
+```cpp
+void ubah(int n) {
+    n = 100;
+}
+
+int main() {
+    int n = 5;
+    ubah(n);
+    // n di sini?
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `n` di dalam `main` setelah `ubah(n)` dipanggil?
+2. Mengapa `n = 100` di dalam fungsi tidak merubah `n` di luar?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 15]
+A["main: n=5"] -- copy --> B["fungsi: n=5"]
+B --> C["fungsi: n=100"]
+C -- hancur --> D["main: n tetap 5"]
 ```
+
+**Jawaban:**
+1. **5**
+2. Karena ini adalah **Pass-by-Value**. Fungsi hanya menerima "fotokopi" dari nilainya, bukan variabel aslinya.
+</details>
 
 ---
-### Soal 8
+
+### Soal 5: Komposisi Fungsi (Nested Calls)
 ```cpp
-// Level: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int level=53;
-reset(level);
+int kuadrat(int n) { return n * n; }
+int kali_dua(int n) { return n * 2; }
+
+int main() {
+    int x = kuadrat(kali_dua(3));
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `x`?
+2. Fungsi mana yang selesai dieksekusi lebih dulu?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Level' ter-reset jadi 0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 0]
+A["kali_dua(3)"] --> B["6"]
+B --> C["kuadrat(6)"]
+C --> D["36"]
 ```
 
----
-### Soal 9
-```cpp
-// Hp: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int hp=40;
-ubah(hp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **40**
-2. Value 'Hp' dikirim fotokopinya. Aslinya tetap 40.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 40]
-```
-
----
-### Soal 10
-```cpp
-// Atk: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int atk=48;
-reset(atk);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Atk' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 11
-```cpp
-// Def: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int def=13;
-ubah(def);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **13**
-2. Value 'Def' dikirim fotokopinya. Aslinya tetap 13.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 13]
-```
-
----
-### Soal 12
-```cpp
-// Spd: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int spd=67;
-reset(spd);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Spd' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 13
-```cpp
-// Luck: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int luck=33;
-ubah(luck);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **33**
-2. Value 'Luck' dikirim fotokopinya. Aslinya tetap 33.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 33]
-```
-
----
-### Soal 14
-```cpp
-// Cri: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int cri=19;
-reset(cri);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Cri' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 15
-```cpp
-// Eva: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int eva=93;
-ubah(eva);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **93**
-2. Value 'Eva' dikirim fotokopinya. Aslinya tetap 93.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 93]
-```
-
----
-### Soal 16
-```cpp
-// Hit: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int hit=48;
-reset(hit);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Hit' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 17
-```cpp
-// Res: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int res=50;
-ubah(res);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **50**
-2. Value 'Res' dikirim fotokopinya. Aslinya tetap 50.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 50]
-```
-
----
-### Soal 18
-```cpp
-// Elem: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int elem=85;
-reset(elem);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Elem' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 19
-```cpp
-// Skill: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int skill=36;
-ubah(skill);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **36**
-2. Value 'Skill' dikirim fotokopinya. Aslinya tetap 36.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 36]
-```
+2. **kali_dua(3)**. Bagian paling dalam dari kurung harus diselesaikan dulu sebelum hasilnya dikirim ke fungsi luar.
+</details>
 
 ---
-### Soal 20
+
+### Soal 6: Return Ekspresi (Math Return)
 ```cpp
-// Magic: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int magic=44;
-reset(magic);
+int hitung(int a) {
+    return a * a - a;
+}
+
+int main() {
+    int hasil = hitung(4);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `hasil`?
+2. Jika dilakukan `hitung(1)`, berapakah hasilnya?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Magic' ter-reset jadi 0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
+**Jawaban:**
+1. **12** (16 - 4)
+2. **0** (1 - 1)
+</details>
 
 ---
-### Soal 21
+
+### Soal 7: ⚠️ Void return? (Syntax Trap)
 ```cpp
-// Stam: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int stam=34;
-ubah(stam);
+void tampil(int n) {
+    if (n < 0) return;
+    // Cetak n
+}
+
+int main() {
+    tampil(-5);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Apakah `return;` (tanpa nilai) diperbolehkan di fungsi `void`?
+2. Apa fungsi `return;` di baris kedua tersebut?
 
-**Jawaban & Diagnosis:**
-1. **34**
-2. Value 'Stam' dikirim fotokopinya. Aslinya tetap 34.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 34]
-```
+**Jawaban:**
+1. **Boleh.**
+2. Sebagai **pintu keluar darurat**. Ia menghentikan fungsi saat itu juga tanpa memberikan nilai balik.
+
+**📖 Analisis Mendalam:**
+Ini sering digunakan untuk validasi input di awal fungsi. Jika syarat tidak terpenuhi, langsung "cabut".
+</details>
 
 ---
-### Soal 22
+
+### Soal 8: Parameter Ganda (Multi-param)
 ```cpp
-// Mana: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int mana=16;
-reset(mana);
+int rahasia(int a, int b, int c) {
+    if (a > b) return a + c;
+    return b + c;
+}
+
+int main() {
+    int x = rahasia(5, 10, 2);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `x`?
+2. Syarat mana yang terpenuhi di dalam fungsi?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Mana' ter-reset jadi 0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
+graph TD
+A{"5 > 10?"} -- F --> B["return 10 + 2"]
 ```
 
+**Jawaban:**
+1. **12**
+2. Syarat **False** (masuk ke baris return kedua).
+</details>
+
 ---
-### Soal 23
+
+### Soal 9: Bayangan Global (Global Scope)
 ```cpp
-// Health: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int health=42;
-ubah(health);
+int x = 50;
+
+void ganti() {
+    x = 10;
+}
+
+int main() {
+    int x = 5;
+    ganti();
+    // Berapa x di main?
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `x` di dalam `main` di akhir program?
+2. Apakah fungsi `ganti()` berhasil mengubah `x` global?
 
-**Jawaban & Diagnosis:**
-1. **42**
-2. Value 'Health' dikirim fotokopinya. Aslinya tetap 42.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 42]
+graph TD
+G["Global x: 50"] --- M["main x: 5"]
+G --> F["ganti(): Global x = 10"]
+F --> End["main x: tetap 5"]
 ```
 
+**Jawaban:**
+1. **5**
+2. **Ya, tapi** `x` di dalam `main` adalah variabel lokal yang berbeda, sehingga `main` tetap melihat `x` miliknya sendiri (5).
+
+**📖 Analisis Mendalam:**
+Hati-hati dengan nama yang sama! Variabel lokal akan "menutupi" variabel global dengan nama yang sama.
+</details>
+
 ---
-### Soal 24
+
+### Soal 10: Rantai Panggilan (Chain Call)
 ```cpp
-// Shield: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int shield=36;
-reset(shield);
+int f3(int n) { return n + 1; }
+int f2(int n) { return f3(n) * 2; }
+int f1(int n) { return f2(n) - 1; }
+
+int main() {
+    int hasil = f1(5);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `hasil`?
+2. Berapa kali loncatan stack yang terjadi?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Shield' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 25
-```cpp
-// Armor: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int armor=43;
-ubah(armor);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **43**
-2. Value 'Armor' dikirim fotokopinya. Aslinya tetap 43.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 43]
+graph TD
+A["main panggil f1(5)"] --> B["f1 panggil f2(5)"]
+B --> C["f2 panggil f3(5)"]
+C --> D["f3 return 6"]
+D --> E["f2 return 12"]
+E --> F["f1 return 11"]
 ```
 
----
+**Jawaban:**
+1. **11**
+2. **3 loncatan** ke depan, dan 3 kali kembali.
+</details>

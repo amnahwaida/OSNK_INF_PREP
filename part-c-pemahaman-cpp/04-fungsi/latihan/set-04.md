@@ -1,556 +1,296 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
-# Latihan Soal Part C - Modul 04 - Set 04
+# Latihan Soal Part C - Modul 04 - Set 04 (Premium Edition)
 
-### Soal 76
+---
+
+### Soal 31: Overloading Dasar (Int vs Double)
 ```cpp
-// Gps: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int gps=11;
-reset(gps);
+int tambah(int a, int b) { return a + b; }
+double tambah(double a, double b) { return a + b + 0.5; }
+
+int main() {
+    int x = tambah(2, 3);
+    double y = tambah(2.0, 3.0);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `x`?
+2. Berapakah nilai `y`?
+3. Apa nama fitur C++ yang mengijinkan dua fungsi memiliki nama yang sama?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Gps' ter-reset jadi 0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["Panggil tambah(2,3)"] --> B["Cari tipe (int, int)"]
+B --> C["return 5"]
+D["Panggil tambah(2.0, 3.0)"] --> E["Cari tipe (double, double)"]
+E --> F["return 5.5"]
+```
+
+**Jawaban:**
+1. **5**
+2. **5.5**
+3. **Function Overloading.** C++ melihat tipe data argumen untuk menentukan fungsi mana yang harus dipanggil.
+</details>
+
+---
+
+### Soal 32: Beda Jumlah Parameter
+```cpp
+int hitung(int a) { return a * a; }
+int hitung(int a, int b) { return a + b; }
+
+int main() {
+    int x = hitung(5);
+    int y = hitung(5, 10);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `x`?
+2. Berapakah nilai `y`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **25** (5 * 5)
+2. **15** (5 + 10)
+
+**📖 Analisis Mendalam:**
+Selain tipe data, jumlah parameter juga menjadi pembeda utama dalam *Overloading*. Komputer tidak bingung karena tanda dalam kurungnya berbeda.
+</details>
+
+---
+
+### Soal 33: Parameter Default (Optional Arg)
+```cpp
+int power(int n, int p = 2) {
+    int hasil = 1;
+    for(int i=0; i<p; i++) hasil *= n;
+    return hasil;
+}
+
+int main() {
+    int a = power(3);
+    int b = power(3, 3);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `a`?
+2. Berapakah nilai `b`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["Panggil power(3)"] --> B["p default = 2"]
+B --> C["3^2 = 9"]
+D["Panggil power(3,3)"] --> E["p ditimpa = 3"]
+E --> F["3^3 = 27"]
+```
+
+**Jawaban:**
+1. **9**
+2. **27**
+</details>
+
+---
+
+### Soal 34: ⚠️ Overloading Ambiguitas
+```cpp
+void f(int n) { /* opsi 1 */ }
+void f(float n) { /* opsi 2 */ }
+
+int main() {
+    f(5.5); // Ini memanggil yang mana?
+}
+```
+**Pertanyaan:**
+1. Tipe data apakah angka **5.5** secara default di C++?
+2. Apakah program di atas memanggil `f(int)` atau `f(float)`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **Double** (bukan float).
+2. **Error / Ambiguitas.** (Jika tidak ada `f(double)`, compiler akan bingung memilih apakah harus diubah ke `int` atau `float`. Namun biasanya ia akan komplain karena tidak menemukan kecocokan yang pas).
+
+**📖 Analisis Mendalam:**
+Hati-hati, simbol desimal seperti `5.5` dianggap `double`. Untuk menjadikannya `float`, harus ditulis `5.5f`.
+</details>
+
+---
+
+### Soal 35: Menu dengan Default Param
+```cpp
+int belanja(int harga, int diskon = 0) {
+    return harga - diskon;
+}
+
+int main() {
+    int bayar1 = belanja(10000);
+    int bayar2 = belanja(10000, 2000);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `bayar1`?
+2. Berapakah nilai `bayar2`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **10000**
+2. **8000**
+</details>
+
+---
+
+### Soal 36: Urutan Parameter Default
+```cpp
+// Skenario: Pajak default 10%
+int total(int harga, int pajak = 10, int admin = 5) {
+    return harga + pajak + admin;
+}
+
+int main() {
+    int x = total(100, 20);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `x`?
+2. Nilai `20` tersebut dikirim ke parameter mana?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 0]
+A["total(100, 20)"] --> B["harga = 100"]
+B --> C["pajak = 20"]
+C --> D["admin = 5 (Default)"]
+D --> E["100 + 20 + 5 = 125"]
 ```
+
+**Jawaban:**
+1. **125**
+2. **pajak.** Argumen diisi dari kiri ke kanan. Sisanya baru menggunakan default.
+</details>
 
 ---
-### Soal 77
+
+### Soal 37: ⚠️ Jebakan Overloading (Tipe Mirip)
 ```cpp
-// Sms: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int sms=22;
-ubah(sms);
+void cetak(char c) { /* A */ }
+void cetak(int n) { /* B */ }
+
+int main() {
+    cetak('A');
+    cetak(65);
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Blok mana yang dijalankan saat `cetak('A')`?
+2. Blok mana yang dijalankan saat `cetak(65)`?
 
-**Jawaban & Diagnosis:**
-1. **22**
-2. Value 'Sms' dikirim fotokopinya. Aslinya tetap 22.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **Blok A** (Karakter).
+2. **Blok B** (Integer).
+
+**📖 Analisis Mendalam:**
+Meskipun 'A' memiliki kode ASCII 65, C++ sangat memedulikan tipe data aslinya sebelum melakukan konversi otomatis.
+</details>
+
+---
+
+### Soal 38: Luas Bangun (Overload Logic)
+```cpp
+int luas(int s) { return s * s; }
+int luas(int p, int l) { return p * l; }
+
+int main() {
+   int x = luas(luas(2), 2);
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `x`?
+2. Fungsi `luas` yang mana yang dipanggil paling dalam?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 22]
+A["luas(2)"] --> B["4 (Persegi)"]
+B --> C["luas(4, 2)"] --> D["8 (Persegi Panjang)"]
 ```
 
+**Jawaban:**
+1. **8**
+2. **luas(int s)** (Persegi).
+</details>
+
 ---
-### Soal 78
+
+### Soal 39: Gabung String Default
 ```cpp
-// Call: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int call=19;
-reset(call);
+string gabung(string a, string b = "ku") {
+    return a + b;
+}
+
+int main() {
+    string s1 = gabung("Buku");
+    string s2 = gabung("I", "bu");
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah isi `s1`?
+2. Berapakah isi `s2`?
 
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Call' ter-reset jadi 0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
+**Jawaban:**
+1. **"Bukuku"**
+2. **"Ibu"**
+</details>
 
 ---
-### Soal 79
+
+### Soal 40: ⚠️ Default vs Overload (Conflict?)
 ```cpp
-// Mail: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int mail=97;
-ubah(mail);
+void f(int a) { /* Opsi 1 */ }
+void f(int a, int b = 5) { /* Opsi 2 */ }
+
+int main() {
+    f(10); // Ambiguitas?
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **97**
-2. Value 'Mail' dikirim fotokopinya. Aslinya tetap 97.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 97]
-```
-
----
-### Soal 80
-```cpp
-// Chat: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int chat=38;
-reset(chat);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Chat' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 81
-```cpp
-// Video: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int video=79;
-ubah(video);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **79**
-2. Value 'Video' dikirim fotokopinya. Aslinya tetap 79.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 79]
-```
-
----
-### Soal 82
-```cpp
-// Photo: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int photo=29;
-reset(photo);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Photo' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 83
-```cpp
-// Audio: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int audio=65;
-ubah(audio);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **65**
-2. Value 'Audio' dikirim fotokopinya. Aslinya tetap 65.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 65]
-```
-
----
-### Soal 84
-```cpp
-// Music: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int music=17;
-reset(music);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Music' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 85
-```cpp
-// Movie: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int movie=93;
-ubah(movie);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **93**
-2. Value 'Movie' dikirim fotokopinya. Aslinya tetap 93.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 93]
-```
-
----
-### Soal 86
-```cpp
-// Game: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int game=52;
-reset(game);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Game' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 87
-```cpp
-// App: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int app=97;
-ubah(app);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **97**
-2. Value 'App' dikirim fotokopinya. Aslinya tetap 97.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 97]
-```
-
----
-### Soal 88
-```cpp
-// Web: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int web=36;
-reset(web);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Web' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 89
-```cpp
-// Cloud: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int cloud=58;
-ubah(cloud);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **58**
-2. Value 'Cloud' dikirim fotokopinya. Aslinya tetap 58.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 58]
-```
-
----
-### Soal 90
-```cpp
-// Ssh: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int ssh=64;
-reset(ssh);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Ssh' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 91
-```cpp
-// Ftp: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int ftp=28;
-ubah(ftp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **28**
-2. Value 'Ftp' dikirim fotokopinya. Aslinya tetap 28.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 28]
-```
-
----
-### Soal 92
-```cpp
-// Http: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int http=34;
-reset(http);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Http' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 93
-```cpp
-// Tcp: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int tcp=66;
-ubah(tcp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **66**
-2. Value 'Tcp' dikirim fotokopinya. Aslinya tetap 66.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 66]
-```
-
----
-### Soal 94
-```cpp
-// Udp: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int udp=44;
-reset(udp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Udp' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 95
-```cpp
-// Icmp: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int icmp=47;
-ubah(icmp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **47**
-2. Value 'Icmp' dikirim fotokopinya. Aslinya tetap 47.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 47]
-```
-
----
-### Soal 96
-```cpp
-// Arp: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int arp=88;
-reset(arp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Arp' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 97
-```cpp
-// Dns: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int dns=55;
-ubah(dns);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **55**
-2. Value 'Dns' dikirim fotokopinya. Aslinya tetap 55.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 55]
-```
-
----
-### Soal 98
-```cpp
-// Dhcp: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int dhcp=71;
-reset(dhcp);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Dhcp' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
-### Soal 99
-```cpp
-// Nat: Pass-by-Value
-void ubah(int x) { x = 0; }
-// main: int nat=92;
-ubah(nat);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **92**
-2. Value 'Nat' dikirim fotokopinya. Aslinya tetap 92.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 92]
-```
-
----
-### Soal 100
-```cpp
-// Vpn: Pass-by-Reference
-void reset(int &x) { x = 0; }
-// main: int vpn=95;
-reset(vpn);
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. Reference '&' dikirim alamat aslinya. 'Vpn' ter-reset jadi 0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 0]
-```
-
----
+1. Apakah program ini bisa dikompilasi (berjalan)?
+2. Mengapa compiler akan marah (error) pada baris `f(10)`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **Tidak.** Ini akan menyebabkan *Compile Error*.
+2. Karena **Ambiguitas**. Saat dipanggil dengan satu angka, compiler bingung: 
+   - Apakah memanggil Opsi 1 (pas 1 parameter).
+   - Ataukah memanggil Opsi 2 (menggunakan default parameter untuk b).
+   Keduanya sama-sama valid, sehingga compiler menyerah.
+</details>
