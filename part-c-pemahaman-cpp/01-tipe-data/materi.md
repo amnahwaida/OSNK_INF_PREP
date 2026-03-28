@@ -193,10 +193,17 @@
  1. **`abs(x)` (Nilai Mutlak)**: Menghilangkan tanda minus. `abs(-5)` jadi `5`. (Ingat: **Abs**olut).
  2. **`sqrt(x)` (Akar Kuadrat)**: Mencari lari akar. `sqrt(16)` jadi `4`. (**S**quare **R**oo**T**).
  3. **`pow(a, b)` (Pangkat)**: Menghitung $a$ pangkat $b$. `pow(2, 3)` jadi `8`. (**Pow**er).
- 4. **`round(x)` (Pembulatan)**: Membulatkan ke angka terdekat. `round(2.6)` jadi `3`.
+ 4. **`round(x)` (Pembulatan Terdekat)**: Membulatkan ke angka terdekat. `round(2.6)` jadi `3`.
+ 5. **`floor(x)` (Lantai)**: Memaksa pembulatan ke **BAWAH** (Lantai). `floor(2.9)` tetap jadi `2`. 
+ 6. **`ceil(x)` (Atap)**: Memaksa pembulatan ke **ATAS** (Atap/Ceiling). `ceil(2.1)` langsung naik jadi `3`.
+ 
+ **Analogi "Bus Sekolah" (Kapan Memakai Ceil?)**:
+ Kamu punya 10 anak dan 1 bus kapasitasnya cuma 3 orang. Secara matematika $10 \div 3 = 3.33$.
+ - Kalau pakai `round`, hasilnya 3 bus (Satu anak tertinggal di lobi!).
+ - Kalau pakai **`ceil`**, hasilnya **4 bus** (Semua anak terangkut, meski bus ke-4 agak kosong). **Ingat: `ceil` sangat penting untuk soal-soal logistik di OSN-K!**
  
  > [!TIP]
- > Hati-hati! Hasil dari `sqrt` dan `pow` otomatis berwujud **`double`** (angka koma), meskipun kamu memasukkan angka bulat.
+ > Hati-hati! Hasil dari `sqrt`, `pow`, `floor`, dan `ceil` otomatis berwujud **`double`** (angka koma), meskipun kamu memasukkan angka bulat.
  
  ---
  
