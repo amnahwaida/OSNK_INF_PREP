@@ -1,237 +1,172 @@
 # 2. Percabangan & Logika Boolean (Seni Razia Komputer)
  
- Sekarang saatnya kamu menjadi Pak Dengklek sebagai Polisi Gerbang Tol (atau Guru BP).
- Kode di OSN-K penuh dengan blok pengawal keamanan yang disebut **Percabangan (`if`, `else if`, `else`)** yang dirakit menggunakan gembok kode **Logika Boolean (`&&` AND, `||` OR)**.
+ Selamat datang di gerbang logika! Di sini, kode C++ tidak lagi berjalan lurus seperti kereta api, tapi mulai bercabang seperti labirin. Sebagai *Compiler Manusia*, tugasmu adalah menentukan **jalur mana yang benar-benar dilewati** dan **jalur mana yang cuma fatamorgana**.
  
- Mesin C++ itu **Super Kaku** dan **Super Egois Pemalas**. Mari kita bongkar anatomi kedua sikap buruk mesin ini supaya kamu tidak terjebak men-Trace cabang yang salah.
+ Mesin C++ itu **Super Kaku** dan **Sangat Malas**. Mari kita pelajari sifat aslinya agar kamu tidak tersesat dalam percabangan.
  
  ---
  
- ## 📋 A. Pemanasan: Hukum Kurung Kurawal `{ }`
+ ## 📋 A. Hukum Kurung Kurawal `{ }` (Wilayah Kekuasaan)
  
- Sebelum masuk ke gerbang, ada satu aturan main yang paling sering menjebak murid di soal kertas: **Batas Wilayah Kekuasaan**.
+ Masalah nomor satu pemula adalah mengira `if` berkuasa atas banyak baris di bawahnya. 
+ - **Aturan Emas:** Jika tidak ada `{ }`, si `if` **HANYA** memimpin **satu baris** (sampai ketemu titik koma `;` pertama).
  
- 1. **Pakai `{ }` (Blok)**: Semua perintah di dalam kurung kurawal adalah milik si `if`.
- 2. **Tanpa `{ }` (Satu Baris)**: Jika tidak ada kurung kurawal, si `if` **HANYA BERKUASA ATAS SATU BARIS** tepat di bawahnya.
- 
- **Jebakan Penglihatan:**
+ **Analogi "Raja Tanpa Tembok":**
  ```cpp
- if (x > 10)
-     y = 5;
-     z = 10; // Baris ini BUKAN bagian dari if! Ia akan dijalankan APAPUN yang terjadi.
+ if (uang > 100)
+     belanja();   // <--- Ini rakyat si Raja if.
+     nabung();    // <--- Ini rakyat merdeka! Dia jalan terus, mau uangnya banyak atau sedikit.
  ```
- *Hati-hati:* Juri sering menaruh baris `z = 10` menjorok ke dalam (*indentasi*) padahal aslinya ia merdeka. Jangan tertipu mata!
+ *Tips Tracing:* Selalu tarik garis lurus dari `if`. Jika tidak ada kurung, baris kedua dan seterusnya *selalu* dijalankan terlepas kondisinya benar atau salah.
  
  ---
  
  ## 🚦 B. Gembok Persyaratan (`if`, `else if`, `else`)
  
- Percabangan `if` menuntut pelacakan variabel di lembar buram-mu harus **100% presisi**.
+ Pikirkan ini sebagai **Filter Bertingkat**.
+ 1. **`if`**: Saringan pertama. Kalau lolos, yang lain diabaikan.
+ 2. **`else if`**: Saringan cadangan (Hanya dicek jika saringan di atasnya gagal).
+ 3. **`else`**: Jaring pengaman terakhir. Kalau semua saringan di atas gagal, secara otomatis masuk ke sini.
  
- ```cpp
- int nyawa = 5;
- 
- if (nyawa > 5) {
-     printf("Bos Nyala");
- } else if (nyawa == 5) {
-     printf("Siaga Satu");
- } else {
-     printf("Game Over");
- }
- ```
- 
- **Analisis Compiler Manusia-mu:**
- - Baris `if (nyawa > 5)`: Apakah $5$ lebih besar dari $5$? **SALAH (FALSE)**!
- - Baris `else if (nyawa == 5)`: Apakah $5$ sama presisi eksak dengan $5$?  **BENAR (TRUE)**. Cetak `Siaga Satu`.
- - **PENTING:** Begitu satu pintu terbuka (Kondisi BENAR), seluruh pintu `else` di bawahnya langsung **GHAIB / HILANG**. Mesin tidak akan mengecek pintu lainnya lagi.
+ **Analogi "Pintu VIP":**
+ Begitu kamu masuk lewat pintu `if`, pengawal langsung **membakar habis** pintu `else if` dan `else`. Kamu tidak bisa (dan tidak perlu) menengok ke pintu-pintu lain lagi.
  
  ---
  
  ## ⚠️ C. Jebakan Batman: `==` vs `=`
  
- OSN Informatika hobinya memakan *kewarasan* matamu:
- - `x == 5`: Ini TANDA TANYA *"Apakah X itu 5?"*
- - `x = 5`: Ini TANDA PERINTAH MUTLAK *"Ganti isi kotak X sekarang jadi bernilai 5, lalu hasilnya dianggap BENAR!"*
+ Ini adalah jebakan "Salah Ketik" yang sering disengaja oleh juri:
+ - `x == 5`: "Tanda Tanya" $\rightarrow$ "Halo, apakah kamu angka 5?"
+ - `x = 5`: "Tanda Seru/Perintah" $\rightarrow$ "Kamu sekarang jadi angka 5, titik!"
  
- ```cpp
- int x = 10;
- if (x = 5) { // <--- X DIPAKSA JADI 5, DAN IF-NYA TEMBUS (TRUE)!
-    // Hati-hati, nilai x sekarang sudah berubah selamanya jadi 5.
- }
- ```
+ **Efek Samping:** Jika kamu menulis `if (x = 5)`, laci `x` yang tadinya berisi 100 akan **terhapus permanen** dan diganti jadi 5. Kondisinya juga dianggap **TRUE** karena 5 bukan nol.
  
  ---
  
  ## 🧨 D. Jebakan Double-Action: Penugasan + Perbandingan
  
- Juri terkadang menggabungkan dua perintah dalam satu kurung `if`. Ini adalah gabungan dari materi Tipe Data dan Percabangan.
+ Kadang juri ingin melihat apakah kamu bisa melakukan dua hal sekaligus dalam satu tarikan napas.
  ```cpp
- int a = 20;
- if ((a = 1) > 0) {
-     printf("a sekarang = %d", a);
- }
+ if ((a = 0) == 0) { ... }
  ```
- **Hukum Robot C++:**
- 1. Kerjakan di dalam kurung dulu: `(a = 1)`. Artinya: "Laci `a` dibongkar isinya, diganti jadi angka **1**."
- 2. Gunakan angka baru tersebut (`1`) untuk dibandingkan: `1 > 0`.
- 3. Apakah `1 > 0`? **BENAR (TRUE)**!
+ **Cara Tracingnya:**
+ 1. Kerjakan di dalam kurung: `a = 0`. Sekarang laci `a` resmi jadi **0**.
+ 2. Bandingkan hasilnya: `0 == 0`.
+ 3. Hasilnya **TRUE**! (Tapi ingat, isi `a` sekarang sudah jadi nol).
  
  ---
  
  ## ⛓️ E. Jebakan Rantai Palsu (`10 < 5 < 20`)
  
- Hati-hati, kodingan di kertas seringkali mencoba membodohi insting matematika-mu! Bisakah kamu menebak hasil `if (10 < 5 < 20)`?
- - **Robot C++:** "Oit, gue kerjain dari kiri!"
-   1. `10 < 5` dihitung duluan, hasilnya **0** (False).
-   2. Sekarang rumusnya jadi `0 < 20`.
-   3. Apakah 0 lebih kecil dari 20? **BETUL BANGET (TRUE)**!
+ Di matematika, ini salah. Di C++, ini benar. Kok bisa?
+ - **Robot C++ itu Bertahap:** 
+   1. Dia hitung `10 < 5`. Hasilnya **0** (False).
+   2. Dia hitung `0 < 20`. Hasilnya **1** (True).
+   3. Pintu `if` terbuka!
+ 
+ **Pelajaran:** Jangan percaya mata. Kerjakan dari kiri ke kanan, ganti perbandingan jadi angka `0` atau `1`, baru bandingkan lagi dengan angka berikutnya.
  
  ---
  
  ## ⚡ F. Operator Logika (`&&`, `||`, `!`)
  
- - `&&` (DAN / AND): DUA-DUANYA WAJIB BENAR!
- - `||` (ATAU / OR): CUKUP SALAH SATU AJA BENAR, BERES!
- - `!` (TIDAK / NOT): Kacamata kebalikan (Benar jadi Salah).
+ - `&&` (DAN): Harus **Kompak Benar**. Satu saja salah, semua hancur.
+ - `||` (ATAU): Harus **Ada yang Benar**. Satu saja benar, semua selamat.
+ - `!` (TIDAK): **Kacamata Terbalik**. (True jadi False, False jadi True).
  
  ---
  
- ## ⚖️ G. Hukum Kasta Logika (Siapa Lebih Kuat?)
+ ## ⚖️ G. Hukum Kasta Logika (Precedence)
  
- Jika ada banyak operator logika berjejer tanpa kurung, ikuti urutan kasta ini:
- 1. `!` (Kasta Tertinggi / Penguasa)
- 2. `&&` (Kasta Menengah / Lengket)
- 3. `||` (Kasta Rakyat / Longgar)
- 
- *Contoh:* `A || B && C` dikerjakan sebagai `A || (B && C)`. **AND lebih lengket daripada OR!**
+ Sama seperti perkalian dikerjakan sebelum pertambahan, operator logika juga punya kasta:
+ 1. `!` (Kasta Tertinggi/Diktator) $\rightarrow$ Dikerjakan paling awal.
+ 2. `&&` (Kasta Menengah/Geng Motor) $\rightarrow$ Sangat lengket satu sama lain.
+ 3. `||` (Kasta Rakyat/Geng Sepeda) $\rightarrow$ Paling longgar, dikerjakan terakhir.
  
  ---
  
- ## 💤 H. Evaluasi Sirkuit-Pendek (Sirkuit Pemalas)
+ ## 💤 H. Evaluasi Sirkuit-Pendek (Robot Pemalas)
  
- Mesin C++ sifatnya egois memikirkan jalan pintas (**Short-Circuit Evaluation**).
+ Ini adalah sifat paling penting untuk menghemat waktu tracing:
+ **1. Kemalasan AND (`&&`)**: Jika sisi kiri sudah **SALAH**, abaikan sisi kanan. (Gak mungkin benar kalau salah satu udah salah).
+ **2. Kemalasan OR (`||`)**: Jika sisi kiri sudah **BENAR**, abaikan sisi kanan. (Hadiah udah dapet, buat apa cek syarat lain?).
  
- **1. Kemalasan AND (`&&`)**
- Dalam `A && B`, **JIKA KONDISI `A` SUDAH FALSE**, C++ **MENOLAK MEMBACA KONDISI `B`!**
- 
- **2. Kemalasan OR (`||`)**
- Dalam `A || B`, **JIKA KONDISI `A` SUDAH TRUE**, C++ **MENOLAK MEMBACA KONDISI `B`!**
+ *Efek Samping:* Jika di sisi kanan ada perintah `x++`, dan sirkuit pendek terjadi, maka **`x` tidak akan pernah bertambah!** Hati-hati!
  
  ---
  
  ## 🧬 I. Misteri "Angka adalah Kebenaran"
  
- Di kodingan OSN-K, kamu akan sering melihat `if` yang isinya angka mentah, bukan perbandingan.
- ```cpp
- int x = 5;
- if (x) { ... }
- ```
- **Aturan Robot C++:**
- - **Angka `0`** = **FALSE** (Salah).
- - **Angka APAPUN SELAIN `0`** (1, 5, -100, 999) = **TRUE** (Benar).
+ Mengapa `if(5)` itu benar tapi `if(0)` itu salah?
+ - **Filosofi Biner:** Di C++, angka **0** adalah kegelapan (False). Angka lainnya (1, -5, 999) adalah cahaya (True). 
+ - Ingat saja: **Cuma NOL yang salah, sisanya benar semua.**
  
  ---
  
  ## 🎰 J. Vending Machine (`switch - case`)
  
- Kadang kita punya banyak pilihan angka yang saklek. Daripada pakai `else if` kepanjangan, C++ pakai `switch`.
- ```cpp
- switch (pilih) {
-     case 1: printf("Kopi"); break;
-     case 2: printf("Teh"); break;
-     default: printf("Air Putih");
- }
- ```
- **Jebakan `break`:** Jika ada `case` yang lupa dikasih `break`, mesin akan "Bablas" menjalankan perintah di bawahnya secara berurutan sampai ketemu `break` berikutnya!
- 
- ### 💡 Tip Pro: Jurus "Bablas" Berjamaah
- Terkadang kita **sengaja** tidak memasang `break` untuk menangani beberapa pilihan sekaligus.
- ```cpp
- switch (hari) {
-     case 1:
-     case 2:
-     case 3:
-     case 4:
-     case 5: printf("Kerja!"); break;
-     case 6:
-     case 7: printf("Libur!"); break;
- }
- ```
- Ini jauh lebih rapi daripada menulis `if (hari == 1 || hari == 2 || ...)` yang panjang!
+ Gunakan ini jika pilihannya banyak dan angkanya pasti (misal: tombol lift).
+ - **Jurus Bablas:** Jika tidak ada `break;`, mesin akan menjalankan semua `case` di bawahnya sampai ketemu `break` atau pintu keluar. Ini bisa dipakai untuk membuat beberapa tombol punya fungsi yang sama.
  
  ---
  
  ## ✂️ K. Cabang Kilat (Ternary Operator `? :`)
  
- Inilah cara orang sibuk menulis `if-else` dalam satu baris.
- ```cpp
- int hasil = (uang > 10) ? 100 : 0;
- ```
- **Struktur:** `(Kondisi) ? [Jika Benar] : [Jika Salah];`
+ Shorthand untuk `if-else` singkat: `(Syarat) ? (Benar) : (Salah)`.
+ - **Analogi Kuis Cepat:** "Lulus ga? (Iya) : (Enggak)". Kalau nilaimu di atas 75, ambil "Iya", kalau di bawah ambil "Enggak".
  
  ---
  
  ## 🕵️ L. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
  
- Jika kamu melihat kode bertingkat tanpa tanda kurung `{ }`, siapakah pemilik `else` yang sebenarnya?
- ```cpp
- if (a > 5)
-     if (b > 10)
-         printf("Jackpot!");
- else
-     printf("Zonk!");
- ```
- - **Hukum C++ (Dangling Else):** "`else` akan selalu menempel pada `if` paling dekat di atasnya yang belum punya pasangan."
- - Jadi, `else Zonk!` di atas adalah milik `if (b > 10)`. Kalau `a > 5` saja sudah salah, program **TIDAK AKAN MENCETAK APAPUN**.
+ Jika ada `else` nyasar tanpa `{ }`, carilah `if` terdekat tepat di atasnya yang masih jomblo (belum punya pasangan `else`).
+ - Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung.
  
  ---
  
- ## 🌀 M. Strategi Memilih Gembok (Banyak If vs Logika &&)
+ ## 🍜 M. Strategi Memilih Gembok (Workflow Terpercaya)
  
- Seringkali murid bingung kapan harus pakai `if` bertingkat dan kapan pakai `&&` atau banyak `if` terpisah.
- 
- 1. **`if (A) if (B)` (Pintu Berlapis)**: Sama persis dengan `if (A && B)`. Syarat B hanya dicek kalau A sudah lulus.
- 2. **Banyak `if` Terpisah**: Jika ada 3 `if` tanpa `else`, mesin akan mengecek **KETIGANYA** secara mandiri. Ini beda dengan `if - else if` di mana cuma satu yang bisa tembus.
+ - **Gunakan `if - else if`**: Jika hadiahnya cuma boleh satu (Pilih Soto ATAU Bakso, gaboleh dua-duanya).
+ - **Gunakan Banyak `if` mandiri**: Jika hadiahnya boleh banyak (Boleh beli baju sendiri, beli tas sendiri, beli sepatu juga sendiri). Syaratnya tidak saling mengunci.
  
  ---
  
- ## 🌀 N. Analogi Labirin Keputusan
+ ## 🌀 N. Analogi Labirin Decisional (Rangkuman Visual)
  
- ### 🚪 1. Nested If: Pintu Keamanan Berlapis
- Syarat di dalam hanya diperiksa jika syarat luar sudah lolos. (Sidik jari hanya diminta jika PIN kartu sudah benar).
- 
- ### 🍜 2. Else-If Chain: Menu Kantin
- Begitu satu pilihan (Soto) tersedia, kamu kenyang dan tidak mencolek pilihan lain (Bakso/Mie Ayam).
+ 1. **Nested If**: Seperti masuk ke dalam brankas di dalam bank (Pintu PIN $\rightarrow$ Pintu Sidik Jari).
+ 2. **Else-If Chain**: Seperti antre prasmanan (Satu lauk sudah diambil, lanjut ke meja makan).
  
  ---
  
- ## 📜 O. Rangkuman: Cara Berpikir Cabang
+ ## 📜 O. Rangkuman: Mantra "Compiler Manusia"
  
- 1. **Pintu Tunggal**: Dalam satu blok `if-else if-else`, **Cuma ada SATU** blok yang bisa tembus.
- 2. **Sirkuit Pendek**: Selalu cek sisi kiri `&&` atau `||` dulu. Kalau sudah cukup menentukan hasil, abaikan sisi kanan.
- 3. **Indentasi Menipu**: Jangan percaya spasi/tab. Percayalah pada `{ }`. Kalau tidak ada, cuma 1 baris di bawahnya yang dikuasai.
+ Sebelum men-trace soal percabangan, ucapkan 3 mantra ini:
+ 1. **"Kurung mana kurung?"** (Cek batas wilayah kekuasaan `{ }`).
+ 2. **"Kiri dulu baru kanan!"** (Cek Short-circuit).
+ 3. **"Sekali benar, lupakan yang else!"** (Cek kunci `else if`).
  
  ---
  
  ### Siap Di Uji Tracing?
  
  ```cpp
- int a = 10;
- int b = 0;
+ int skor = 80;
+ int bonus = 0;
  
- if (a > 5 || (b++ > 0)) {
-     if (a == 10) b += 5;
+ if (skor > 50 || (bonus++ == 5)) {
+     if (skor > 90) bonus += 10;
+     else bonus += 5;
  }
- printf("b = %d", b);
+ printf("bonus = %d", bonus);
  ```
  
  **Diagnosis Logika:**
- 1. `if (a > 5 || ...)` $\rightarrow$ `10 > 5` adalah **TRUE**.
- 2. Karena konektornya `||` (OR) dan kiri sudah **TRUE**, mesin **MALAS** membaca sebelah kanan.
- 3. `(b++ > 0)` **DIBUANG/DIABAIKAN**. Nilai `b` masih `0`.
- 4. Masuk ke Nested If: `if (a == 10)` $\rightarrow$ `10 == 10` is **TRUE**.
- 5. `b += 5` $\rightarrow$ `b` jadi `0 + 5 = 5`.
- 6. Hasil akhir: **`b = 5`**.
+ 1. `skor > 50` $\rightarrow 80 > 50$ is **TRUE**.
+ 2. Konektor `||` (OR) mendeteksi sisi kiri sudah TRUE. Robot malas aktif!
+ 3. `(bonus++ == 5)` **DIABAIKAN**. Bonus tetap `0`.
+ 4. Masuk ke dalam: `skor > 90` $\rightarrow 80 > 90$ is **FALSE**.
+ 5. Lari ke `else` miliknya: `bonus += 5` $\rightarrow$ bonus jadi `0 + 5 = 5`.
+ 6. Hasil: **`bonus = 5`**.
  
  ---
  
