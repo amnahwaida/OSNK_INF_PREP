@@ -325,7 +325,27 @@
  
  ---
  
- ## 📦 P. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 P. Intipan Masa Depan: Tipe Data Borongan
+ 
+ Di tingkat olimpiade, data yang kamu olah tidak cuma satu permen, tapi sebungkus besar! Di sini kita akan mengintip dua tipe data yang akan dijelaskan di modul selanjutnya:
+ 
+ ### 🧵 1. `string` (Kalimat / Rangkaian Huruf)
+ Digunakan untuk menyimpan kata, kalimat, atau sandi rahasia.
+ - **Analoginya**: Kereta Api Huruf. Setiap gerbong berisi satu karakter.
+ - **Cara Tulis**: `string nama = "Pak Dengklek";`.
+ > [!NOTE]
+ > Pembahasan mendalam mengenai cara membedah kalimat ada di **Modul 07: Manipulasi String**.
+ 
+ ### 📚 2. `array` (Loker Berderet / Daftar Angka)
+ Digunakan saat kamu punya banyak angka tapi malas memberi nama laci satu per satu.
+ - **Analoginya**: Lemari Loker Berderet. Satu pintu besar berjudul `nilai`, tapi di dalamnya ada laci nomor 0, 1, 2, dst.
+ - **Cara Tulis**: `int nilai[5] = {90, 85, 80, 70, 100};`.
+ > [!NOTE]
+ > Pembahasan mengenai cara membongkar isi loker ini secara otomatis dapat kamu temukan di **Modul 03: Perulangan & Array**.
+ 
+ ---
+ 
+ ## 📦 Q. Analogi Tambahan: Gudang Rahasia Komputer
  
  ### 🛁 1. Long Long vs Int: Gayung vs Bak Mandi
  Kamu butuh **Bak Mandi** (`long long`) saat hasil hitunganmu sangat banyak (misal hasil perkalian `100.000 * 100.000`) agar airnya tidak tumpah lari ke mana-mana (*Overflow*).
@@ -335,7 +355,7 @@
  
  ---
  
- ## 📜 Q. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ ## 📜 R. Rangkuman: Cara Berpikir C++ (Resep Masakan)
  
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
