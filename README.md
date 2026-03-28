@@ -31,8 +31,8 @@ graph LR
 | Part | Fokus | Link Masuk | Progress |
 |:---:|--------|-----------|----------|
 | 🔹 A | Berpikir Komputasional | [Masuk](./part-a-abstraksi-ct/) | 🟡 Draft |
-| 🔹 B | Analisis Studi Kasus | [Masuk](./part-b-problem-solving/) | 🟡 Draft |
-| 🔹 C | Dry Run Kode C++ | [Masuk](./part-c-cpp-comprehension/) | 🟡 Draft |
+| 🔹 B | Analisis Studi Kasus | [Masuk](./part-b-pemecahan-masalah/) | ✅ Lengkap |
+| 🔹 C | Dry Run Kode C++ | [Masuk](./part-c-pemahaman-cpp/) | ✅ Lengkap |
 
 ## 🎯 Simulasi Ujian
 | Paket | Link | Durasi | Status |
