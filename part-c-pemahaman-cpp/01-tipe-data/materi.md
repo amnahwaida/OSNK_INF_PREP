@@ -13,10 +13,23 @@
  
  1. **Titik Koma (`;`) adalah Titik**: Setiap satu perintah selesai, wajib diakhiri `;`. 
  2. **Komentar (`//`) adalah Catatan**: Tulis apapun setelah `//` tidak akan dibaca oleh komputer. 
- 3. **C++ itu Beda Huruf (Case Sensitive)**: `Uang` and `uang` adalah dua laci yang **BERBEDA**. Hati-hati dengan huruf kapital!
- 4. **Nama Loker (Variabel)**: Tidak boleh ada **Spasi**, tidak boleh diawali **Angka**, dan tidak boleh memakai **Nama Terlarang (Reserved Words)**.
-    - **Analogi Nama Terlarang**: Kamu tidak boleh menamai anakmu "Presiden" atau "Polisi" karena itu adalah nama jabatan/pusat. Begitu juga di C++, kamu dilarang memakai nama seperti `int`, `long`, `float`, `if`, `return`, atau `double` sebagai nama variabelmu!
- 5. **Petik Tunggal vs Ganda**: Satu huruf pakai petik tunggal `'A'`, kalau teks panjang pakai petik ganda `"Halo"`. Jangan tertukar!
+ 3. **C++ itu Beda Huruf (Case Sensitive)**: `Uang` dan `uang` adalah dua laci yang **BERBEDA**. Hati-hati dengan huruf kapital!
+ 4. **Nama Loker (Variabel)**: Tidak boleh ada **Spasi**, tidak boleh diawali **Angka**.
+ 5. **Petik Tunggal vs Ganda**: Satu huruf pakai petik tunggal `'A'`, kalau teks panjang memakai petik ganda `"Halo"`.
+ 
+ ### 🚫 Kata-Kata Terlarang (Reserved Words)
+ Komputer punya "Kamus Kata Sakti" yang sudah memiliki fungsi khusus. Kamu **DILARANG KERAS** menggunakan kata-kata ini sebagai nama variabelmu.
+ 
+ **Daftar Lengkap Kata Terlarang (Wajib Hindari):**
+ 
+ | Kategori | Kata Terlarang |
+ | :--- | :--- |
+ | **Tipe Data** | `bool`, `char`, `double`, `float`, `int`, `long`, `short`, `signed`, `unsigned`, `void`, `wchar_t`, `auto` |
+ | **Kontrol Alur** | `break`, `case`, `continue`, `default`, `do`, `else`, `for`, `goto`, `if`, `return`, `switch`, `while` |
+ | **Akses & Memori** | `class`, `const`, `delete`, `enum`, `extern`, `friend`, `inline`, `mutable`, `namespace`, `new`, `operator`, `private`, `protected`, `public`, `register`, `sizeof`, `static`, `struct`, `template`, `this`, `typedef`, `union`, `using`, `virtual`, `volatile` |
+ | **Logika & Lainnya** | `and`, `and_eq`, `asm`, `bitand`, `bitor`, `compl`, `const_cast`, `dynamic_cast`, `explicit`, `export`, `false`, `not`, `not_eq`, `or`, `or_eq`, `reinterpret_cast`, `static_cast`, `throw`, `true`, `try`, `typeid`, `typename`, `xor`, `xor_eq` |
+ 
+ **Analogi**: Bayangkan kamu sedang di restoran. Kamu tidak boleh menamai anjing peliharaanmu "Menu", "Meja", atau "Pelayan", karena saat kamu memanggil mereka, seisi restoran akan bingung dan kacau! Begitu juga dengan robot C++.
  
  ---
  
@@ -111,13 +124,29 @@
  
  ---
  
- ## 📦 E. Aturan Main Kotak (Tipe Data Dasar)
+ ## 📦 E. Rahasia Loker Ajaib (Konsep Variabel & Tipe Dasar)
  
- Di bahasa C++, kamu tidak bisa sembarangan menaruh barang ke udara kosong. Kamu butuh **"Kotak Loker"** (Variabel). Kotak ini ada label nama tipe datanya, yang paling sering memakan korban adalah:
+ Selamat! Kamu akan belajar tentang jantung dari segala program komputer: **Variabel**.
  
- - `int` (Kotak Semen): Cuma bisa diisi **Bilangan Bulat** antara minus 2 miliar sampai plus 2 miliar.
- - `long long` (Peti Kemas): Sama kayak `int`, cuma kapasitasnya raksasa (sampai triliunan `1e18`).
- - `bool` (Saklar Lampu): Tipe data paling sederhana. Cuma punya dua kemungkinan: **`true`** (Benar/1) atau **`false`** (Salah/0).
+ ### 🔍 1. Apa Itu Variabel? (Analogi Loker Sekolah)
+ Bayangkan kamu punya barisan loker di sekolah. Untuk menyimpan barang, kamu harus melakukan 3 hal:
+ 1.  **Pilih Ukuran Loker** (Tipe Data): Apakah kamu butuh loker kecil untuk permen, atau peti kemas untuk sepeda?
+ 2.  **Beri Label Nama** (Variabel Name): Agar kamu tidak tertukar dengan loker temanmu.
+ 3.  **Isi Barangnya** (Value): Masukkan angka atau huruf ke dalamnya.
+ 
+ Di C++, cara memesan loker adalah:
+ `TipeData NamaLoker = IsiAwal;`
+ 
+ **Contoh**: `int skor = 100;` 
+ Artinya: "Robot, siapkan loker ukuran **Integer** bernama **Skor**, dan langsung isi dengan angka **100**."
+ 
+ ### 🧪 2. Macam-Macam Ukuran Loker (Tipe Data Dasar)
+ Di OSN-K, pemilihan ukuran loker sangat menentukan apakah kamu dapat skor atau tidak.
+ 
+ - `int` (**Loker Semen**): Loker standar. Cuma bisa diisi **Bilangan Bulat** (-2 miliar s.d 2 miliar).
+ - `long long` (**Peti Kemas**): Loker raksasa. Untuk angka yang sangat besar (triliunan atau $10^{18}$).
+ - `bool` (**Saklar Lampu**): Loker kecil yang cuma punya dua kondisi: **`true`** (Benar/1) atau **`false`** (Salah/0).
+ - `double` (**Gelas Takar**): Loker khusus untuk angka koma/pecahan ($3.14$).
  
  ### 🔒 Loker Tertutup (Konstanta `const`)
  Terkadang ada angka yang **tidak boleh diubah** apa pun yang terjadi (misalnya nilai Maksimal atau nilai Modulo). Kita menyegelnya dengan kata sakti `const`:
@@ -132,14 +161,8 @@
  Guru Matematika di sekolah mengajarkan: $5 \div 2 = 2.5$. Benar kan?
  **Di dunia C++, `5 / 2` HASILNYA ADALAH `2`!** Lho kok bisa? Kemana sisa $0.5$ nya?
  
- **Analogi Loker & Pembagian Permen Mentah:**
- Bayangkan tipe `int` itu adalah **Laci Semen keras tanpa celah karet (desimal)**.
- Kalau Pak Dengklek menyuruh mesin C++ membagi 5 biji permen mentah ke 2 anak (Budi dan Wati). 
- - Budi dapat 2 biji utuh.
- - Wati dapat 2 biji utuh.
- Sisa 1 biji lagi gak bisa dibelah pisau karena kodratnya di kodingan variabel `int` melarang keras adanya "serpihan desimal"!!
- 
- Sisa serpihannya? **DIBUANG KE TONG SAMPAH, DIABAIKAN, DIBAKAR!**
+ **Analogi Laci Semen keras tanpa celah karet (desimal)**:
+ Kalau tipe datanya `int`, sisa serpihannya **DIBUANG KE TONG SAMPAH, DIABAIKAN, DIBAKAR!**
  
  *Aturan Emas Tracing C++:* Kalau tipe datanya `int`, setiap ada rumus Pembagian `/`, **potong buang semua angka koma di belakangnya tanpa pembulatan**.
  
