@@ -13,8 +13,9 @@
  
  1. **Titik Koma (`;`) adalah Titik**: Setiap satu perintah selesai, wajib diakhiri `;`. 
  2. **Komentar (`//`) adalah Catatan**: Tulis apapun setelah `//` tidak akan dibaca oleh komputer. 
- 3. **C++ itu Beda Huruf (Case Sensitive)**: `Uang` dan `uang` adalah dua laci yang **BERBEDA**. Hati-hati dengan huruf kapital!
- 4. **Nama Loker (Variabel)**: Tidak boleh ada **Spasi** dan tidak boleh diawali **Angka**. (Contoh: `uang_jajan` ✅, `2uang` ❌).
+ 3. **C++ itu Beda Huruf (Case Sensitive)**: `Uang` and `uang` adalah dua laci yang **BERBEDA**. Hati-hati dengan huruf kapital!
+ 4. **Nama Loker (Variabel)**: Tidak boleh ada **Spasi**, tidak boleh diawali **Angka**, dan tidak boleh memakai **Nama Terlarang (Reserved Words)**.
+    - **Analogi Nama Terlarang**: Kamu tidak boleh menamai anakmu "Presiden" atau "Polisi" karena itu adalah nama jabatan/pusat. Begitu juga di C++, kamu dilarang memakai nama seperti `int`, `long`, `float`, `if`, `return`, atau `double` sebagai nama variabelmu!
  5. **Petik Tunggal vs Ganda**: Satu huruf pakai petik tunggal `'A'`, kalau teks panjang pakai petik ganda `"Halo"`. Jangan tertukar!
  
  ---
@@ -180,10 +181,10 @@
  
  **2. Pendeteksi Genap-Ganjil Instant**
  Di soal operasi *looping* array panjang, Modulo `2` seringkali nongol mendadak.
- ```cpp
- if (x % 2 == 0) { ... }
- ```
- Jangan panik ngitung sisa bagi angka gila! `% 2 == 0` terjemahan bahasa Indonesianya murni satu kalimat: **"Apakah `x` ini genap?"**.
+ - **Genap**: `if (x % 2 == 0)` $\rightarrow$ "Apakah `x` genap?"
+ - **Ganjil**: `if (x % 2 != 0)` atau `if (x % 2 == 1)` $\rightarrow$ "Apakah `x` ganjil?"
+ 
+ Jangan panik ngitung sisa bagi angka gila! `% 2` terjemahan bahasa Indonesianya murni: **"Apa golongan angka ini?"**.
  
  ---
  
@@ -445,6 +446,12 @@
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
  3. **Aturan Persiapan**: Kamu tidak bisa memakai bahan (variabel) sebelum menyiapkannya (deklarasi).
+ 
+ ### 🏆 Ceklis Emas Penelusuran (Final Check)
+ Sebelum kamu menulis jawaban akhir di lembar soal, lakukan 3 pengecekan ini:
+ 1.  **Cek Tipe Data**: Apakah ada pembagian `int` yang "koma-nya" harus hangus dibakar?
+ 2.  **Cek Kasta Operator**: Apakah ada perkalian/modulo yang harus didahulukan daripada penjumlahan?
+ 3.  **Cek Perubahan Nilai**: Apakah ada variabel yang isinya terhapus/ditimpa oleh perintah baru (seperti `a = 5` atau `a++`)?
  
  ---
  
