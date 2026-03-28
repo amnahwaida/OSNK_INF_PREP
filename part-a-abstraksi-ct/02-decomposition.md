@@ -139,5 +139,59 @@ Gunakan konsep Diagram Venn: (Habis dibagi 3) - (Habis dibagi 3 DAN 5).
 Langkah 1 (Habis dibagi 3) adalah masalah utama, lalu kita "membuang" bagian yang tidak diinginkan (habis dibagi 5, yang berarti kelipatan 15).
 </details>
 
+### Soal #05: Perencanaan Studi Wisata
+Dalam merencanakan studi wisata sekolah ke Museum Nasional, panitia membagi tugas besar menjadi beberapa sub-tugas. Manakah di bawah ini yang merupakan dekomposisi yang tepat untuk sub-tugas **"Transportasi"**?
+A. Memesan bus, menentukan rute perjalanan, dan mengumpulkan biaya bensin.
+B. Membeli tiket masuk museum dan memesan pemandu wisata.
+C. Menyiapkan kotak P3K dan daftar nama peserta.
+D. Mendata menu makan siang untuk siswa dan guru.
+
+<details>
+<summary>💡 Hint</summary>
+Fokus pada segala hal yang berkaitan dengan "perjalanan/kendaraan".
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. Memesan bus, menentukan rute, dan biaya bensin.**
+Ketiga hal tersebut adalah komponen penyusun dari masalah besar "Transportasi".
+</details>
+
+### Soal #06: Teka-Teki Koin Berat
+Anda memiliki 9 koin yang terlihat identik, namun salah satunya sedikit lebih berat. Anda memiliki timbangan neraca (dua lengan). Strategi pertama dalam CT (Dekomposisi) untuk mencari koin berat tersebut dengan langkah minimal adalah...
+A. Menimbang koin satu per satu (koin 1 vs koin 2, koin 2 vs koin 3, dst).
+B. Membagi 9 koin menjadi 3 grup yang masing-masing berisi 3 koin.
+C. Membagi 9 koin menjadi 2 grup (4 koin dan 5 koin).
+D. Langsung menebak koin mana yang paling berat.
+
+<details>
+<summary>💡 Hint</summary>
+Dekomposisi yang efisien seringkali membagi masalah menjadi bagian-bagian yang seimbang.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Membagi menjadi 3 grup berisi 3 koin.**
+Ini adalah langkah awal algoritma *Divide and Conquer*. Dengan menimbang dua grup berisi 3 koin, kita bisa tahu di grup mana koin berat berada (hanya dalam 1 kali timbang).
+</details>
+
+### Soal #07: Pembuatan Aplikasi Kalkulator
+Jika Anda diminta membuat program kalkulator scientific, proses dekomposisi mana yang paling masuk akal untuk fungsi **"Operasi Matematika Dasar"**?
+A. Membuat fungsi terpisah untuk Penjumlahan, Pengurangan, Perkalian, dan Pembagian.
+B. Membuat satu fungsi raksasa yang berisi ribuan baris kode untuk semua hitungan.
+C. Fokus pada desain warna tombol kalkulator terlebih dahulu.
+D. Menunggu instruksi lebih lanjut dari guru tanpa menulis kode.
+
+<details>
+<summary>💡 Hint</summary>
+Ingat: "Setiap bagian kecil harus bisa berdiri sendiri dan mudah diuji."
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. Membuat fungsi terpisah (Tambah, Kurang, Kali, Bagi).**
+Memecah operasi besar menjadi fungsi-fungsi kecil membuat kode lebih rapi, mudah diperbaiki, dan bisa digunakan kembali.
+</details>
+
 ---
 [< Kembali ke Beranda Materi](../README.md) | [Materi Selanjutnya: Pattern Recognition](./03-pattern-recognition.md)
