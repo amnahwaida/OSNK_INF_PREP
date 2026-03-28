@@ -1,531 +1,324 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
-# Latihan Soal Part C - Modul 03 - Set 01
+# Latihan Soal Part C - Modul 03 - Set 01 (Premium Edition)
 
-### Soal 1
+> [!IMPORTANT]
+> Fokus pada **Kondisi Berhenti** dan **Perubahan Variabel**. Ingat: Satu kesalahan kecil di `i++` bisa menyebabkan loop berjalan selamanya!
+
+---
+
+### Soal 1: Belajar Berhitung (Basic For Loop)
 ```cpp
-// Step: Akumulasi
-int total_step = 0;
-for(int i=1; i<=4; i++) total_step += i;
+// Skenario: Cetak angka 1 sampai 5
+int total = 0;
+for (int i = 1; i <= 5; i++) {
+    total += i;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `total` di akhir program?
+2. Berapa kali blok di dalam `for` dieksekusi?
 
-**Jawaban & Diagnosis:**
-1. **10**
-2. Menghitung total dari 1 sampai 4.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
+graph TD
+Start --> Init["i = 1"]
+Init --> Cond{"i <= 5?"}
+Cond -- T --> Body["total += i"]
+Body --> Inc["i++"]
+Inc --> Cond
+Cond -- F --> End
 ```
+
+**Jawaban:**
+1. **15** (1+2+3+4+5)
+2. **5 kali**
+
+**📖 Analisis Mendalam:**
+Ini adalah struktur dasar loop `for`. Iterasi berhenti tepat saat `i` menjadi 6, karena kondisi `6 <= 5` bernilai false.
+</details>
 
 ---
-### Soal 2
+
+### Soal 2: Lari Keliling Lapangan (While Loop)
 ```cpp
-// Save: Counter
-int n=4, count=0;
-while(n > 0) { count++; n--; }
+// Skenario: Lari sampai lelah (energi habis)
+int energi = 15;
+int putaran = 0;
+
+while (energi > 0) {
+    energi -= 5;
+    putaran++;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `putaran` di akhir?
+2. Berapakah nilai `energi` terakhir?
 
-**Jawaban & Diagnosis:**
-1. **4**
-2. Loop berjalan 4 kali sampai n=0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
+graph TD
+A{"energi > 0?"} -- T --> B["Energi - 5, Putaran + 1"]
+B --> A
+A -- F --> End
 ```
 
----
-### Soal 3
-```cpp
-// Lari: Akumulasi
-int total_lari = 0;
-for(int i=1; i<=3; i++) total_lari += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Menghitung total dari 1 sampai 3.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 4
-```cpp
-// Baca: Counter
-int n=4, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. Loop berjalan 4 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
-```
-
----
-### Soal 5
-```cpp
-// Tulis: Akumulasi
-int total_tulis = 0;
-for(int i=1; i<=3; i++) total_tulis += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Menghitung total dari 1 sampai 3.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 6
-```cpp
-// Makan: Counter
-int n=4, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. Loop berjalan 4 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
-```
-
----
-### Soal 7
-```cpp
-// Minum: Akumulasi
-int total_minum = 0;
-for(int i=1; i<=6; i++) total_minum += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **21**
-2. Menghitung total dari 1 sampai 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 21]
-```
-
----
-### Soal 8
-```cpp
-// Tidur: Counter
-int n=5, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **5**
-2. Loop berjalan 5 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 5]
-```
-
----
-### Soal 9
-```cpp
-// Main: Akumulasi
-int total_main = 0;
-for(int i=1; i<=3; i++) total_main += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Menghitung total dari 1 sampai 3.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 10
-```cpp
-// Kerja: Counter
-int n=4, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. Loop berjalan 4 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
-```
-
----
-### Soal 11
-```cpp
-// Belajar: Akumulasi
-int total_belajar = 0;
-for(int i=1; i<=6; i++) total_belajar += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **21**
-2. Menghitung total dari 1 sampai 6.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 21]
-```
-
----
-### Soal 12
-```cpp
-// Kursus: Counter
-int n=5, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **5**
-2. Loop berjalan 5 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 5]
-```
-
----
-### Soal 13
-```cpp
-// Les: Akumulasi
-int total_les = 0;
-for(int i=1; i<=4; i++) total_les += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. Menghitung total dari 1 sampai 4.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
-
----
-### Soal 14
-```cpp
-// Ujian: Counter
-int n=5, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **5**
-2. Loop berjalan 5 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 5]
-```
-
----
-### Soal 15
-```cpp
-// Tugas: Akumulasi
-int total_tugas = 0;
-for(int i=1; i<=5; i++) total_tugas += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **15**
-2. Menghitung total dari 1 sampai 5.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 15]
-```
-
----
-### Soal 16
-```cpp
-// Proyek: Counter
-int n=6, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. Loop berjalan 6 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
-
----
-### Soal 17
-```cpp
-// Rapat: Akumulasi
-int total_rapat = 0;
-for(int i=1; i<=5; i++) total_rapat += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **15**
-2. Menghitung total dari 1 sampai 5.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 15]
-```
-
----
-### Soal 18
-```cpp
-// Presentasi: Counter
-int n=5, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **5**
-2. Loop berjalan 5 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 5]
-```
-
----
-### Soal 19
-```cpp
-// Diskusi: Akumulasi
-int total_diskusi = 0;
-for(int i=1; i<=5; i++) total_diskusi += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **15**
-2. Menghitung total dari 1 sampai 5.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 15]
-```
-
----
-### Soal 20
-```cpp
-// Debat: Counter
-int n=3, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **3**
-2. Loop berjalan 3 kali sampai n=0.
+2. **0**
+
+**📖 Analisis Mendalam:**
+Loop `while` mengecek kondisi di awal. Putaran terjadi 3 kali: (15->10, 10->5, 5->0). Saat energi 0, kondisi `0 > 0` salah, dan loop berhenti.
+</details>
+
+---
+
+### Soal 3: ⚠️ Batas Tipis (Off-by-One Error)
+```cpp
+// Skenario: Cetak pesan 5 kali?
+int count = 0;
+for (int i = 0; i <= 5; i++) {
+    count++;
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `count`?
+2. Mengapa hasilnya bukan 5?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 3]
+A["i: 0, 1, 2, 3, 4, 5"] --> B["6 Iterasi"]
 ```
 
----
-### Soal 21
-```cpp
-// Pidato: Akumulasi
-int total_pidato = 0;
-for(int i=1; i<=4; i++) total_pidato += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. Menghitung total dari 1 sampai 4.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 10]
-```
-
----
-### Soal 22
-```cpp
-// Ceramah: Counter
-int n=4, count=0;
-while(n > 0) { count++; n--; }
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. Loop berjalan 4 kali sampai n=0.
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
-```
-
----
-### Soal 23
-```cpp
-// Khotbah: Akumulasi
-int total_khotbah = 0;
-for(int i=1; i<=3; i++) total_khotbah += i;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
+**Jawaban:**
 1. **6**
-2. Menghitung total dari 1 sampai 3.
+2. Karena loop dimulai dari **0** dan berhenti di **<= 5** (inklusif).
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: 6]
-```
+**📖 Analisis Mendalam:**
+Ini adalah jebakan klasik *Off-by-One*. Jika ingin 5 kali iterasi, gunakan `i < 5` (jika mulai dari 0) atau `i <= 5` (jika mulai dari 1).
+</details>
 
 ---
-### Soal 24
+
+### Soal 4: Hitung Mundur Roket (Decrement Loop)
 ```cpp
-// Dakwah: Counter
-int n=4, count=0;
-while(n > 0) { count++; n--; }
+// Skenario: Countdown peluncuran
+int t = 3;
+while (t > 0) {
+    t--;
+}
+// Di sini ada baris: t += 10;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `t` tepat setelah loop selesai?
+2. Berapakah nilai `t` di akhir seluruh program?
 
-**Jawaban & Diagnosis:**
-1. **4**
-2. Loop berjalan 4 kali sampai n=0.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
-graph LR
-A[Trace] --> B[Result: 4]
+graph TD
+A{"3 > 0?"} -- T --> B["t = 2"]
+B --> C{"2 > 0?"} -- T --> D["t = 1"]
+D --> E{"1 > 0?"} -- T --> F["t = 0"]
+F --> G{"0 > 0? (F)"} --> End
 ```
 
+**Jawaban:**
+1. **0**
+2. **10**
+</details>
+
 ---
-### Soal 25
+
+### Soal 5: Pangkat Manual (Power Simulation)
 ```cpp
-// Sholat: Akumulasi
-int total_sholat = 0;
-for(int i=1; i<=4; i++) total_sholat += i;
+// Skenario: Hitung 2 pangkat 4
+int basis = 2;
+int hasil = 1;
+
+for (int i = 0; i < 4; i++) {
+    hasil *= basis;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `hasil`?
+2. Apa guna `i < 4` dalam konteks perpangkatan ini?
 
-**Jawaban & Diagnosis:**
-1. **10**
-2. Menghitung total dari 1 sampai 4.
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-A[Trace] --> B[Result: 10]
+A["1 * 2"] --> B["2 * 2"] --> C["4 * 2"] --> D["8 * 2"]
+D --> E["16"]
 ```
 
+**Jawaban:**
+1. **16**
+2. Sebagai penentu berapa kali perkalian dengan basis dilakukan (eksponen).
+</details>
+
 ---
+
+### Soal 6: Kelipatan Genap (Step Change)
+```cpp
+// Skenario: Jumlahkan angka genap 2 sampai 6
+int jumlah = 0;
+for (int i = 2; i <= 6; i += 2) {
+    jumlah += i;
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `jumlah`?
+2. Berapa kali variabel `i` diubah nilainya?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["i = 2"] --> B["jumlah = 2"]
+B --> C["i = 4"] --> D["jumlah = 6"]
+D --> E["i = 6"] --> F["jumlah = 12"]
+F --> G["i = 8 (Stop)"]
+```
+
+**Jawaban:**
+1. **12** (2 + 4 + 6)
+2. **3 kali** (menjadi 4, 6, lalu 8 untuk pengecekan gagal).
+</details>
+
+---
+
+### Soal 7: Misteri ++i vs i++ (Prefix vs Postfix)
+```cpp
+// Skenario: Loop dengan increment berbeda
+int a = 0, b = 0;
+
+for (int i = 0; i < 3; i++) a++;
+for (int j = 0; j < 3; ++j) b++;
+```
+**Pertanyaan:**
+1. Berapakah nilai `a`?
+2. Berapakah nilai `b`?
+3. Apakah ada perbedaan hasil antara `i++` dan `++i` dalam bagian ketiga perintah `for`?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Jawaban:**
+1. **3**
+2. **3**
+3. **Tidak ada.** Di dalam header `for`, post-increment dan pre-increment memberikan hasil iterasi yang sama.
+
+**📖 Analisis Mendalam:**
+Meskipun secara teori `++i` sedikit lebih cepat, compiler modern memperlakukan keduanya secara identik di dalam struktur `for`. Keduanya akan melakukan penambahan **setelah** blok kode di dalam loop selesai dikerjakan.
+</details>
+
+---
+
+### Soal 8: Tabungan Berlipat (Compound Interest)
+```cpp
+// Skenario: Uang 100rb, tiap tahun naik 10% (dibulatkan ke bawah)
+int uang = 100000;
+for (int thn = 0; thn < 2; thn++) {
+    uang += uang / 10;
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `uang` setelah 2 tahun?
+2. Apa yang membedakan tahun ke-1 dan tahun ke-2?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["Start: 100k"] --> B["Thn 1: 100k + 10k = 110k"]
+B --> C["Thn 2: 110k + 11k = 121k"]
+```
+
+**Jawaban:**
+1. **121000**
+2. Di tahun kedua, bunga 10% dihitung dari saldo yang sudah bertambah di tahun pertama (bunga berbunga).
+</details>
+
+---
+
+### Soal 9: ⚠️ Loop Tanpa Henti? (Inversion Trap)
+```cpp
+// Skenario: Salah tanda di increment/decrement
+int n = 5;
+while (n < 10) {
+    n--; // <-- Perhatikan ini!
+    if (n < 0) break; // Penyelamat darurat
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `n` terakhir sebelum program berhenti?
+2. Kenapa tanpa `break`, program ini akan menjadi *Infinite Loop*?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["5"] --> B["4"] --> C["3"] --> D["..."] --> E["-1 (Break!)"]
+```
+
+**Jawaban:**
+1. **-1**
+2. Karena `n` terus mengecil (menjauh dari angka 10), sehingga kondisi `n < 10` akan **selalu benar** selamanya.
+</details>
+
+---
+
+### Soal 10: Pemecah Kelompok (Skip Multiples)
+```cpp
+// Skenario: Jumlahkan angka dari 1 ke 5, tapi lewatkan angka 3
+int total = 0;
+for (int i = 1; i <= 5; i++) {
+    if (i != 3) {
+        total += i;
+    }
+}
+```
+**Pertanyaan:**
+1. Berapakah nilai `total`?
+2. Rumus matematika apa yang setara dengan `total` tersebut?
+
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["i: 1"] --> B["total = 1"]
+B --> C["i: 2"] --> D["total = 3"]
+D --> E["i: 3 (Skip)"]
+E --> F["i: 4"] --> G["total = 7"]
+G --> H["i: 5"] --> I["total = 12"]
+```
+
+**Jawaban:**
+1. **12**
+2. $(1+2+3+4+5) - 3 = 12$.
+</details>
