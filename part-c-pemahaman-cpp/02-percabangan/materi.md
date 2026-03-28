@@ -177,11 +177,6 @@
  printf("%s", (skor >= 75) ? "LULUS" : "REMEDIAL");
  ```
  
- **3. Penentu Genap-Ganjil (Logistik)**
- ```cpp
- string label = (x % 2 == 0) ? "GENAP" : "GANJIL";
- ```
- 
  **Diagnosis Logika Kilat:**
  1. **Evaluasi Cepat**: Mesin pertama-tama fokus menghitung yang di dalam kurung `()`, misal `80 >= 75`.
  2. **Pilih Jalur**:
@@ -196,22 +191,46 @@
  
  ## 🕵️ L. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
  
- Jika ada `else` nyasar tanpa `{ }`, carilah `if` terdekat tepat di atasnya yang masih jomblo (belum punya pasangan `else`).
- - Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung. Berhati-hatilah!
+ Jika kamu melihat kode bertingkat tanpa tanda kurung `{ }`, carilah `if` terdekat tepat di atasnya yang masih jomblo (belum punya pasangan `else`). Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung.
+ 
+ **Analogi "Tetangga Terdekat":**
+ Pikirkan `else` sebagai anak kecil yang tersesat di mall. Dia tidak akan mencari orangtuanya di seberang mall, tapi akan menempel pada orang dewasa paling dekat yang berada tepat di depannya.
+ 
+ ### 🌍 Pemanasan di Program Nyata (Sistem Login):
+ ```cpp
+ if (user_aktif)
+     if (password_bener)
+         printf("Selamat Datang!");
+ else
+     printf("Akun kamu mati!"); // <--- JEBAKAN!
+ ```
+ **Diagnosis Logika Tetangga:**
+ - **Hati-hati!** Walaupun tulisan "Akun kamu mati!" menjorok ke kiri, secara hukum C++ dia adalah milik `if (password_bener)`.
+ - Jika `user_aktif` adalah **SALAH (FALSE)**, maka robot C++ akan langsung lompat keluar tanpa mencetak apapun! Tulisan "Akun kamu mati!" hanya akan muncul jika user sudah benar tapi passwordnya salah.
  
  ---
  
  ## 🍜 M. Strategi Memilih Gembok (Workflow Terpercaya)
  
- - **Gunakan `if - else if`**: Jika hadiahnya cuma boleh satu (Pilih Soto atau Bakso).
- - **Gunakan Banyak `if` mandiri**: Jika hadiahnya boleh banyak (Beli baju AND beli tas).
+ Memilih struktur percabangan yang tepat seperti memilih alat makan; salah pilih, makanmu jadi tidak efisien.
+ 
+ ### 1. Kapan Pakai `if - else if` ? (Pilih Salah Satu)
+ Pakailah saat pilihan-pilihannya saling meniadakan (exclusive). Jika satu sudah benar, yang lain sudah pasti salah.
+ - **Contoh Nyata**: Menentukan kategori umur (Balita, Anak, Remaja, Dewasa). Kamu tidak mungkin anak-anak SEKALIGUS dewasa di saat yang sama, kan?
+ 
+ ### 2. Kapan Pakai Banyak `if` Terpisah ? (Pilih Sebanyaknya)
+ Pakailah saat pilihan-pilihannya bersifat independen (bisa benar semua). 
+ - **Contoh Nyata**: Belanja e-commerce. Pengecekan `Gunakan Kupon`, `Gunakan Saldo`, dan `Pakai Asuransi` adalah tiga `if` mandiri. Bisa jadi kamu memakai kupon saja, atau pakai ketiganya sekaligus. Robot C++ harus mengecek semua syarat satu-per-satu tanpa mengabaikan yang lain.
  
  ---
  
  ## 🌀 N. Analogi Labirin Decisional (Rangkuman Visual)
  
- 1. **Nested If**: Seperti masuk ke dalam brankas di dalam bank (Pintu PIN -> Sidik Jari).
- 2. **Else-If Chain**: Seperti antre prasmanan (Satu lauk sudah diambil, lanjut ke meja makan).
+ Mari kita rangkum semua gembok logika tadi ke dalam visualisasi labirin:
+ 
+ 1. **Nested If (Labirin Berlapis)**: Seperti kotak brankas rahasia di dalam bank. Untuk mengambil emas, kamu harus membuka **Pintu Bank** AND **Pintu Brankas** AND **Gembok Kotak**. Salah satu kunci gagal, kamu tidak dapat apa-apa.
+ 2. **Else-If Chain (Antrean Soto)**: Seperti antrean makanan. Begitu kamu melihat kuali "Soto" penuh, kamu ambil dan langsung lari ke meja makan. Kamu tidak akan melirik ke kuali "Bakso" atau "Mie Ayam" lagi. 
+ 3. **Multi If (Daftar Belanja)**: Seperti belanja di pasar. Kamu bawa daftar: Cabai, Bawang, Tomat. Kamu mendatangi setiap lapak satu per satu secara mandiri. Ada atau tidaknya bawang tidak berpengaruh pada usahamu mencari cabai.
  
  ---
  
