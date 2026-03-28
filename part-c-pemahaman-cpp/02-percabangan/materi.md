@@ -6,7 +6,7 @@
  
  ---
  
- ## 📋 A. Hukum Kurung Kurawal `{ }` (Wilayah Kekuasaan)
+ ## 📋 A. Pemanasan: Hukum Kurung Kurawal `{ }` (Wilayah Kekuasaan)
  
  Masalah nomor satu pemula adalah mengira `if` berkuasa atas banyak baris di bawahnya. 
  - **Aturan Emas:** Jika tidak ada `{ }`, si `if` **HANYA** memimpin **satu baris** (sampai ketemu titik koma `;` pertama).
@@ -61,8 +61,8 @@
  Di matematika, ini salah. Di C++, ini benar. Kok bisa?
  - **Robot C++ itu Bertahap:** 
    1. Dia hitung `10 < 5`. Hasilnya **0** (False).
-   2. Dia hitung `0 < 20`. Hasilnya **1** (True).
-   3. Pintu `if` terbuka!
+   2. Sekarang rumusnya jadi `0 < 20`.
+   3. Apakah 0 lebih kecil dari 20? **BETUL BANGET (TRUE)**!
  
  **Pelajaran:** Jangan percaya mata. Kerjakan dari kiri ke kanan, ganti perbandingan jadi angka `0` atau `1`, baru bandingkan lagi dengan angka berikutnya.
  
@@ -120,7 +120,7 @@
  ## 🕵️ L. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
  
  Jika ada `else` nyasar tanpa `{ }`, carilah `if` terdekat tepat di atasnya yang masih jomblo (belum punya pasangan `else`).
- - Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung.
+ - Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung Berhati-hatilah!
  
  ---
  
@@ -147,7 +147,7 @@
  
  ---
  
- ### Siap Di Uji Tracing?
+ ### 🧠 Siap Di Uji Tracing? (Level 1: Gembok Berantai)
  
  ```cpp
  int skor = 80;
@@ -159,14 +159,61 @@
  }
  printf("bonus = %d", bonus);
  ```
- 
  **Diagnosis Logika:**
  1. `skor > 50` $\rightarrow 80 > 50$ is **TRUE**.
  2. Konektor `||` (OR) mendeteksi sisi kiri sudah TRUE. Robot malas aktif!
  3. `(bonus++ == 5)` **DIABAIKAN**. Bonus tetap `0`.
- 4. Masuk ke dalam: `skor > 90` $\rightarrow 80 > 90$ is **FALSE**.
- 5. Lari ke `else` miliknya: `bonus += 5` $\rightarrow$ bonus jadi `0 + 5 = 5`.
- 6. Hasil: **`bonus = 5`**.
+ 4. Masuk ke dalam: `skor > 90` adalah **FALSE**.
+ 5. Lari ke `else`: `bonus += 5` $\rightarrow$ bonus jadi `0 + 5 = 5`.
+ 6. Hasil akhir: **`bonus = 5`**.
+ 
+ ---
+ 
+ ### 🧗 Siap Di Uji Tracing? (Level 2: Pemburu Tanpa Tembok)
+ 
+ ```cpp
+ int a = 5;
+ int b = 10;
+ 
+ if (a > 10)
+     a = a + 2;
+     b = b + 5; // <--- Apakah ini rakyat Raja if?
+     
+ if (b > 10) {
+     if (a == 5) b = 0;
+     else b = 1;
+ }
+ printf("a = %d, b = %d", a, b);
+ ```
+ **Diagnosis Logika:**
+ 1. `a > 10` $\rightarrow 5 > 10$ is **FALSE**.
+ 2. Karena tidak ada kurung `{ }`, Raja `if` cuma berkuasa atas `a = a + 2`. Perintah itu **DIBATALKAN**.
+ 3. Namun `b = b + 5` adalah rakyat merdeka! Ia tetap jalan: `b = 10 + 5 = 15`.
+ 4. Pintu Berikutnya: `if (b > 10)` $\rightarrow 15 > 10$ is **TRUE**.
+ 5. Cek `if (a == 5)`? Karena `a` tadi tidak jadi ditambah, ia masih `5`. Hasilnya **TRUE**.
+ 6. `b = 0`.
+ 7. Hasil akhir: **`a = 5, b = 0`**.
+ 
+ ---
+ 
+ ### 🌋 Siap Di Uji Tracing? (Level 3: Kiamat Logika)
+ 
+ ```cpp
+ int x = 10;
+ int y = 5;
+ 
+ if (x < y < 20) {
+     if (x = 2) y += x;
+ }
+ printf("x = %d, y = %d", x, y);
+ ```
+ **Diagnosis Logika:**
+ 1. `x < y < 20` $\rightarrow$ Robot C++ menghitung `10 < 5` dulu. Hasilnya **0** (False).
+ 2. Lalu `0 < 20` dihitung. Hasilnya **1** (True)! Gerbang Labirin terbuka.
+ 3. Masuk ke dalam: `if (x = 2)`. Ini bukan `==`. Juri mencuci otak `x` menjadi **2**. 
+ 4. Angka `2` dianggap **TRUE**, maka `y += x` dikerjakan.
+ 5. `y = 5 + 2 = 7`.
+ 6. Hasil akhir: **`x = 2, y = 7`**.
  
  ---
  
