@@ -19,6 +19,13 @@ int sisi = no_kursi % 2;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["no_kursi=15"] --> B["% 2"]
+B --> C["1 (Ganjil)"]
+```
+
 **Jawaban:**
 1. **1**
 2. **Kiri** (Ganjil)
@@ -41,6 +48,14 @@ int cek = (tahun % 4 == 0);
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["2026 % 4"] --> B["Sisa 2"]
+B --> C["2 == 0?"]
+C -- F --> D["0 (False)"]
+```
 
 **Jawaban:**
 1. **0**
@@ -65,10 +80,6 @@ int blok = (bat / 20) + 1;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Jawaban:**
-1. **3**
-2. **1**
-
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
@@ -76,6 +87,10 @@ A["Baterai 48%"] --> B["/ 20 = 2"]
 B --> C["+ 1 = 3"]
 C --> D["Hasil: 3 Blok"]
 ```
+
+**Jawaban:**
+1. **3**
+2. **1**
 
 **📖 Analisis Mendalam:**
 `48 / 20` adalah 2. Ditambah 1 menjadi 3. Ini adalah cara memetakan rentang angka besar ke rentang angka kecil untuk kebutuhan UI.
@@ -95,6 +110,15 @@ double fahr_B = (9.0 / 5.0) * cel + 32;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["9 / 5 (Int)"] --> B["1"]
+B --> C["* 100 + 32 = 132"]
+D["9.0 / 5.0 (Double)"] --> E["1.8"]
+E --> F["* 100 + 32 = 212"]
+```
 
 **Jawaban:**
 1. **132.0**
@@ -120,6 +144,15 @@ stok = stok + 10;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["stok=250"] --> B["+ 10 = 260"]
+B --> C["260 > 255 (Limit)"]
+C --> D["Modulo 256"]
+D --> E["Hasil: 4"]
+```
+
 **Jawaban:**
 1. **4**
 2. **Overflow** (Meluap kembali ke nol).
@@ -142,6 +175,14 @@ int jarak = (int)1.41 * (dx + dy);
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["(int) 1.41"] --> B["1 (Pangkas)"]
+B --> C["* (5 + 5)"]
+C --> D["1 * 10 = 10"]
+```
 
 **Jawaban:**
 1. **10**
@@ -166,6 +207,14 @@ double efisiensi = km / liter;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["km=100, lit=30"] --> B["100 / 30 (Int)"]
+B --> C["3 (Sisa Dibuang)"]
+C --> D["efisiensi = 3.0"]
+```
+
 **Jawaban:**
 1. **3.0** (Desimal hilang sebelum masuk ke double)
 2. Ubah salah satu angka menjadi double, misal: `(double)km / liter`.
@@ -185,11 +234,20 @@ int menit = sisa / 60;
 int detik = sisa % 60;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `jam`, `menit`, dan `detik`?
+1. Berapakah nilai `jam`, `menit`, and `detik`?
 2. Tunjukkan formatnya dalam HH:MM:SS!
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["4000 Detik"] --> B["/ 3600 = 1 Jam"]
+A --> C["% 3600 = 400 Sisa"]
+C --> D["/ 60 = 6 Menit"]
+C --> E["% 60 = 40 Detik"]
+```
 
 **Jawaban:**
 1. **1 jam, 6 menit, 40 detik**
@@ -213,6 +271,17 @@ int nilai_rapor = (int)(nilai + 0.5);
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["7.6 + 0.5"] --> B["8.1"]
+B --> C["(int) 8.1"]
+C --> D["8"]
+E["7.4 + 0.5"] --> F["7.9"]
+F --> G["(int) 7.9"]
+G --> H["7"]
+```
+
 **Jawaban:**
 1. **8**
 2. **7**
@@ -235,6 +304,13 @@ int hasil_B = x >> 1;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["x=20 (10100)"] --> B["Shift Right 1x"]
+B --> C["1010 (10)"]
+```
 
 **Jawaban:**
 1. **Ya, sama-sama 10.**

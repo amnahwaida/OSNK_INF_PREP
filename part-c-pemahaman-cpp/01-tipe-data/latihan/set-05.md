@@ -1,4 +1,4 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
@@ -18,6 +18,14 @@ int y = sqrt(x);
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["sqrt(-16)"] --> B["NaN (Error)"]
+B --> C["(int) y"]
+C --> D["0 (Default Fail)"]
+```
 
 **Jawaban:**
 1. **0 atau NaN (Not a Number)** dalam bentuk integer.
@@ -42,6 +50,15 @@ int z = y & 1;  // y % 2
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["x=6 (110)"] --> B[">> 1"]
+B --> C["3 (011)"]
+C --> D["& 1"]
+D --> E["1 (Bit Terakhir)"]
+```
+
 **Jawaban:**
 1. **3**
 2. **1**
@@ -65,6 +82,14 @@ int hasil = data[pilih];
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["pilih = true"] --> B["(int) 1"]
+B --> C["data[1]"]
+C --> D["20"]
+```
+
 **Jawaban:**
 1. **20**
 2. **Indeks 1.**
@@ -86,6 +111,13 @@ int hasil = x % 1;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["x % 1"] --> B["Sisa Bagi per-1"]
+B --> C["0"]
+```
 
 **Jawaban:**
 1. **0**
@@ -110,6 +142,14 @@ int hasil = semut / gajah;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["3 / 100 (Int)"] --> B["0.03"]
+B --> C["Pangkas Desimal"]
+C --> D["Hasil: 0"]
+```
+
 **Jawaban:**
 1. **0**
 2. Karena pembagian `int` membuang semua desimal di belakang nol koma.
@@ -133,6 +173,14 @@ x += y /= 2;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["y /= 2"] --> B["y = 2"]
+B --> C["x += 2"]
+C --> D["x = 12"]
+```
+
 **Jawaban:**
 1. **2**
 2. **12** (10 + 2)
@@ -148,7 +196,6 @@ Operasi dievaluasi dari **kanan ke kiri**.
 ### Soal 47: Koma Berbahaya (Comma Operator)
 ```cpp
 int x = (5, 10, 15);
-int y = 5, 10, 15; // Ini akan ERROR tapi asumsikan x dulu
 ```
 **Pertanyaan:**
 1. Berapakah nilai `x`?
@@ -156,6 +203,14 @@ int y = 5, 10, 15; // Ini akan ERROR tapi asumsikan x dulu
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["5, 10, 15"] --> B["Evaluasi Berutan"]
+B --> C["Ambil Paling Kanan"]
+C --> D["15"]
+```
 
 **Jawaban:**
 1. **15**
@@ -180,6 +235,13 @@ int selisih = spasi - enter;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["' ' (32)"] --> B["- '\n' (10)"]
+B --> C["22"]
+```
+
 **Jawaban:**
 1. **22** (32 - 10)
 2. Karena semua instruksi teks harus dikirimkan ke printer/layar dalam kode angka agar hardware mengerti instruksi baris baru.
@@ -198,6 +260,14 @@ char cebol = (char)raksasa;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["300"] --> B["Biner: 100101100"]
+B --> C["Ambil 8-bit terakhir"]
+C --> D["00101100 (44)"]
+```
 
 **Jawaban:**
 1. **44** (300 - 256)
@@ -223,6 +293,15 @@ int hasil_akhir = d % 5;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["10 / 3 (Int) = 3"] --> B["c(double) = 3.0"]
+B --> C["'A'(65) + 3 = 68"]
+C --> D["d(char) = 'D'"]
+D --> E["68 % 5 = 3"]
+```
 
 **Jawaban:**
 1. `c = 10 / 3 = 3.0` (Int division first).

@@ -24,12 +24,17 @@ if (kursi[klik] == 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["klik = 4"] --> B["kursi[4] = 1"]
+B --> C{"1 == 0? (F)"}
+C -- F --> D["status = Booked"]
+```
+
 **Jawaban:**
 1. **"Booked"** (Karena `kursi[4]` adalah 1)
 2. **"Booked"** (Karena `kursi[1]` juga adalah 1)
-
-**📖 Analisis Mendalam:**
-Ini adalah logika basis data sederhana untuk sistem reservasi. Indeks array digunakan untuk merepresentasikan posisi fisik.
 </details>
 
 ---
@@ -52,12 +57,17 @@ if (mendung) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"mendung (T)?"} -- T --> B{"gerimis (F)?"}
+B -- F --> C["bawa = Payung"]
+A -- F --> D["bawa = Kacamata"]
+```
+
 **Jawaban:**
 1. **"Payung"**
 2. **Saat `mendung = false`.**
-
-**📖 Analisis Mendalam:**
-Nested if di sini sangat cerdas. Jika tidak mendung, blok besar dilewati dan nilai awal tetap terjaga.
 </details>
 
 ---
@@ -81,12 +91,16 @@ if (speed > limit) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"110 > 100? (T)"} -- T --> B["Tilang!"]
+B --> C{"110 > 120? (F)"}
+```
+
 **Jawaban:**
 1. **Ya.** (110 > 100)
 2. **Tidak.** (110 < 120)
-
-**📖 Analisis Mendalam:**
-Pengecekan bertahap untuk menentukan beratnya pelanggaran.
 </details>
 
 ---
@@ -110,12 +124,16 @@ switch(target) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["target: 'S'"] --> B["case 'S'"]
+B --> C["100.000 / 10.000 = 10"]
+```
+
 **Jawaban:**
 1. **10**
 2. Karena `hasil` bertipe `int` (pembagian integer membuang koma).
-
-**📖 Analisis Mendalam:**
-Switch case untuk memilih kurs mata uang secara instan.
 </details>
 
 ---
@@ -136,12 +154,15 @@ if (hp < max_hp && pot > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"hp < 100 (T) && pot > 0 (T)"} -- T --> B["hp = 80, pot = 1"]
+```
+
 **Jawaban:**
 1. **80**
 2. **1**
-
-**📖 Analisis Mendalam:**
-Logika penggunaan item di video game. Syarat `pot > 0` sangat krusial agar potion tidak "ghaib" (negatif).
 </details>
 
 ---
@@ -164,12 +185,15 @@ if (umur >= 17 || (umur < 17 && punya_ktp)) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"16 >= 17 (F) || (16 < 17 && T) (T)"} -- T --> B["status = Berhak"]
+```
+
 **Jawaban:**
 1. **"Berhak"**
 2. **"Belum Berhak"**
-
-**📖 Analisis Mendalam:**
-Penyederhanaan syarat gabungan `||`. Selama salah satu bagian dari OR bernilai true, maka seluruhnya true.
 </details>
 
 ---
@@ -190,12 +214,15 @@ if (gaji > 50) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"60 > 50? (T)"} -- T --> B["persen = 15"]
+```
+
 **Jawaban:**
 1. **15**
 2. **5** (Karena syaratnya `> 50`, bukan `>= 50`).
-
-**📖 Analisis Mendalam:**
-Batas eksklusif di OSN-K sering menjadi pembeda antara jagoan dan amatir. Teliti tandanya!
 </details>
 
 ---
@@ -216,12 +243,15 @@ if (len > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"0 > 0? (F)"} -- F --> B["dikirim = false"]
+```
+
 **Jawaban:**
 1. **false** (0)
 2. Karena syarat `len > 0` bernilai salah.
-
-**📖 Analisis Mendalam:**
-Validasi input paling mendasar di aplikasi apa pun.
 </details>
 
 ---
@@ -248,12 +278,16 @@ switch(target) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["10 % 7 = 3"] --> B["case 3"]
+B --> C["nama = Kamis"]
+```
+
 **Jawaban:**
 1. **3**
 2. **Tidak.** Nama bernilai "Kamis".
-
-**📖 Analisis Mendalam:**
-Modulo 7 digunakan untuk "melipat" angka berulang menjadi siklus mingguan.
 </details>
 
 ---
@@ -274,10 +308,14 @@ if (saklar_diklik) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["saklar = T"] --> B["lampu = !false"]
+B --> C["lampu = true"]
+```
+
 **Jawaban:**
 1. **true** (Menyala)
 2. **Mati kembali** (False).
-
-**📖 Analisis Mendalam:**
-Simbol `!` (NOT) adalah jantung dari logika toggle (on/off) di dunia komputer. 
 </details>

@@ -24,6 +24,14 @@ if (hari_ini <= kadaluarsa) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+Start --> C{"28 <= 25?"}
+C -- T --> OK["ok = true"]
+C -- F --> Fail["ok = false"]
+```
+
 **Jawaban:**
 1. **0** (False)
 2. **Tidak.** Karena `28 <= 25` bernilai salah.
@@ -52,6 +60,14 @@ if (hasil == 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["-5 % 2"] --> B["-1 (Ikut Kiri)"]
+B --> C{"-1 == 0?"}
+C -- F --> D["Ganjil"]
+```
+
 **Jawaban:**
 1. **-1**
 2. **Ya.** Karena `-1 != 0`, maka blok `else` dieksekusi.
@@ -78,6 +94,14 @@ if (mat > 80 && (fis > 70 || kim > 70)) {
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"mat > 80 (T)"} --> B{"fis > 70 || kim > 70"}
+B -- T --> OK["lulus = true"]
+B -- F --> Fail
+```
 
 **Jawaban:**
 1. **true** (1)
@@ -109,6 +133,15 @@ switch(op) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"op?"} --> B["'+' : a+b"]
+A --> C["'-' : a-b"]
+A --> D["'*', 'x' : a*b"]
+A --> E["default : -1"]
+```
+
 **Jawaban:**
 1. **50**
 2. Untuk mendukung **Multiple Cases** (simbol '*' dan 'x' memiliki efek yang sama).
@@ -138,6 +171,13 @@ if (level >= 10 && punya_kunci) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"8 >= 10 && T? (F)"} -- F --> B{"8 >= 5 || T? (T)"}
+B -- T --> OK["status = 1"]
+```
+
 **Jawaban:**
 1. **1**
 2. **1** (Karena `level >= 5` masih true).
@@ -163,12 +203,16 @@ else if (umur > 60) tipe = "Lansia";
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"12 < 12? (F)"} -- F --> B{"12 > 60? (F)"}
+B -- F --> C["tipe = 'Dewasa'"]
+```
+
 **Jawaban:**
 1. **"Dewasa"**
 2. Karena syaratnya adalah `< 12` (kurang dari), bukan `<= 12` (kurang dari atau sama dengan).
-
-**📖 Analisis Mendalam:**
-Batas inklusif/eksklusif sering menjadi jebakan maut di OSN-K. Teliti tandanya!
 </details>
 
 ---
@@ -191,12 +235,16 @@ if (n % 3 == 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"30 % 3 == 0? (T)"} -- T --> B{"30 % 5 == 0? (T)"}
+B -- T --> OK["k15 = true"]
+```
+
 **Jawaban:**
 1. **true**
 2. `if (n % 3 == 0 && n % 5 == 0)` atau `if (n % 15 == 0)`.
-
-**📖 Analisis Mendalam:**
-Nested if dapat digabungkan dengan operator `&&` untuk menyederhanakan kode.
 </details>
 
 ---
@@ -217,12 +265,16 @@ if (!is_locked) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["is_locked = False"] --> B["!is_locked = True"]
+B --> C["alarm = 1"]
+```
+
 **Jawaban:**
 1. **1**
 2. **NOT** (Membalikkan nilai: true jadi false, false jadi true).
-
-**📖 Analisis Mendalam:**
-`!is_locked` dibaca "Jika TIDAK terkunci". Karena `is_locked` adalah false, maka "TIDAK false" adalah true. Alarm menyala.
 </details>
 
 ---
@@ -247,12 +299,17 @@ if (telat > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"telat > 0? (T)"} -- T --> B["denda = 10000"]
+B --> C{"member? (T)"}
+C -- T --> D["denda = 5000"]
+```
+
 **Jawaban:**
 1. **5000**
 2. **10000**
-
-**📖 Analisis Mendalam:**
-Diskon 50% hanya diberikan jika `member` bernilai true. Logika ini bersarang di dalam pengecekan "apakah ada keterlambatan".
 </details>
 
 ---
@@ -274,6 +331,13 @@ if (x = 5) {
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["x = 5 (Assignment)"] --> B{"5 (Non-Zero)?"}
+B -- T --> C["y = 1"]
+```
 
 **Jawaban:**
 1. **5**

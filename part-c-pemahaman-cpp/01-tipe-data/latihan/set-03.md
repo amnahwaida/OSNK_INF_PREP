@@ -20,6 +20,15 @@ int status = is_valid;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["kode=121"] --> B["% 11"]
+B --> C["0 (Sisa Nol)"]
+C --> D["is_valid = true"]
+D --> E["status = 1"]
+```
+
 **Jawaban:**
 1. **1** (True)
 2. **0** (False)
@@ -44,6 +53,13 @@ int bus_perlu = orang / bus_cap;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["orang=45, cap=12"] --> B["45 / 12 (Int Div)"]
+B --> C["3 (Sisa Dibuang)"]
+```
+
 **Jawaban:**
 1. **3**
 2. **Belum cukup.** (Tampung 36 orang, sisa 9 orang terlantar).
@@ -66,6 +82,16 @@ double avg_B = (a + b + c) / 3.0;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["a+b+c = 55"] --> B["55 / 3 (Int)"]
+B --> C["18"]
+C --> D["avg_A(double) = 18.0"]
+A --> E["55 / 3.0 (Double)"]
+E --> F["avg_B = 18.333..."]
+```
 
 **Jawaban:**
 1. **18.0**
@@ -90,6 +116,13 @@ int n = c - '0'; // '0' ASCII 48
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["c='7' (55)"] --> B["- '0' (48)"]
+B --> C["7 (Int)"]
+```
+
 **Jawaban:**
 1. **7**
 2. **56** (Atau karakter '8')
@@ -113,6 +146,13 @@ char s_baru = s + 1;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["'!' (33)"] --> B["+ 1"]
+B --> C["34 ('\"')"]
+```
+
 **Jawaban:**
 1. **'"'** (Petik dua)
 2. **34**
@@ -135,6 +175,16 @@ int total_B = harga + (harga * 11 / 100);
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["10000 * 1.11"] --> B["11100.0"]
+B --> C["(int) total_A = 11100"]
+D["10000 * 11 / 100"] --> E["110000 / 100"]
+E --> F["1100"]
+F --> G["total_B = 10000 + 1100 = 11100"]
+```
 
 **Jawaban:**
 1. **11100**
@@ -160,6 +210,13 @@ int sisa_ruang = wadah % isi;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["wadah=100, isi=35"] --> B["100 % 35"]
+B --> C["30 (Sisa)"]
+```
+
 **Jawaban:**
 1. **30** (Sisa ruang setelah 2x isi)
 2. **2 kali** (Total 70L, isi ke-3 butuh 105L -> Meluap).
@@ -184,6 +241,14 @@ int hal_sekarang = (total_data + data_per_hal - 1) / data_per_hal;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["21 + 10 - 1"] --> B["30"]
+B --> C["/ 10"]
+C --> D["3 (Ceiling)"]
+```
+
 **Jawaban:**
 1. **3**
 2. Untuk memaksa pembagian integer melakukan **pembulatan ke atas**.
@@ -207,6 +272,14 @@ double luas_B = 3.14 * (r * r);
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["3.14 * 100"] --> B["314.0"]
+B --> C["luas_A(int) = 314"]
+B --> D["luas_B(double) = 314.0"]
+```
+
 **Jawaban:**
 1. **314**
 2. **314.0**
@@ -229,6 +302,13 @@ int y = 10 % -3;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["-10 % 3"] --> B["-1 (Ikut Kiri)"]
+C["10 % -3"] --> D["1 (Ikut Kiri)"]
+```
 
 **Jawaban:**
 1. **-1**

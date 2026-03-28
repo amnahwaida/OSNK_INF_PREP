@@ -29,6 +29,14 @@ if (punya_kartu || diundang) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+Start --> A{"punya_kartu || diundang"}
+A -- T --> B["status = 1"]
+A -- F --> C["status = -1"]
+```
+
 **Jawaban:**
 1. **1**
 2. Karena `diundang` bernilai true, maka seluruh kondisi `if` menjadi true.
@@ -59,6 +67,16 @@ if (saldo >= tarik) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+Start --> C1{"saldo >= tarik?"}
+C1 -- T --> C2{"saldo >= total?"}
+C1 -- F --> End
+C2 -- T --> Process["saldo -= 105k"]
+C2 -- F --> End
+```
+
 **Jawaban:**
 1. **45000**
 2. Untuk memastikan saldo mencukupi penarikan **sekaligus** biaya administrasinya.
@@ -85,6 +103,18 @@ if ((tahun % 4 == 0 && tahun % 100 != 0) || (tahun % 400 == 0)) {
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+Start --> C1{"%4==0 && %100!=0"}
+Start --> C2{"%400==0"}
+C1 -- T --> OK
+C1 -- F --> C2
+C2 -- T --> OK
+C2 -- F --> Fail["kabisat=false"]
+OK["kabisat=true"]
+```
 
 **Jawaban:**
 1. **false** (0)
@@ -113,6 +143,15 @@ if (rambut_cm > 10 && ++poin > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+Start --> C1{"rambut > 10?"}
+C1 -- T --> C2["++poin > 0?"]
+C1 -- F --> End["Short-circuit (poin tetap 0)"]
+C2 --> End
+```
+
 **Jawaban:**
 1. **1**
 2. **0** (Poin tidak bertambah!)
@@ -139,6 +178,14 @@ else if (belanja > 300000) diskon = 30;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"> 100k?"} -- T --> B["diskon=10"]
+A -- F --> C{"> 300k?"}
+C -- T --> D["diskon=30"]
+```
+
 **Jawaban:**
 1. **10**
 2. Urutan pengecekan terbalik. Angka 100rb "memakan" angka yang lebih besar.
@@ -164,6 +211,15 @@ else jenis = 3;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"a==b && b==c"} -- T --> B["1 (Sama Sisi)"]
+A -- F --> C{"a==b || ..."}
+C -- T --> D["2 (Sama Kaki)"]
+C -- F --> E["3 (Sembarang)"]
+```
 
 **Jawaban:**
 1. **1**
@@ -195,10 +251,6 @@ if (x > 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Jawaban:**
-1. **2**
-2. x negatif (kiri), y positif (atas) -> Kuadran 2.
-
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
@@ -210,6 +262,10 @@ Y1 -- F --> Q4[Q4]
 Y2 -- T --> Q2[Q2]
 Y2 -- F --> Q3[Q3]
 ```
+
+**Jawaban:**
+1. **2**
+2. x negatif (kiri), y positif (atas) -> Kuadran 2.
 </details>
 
 ---
@@ -228,6 +284,13 @@ if (user_input == user_db) log = true;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["'a' (97)"] --> B["== 'A' (65)?"]
+B -- F --> C["log = false"]
+```
 
 **Jawaban:**
 1. **false**
@@ -255,6 +318,15 @@ else cat = 3;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"< 18.5?"} -- T --> B["1 (Kurus)"]
+A -- F --> C{"< 25.0?"}
+C -- T --> D["2 (Normal)"]
+C -- F --> E["3 (Gemuk)"]
+```
+
 **Jawaban:**
 1. **2**
 2. **Efisiensi**. Begitu satu syarat terpenuhi, mesin langsung melompat ke akhir blok tanpa mengecek syarat lainnya.
@@ -278,6 +350,15 @@ if (c >= 'a' && c <= 'z') {
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["c='m' (109)"] --> B{"'a' <= c <= 'z'?"}
+B -- T --> C["c -= 32"]
+C --> D["77 ('M')"]
+B -- F --> End
+```
 
 **Jawaban:**
 1. **'M'** (Huruf besar)

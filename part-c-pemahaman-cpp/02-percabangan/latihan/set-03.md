@@ -22,12 +22,16 @@ else if (temp >= 100) wujud = "Gas";
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"temp <= 0? (F)"} -- F --> B{"temp >= 100? (T)"}
+B -- T --> C["wujud = 'Gas'"]
+```
+
 **Jawaban:**
 1. **"Gas"**
 2. **"Padat"**
-
-**📖 Analisis Mendalam:**
-Suhu 105 memenuhi syarat `temp >= 100`. Suhu 0 memenuhi syarat `temp <= 0`. Logika `else if` memastikan satu kategori yang terpilih.
 </details>
 
 ---
@@ -52,12 +56,16 @@ if (qty >= 3) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"3 >= 3? (T)"} -- T --> B["bayar = 2 * 10k = 20k"]
+A -- F --> C["bayar = qty * harga"]
+```
+
 **Jawaban:**
 1. **20000**
 2. **20000**
-
-**📖 Analisis Mendalam:**
-Ini adalah logika promo sederhana. Pembeli mendapatkan 3 barang tapi hanya membayar harga 2 barang.
 </details>
 
 ---
@@ -78,12 +86,15 @@ if (x == 0 || y == 0) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A{"x == 0 (T) || y == 0 (F)"} -- T --> B["di_sumbu = true"]
+```
+
 **Jawaban:**
 1. **true**
 2. **OR** (Cukup satu nol, maka titik berada di garis sumbu).
-
-**📖 Analisis Mendalam:**
-Karena `x == 0` adalah true, maka seluruh kondisi menjadi true, meskipun `y` bukan nol.
 </details>
 
 ---
@@ -104,12 +115,16 @@ else hasil = "Nol";
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"-10 > 0? (F)"} -- F --> B{"-10 < 0? (T)"}
+B -- T --> C["hasil = 'Negatif'"]
+```
+
 **Jawaban:**
 1. **"Negatif"**
 2. **Blok else** (paling bawah).
-
-**📖 Analisis Mendalam:**
-Ini adalah contoh klasik *tricotomy logic*. Angka hanya bisa berada di salah satu dari tiga kategori tersebut.
 </details>
 
 ---
@@ -130,12 +145,15 @@ if (c == 'a' || c == 'i' || c == 'u' || c == 'e' || c == 'o') {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["'E' == 'a', 'i', 'u', 'e', 'o'?"] -- F --> B["vokal = false"]
+```
+
 **Jawaban:**
 1. **false**
 2. Karena 'E' (besarnya) berbeda dengan 'e' (kecilnya).
-
-**📖 Analisis Mendalam:**
-C++ bersifat **Case Sensitive**. Di draf kodemu, kamu hanya mengecek huruf kecil. 'E' kapitas akan dianggap konsonan rill oleh mesin di atas.
 </details>
 
 ---
@@ -156,6 +174,13 @@ if (is_vip || ++antrian > 10) {
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A{"is_vip (T)"} -- T --> B["Short-circuit (Antrian Tetap 0)"]
+A -- F --> C["++antrian > 10?"]
+```
 
 **Jawaban:**
 1. **0**
@@ -185,12 +210,15 @@ if (hari == "Sabtu" || hari == "Minggu") {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"'Minggu' == 'Minggu' (T)"} -- T --> B["diskon = 50"]
+```
+
 **Jawaban:**
 1. **50**
 2. **0**
-
-**📖 Analisis Mendalam:**
-Operator `||` di sini bertindak sebagai "Range Filter" untuk hari libur.
 </details>
 
 ---
@@ -215,12 +243,17 @@ switch(grade) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["grade: 'B'"] --> B["case 'B' matched"]
+B --> C["poin = 3"]
+C --> D["break (exit)"]
+```
+
 **Jawaban:**
 1. **3**
 2. Mesin akan terus "jatuh" ke bawah (*fallthrough*) dan mengambil nilai dari case berikutnya.
-
-**📖 Analisis Mendalam:**
-`switch` sangat efisien untuk pengecekan nilai-nilai tetap (integer/char) yang sudah pasti.
 </details>
 
 ---
@@ -243,12 +276,16 @@ if (perokok) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"perokok (T)?"} -- T --> B["premi = 150"]
+A -- F --> C["premi = 90"]
+```
+
 **Jawaban:**
 1. **150**
 2. **90**
-
-**📖 Analisis Mendalam:**
-Branching sering digunakan untuk menghitung biaya berdasarkan profil (flag) pengguna.
 </details>
 
 ---
@@ -270,10 +307,14 @@ if (bln == 2 && tgl > 29) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A{"bln == 2 (T)"} --> B{"tgl > 29 (T)"}
+B -- T --> C["valid = false"]
+```
+
 **Jawaban:**
 1. **false** (0)
 2. Segala bulan selain Februari.
-
-**📖 Analisis Mendalam:**
-Pengecekan khusus ini sering muncul di soal-soal konversi kalender untuk mencegah input tanggal yang mustahil. 
 </details>

@@ -5,6 +5,15 @@
 
 ---
 
+### 🧩 Panduan Membaca Diagram Mermaid
+Untuk membantu kamu memahami alur batin *compiler*, sebagian besar soal dilengkapi dengan diagram **Mermaid**. Berikut cara membacanya:
+- **Kotak Persegi `[...]`**: Menandakan proses atau deklarasi variabel (Contoh: `x = 10`).
+- **Kotak Belah Ketupat `{...}`**: Menandakan percabangan atau kondisi `if` (Contoh: `x > 5?`).
+- **Panah `-->`**: Arah eksekusi baris kode (dari atas ke bawah).
+- **Label `T` (True) atau `F` (False)**: Jalur yang diambil berdasarkan hasil kondisi `if`.
+
+---
+
 Selamat berlatih! Gunakan coretan kertas untuk melakukan *tracing* sebelum melihat kunci jawaban.
 
 - [Set 01 (Soal 1-10)](./set-01.md)

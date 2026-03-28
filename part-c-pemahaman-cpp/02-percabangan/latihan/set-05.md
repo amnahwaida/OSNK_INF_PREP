@@ -23,6 +23,14 @@ if (10 < x < 20) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["(10 < 50)"] --> B["1 (True)"]
+B --> C["(1 < 20)"]
+C --> D["ok = true"]
+```
+
 **Jawaban:**
 1. **true**
 2. Karena C++ mengevaluasi secara berurutan: `(10 < 50)` bernilai **1** (true). Lalu `1 < 20` bernilai **true**.
@@ -48,6 +56,14 @@ if (flags & 1) {
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["flags = 101"] --> B["& 001"]
+B --> C["001 (1)"]
+C --> D["bit_0 = true"]
+```
 
 **Jawaban:**
 1. **true**
@@ -77,6 +93,15 @@ switch(n) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["n = 1"] --> B["case 1: hasil + 10"]
+B --> C["Fallthrough!"]
+C --> D["case 2: hasil + 20"]
+D --> E["break"]
+```
+
 **Jawaban:**
 1. **30** (10 + 20)
 2. Karena tidak ada kata kunci `break;` di akhir `case 1`.
@@ -99,12 +124,17 @@ int max = (a > b) ? a : b;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"a > b? (F)"}
+A -- T --> B["max = a"]
+A -- F --> C["max = b"]
+```
+
 **Jawaban:**
 1. **20**
 2. `if (a > b) max = a; else max = b;`
-
-**📖 Analisis Mendalam:**
-Operator `? :` adalah singkatan elegan (Shorthand) dari `if-else` untuk penugasan nilai tunggal.
 </details>
 
 ---
@@ -122,12 +152,16 @@ else x = 100;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A{"5 > 10? (F)"} -- F --> B["else: x = 100"]
+A -- T --> C["Do Nothing (;)"]
+```
+
 **Jawaban:**
 1. **100**
 2. Itu adalah **Null Statement**. Artinya "jika benar, jangan lakukan apa-apa".
-
-**📖 Analisis Mendalam:**
-Meskipun aneh, ini valid dalam C++. Karena `5 > 10` salah, mesin melompat ke `else` dan mengubah `x` jadi 100.
 </details>
 
 ---
@@ -149,12 +183,15 @@ if (jarak > 10 && berat > 5) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A{"15 > 10 (T) && 10 > 5 (T)"} -- T --> B["ongkir = 10000"]
+```
+
 **Jawaban:**
 1. **10000**
 2. **5000**
-
-**📖 Analisis Mendalam:**
-Operator `&&` mensyaratkan **KEDUANYA** harus benar agar biaya naik.
 </details>
 
 ---
@@ -172,12 +209,15 @@ if ('A' < 'a') {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["65 < 97?"] -- T --> B["Masuk Blok"]
+```
+
 **Jawaban:**
 1. **Ya.** (65 < 97)
 2. **Huruf kecil** bernilai lebih besar di tabel ASCII.
-
-**📖 Analisis Mendalam:**
-Pengecekan urutan alfabet di C++ didasarkan pada urutan angka di tabel ASCII-nya.
 </details>
 
 ---
@@ -198,12 +238,16 @@ if (x == 0.3) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["0.1+0.2 = 0.300...04"] --> B{"== 0.3? (F)"}
+B -- F --> C["NOT OK"]
+```
+
 **Jawaban:**
 1. **NOT OK**
 2. Karena ada *Floating Point Inaccuracy*.
-
-**📖 Analisis Mendalam:**
-0.1 + 0.2 di biner seringkali bernilai `0.30000000000000004`. Membandingkannya dengan `0.3` murni akan menghasilkan "False".
 </details>
 
 ---
@@ -225,12 +269,16 @@ if (!(lapar && pelit)) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A{"lapar && pelit (T)"} --> B["!(T) = False"]
+B -- F --> C["makan = 'Makan'"]
+```
+
 **Jawaban:**
 1. **"Makan"** (Nilai awal tidak berubah)
 2. **"Tidak benar bahwa (Lapar DAN Pelit)"**.
-
-**📖 Analisis Mendalam:**
-Karena `lapar && pelit` adalah True, maka `!(True)` adalah **False**. Blok `if` dilewati.
 </details>
 
 ---
@@ -257,10 +305,16 @@ if (usia >= 21) {
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+Start --> A{"usia >= 21? (F)"}
+A -- F --> B{"usia >= 17? (T)"}
+B -- T --> C{"punya_izin || ditemani? (T)"}
+C -- T --> D["Boleh dengan Syarat"]
+```
+
 **Jawaban:**
 1. **"Boleh dengan Syarat"**
 2. **Tidak.** Karena ia akan langsung gagal di syarat `else if (usia >= 17)`.
-
-**📖 Analisis Mendalam:**
-Ini adalah pola *Early Exit*. Jika usia di bawah 17, ia tidak akan pernah sampai ke pengecekan "punya_izin".
 </details>

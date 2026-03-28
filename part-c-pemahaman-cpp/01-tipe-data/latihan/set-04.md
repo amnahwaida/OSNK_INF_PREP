@@ -1,4 +1,4 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
@@ -20,6 +20,14 @@ int status = is_pass + 10;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["skor = 50 - 4 = 46"] --> B["46 > 40?"]
+B -- T --> C["is_pass = 1 (True)"]
+C --> D["status = 1 + 10 = 11"]
+```
 
 **Jawaban:**
 1. **46**
@@ -45,6 +53,13 @@ int size_B = sizeof(char);
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["sizeof(int)"] --> B["4 Byte"]
+C["sizeof(char)"] --> D["1 Byte"]
+```
+
 **Jawaban:**
 1. **4** (Byte)
 2. **1** (Byte)
@@ -68,6 +83,14 @@ int bonus = gaji * 1000000;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["1M * 1M"] --> B["10^12"]
+B --> C["Overflow @ 32rd Bit"]
+C --> D["Angka Ngaco"]
+```
+
 **Jawaban:**
 1. **Angka acak/negatif (Overflow).**
 2. **Tidak.** Karena batas maksimal `int` adalah sekitar 2.1 miliar.
@@ -89,6 +112,13 @@ c = c + 10;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["250 + 10 = 260"] --> B["260 % 256"]
+B --> C["4"]
+```
 
 **Jawaban:**
 1. **4**
@@ -115,6 +145,14 @@ a = a - b; // a=15-5=10
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["a=5, b=10"] --> B["a = 15"]
+B --> C["b = 15 - 10 = 5"]
+C --> D["a = 15 - 5 = 10"]
+```
+
 **Jawaban:**
 1. **10**
 2. **5**
@@ -139,6 +177,13 @@ double hasil_B = gaji * 2;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["100 / 0.5"] --> B["200.0"]
+C["100 * 2"] --> D["200"]
+```
+
 **Jawaban:**
 1. **200.0**
 2. **200.0**
@@ -161,6 +206,14 @@ bool is_equal = (a + b == 0.3f);
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["0.1 + 0.2"] --> B["0.3000...04"]
+B --> C["== 0.3?"]
+C -- F --> D["false"]
+```
 
 **Jawaban:**
 1. **Tergantung sistem (Seringnya False).**
@@ -186,6 +239,14 @@ double hasil = x + y * z;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A["y(int) * z(double)"] --> B["12.5 (double)"]
+B --> C["x(char) + 12.5 (double)"]
+C --> D["22.5 (double)"]
+```
+
 **Jawaban:**
 1. **22.5**
 2. **char + int * double** -> **int * double** -> **double**.
@@ -209,6 +270,13 @@ long long z = x + y;
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["100LL (64bit)"] --> B["+ 50 (32bit)"]
+B --> C["150 (64bit)"]
+```
+
 **Jawaban:**
 1. Untuk memberitahu compiler bahwa angka tersebut adalah **Long Long** (64-bit).
 2. **8 Byte.**
@@ -231,6 +299,14 @@ int z = x + y;
 
 <details>
 <summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A["1e2 = 100.0"] --> B["(int) x = 100"]
+C["5e1 = 50.0"] --> D["(int) y = 50"]
+E["100 + 50"] --> F["150"]
+```
 
 **Jawaban:**
 1. **150**
