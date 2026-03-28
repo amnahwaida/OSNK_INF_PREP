@@ -62,13 +62,29 @@
  
  ---
  
- ## ⚡ D. Operator Logika (`&&`, `||`, `!`)
+ ## ⛓️ D. Jebakan Rantai Palsu (`10 < 5 < 20`)
+ 
+ Hati-hati, kodingan di kertas seringkali mencoba membodohi insting matematika-mu! Bisakah kamu menebak hasil `if (10 < 5 < 20)`?
+ - **Insting Matematika:** "Salah dong! Kan 10 tidak lebih kecil dari 5." (FALSE).
+ - **Robot C++:** "Oit, gue kerjain dari kiri!"
+   1. `10 < 5` dihitung duluan, hasilnya **0** (False).
+   2. Sekarang rumusnya jadi `0 < 20`.
+   3. Apakah 0 lebih kecil dari 20? **BETUL BANGET (TRUE)**!
+ 
+ **Pelajaran:** Jangan pernah menggabung perbandingan seperti gerbong kereta api. Gunakan `&&` jika ingin mengecek rentang angka. (Contoh: `if (10 < 5 && 5 < 20)`).
+ 
+ ---
+ 
+ ## ⚡ E. Operator Logika (`&&`, `||`, `!`)
  
  - `&&` (DAN / AND): DUA-DUANYA WAJIB BENAR!
  - `||` (ATAU / OR): CUKUP SALAH SATU AJA BENAR, BERES!
  - `!` (TIDAK / NOT): Kacamata kebalikan (Benar jadi Salah).
  
- ### ⚖️ Hukum Kasta Logika (Siapa Lebih Kuat?)
+ ---
+ 
+ ## ⚖️ F. Hukum Kasta Logika (Siapa Lebih Kuat?)
+ 
  Jika ada banyak operator logika berjejer tanpa kurung, ikuti urutan kasta ini:
  1. `!` (Kasta Tertinggi / Penguasa)
  2. `&&` (Kasta Menengah / Lengket)
@@ -78,7 +94,7 @@
  
  ---
  
- ## 💤 E. Evaluasi Sirkuit-Pendek (Sirkuit Pemalas)
+ ## 💤 G. Evaluasi Sirkuit-Pendek (Sirkuit Pemalas)
  
  Mesin C++ sifatnya egois memikirkan jalan pintas (**Short-Circuit Evaluation**).
  
@@ -92,7 +108,7 @@
  
  ---
  
- ## 🧬 F. Misteri "Angka adalah Kebenaran"
+ ## 🧬 H. Misteri "Angka adalah Kebenaran"
  
  Di kodingan OSN-K, kamu akan sering melihat `if` yang isinya angka mentah, bukan perbandingan.
  ```cpp
@@ -107,7 +123,7 @@
  
  ---
  
- ## 🎰 G. Vending Machine (`switch - case`)
+ ## 🎰 I. Vending Machine (`switch - case`)
  
  Kadang kita punya banyak pilihan angka yang saklek. Daripada pakai `else if` kepanjangan, C++ pakai `switch`.
  ```cpp
@@ -121,7 +137,7 @@
  
  ---
  
- ## ✂️ H. Cabang Kilat (Ternary Operator `? :`)
+ ## ✂️ J. Cabang Kilat (Ternary Operator `? :`)
  
  Inilah cara orang sibuk menulis `if-else` dalam satu baris.
  ```cpp
@@ -132,7 +148,23 @@
  
  ---
  
- ## 🌀 I. Analogi Labirin Keputusan
+ ## 🕵️ K. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
+ 
+ Jika kamu melihat kode bertingkat tanpa tanda kurung `{ }`, siapakah pemilik `else` yang sebenarnya?
+ ```cpp
+ if (a > 5)
+     if (b > 10)
+         printf("Jackpot!");
+ else
+     printf("Zonk!");
+ ```
+ - **Insting Murid:** "Kalau `a > 5` salah, pasti lari ke `else Zonk!`."
+ - **Hukum C++ (Dangling Else):** "`else` akan selalu menempel pada `if` paling dekat di atasnya yang belum punya pasangan."
+ - Jadi, `else Zonk!` di atas adalah milik `if (b > 10)`. Kalau `a > 5` saja sudah salah, program **TIDAK AKAN MENCETAK APAPUN** (Karena `else` ikut hilang bersama `if` induknya yang dia tempel).
+ 
+ ---
+ 
+ ## 🌀 L. Analogi Labirin Keputusan
  
  ### 🚪 1. Nested If: Pintu Keamanan Berlapis
  Syarat di dalam hanya diperiksa jika syarat luar sudah lolos. (Sidik jari hanya diminta jika PIN kartu sudah benar).
@@ -142,7 +174,7 @@
  
  ---
  
- ## 📜 J. Rangkuman: Cara Berpikir Cabang
+ ## 📜 M. Rangkuman: Cara Berpikir Cabang
  
  1. **Pintu Tunggal**: Dalam satu blok `if-else if-else`, **Cuma ada SATU** blok yang bisa tembus.
  2. **Sirkuit Pendek**: Selalu cek sisi kiri `&&` atau `||` dulu. Kalau sudah cukup menentukan hasil, abaikan sisi kanan (jangan di-trace!).
@@ -165,7 +197,7 @@
  **Diagnosis Logika:**
  1. `if (a > 5 || ...)` $\rightarrow$ `10 > 5` adalah **TRUE**.
  2. Karena konektornya `||` (OR) dan kiri sudah **TRUE**, mesin **MALAS** membaca sebelah kanan.
- 3. `(b++ > 0)` **DIBUANG/DIABAIKAN**. Nilai `b` masih `0` (tidak jadi tambah).
+ 3. `(b++ > 0)` **DIBUANG/DIABAIKAN**. Nilai `b` masih `0`.
  4. Masuk ke Nested If: `if (a == 10)` $\rightarrow$ `10 == 10` is **TRUE**.
  5. `b += 5` $\rightarrow$ `b` jadi `0 + 5 = 5`.
  6. Hasil akhir: **`b = 5`**.
