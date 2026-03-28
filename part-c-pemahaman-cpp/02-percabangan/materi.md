@@ -98,7 +98,24 @@
  
  ---
  
- ## 🎰 J. Vending Machine (`switch - case`)
+ ## 🔢 J. Hasil Akhir Logika (Ujung dari Segalanya: 0 & 1)
+ 
+ Di kodingan OSN-K, kamu terkadang melihat logika dicampur dengan matematika. Bagaimana robot C++ menghadapinya?
+ - **Robot Matematika Logika:** Di matanya, semua hasil perbandingan `(> < == !=)` AND/OR/NOT itu **SELALU** berakhir menjadi angka **0** (Jika Salah) atau **1** (Jika Benar).
+ 
+ **Contoh Real Code:**
+ ```cpp
+ int x = (10 > 5) + (5 > 2); // 1 + 1
+ printf("x = %d", x); // x jadi 2!
+ ```
+ **Diagnosis Logika:**
+ - `(10 > 5)` adalah Benar, maka robot mengubahnya jadi angka **1**.
+ - `(5 > 2)` adalah Benar, maka robot mengubahnya jadi angka **1**.
+ - `1 + 1` hasilnya **2**. Robot ini menggabungkan dua "fakta kebenaran" menjadi sebuah angka murni!
+ 
+ ---
+ 
+ ## 🎰 K. Vending Machine (`switch - case`)
  
  Gunakan ini jika pilihannya banyak dan angkanya pasti (diskrit).
  
@@ -157,7 +174,7 @@
  
  ---
  
- ## ✂️ K. Cabang Kilat (Ternary Operator `? :`)
+ ## ✂️ L. Cabang Kilat (Ternary Operator `? :`)
  
  Inilah cara orang sibuk menulis `if-else` dalam satu baris. Pikirkan ini sebagai **"Jalan Pintas"** untuk mengisi nilai laci berdasarkan satu syarat singkat.
  
@@ -189,7 +206,7 @@
  
  ---
  
- ## 🕵️ L. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
+ ## 🕵️ M. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
  
  Jika kamu melihat kode bertingkat tanpa tanda kurung `{ }`, carilah `if` terdekat tepat di atasnya yang masih jomblo (belum punya pasangan `else`). Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung.
  
@@ -210,7 +227,7 @@
  
  ---
  
- ## 🍜 M. Strategi Memilih Gembok (Workflow Terpercaya)
+ ## 🍜 N. Strategi Memilih Gembok (Workflow Terpercaya)
  
  Memilih struktur percabangan yang tepat seperti memilih alat makan; salah pilih, makanmu jadi tidak efisien.
  
@@ -247,7 +264,7 @@
  
  ---
  
- ## 🌀 N. Analogi Labirin Decisional (Rangkuman Visual)
+ ## 🌀 O. Analogi Labirin Decisional (Rangkuman Visual)
  
  Mari kita rangkum semua gembok logika tadi ke dalam visualisasi labirin:
  
@@ -287,7 +304,7 @@
  
  ---
  
- ## 📜 O. Rangkuman: Mantra "Compiler Manusia"
+ ## 📜 P. Rangkuman: Mantra "Compiler Manusia"
  
  Sebelum men-trace soal percabangan, ucapkan 3 mantra ini:
  1. **"Kurung mana kurung?"** (Cek batas wilayah kekuasaan `{ }`).
