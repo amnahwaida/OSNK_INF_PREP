@@ -100,6 +100,19 @@ Nah... Inilah pintu gerbang menuju bos terakhir ilmu algoritma Olimpiade Informa
 
 ---
 
+## ⚔️ Simulasi Tarung: Bedah 300 Soal Algoritma Greedy
+
+Siap melatih insting Rakus-mu dalam menyabet *Jadwal Rapat Balai Desa* (Activity Selection) dan menjebak jebakan *Coin Change Planet Namec*? Hajar 300 soal khusus algoritma tamak ini:
+
+1. **[Latihan Soal Part 1 (Soal 1-50)](./02-algoritma-greedy/02-algoritma-greedy-soal-part-1.md)**
+2. **[Latihan Soal Part 2 (Soal 51-100)](./02-algoritma-greedy/02-algoritma-greedy-soal-part-2.md)**
+3. **[Latihan Soal Part 3 (Soal 101-150)](./02-algoritma-greedy/02-algoritma-greedy-soal-part-3.md)**
+4. **[Latihan Soal Part 4 (Soal 151-200)](./02-algoritma-greedy/02-algoritma-greedy-soal-part-4.md)**
+5. **[Latihan Soal Part 5 (Soal 201-250)](./02-algoritma-greedy/02-algoritma-greedy-soal-part-5.md)**
+6. **[Latihan Soal Part 6 (Soal 251-300)](./02-algoritma-greedy/02-algoritma-greedy-soal-part-6.md)**
+
+---
+
 Tapi sebelum menyentuh ilmu sihir tingkat tinggi macam Dynamic Programming, mari kita turun takhta sebentar mengulas algoritma paling basic yang sering ditugaskan gurumu: mencetak urutan rangking absen siswa di modul selanjutnya: 
 
 ⏩ **[Modul 03: Pencarian dan Pengurutan (Searching & Sorting Manual)](./03-pencarian-dan-pengurutan.md)**

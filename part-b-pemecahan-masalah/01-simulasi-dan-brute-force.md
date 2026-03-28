@@ -84,6 +84,19 @@ Kamu harus tahu batas *"Capeknya Mencoret Kertas"*.
 
 ---
 
+## ⚔️ Simulasi Tarung: Bedah 300 Soal Simulasi & Brute Force
+
+Siap melatih daya tahan *Compiler Manusia*-mu tanpa salah catat? Hajar 300 bank soal Tracing Simulasi Array dan Vektor ini secara progresif:
+
+1. **[Latihan Soal Part 1 (Soal 1-50)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force-soal-part-1.md)**
+2. **[Latihan Soal Part 2 (Soal 51-100)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force-soal-part-2.md)**
+3. **[Latihan Soal Part 3 (Soal 101-150)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force-soal-part-3.md)**
+4. **[Latihan Soal Part 4 (Soal 151-200)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force-soal-part-4.md)**
+5. **[Latihan Soal Part 5 (Soal 201-250)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force-soal-part-5.md)**
+6. **[Latihan Soal Part 6 (Soal 251-300)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force-soal-part-6.md)**
+
+---
+
 Selanjutnya, kita akan berpindah ke mentalitas lain. Kadang-kadang, mengecek semua hal pakai Brute Force itu buang waktu (meskipun angkanya kecil). Apakah ada cara untuk *"Hanya mengambil apa yang kelihatan paling rakus saat ini"* biar cepat beres? 
 
 Mari berkenalan dengan **Modul 02: [Algoritma Greedy](./02-algoritma-greedy.md)**!

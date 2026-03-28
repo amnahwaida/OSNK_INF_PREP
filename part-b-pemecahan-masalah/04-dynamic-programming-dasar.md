@@ -102,6 +102,19 @@ Jangan coba digambar garis rute bercabang-cabang manual di kertasmu! (Bisa abis 
 
 ---
 
+## ⚔️ Simulasi Tarung: Bedah 300 Soal Dynamic Programming Kertas
+
+Berani mengetes kesaktian ilmu "Buku Tabungan Masa Depan" mu? Mari coba rute Matriks Peta Harta Karun dan DP Fibonacci di bank soal di bawah:
+
+1. **[Latihan Soal Part 1 (Soal 1-50)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar-soal-part-1.md)**
+2. **[Latihan Soal Part 2 (Soal 51-100)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar-soal-part-2.md)**
+3. **[Latihan Soal Part 3 (Soal 101-150)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar-soal-part-3.md)**
+4. **[Latihan Soal Part 4 (Soal 151-200)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar-soal-part-4.md)**
+5. **[Latihan Soal Part 5 (Soal 201-250)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar-soal-part-5.md)**
+6. **[Latihan Soal Part 6 (Soal 251-300)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar-soal-part-6.md)**
+
+---
+
 Kita sudah memahami mesin inti algoritma. Sekarang di bab terakhir Part B ini, mari kita asah pedang terakhir yang berfokus ke manipulasi Text dan Alfabet Huruf dengan kecepatan otak dewa. 
 
 Mari meluncur ke **[Modul 05: Pemrosesan String & Array Murni OSN-K!](./05-pemrosesan-string-dan-array.md)**

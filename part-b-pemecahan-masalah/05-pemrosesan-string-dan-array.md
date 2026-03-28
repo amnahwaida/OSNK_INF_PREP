@@ -83,6 +83,19 @@ Gila bukan? Kamu tak perlu membuat garis-garis silang semrawut pakai pensil! Kam
 
 ---
 
+## ⚔️ Simulasi Tarung: Bedah 300 Soal Analisis String & Array
+
+Siap membuktikan matamu tahan melacak operasi subsekuens silabus asli OSN-K seperti layaknya memori kodingan? Taklukkan 300 soal ini:
+
+1. **[Latihan Soal Part 1 (Soal 1-50)](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array-soal-part-1.md)**
+2. **[Latihan Soal Part 2 (Soal 51-100)](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array-soal-part-2.md)**
+3. **[Latihan Soal Part 3 (Soal 101-150)](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array-soal-part-3.md)**
+4. **[Latihan Soal Part 4 (Soal 151-200)](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array-soal-part-4.md)**
+5. **[Latihan Soal Part 5 (Soal 201-250)](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array-soal-part-5.md)**
+6. **[Latihan Soal Part 6 (Soal 251-300)](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array-soal-part-6.md)**
+
+---
+
 Selesai sudah pembekalan *Algoritma Manual* kita di alam komputasi kertas Part B!
 Di titik ini, insting *Compiler Manusia* milikmu sudah terbangun. Kamu paham `Array Looping`, cara serakah `Greedy`, dan *Simulasi Waktu*. 
 

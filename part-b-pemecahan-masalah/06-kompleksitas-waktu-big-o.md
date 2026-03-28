@@ -94,3 +94,16 @@ Lihat nilai maksimal variabel $N$ di Lembar Soalmu:
 5. Jika $N = 1.000.000.000$ (Satu Miliar) $\rightarrow$ Wah keterlaluan, 100% ini soal Teori Matematika (Ingat ilmu Rumus Gauss Part A?!). Ini wajib diselesaikan dengan Instan $O(1)$! Cari apanya yang bisa diformulasikan jadi rumus matematika mati (Aritmetika/Pigeonhole) tanpa nulis perulangan 1 pun!
 
 *(Nah, materi Big O ini yang akan sering membuat logikamu tersenyum dan mengeliminasi jebakan-jebakan naif di ujian tertulis OSN-K nanti!)*.
+
+---
+
+## ⚔️ Simulasi Tarung: Bedah 300 Soal Kompleksitas Waktu
+
+Buktikan kemampuan asimtotik matamu layaknya server grader juri yang mendeteksi ancaman Timeout. Bedah 300 potongan wujud *Time Limit* di bawah ini:
+
+1. **[Latihan Soal Part 1 (Soal 1-50)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-1.md)**
+2. **[Latihan Soal Part 2 (Soal 51-100)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-2.md)**
+3. **[Latihan Soal Part 3 (Soal 101-150)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-3.md)**
+4. **[Latihan Soal Part 4 (Soal 151-200)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-4.md)**
+5. **[Latihan Soal Part 5 (Soal 201-250)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-5.md)**
+6. **[Latihan Soal Part 6 (Soal 251-300)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o-soal-part-6.md)**
