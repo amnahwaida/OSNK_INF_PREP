@@ -10,24 +10,25 @@ Sebelum masuk ke algoritma silabus asli berspesifikasi dewa bernama *"Menghitung
 
 ## ✂️ A. Beda Kasta Teks: *Substring* vs *Subsequence*
 
-Banyak peserta gagal OSN karena menyamakan dua arti mahluk string ini.
+Banyak peserta pemula hancur lebur di OSN karena tidak bisa membedakan dua istilah kembar identik tapi beda nasib ini.
 
-Misalkan kita punya String Murni Induk:
+Misalkan kita punya String Panjang Asli:
 `T X S A X J E U R K N K`
 
-1. **Substring (Potongan Utuh Lurus dan Harus Dempet Tersetiai)**
-   - Aturan: Harus berjejer rapat di kata aslinya, tak boleh ada sela jeda putus.
-   - Contoh Valid: `T X S` atau `A X J`
-   - Contoh Haram (Tidak Diakui): `T A U` (Karena dari T loncat ke A itu ngelewatin rintangan huruf X dan S yang kepotong dibuang).
+### 1. Substring (Gerbong Kereta Api)
+Bayangkan kalimat di atas adalah **Gerbong Kereta yang sedang melaju kencang disambung rantai.**
+- **Aturan Mutlak:** Kalau kamu mau motong gerbong, potongannya **WAJIB DEMPET**. Gak boleh nyisain gerbong orang lain di tengah-tengahnya.
+- **Contoh Valid:** `T X S` atau `A X J` (Potongan murni gerbong berurut).
+- **Contoh Haram (Ditolak):** `T A U`. Kenapa haram? Boro-boro nyambung, dari huruf `T` terbang loncat ke `A` aja udah nyisain gerbong cacat `X` dan `S` terpisah di udara. Sistem akan error (kereta anjlok)!
 
-2. **Subsekuens / Subsequence (Potongan Melompat Genit Tetap Urut)**
-   - Aturan: Hurufnya BOLEH LONCAT JAUH asalkan posisinya **tetap wajib dari Kiri ke Kanan** di huruf aslinya (Jangan putar balik urutan!).
-   - Contoh Subsekuens Valid dari kalimat di atas:
-     - `T U K` (Didapat dari ambil `T`-x-s-a-x-j-e-`U`-r-`K`-n-k)
-     - `S A J U N K`
-     - `X X R K`
-   - Contoh Subsekuens Haram (Menyalahi Takdir Waktu Belakang):
-     - `K U J` (Karena huruf K letaknya udah mentok di belakangan, eh dia mundur maksa ngambil huruf U. Itu DILARANG oleh algoritma mesin).
+### 2. Subsekuens / Subsequence (Sandi Singkatan Grup WhatsApp)
+Ini The Real Boss di Olimpiade. Kalau *Substring* kaku macam kereta besi, **Subsequence** ini lentur dan gaul seperti gaya *chatting* kekinian di WhatsApp.
+- **Konsep Gaul (Alay tapi Urut):** Kamu ngetik panjang lebar, tapi di-*chat* disingkat sesuka hati ASAL urutan bacanya dari kiri ke kanan sama kek aslinya (Jangan diputar balik kayak Yoda!). Pokoknya main comot huruf lewatin huruf gapapa.
+- **Contoh Subsekuens Lulus (Murni Kiri ke Kanan):**
+  - **`T U K`** *(Dapat dari loncatan ajaib: **`T`**[x-s-a-x-j-e]**`U`**[r]**`K`**[n-k])*
+  - **`S A J U N K`** *(Semua nyomot Kiri ke Kanan mulus)*
+- **Contoh Subsekuens Haram / Ilegal (Menantang Takdir Mundur):**
+  - **`K U J`**. Kenapa Kriminal? Karena kamu udah nyomot `K` milih gerbong belakang mentok, eh kamu putar setir mundur nge-pick up huruf `U` yang udah kelewatan di masa lalu. Hukum *Subsequence Komputer* benci waktu berjalan mundur!! Wajib *Move On* ke huruf kanannya!
 
 Memahami hukum **Subsekuens** adalah nyawa penting OSN-K! Mari buktikan dengan bedah soal OSN-K asli di silabus.
 

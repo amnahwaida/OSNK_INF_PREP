@@ -50,22 +50,21 @@ Nah, Binary Search kan rewel tuh, minta datanya biar "Diurutkan" dulu. Memangnya
 
 Olimpiade OSN-K sering menugaskan peserta melacak posisi susunan sementara *array* setelah `3 putaran iterasi kodingan Sort`. Mari kuasai perbedaan konsep *"Seni Berpindah Posisi"* tiga algoritma ini:
 
-### 1. Bubble Sort (Gelembung Pemukul Tetangga)
-Namanya *Bubble* (Gelembung), elemen-elemen besar perlahan akan mengapung melayang ke kanan deretan.
-- **Konsep:** Dia jalan dari awal ke akhir, mengecek dirinya dengan 1 orang tetangga persis di kanannya. *"Eh bro, badanmu kan lebih kecil nih, kita tukeran bangku dong biar lu di kiri"*. Begitu terus sampai ujung barisan.
-- **Tanda Tangan Visual (Ciri Khas Tracing):** Setiap kali 1 Putaran Keseluruhan Keliling (Iterasi 1) Selesai, dijamin **ANGKA PALING BESAR 100% PASTI SUDAH MENGENDAP DI POSISI PALING KANAN (UJUNG)**. 
-*(Makanya putaran berikutnya nggak perlu cek elemen ujung kanan lagi).*
+### 1. Bubble Sort (Hukuman Baris Upacara Bendera)
+Bayangkan kamu sedang baris upacara bendera hari Senin, tapi acak-acakan tinggi badannya. Guru BP menyuruh kalian berbaris urut dari pendek ke tinggi.
+- **Konsep:** Guru mengecek 2 anak bersebelahan dari baris paling depan. *"Eh, lu kan lebih tinggi dari temen lu, minggir ganti posisi ke belakang dia!"*. Begitu terus, si guru mukul pundak pelan "Tukaran... Tukaran...".
+- **Tanda Tangan Visual (Ciri Khas Tracing):** Sadar tidak sadar, setelah Guru BP jalan dari ujung depan sampai 1 putaran mentok, **Siswa yang PALING TINGGI se-angkatan pasti otomatis sudah 'terdorong' mentok nongkrong di barisan paling belakang**. Gembok! Barisan buntut nggak perlu dicek lagi.
 
-### 2. Selection Sort (Sang Pecari Kasta Terendah)
-Berlawanan dengan Bubble. *Selection* ini algoritmanya lebih "santai dan pendiam, tapi teliti".
-- **Konsep:** Jangan buru-buru menukar setiap jam! Kita picingkan mata sepanjang sisa deretan, cari siapa sih angka paling kecil / paling cebol *di seluruh deretan barisan*? Oh, si 12! Ambil si cebol 12 itu, langsung lempar/tukar bangku aja paksa bawa ke posisi paling Kiri (Garis Start iterasi).
-- **Tanda Tangan Visual (Ciri Khas Tracing):** Di awal iterasi-1, langsung terbentuk **1 ELEMEN TERKECIL MENDARAT ABADI DI SISI KIRI**. Iterasi kedua, nemu anak terkecil kedua mendarat stabil di sisi kiri nomor 2... dst. Tembok keamanan stabil mengukuh dari area sisi kiri pelan-pelan ke kanan.
+### 2. Selection Sort (Pak RT Milih Bantuan Siswa Miskin)
+Berlawanan dengan Bubble yang repot nukar-nukar anak sebelahan tiap detik, *Selection* ini gayanya mirip Pak RT yang kalem tapi jeli.
+- **Konsep:** Jangan buru-buru ngusir orang sebelahan! Pak RT diam sejenak picingkan mata sepanjang sisa deretan, dari ujung ke ujung. Dia cari: *"Siapa nih anak yang sepatunya paling bolong (Nilai paling kecil/Cebol) di lapangan ini?"* Oh si Dodo! Sini Do, kamu kutarik paksa baris di bangku VVIP paling depan (Kiri).
+- **Tanda Tangan Visual (Ciri Khas Tracing):** Di iterasi-1, langsung **1 ANAK PALING KECIL MENDARAT ABADI DI SAYAP KIRI**. Putaran kedua, cari paling cebol selanjutnya di kerumunan sisa, pindahkan ke nomor urut 2. Tembok keamanan stabil mengunci satu per satu dari sayap kiri.
 
-### 3. Insertion Sort (Bapak Pemain Kartu Remi)
-Pernah menyortir setumpuk kartu Remi/Uno di tangan kiri setelah dikocok?
-Anggap saja mulanya tangan kiri cuma memegang 1 kartu (otomatis urut). Tangan kanan pelan-pelan memungut kartu kedua.
-- **Konsep:** Ambil satu elemen baru (misal memungut angka 7). Cek deretan yang *sudah dirapikan di sebelah kirimu*. Sisipkan (Insert) angka 7 itu pelan-pelan mendesak dan mendorong paksa elemen lain menggeser sampai 7 nangkring di posisi sah urutannya.
-- **Tanda Tangan Visual (Ciri Khas Tracing):** Separuh deret dari pinggir kiri itu "Selalu terlihat urut secara temporer" (Padahal sisa yang kanan masih ngacak jelek berserakan). Seiring putaran bertambah, "Tembok area rapi" itu makin melebar memakan memfagositosis array yang acak.
+### 3. Insertion Sort (Momen Main Kartu Remi/Uno Waktu Istirahat)
+Pernah main capsa, uno, atau remi pas jam istirahat pakai tangan kiri?
+Awalnya tangan kirimu kosong. Lalu kamu jongkok memegang jemput kartu yang dibagikan satu per satu.
+- **Konsep:** Tangan kirimu udah pegang 2 kartu cakep urut. Eh dapet kartu ketiga (angka 7). Pikiranmu langsung jalan: *"Wah, 7 ini harus kusisipkan di sela-sela angka 5 dan 9 yang udah kupegang nih!"*. Kamu mendorong (Insert) paksa kartu 7 itu nyempil ke tengah.
+- **Tanda Tangan Visual (Ciri Khas Tracing):** Kartu yang dipegang tangan kirimu "Selalu terlihat seolah-olah udah urut" (Padahal kartu di tumpukan tengah meja masih kacau meronta). Lama-lama "tembok kartu Tangan Kiri" ini makan semua tumpukan meja, ngelebar sampai lunas.
 
 ---
 
