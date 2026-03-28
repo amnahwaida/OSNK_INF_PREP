@@ -39,7 +39,24 @@ Ada beberapa operator yang sering muncul di OSN-K:
 | F | T | F | **T** | **T** | **T** |
 | F | F | F | F | F | **T** |
 
-> **Tips OSN-K**: Jika ada kurung, kerjakan yang di dalam kurung dulu. Urutan pengerjaan standar: **NOT** -> **AND** -> **OR**.
+### 4. Hukum Logika Penting (De Morgan)
+
+Seringkali kita perlu membalikkan sebuah logika yang kompleks. Gunakan aturan sederhana ini:
+*   **NOT (A AND B)** sama dengan **(NOT A) OR (NOT B)**
+*   **NOT (A OR B)** sama dengan **(NOT A) AND (NOT B)**
+
+*Analogi:* "Saya TIDAK (makan nasi DAN minum teh)" berarti "Saya TIDAK makan nasi ATAU saya TIDAK minum teh".
+
+### 5. Relasi dengan Kehidupan & Informatika
+
+#### A. Logika dalam Informatika:
+*   **Mesin Pencari (Google)**: Saat kamu mencari `Kucing AND Lapar`, Google hanya menampilkan hasil yang ada kedua kata tersebut. Jika `Kucing OR Anjing`, Google menampilkan salah satu atau keduanya.
+*   **Sistem Login**: Kamu bisa masuk JIKA (Username Benar **AND** Password Benar). Salah satu salah, kamu ditolak.
+*   **Filter Belanja**: Menampilkan barang yang (Kategori: Elektronik **AND** Harga < 1 Juta).
+
+#### B. Logika dalam Kehidupan:
+*   **Lampu Lalu Lintas**: Lampu Hijau menyala JIKA (Arah lawan Merah **AND** Tidak ada kereta lewat).
+*   **Resep Masakan**: Jika tidak ada Mentega, gunakan Catatan: (Mentega **OR** Margarin).
 
 ---
 
@@ -48,16 +65,24 @@ Ada beberapa operator yang sering muncul di OSN-K:
 Dalam informatika, kita menyebut ini sebagai **Struktur Data**.
 
 ### 1. Antrian (Queue) - FIFO
-**Analogi Tambahan:**
-*   **Customer Service**: Orang yang ambil nomor antrian duluan pasti dipanggil duluan.
-*   **E-Commerce Flash Sale**: Pesanan yang masuk server sepermili-detik lebih cepat akan diproses duluan sebelum stok habis.
-*   **Chat Message**: Pesan WhatsApp yang kamu kirim jam 08.00 akan muncul di atas pesan jam 08.01.
+
+#### A. Relasi dengan Informatika:
+*   **Web Server**: Jika 100 orang membuka website bersamaan, server akan melayani orang yang klik-nya sampai ke server paling awal (Antrian Request).
+*   **Sistem Operasi**: Komputer mengatur jalannya aplikasi yang banyak menggunakan antrian agar semua aplikasi kebagian waktu proses (CPU Scheduling).
+
+#### B. Relasi dengan Kehidupan:
+*   **Eskalator**: Orang yang naik duluan akan sampai di atas/bawah duluan.
+*   **Pipa Air**: Air yang masuk ke ujung pipa pertama kali adalah yang keluar dari keran pertama kali.
 
 ### 2. Tumpukan (Stack) - LIFO
-**Analogi Tambahan:**
-*   **Browser History (Tombol Back)**: Halaman terakhir yang kamu buka adalah yang muncul pertama kali saat kamu klik "Back".
-*   **Aplikasi Edit Foto (Undo)**: Filter terakhir yang kamu pasang adalah yang akan dihapus pertama kali saat kamu klik "Undo".
-*   **Tumpukan Kursi**: Kursi yang ditaruh paling atas saat merapikan adalah yang pertama diambil saat akan digunakan.
+
+#### A. Relasi dengan Informatika:
+*   **Tag HTML/Coding**: Jika kamu menulis `<b><i>Teks</i></b>`, kamu harus menutup `<i>` dulu baru `<b>`. Tag yang terakhir dibuka (i) harus ditutup pertama kali (LIFO).
+*   **Fungsi Rekursif**: Saat sebuah fungsi memanggil dirinya sendiri, komputer menyimpan posisi fungsi sebelumnya dalam sebuah "Stack".
+
+#### B. Relasi dengan Kehidupan:
+*   **Pez Dispenser**: Permen yang kamu masukkan terakhir ke dalam wadah adalah yang akan keluar pertama kali saat kamu menekan kepalanya.
+*   **Baju dalam Koper**: Baju yang kamu taruh paling atas saat packing adalah baju yang pertama kali kamu ambil saat sampai di hotel.
 
 ---
 
@@ -564,6 +589,195 @@ Gunakan pilar CT yang sudah kamu pelajari untuk menyelesaikan masalah inti.
 <summary>✅ Jawaban</summary>
 **B. Merancang logika dan sistem antrian.**
 Ini adalah inti teknis dari fungsionalitas aplikasi tiket yang adil dan aman.
+</details>
+
+### Soal #31: Pencarian Google (AND/NOT)
+Kamu ingin mencari resep kue yang (Tanpa Telur) **AND** (Gunakan Cokelat).
+Hasil pencarian mana yang akan muncul?
+A. Resep Brownies Kukus (Bahan: Telur, Cokelat, Tepung)
+B. Resep Dark Chocolate Cake (Bahan: Cokelat, Pisang, Tepung)
+C. Resep Omelet Cokelat (Bahan: Telur, Cokelat)
+D. Resep Roti Tawar (Bahan: Tepung, Ragi)
+
+<details>
+<summary>💡 Hint</summary>
+Syarat 1: NOT Telur. Syarat 2: Cokelat.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Resep Dark Chocolate Cake.**
+Hanya pilihan B yang mengandung Cokelat tanpa menggunakan Telur.
+</details>
+
+### Soal #32: Tag HTML (Stack)
+Sebuah kode web tertulis: `<div><span><b>Teks`.
+Manakah urutan penutup tag yang benar sesuai prinsip Stack?
+A. `</b></span></div>`
+B. `</div></span></b>`
+C. `</span></b></div>`
+D. `</b></div></span>`
+
+<details>
+<summary>💡 Hint</summary>
+LIFO: Tag yang terakhir dibuka (`<b>`) harus ditutup pertama kali.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**A. </b></span></div>.**
+Urutan buka: div -> span -> b. Maka urutan tutup harus dibalik: b -> span -> div.
+</details>
+
+### Soal #33: CPU Scheduling (Queue)
+Komputer memiliki 3 tugas: [Cetak_Dokumen, Putar_Musik, Scan_Virus].
+Jika komputer menggunakan sistem Queue, dan tiba-tiba user klik "Pause" pada Putar_Musik, tugas mana yang akan diproses selanjutnya setelah Cetak_Dokumen selesai?
+A. Putar_Musik
+B. Scan_Virus
+C. Tidak ada
+D. Cetak_Dokumen lagi
+
+<details>
+<summary>💡 Hint</summary>
+Jika satu tugas ditangguhkan/dikeluarkan dari antrian, tugas di belakangnya maju.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Scan_Virus.**
+Urutan: [1.Cetak, 2.Musik, 3.Scan]. Karena Musik di-pause, maka urutan ke-2 yang kosong diisi oleh Scan_Virus.
+</details>
+
+### Soal #34: Hukum De Morgan (Logic)
+Pernyataan: **NOT (Lapar AND Haus)** identik dengan...
+A. NOT Lapar AND NOT Haus
+B. NOT Lapar OR NOT Haus
+C. Lapar OR Haus
+D. Tetap Lapar dan Haus
+
+<details>
+<summary>💡 Hint</summary>
+Hukum De Morgan: NOT (A AND B) = (NOT A) OR (NOT B).
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. NOT Lapar OR NOT Haus.**
+Pernyataan ini berarti "Setidaknya salah satu dari kondisi (Lapar atau Haus) tidak terjadi".
+</details>
+
+### Soal #35: Keamanan Microwave
+Microwave menyala JIKA (Pintu Tertutup) **AND** (Waktu Set > 0) **AND** (Tombol Start Ditekan).
+Jika pintu tertutup dan waktu sudah di-set 2 menit, tapi microwave tidak menyala, apa kemungkinan penyebabnya?
+A. Pintu rusak
+B. Waktu habis
+C. Tombol Start belum ditekan
+D. Listrik mati
+
+<details>
+<summary>💡 Hint</summary>
+Syarat AND membutuhkan SEMUA kondisi bernilai BENAR.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**C. Tombol Start belum ditekan.**
+Karena dua syarat lain sudah terpenuhi (Pintu & Waktu), maka syarat ketiga yang mungkin belum aktif.
+</details>
+
+### Soal #36: Vending Machine (Queue)
+Koin yang kamu masukkan ke lubang vending machine masuk ke dalam sebuah tabung penyimpanan. Jika koin yang kamu masukkan pertama kali adalah koin yang paling bawah (untuk diambil pemilik mesin), sistem penyimpanan ini menggunakan prinsip...
+A. Stack
+B. Queue
+C. Random
+D. Circular
+
+<details>
+<summary>💡 Hint</summary>
+Koin pertama masuk -> Koin pertama diambil di bawah.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Queue.**
+Masuk dari atas (belakang), keluar dari bawah (depan). Ini adalah aliran FIFO.
+</details>
+
+### Soal #37: Pez Dispenser (Stack)
+Kamu mengisi Pez dengan permen: [1.Jeruk, 2.Apel, 3.Anggur].
+Manakah permen yang akan dimakan oleh adikmu pertama kali saat ia menekan kepala Pez?
+A. Jeruk
+B. Apel
+C. Anggur
+D. Semua bersamaan
+
+<details>
+<summary>💡 Hint</summary>
+LIFO: Permen terakhir yang dimasukkan (Anggur) berada di posisi paling atas.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**C. Anggur.**
+Permen terakhir yang masuk adalah yang pertama kali keluar.
+</details>
+
+### Soal #38: Penumpang Eskalator (Queue)
+Lima orang (1, 2, 3, 4, 5) naik eskalator berurutan. Di tengah jalan, orang nomor 3 pingsan dan harus digendong keluar eskalator oleh petugas di samping.
+Siapakah orang yang sampai di lantai atas tepat setelah orang nomor 2?
+A. Orang nomor 1
+B. Orang nomor 4
+C. Orang nomor 3
+D. Orang nomor 5
+
+<details>
+<summary>💡 Hint</summary>
+Jika data di tengah antrian hilang, data di belakangnya tetap maju sesuai urutan.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Orang nomor 4.**
+Urutan: [1, 2, 3, 4, 5]. Nomor 3 hilang, sisa: [1, 2, 4, 5]. Maka setelah nomor 2 adalah nomor 4.
+</details>
+
+### Soal #39: Panggilan Telepon Beruntun (Stack)
+Kamu sedang menelepon Ibu, lalu ada panggilan masuk dari Guru yang mendesak, kamu menjawabnya. Saat bicara dengan Guru, Ayah menelepon.
+Urutan penyelesaian telepon agar kamu bisa kembali bicara dengan Ibu adalah...
+A. Selesaikan Guru -> Selesaikan Ayah -> Lanjut Ibu
+B. Selesaikan Ayah -> Selesaikan Guru -> Lanjut Ibu
+C. Selesaikan Ibu -> Selesaikan Guru -> Selesaikan Ayah
+D. Matikan semua
+
+<details>
+<summary>💡 Hint</summary>
+Ini seperti Interupsi/Rekursi. Panggilan terbaru (terakhir) harus diselesaikan dulu untuk kembali ke panggilan sebelumnya.
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Selesaikan Ayah -> Selesaikan Guru -> Lanjut Ibu.**
+Panggilan terakhir (Ayah) berada di puncak "Stack" perhatianmu.
+</details>
+
+### Soal #40: Logika Kontrol Game
+Karakter melompat JIKA (Tombol Spasi) **AND** (Diatas Tanah **OR** Punya Skill Double Jump).
+Karakter tidak di atas tanah, dan tidak punya skill Double Jump. Tapi player menekan Spasi.
+Apakah karakter melompat?
+A. Ya
+B. Tidak
+C. Karakter jatuh
+D. Game Error
+
+<details>
+<summary>💡 Hint</summary>
+(Spasi = T) AND (Tanah = F OR Skill = F).
+</details>
+
+<details>
+<summary>✅ Jawaban</summary>
+**B. Tidak.**
+(F OR F) menghasilkan SALAH. BENAR AND SALAH menghasilkan SALAH.
 </details>
 
 ---
