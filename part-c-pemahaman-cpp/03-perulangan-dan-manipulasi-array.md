@@ -1,0 +1,110 @@
+# 3. Perulangan & Array (Trek Lari & Playlist Spotify)
+
+Kamu sudah lulus dari ujian *Simulasi Brute Force* di Part B kemarin! Di Part C ini, kita akan melihat wujud asli kode C++ bermesin putar yang kamu lacak susah payah kemarin siang: **Perulangan (`for`, `while`)** dan tempat penyimpanannya yakni **Array**.
+
+Dalam membaca soal *"Compiler Manusia"*, sering kali juri sengaja menyisipkan tombol gaib bernama `break` dan `continue` untuk mengecoh simulasi iterasi *looping*-mu. Mari kita bongkar saklar rahasiannya!
+
+---
+
+## 🏃 A. Aturan Main Mesin Lari (Looping Mutlak)
+
+Sintaks C++ `for` memiliki 3 mesin waktu yang dipisahkan oleh tanda titik koma (`;`).
+```cpp
+for (int i = 0; i < 5; i++) {
+   // Aksi putaran
+}
+```
+**Analogi Trek Lari Senayan:**
+1. Mesin 1: `int i = 0`. Ini Dapur Start. Kamu mulai memanaskan mesin sepatu dari garis $0$.
+2. Mesin 2: `i < 5`. Ini Wasit Peniup Peluit. Selama syarta ini terpenuhi (contoh: Apakah sepatu $i=3$ masih lebih kecil dari $5$?), peluit terus menerus dibunyikan untuk suruh kamu lari 1 putaran lagi! Peringatan keras: Kalau $i=5$, peluit distop. Mesin lari mati seketika!
+3. Mesin 3: `i++` (alias `i = i + 1`). Ini Sepatu Lari. Begitu kelar putaran track lapangan, poin kamu ditambahkan sesuai batas ini.
+
+### ⚠️ Jebakan Batman #4: Loop Berjalan Mundur
+Hati-hati! OSN-K benci soal yang lurus lurus aja. Jangan otomatis selalu mutar *Nge-plus-plus* (`i++`). Soal sering menaruh `i = i - 2` yang menyebabkan mesin lari ke arah belakang.
+
+```cpp
+for (int peluru = 10; peluru > 0; peluru -= 3) {
+    ...
+}
+```
+Dalam *Tracing Loop* di coretan kertas buram, mulailah berteriak manual: "Peluru 10 $\\rightarrow$ sisa 7 $\\rightarrow$ sisa 4 $\\rightarrow$ sisa 1 $\\rightarrow$ sisa -2 (STOP/BUNUH DIRI SINTAKTIKAL!)."
+
+
+---
+
+## 🎵 B. Tombol Gaib: Break vs Continue (Playlist Spotify)
+
+Di dalam lorong gelap perulangan, sang juri C++ kadang meletakkan gerbang penyeleksi:
+
+```cpp
+for (int lagu = 1; lagu <= 10; lagu++) {
+    if (lagu == 4) break;
+    if (lagu == 2) continue;
+    printf("Nyanyi lagu %d\n", lagu);
+}
+```
+
+Bagi *Compiler Manusia* pemula, `break` dan `continue` ini sering tertukar definisinya.
+Mari perjelas perbedaannya memakai analogi **Aplikasi Spotify**:
+
+### ⏩ 1. CONTINUE (Skip ke Lagu Selanjutnya!)
+`continue` artinya kamu membatalkan sisa bait program pada putaran spesifik *saat ini* SAJA, lalu langsung lompat ke kepala iterasi atas buat **memutar lagu berikutnya**.
+
+- **Jejak Logika Coretanmu:** *Aplikasi mutar Lagu ke-2 $\\rightarrow$ Eh, lagunya galau banget (Ketemu `continue`) $\\rightarrow$ Langsung tekan tombol "Next Track" ($\\rightarrow$) lewati printf, naik kembali putar lagu 3.*
+
+### ⏹️ 2. BREAK (Matikan Aplikasinya! Lari dari Lorong!)
+`break` jauh lebih kejam. Begitu tersentuh, fungsi ini seketika MELEDAKKAN / MEMBUNUH seluruh aplikasi perulangan seutuhnya! Lingkaran Trek senayan dibakar! Lagu sisa takkan diputar selamanya.
+
+- **Jejak Logika Coretanmu:** *Aplikasi mutar Lagu ke-4 $\\rightarrow$ Astaga penyanyinya mantan pacarku (Ketemu `break`) $\\rightarrow$ Banting HP nya, keluar cabut pulang! Mesin langsung lompat menembus dinding keluar dari kurung kurawal `}` sang Perulangan.* 
+
+*(Output kodingan di atas hanyalah "Nyanyi lagu 1" lalu "Nyanyi lagu 3" lalu sunyi murni!).*
+
+---
+
+## 📦 C. Tabrakan Dinding Array (Index Bounded)
+
+Array di C++ (seperti `arr[10]`) adalah deretan lemari berhimpitan. Indeks mutlaknya selalu berjalan dari kardus nomor gembok **`0` hingga `9`**.
+Juri C++ sangat suka mengetes kepekaanmu di ujung batas (*Off-by-One Error*).
+
+```cpp
+int uang[5] = {10, 20, 30, 40, 50};
+for (int i = 0; i <= 5; i++) {
+    uang[i] += 5;
+}
+```
+**Bencana OOB (Out Of Bounds):**
+Lihat mesin `for` melempar `i <= 5`.
+Artinya *looping* mesin sepatu tersebut memaksakan diri mengakses loker kunci ke `5` alias `uang[5]`. Padahal deklarasinya, `uang[5]` HANYA berdiri untuk 5 pintu loker berindeks gembok `0, 1, 2, 3, 4`!
+
+Mengakses `uang[5]` di C++ = **Mendobrak dinding kelas sebelah!**
+Perilaku program memuntahkan *Garbage Value* atau berpotensi kiamat OS (Segmentation Fault). Sebagai pembaca soal, kalau ditanya nilai `uang[5]`, ketahuilah itu murni kesalahan mematikan dari sang arsitek soalnya!
+
+---
+
+### Siap Di Uji Tracing?
+
+Kamu ditunjuk menjadi Komandan Compiler pada sebaris kodingan OSN Murni berikut:
+
+```cpp
+int total_harta = 0;
+for (int lemari = 1; lemari <= 10; lemari += 2) {
+    if (lemari == 5) continue;
+    if (lemari == 9) break;
+    total_harta += lemari;
+}
+print(total_harta);
+```
+**Berapakah total_harta yang dikurasi komputermu?**
+
+**Diagnosis Logika Papan Tulis Juri C++:**
+1. Mesin mulai dari pintu lari ganjil `lemari = 1, 3, 5, 7, 9`.
+2. Lari `lemari=1` $\\rightarrow$ Aman. `total_harta += 1`. (Saldo = 1)
+3. Lari `lemari=3` $\\rightarrow$ Aman. `total_harta += 3`. (Saldo = 4)
+4. Lari `lemari=5` $\\rightarrow$ Pintu terdeteksi `continue`! Juri berteriak "SKIP KE NEXT LAGU!". Baris pertambahan *total harta* diabaikan mutlak. Mesin dipaksa lompat lanjut ke lari indeks `7`. (Saldo tetap 4).
+5. Lari `lemari=7` $\\rightarrow$ Aman. `total_harta += 7`. (Saldo = 11)
+6. Lari `lemari=9` $\\rightarrow$ Pintu terdeteksi `break`! Juri berteriak "BAKAR TREK LARI INI!". Sang juri lompat cabut terbang dari jeruji `{}` For Loop! Sisa proses tak tersentuh abadi.
+7. Print Saldo Mutlak Final $\\rightarrow$ Nilainya tembus **`11`**.
+
+Selamat, matamu telah mewarisi kutukan presisi mesin CPU intel gen-12!
+
+⏩ **Lanjut ke Modul Keempat:** [Fungsi C++ & Manipulasi Referensi (Nyontek PR Tip-Ex)](./04-fungsi-dan-parameter-referensi.md)
