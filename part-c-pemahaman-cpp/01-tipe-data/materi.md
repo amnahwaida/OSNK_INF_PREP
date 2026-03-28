@@ -34,7 +34,15 @@
  
  1. **`cin >> laci;` (Input)**: Corong masuk dari Keyboard.
  2. **`cout << laci;` (Output)**: Corong keluar ke Layar.
- 3. **`endl` atau `"\n"` (Tombol Enter)**: Berfungsi untuk pindah ke baris baru. Tanpa ini, semua tulisanmu akan menempel seperti kereta api panjang tanpa ujung!
+ 3. **`endl` atau `"\n"` (Tombol Enter)**: Berfungsi untuk pindah ke baris baru.
+ 
+ ### ⚡ Mantra Pelicin (Fast I/O)
+ Di soal OSN-K yang datanya sangat besar (ratusan ribu baris), `cin` dan `cout` seringkali terasa "lelet". Agar secepat kilat, kita butuh mantra sakti di awal fungsi `main`:
+ ```cpp
+ ios::sync_with_stdio(0);
+ cin.tie(0);
+ ```
+ **Analogi "Lampu Hijau Terus"**: Secara bawaan, C++ selalu mengecek apakah bahasa C juga mau mengirim data (antrean bareng). Mantra ini seperti membuat jalur khusus TransJakarta; `cin` dan `cout` langsung melesat tanpa peduli kendaraan lain!
  
  ---
  
@@ -80,7 +88,7 @@
  
  ---
  
- ## 📦 E. Aturan Main Kotak (Tipe Data `int`)
+ ## 📦 E. Aturan Main Kotak (Tipe Data Dasar)
  
  Di bahasa C++, kamu tidak bisa sembarangan menaruh barang ke udara kosong. Kamu butuh **"Kotak Loker"** (Variabel). Kotak ini ada label nama tipe datanya, yang paling sering memakan korban adalah:
  
@@ -264,7 +272,7 @@
  
  ---
  
- ## 🧪 N. Tip & Trick Khas OSN-K (Angka Dewa)
+ ## 🧪 N. Tip & Trick Khas OSN-K (Angka Dewa & Jebakan Maut)
  
  Di soal-soal tingkat nasional, kamu akan sering melihat cara penulisan angka yang "aneh". Mari kita bedah rahasianya:
  
@@ -275,6 +283,25 @@
  
  **2. Nilai Tak Hingga (INF)**
  Seringkali juri menulis `int ans = 1e9;`. Ini bukan berarti jawabannya semiliar, tapi juri sedang menyiapkan "Laci Penampung" dengan nilai yang sangat besar agar nanti bisa dibandingkan dan diganti dengan angka yang lebih kecil.
+ 
+ ### ⚠️ 3. Jebakan Overflow Meski Pakai Long Long!
+ Ini adalah jebakan nomor 1 yang mematikan banyak peserta. Perhatikan kode ini:
+ ```cpp
+ int a = 1000000; // Satu juta
+ int b = 1000000; // Satu juta
+ long long c = a * b; // HARUSNYA satu triliun kan?
+ ```
+ **Hasilnya: SALAH BESAR!** Lho kok bisa, padahal `c` sudah pakai `long long`?
+ 
+ **Diagnosis Logika Maut:**
+ Robot C++ bekerja secara bertahap. Sebelum memasukkan hasil ke laci `c`, dia menghitung `a * b` dulu. Karena `a` dan `b` adalah **`int`**, robot menghitungnya di area "Laci Semen" (`int`) yang kapasitasnya cuma sampai 2 miliar.
+ Satu Triliun JAUH melampaui 2 miliar, sehingga angkanya **MELEDAK (Overflow)** di tengah jalan dan menjadi sampah angka negatif. Hasil sampah itulah yang baru dimasukkan ke `long long c`.
+ 
+ **Solusi Sakti (Operasi 1LL):**
+ Paksa robot menghitung di area Peti Kemas sejak awal dengan menambahkan angka `1LL` (angka 1 bertipe long long):
+ ```cpp
+ long long c = 1LL * a * b; // Berhasil! (Kasta tertinggi menang).
+ ```
  
  ---
  
@@ -312,10 +339,10 @@
  | **Huruf Kecil** | `'a'` s.d. `'z'` | **97 s.d. 122** | `'a'` = 97 |
  | **Spasi** | `' '` | **32** | Sering terlupa saat tracing. |
  
- **Kenapa HarusSequential (Berurutan)?**
+ **Kenapa Harus Sequential (Berurutan)?**
  Robot C++ menaruh huruf demi huruf secara rapi berurutan. Ini memungkinkan kita memakai trik **"Matematika Huruf"**:
  1. **Mencari Urutan Abjad**: `char c = 'C'; int urutan = c - 'A';` $\rightarrow 67 - 65 = 2$. (Artinya 'C' adalah orang ke-2 setelah 'A').
-  2. **Konversi Angka Teks**: `char c = '5'; int asli = c - '0';` $\rightarrow 53 - 48 = 5$.
+ 2. **Konversi Angka Teks**: `char c = '5'; int asli = c - '0';` $\rightarrow 53 - 48 = 5$.
  3. **The Magic 32**: Jarak antara Huruf Kecil dan Huruf Besar SELALU **32**. 
     - `'a' - 32` = `'A'`.
     - `'B' + 32` = `'b'`.
@@ -345,7 +372,7 @@
  }
  ```
  **Hukum Kesopanan C++:** "Orang Dalam Lebih Berkuasa".
- Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSIS (`100`) dan ada ketua kelasnya sendiri (`5`). Fungsi itu akan mencetak mutlak **`5`**. Uang `100` di luar sana sedang tertimpa bayangan (*Shadowing*).
+ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSIS (`100`) and ada ketua kelasnya sendiri (`5`). Fungsi itu akan mencetak mutlak **`5`**. Uang `100` di luar sana sedang tertimpa bayangan (*Shadowing*).
  
  ---
  
