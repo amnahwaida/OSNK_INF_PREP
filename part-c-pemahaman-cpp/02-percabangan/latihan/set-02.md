@@ -4,758 +4,760 @@
 
 # Latihan Soal Part C - Modul 02 - Set 02
 
-### Soal 26 (Nested If-Else)
+### Soal 26
 ```cpp
-bool pagi = false;
-bool hujan = true;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 27
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Makan**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Pagi=0, Hujan=1. Masuk blok else terluar (Makan). 
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 27 (Short-Circuit OR)
+### Soal 28
 ```cpp
-int a = 0;
-int visit = 0;
-if (a == 1 || ++visit > 0) { /* logic */ }
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai benar?
-2. Berapakah nilai akhir variabel `visit`?
-3. Apa yang terjadi pada `++visit` jika `a` bernilai 1?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Salah**
-2. **1**
-3. **Jika `a == 1` (True), maka syarat kedua tidak akan pernah dibaca (Short-Circuit OR).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[Cek a == 1] -->|"False"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=0. Cek `a == 1`. Hasil: False. Karena False, baru lanjut cek ++visit. visit jadi 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 28 (Nested If-Else)
+### Soal 29
 ```cpp
-bool pagi = false;
-bool hujan = false;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Makan**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Pagi=0, Hujan=0. Masuk blok else terluar (Makan). 
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 29 (Nested If-Else)
+### Soal 30
 ```cpp
-bool pagi = true;
-bool hujan = false;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 31
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 32
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Lari**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Pagi=1, Hujan=0. Masuk blok if(pagi). Cek hujan: Lari.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 30 (Nested If-Else)
+### Soal 33
 ```cpp
-bool pagi = true;
-bool hujan = false;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 34
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 35
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Lari**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Pagi=1, Hujan=0. Masuk blok if(pagi). Cek hujan: Lari.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 31 (Nested If-Else)
+### Soal 36
 ```cpp
-bool pagi = false;
-bool hujan = true;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 37
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 38
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 39
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 40
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 41
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 42
+```cpp
+int x = 65;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=65] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 65. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 65 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 65 kelereng ke 5 anak. Tiap anak dapat 13 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 43
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 44
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 45
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 46
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 47
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Makan**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Pagi=0, Hujan=1. Masuk blok else terluar (Makan). 
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 32 (Short-Circuit AND)
+### Soal 48
 ```cpp
-int a = 0; int b = 0;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
-
-**Jawaban & Diagnosis:**
-1. **Tidak**
-2. **0**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"False"| B{"STOP: Sirkuit Pendek"}
-    B -->|"visit = 0"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=0. Cek `a == 1`. Hasil: False. Karena False, syarat kedua (++visit) DIABAIKAN. visit tetap 0.
-
----
-### Soal 33 (Boolean Logic Flip)
-```cpp
-int x = -9;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **-9**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=-9] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=-9. Syarat `!x` (NOT x). Jika x=-9 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 34 (Boolean Logic Flip)
-```cpp
-int x = -4;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **-4**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=-4] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=-4. Syarat `!x` (NOT x). Jika x=-4 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 35 (Short-Circuit AND)
-```cpp
-int a = 1; int b = 1;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
-
-**Jawaban & Diagnosis:**
-1. **Ya**
-2. **1**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"True"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=1. Cek `a == 1`. Hasil: True. Karena True, lanjat cek ++visit (visit jadi 1).
-
----
-### Soal 36 (Boolean Logic Flip)
-```cpp
-int x = -6;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **-6**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=-6] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=-6. Syarat `!x` (NOT x). Jika x=-6 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 37 (Boolean Logic Flip)
-```cpp
-int x = 3;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **3**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=3] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=3. Syarat `!x` (NOT x). Jika x=3 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 38 (Boolean Logic Flip)
-```cpp
-int x = -10;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **-10**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=-10] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=-10. Syarat `!x` (NOT x). Jika x=-10 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 39 (Nested If-Else)
-```cpp
-bool pagi = true;
-bool hujan = false;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Lari**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Pagi=1, Hujan=0. Masuk blok if(pagi). Cek hujan: Lari.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 40 (Short-Circuit AND)
+### Soal 49
 ```cpp
-int a = 1; int b = 1;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Ya**
-2. **1**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[Cek a == 1] -->|"True"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=1. Cek `a == 1`. Hasil: True. Karena True, lanjat cek ++visit (visit jadi 1).
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 41 (Short-Circuit OR)
+### Soal 50
 ```cpp
-int a = 0;
-int visit = 0;
-if (a == 1 || ++visit > 0) { /* logic */ }
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai benar?
-2. Berapakah nilai akhir variabel `visit`?
-3. Apa yang terjadi pada `++visit` jika `a` bernilai 1?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Salah**
-2. **1**
-3. **Jika `a == 1` (True), maka syarat kedua tidak akan pernah dibaca (Short-Circuit OR).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[Cek a == 1] -->|"False"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-a=0. Cek `a == 1`. Hasil: False. Karena False, baru lanjut cek ++visit. visit jadi 1.
-
----
-### Soal 42 (Boolean Logic Flip)
-```cpp
-int x = -1;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **-1**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=-1] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=-1. Syarat `!x` (NOT x). Jika x=-1 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 43 (Nested If-Else)
-```cpp
-bool pagi = true;
-bool hujan = false;
-if (pagi) {
-    if (hujan) printf("Tidur");
-    else printf("Lari");
-} else {
-    printf("Makan");
-}
-```
-**Pertanyaan:**
-1. Apa output yang muncul di layar?
-2. Jika `pagi` false, apakah kondisi `hujan` akan dicek?
-3. Berapa jumlah total blok `printf` yang ada dalam kode ini?
-
-**Jawaban & Diagnosis:**
-1. **Lari**
-2. **Tidak, karena mesin langsung masuk ke blok `else` terluar.**
-3. **3**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A{pagi?} -- Ya --> B{hujan?}
-    A -- Tidak --> C[Makan]
-    B -- Ya --> D[Tidur]
-    B -- Tidak --> E[Lari]
-```
-
-**📖 Cara Membaca Diagram:**
-Pagi=1, Hujan=0. Masuk blok if(pagi). Cek hujan: Lari.
-
----
-### Soal 44 (Boolean Logic Flip)
-```cpp
-int x = 7;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **7**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=7] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=7. Syarat `!x` (NOT x). Jika x=7 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 45 (Short-Circuit AND)
-```cpp
-int a = 0; int b = 0;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
-
-**Jawaban & Diagnosis:**
-1. **Tidak**
-2. **0**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"False"| B{"STOP: Sirkuit Pendek"}
-    B -->|"visit = 0"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=0. Cek `a == 1`. Hasil: False. Karena False, syarat kedua (++visit) DIABAIKAN. visit tetap 0.
-
----
-### Soal 46 (Short-Circuit AND)
-```cpp
-int a = 1; int b = 0;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
-
-**Jawaban & Diagnosis:**
-1. **Ya**
-2. **1**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"True"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=1. Cek `a == 1`. Hasil: True. Karena True, lanjat cek ++visit (visit jadi 1).
-
----
-### Soal 47 (Boolean Logic Flip)
-```cpp
-int x = 4;
-if (!x) printf("Nol");
-else printf("Bukan Nol");
-```
-**Pertanyaan:**
-1. Berapakah nilai `x`?
-2. Apa output program tersebut?
-3. Dalam C++, angka berapakah yang dianggap sebagai `false`?
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. **Bukan Nol**
-3. **Hanya angka 0. Selebihnya (positif maupun negatif) dianggap `true`.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=4] --> B{x != 0?}
-    B -- Ya (True) --> C["!x jadi False"]
-    B -- Tidak (False) --> D["!x jadi True"]
-    C --> E[Bukan Nol]
-    D --> F[Nol]
-```
-
-**📖 Cara Membaca Diagram:**
-x=4. Syarat `!x` (NOT x). Jika x=4 (bukan 0), maka x dianggap true, !x jadi false. Maka cetak 'Bukan Nol'.
-
----
-### Soal 48 (Short-Circuit AND)
-```cpp
-int a = 1; int b = 0;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
-
-**Jawaban & Diagnosis:**
-1. **Ya**
-2. **1**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"True"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=1. Cek `a == 1`. Hasil: True. Karena True, lanjat cek ++visit (visit jadi 1).
-
----
-### Soal 49 (Short-Circuit OR)
-```cpp
-int a = 0;
-int visit = 0;
-if (a == 1 || ++visit > 0) { /* logic */ }
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai benar?
-2. Berapakah nilai akhir variabel `visit`?
-3. Apa yang terjadi pada `++visit` jika `a` bernilai 1?
-
-**Jawaban & Diagnosis:**
-1. **Salah**
-2. **1**
-3. **Jika `a == 1` (True), maka syarat kedua tidak akan pernah dibaca (Short-Circuit OR).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"False"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=0. Cek `a == 1`. Hasil: False. Karena False, baru lanjut cek ++visit. visit jadi 1.
-
----
-### Soal 50 (Short-Circuit AND)
-```cpp
-int a = 1; int b = 0;
-int visit = 0;
-if (a == 1 && ++visit > 0) { /* visited */ }
-// Note: ++visit adds 1 to visit
-```
-**Pertanyaan:**
-1. Apakah kondisi `a == 1` bernilai true?
-2. Berapakah nilai akhir variabel `visit`?
-3. Mengapa `visit` bisa tetap bernilai 0 meskipun ada perintah `++visit`?
-
-**Jawaban & Diagnosis:**
-1. **Ya**
-2. **1**
-3. **Karena sifat Short-Circuit AND: Jika syarat pertama sudah FALSE, C++ malas dan tidak akan mengecek/mengeksekusi syarat kedua.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Cek a == 1] -->|"True"| B{"Lanjut cek ++visit"}
-    B -->|"visit = 1"| C[Selesai]
-```
-
-**📖 Cara Membaca Diagram:**
-a=1. Cek `a == 1`. Hasil: True. Karena True, lanjat cek ++visit (visit jadi 1).
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---

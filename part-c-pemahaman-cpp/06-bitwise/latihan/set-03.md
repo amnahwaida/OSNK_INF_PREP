@@ -4,698 +4,758 @@
 
 # Latihan Soal Part C - Modul 06 - Set 03
 
-### Soal 51 (Bitwise AND/OR)
+### Soal 51
 ```cpp
-int a = 7;
-int b = 4;
-int res_and = a & b;
-int res_or = a | b;
+int x = 37;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b111"] --> C["AND -> 0b100"]
-    B["b=0b100"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+A[x=37] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 2]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=7 (0b111), b=4 (0b100). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 37. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 37 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 37 kelereng ke 5 anak. Tiap anak dapat 7 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 52 (Bitwise AND/OR)
+### Soal 52
 ```cpp
-int a = 3;
-int b = 4;
-int res_and = a & b;
-int res_or = a | b;
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 53
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b11"] --> C["AND -> 0b0"]
-    B["b=0b100"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=3 (0b11), b=4 (0b100). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
-### Soal 53 (Bitwise AND/OR)
+### Soal 54
 ```cpp
-int a = 4;
-int b = 7;
-int res_and = a & b;
-int res_or = a | b;
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 55
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b100"] --> C["AND -> 0b100"]
-    B["b=0b111"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=4 (0b100), b=7 (0b111). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
-### Soal 54 (Bitwise AND/OR)
+### Soal 56
 ```cpp
-int a = 6;
-int b = 5;
-int res_and = a & b;
-int res_or = a | b;
+int x = 70;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b110"] --> C["AND -> 0b100"]
-    B["b=0b101"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+A[x=70] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=6 (0b110), b=5 (0b101). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 70. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 70 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 70 kelereng ke 5 anak. Tiap anak dapat 14 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 55 (Bitwise AND/OR)
+### Soal 57
 ```cpp
-int a = 3;
-int b = 3;
-int res_and = a & b;
-int res_or = a | b;
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **3**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 58
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b11"] --> C["AND -> 0b11"]
-    B["b=0b11"] --> C
-    A --> D["OR  -> 0b11"]
-    B --> D
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=3 (0b11), b=3 (0b11). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
-### Soal 56 (Left Shift Power)
+### Soal 59
 ```cpp
-int a = 4;
-int res = a << 3;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kiri sejauh 3 langkah setara dengan mengalikan `a` dengan angka berapa?
-3. Apa yang terjadi pada bit-bit angka jika di-shift ke kiri?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **32**
-2. **8**
-3. **Bit bergeser ke kiri, dan muncul angka 0 di sebelah kanan (seperti nambah digit).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[4] --> B["<< 3"]
-    B --> C[32]
-```
-
-**📖 Cara Membaca Diagram:**
-a=4. Shift kiri 3 kali = 4 * 2^3 = 32.
-
----
-### Soal 57 (Bitwise XOR Trick)
-```cpp
-int x = 25;
-int res = x ^ x ^ 26;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Apa yang terjadi jika angka yang sama di-XOR (`x ^ x`)?
-3. Apa analogi yang cocok untuk XOR?
-
-**Jawaban & Diagnosis:**
-1. **26**
-2. **Hasilnya menjadi 0 (Saling meniadakan).**
-3. **Saklar lampu (Tekan 2x balik ke awal/padam).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["25 ^ 25"] --> B[0]
-    B --> C["0 ^ 26"]
-    C --> D["26"]
-```
-
-**📖 Cara Membaca Diagram:**
-x ^ x = 0. Jadi 0 ^ 26 = 26.
-
----
-### Soal 58 (Right Shift Div)
-```cpp
-int a = 28;
-int res = a >> 1;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kanan sejauh 1 langkah setara dengan membagi `a` dengan angka berapa?
-3. Mengapa shift kanan sering dipakai untuk optimasi?
-
-**Jawaban & Diagnosis:**
-1. **14**
-2. **2**
-3. **Karena pembagian oleh pangkat 2 jauh lebih cepat bagi prosesor daripada operator pembagian biasa.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[28] --> B[">> 1"]
-    B --> C[14]
-```
-
-**📖 Cara Membaca Diagram:**
-a=28. Shift kanan 1 kali = 28 / 2^1 = 14.
-
----
-### Soal 59 (Bitwise XOR Trick)
-```cpp
-int x = 11;
-int res = x ^ x ^ 12;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Apa yang terjadi jika angka yang sama di-XOR (`x ^ x`)?
-3. Apa analogi yang cocok untuk XOR?
-
-**Jawaban & Diagnosis:**
-1. **12**
-2. **Hasilnya menjadi 0 (Saling meniadakan).**
-3. **Saklar lampu (Tekan 2x balik ke awal/padam).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["11 ^ 11"] --> B[0]
-    B --> C["0 ^ 12"]
-    C --> D["12"]
-```
-
-**📖 Cara Membaca Diagram:**
-x ^ x = 0. Jadi 0 ^ 12 = 12.
-
----
-### Soal 60 (Left Shift Power)
-```cpp
-int a = 9;
-int res = a << 3;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kiri sejauh 3 langkah setara dengan mengalikan `a` dengan angka berapa?
-3. Apa yang terjadi pada bit-bit angka jika di-shift ke kiri?
-
-**Jawaban & Diagnosis:**
-1. **72**
-2. **8**
-3. **Bit bergeser ke kiri, dan muncul angka 0 di sebelah kanan (seperti nambah digit).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[9] --> B["<< 3"]
-    B --> C[72]
-```
-
-**📖 Cara Membaca Diagram:**
-a=9. Shift kiri 3 kali = 9 * 2^3 = 72.
-
----
-### Soal 61 (Bitwise AND/OR)
-```cpp
-int a = 5;
-int b = 3;
-int res_and = a & b;
-int res_or = a | b;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b101"] --> C["AND -> 0b1"]
-    B["b=0b11"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-a=5 (0b101), b=3 (0b11). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 62 (Left Shift Power)
+### Soal 60
 ```cpp
-int a = 5;
-int res = a << 3;
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kiri sejauh 3 langkah setara dengan mengalikan `a` dengan angka berapa?
-3. Apa yang terjadi pada bit-bit angka jika di-shift ke kiri?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **40**
-2. **8**
-3. **Bit bergeser ke kiri, dan muncul angka 0 di sebelah kanan (seperti nambah digit).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A[5] --> B["<< 3"]
-    B --> C[40]
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=5. Shift kiri 3 kali = 5 * 2^3 = 40.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 63 (Left Shift Power)
+### Soal 61
 ```cpp
-int a = 3;
-int res = a << 2;
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kiri sejauh 2 langkah setara dengan mengalikan `a` dengan angka berapa?
-3. Apa yang terjadi pada bit-bit angka jika di-shift ke kiri?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. **4**
-3. **Bit bergeser ke kiri, dan muncul angka 0 di sebelah kanan (seperti nambah digit).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 62
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A[3] --> B["<< 2"]
-    B --> C[12]
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=3. Shift kiri 2 kali = 3 * 2^2 = 12.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 64 (Bitwise XOR Trick)
+### Soal 63
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 64
 ```cpp
 int x = 76;
-int res = x ^ x ^ 77;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Apa yang terjadi jika angka yang sama di-XOR (`x ^ x`)?
-3. Apa analogi yang cocok untuk XOR?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **77**
-2. **Hasilnya menjadi 0 (Saling meniadakan).**
-3. **Saklar lampu (Tekan 2x balik ke awal/padam).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["76 ^ 76"] --> B[0]
-    B --> C["0 ^ 77"]
-    C --> D["77"]
-```
-
-**📖 Cara Membaca Diagram:**
-x ^ x = 0. Jadi 0 ^ 77 = 77.
-
----
-### Soal 65 (Bitwise AND/OR)
-```cpp
-int a = 4;
-int b = 6;
-int res_and = a & b;
-int res_or = a | b;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. **6**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b100"] --> C["AND -> 0b100"]
-    B["b=0b110"] --> C
-    A --> D["OR  -> 0b110"]
-    B --> D
+A[x=76] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 1]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=4 (0b100), b=6 (0b110). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 76. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 76 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 76 kelereng ke 5 anak. Tiap anak dapat 15 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 66 (Bitwise AND/OR)
+### Soal 65
 ```cpp
-int a = 3;
-int b = 3;
-int res_and = a & b;
-int res_or = a | b;
+int x = 60;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **3**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b11"] --> C["AND -> 0b11"]
-    B["b=0b11"] --> C
-    A --> D["OR  -> 0b11"]
-    B --> D
+A[x=60] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=3 (0b11), b=3 (0b11). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 60. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 60 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 60 kelereng ke 5 anak. Tiap anak dapat 12 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 67 (Right Shift Div)
+### Soal 66
 ```cpp
-int a = 23;
-int res = a >> 2;
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kanan sejauh 2 langkah setara dengan membagi `a` dengan angka berapa?
-3. Mengapa shift kanan sering dipakai untuk optimasi?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **5**
-2. **4**
-3. **Karena pembagian oleh pangkat 2 jauh lebih cepat bagi prosesor daripada operator pembagian biasa.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A[23] --> B[">> 2"]
-    B --> C[5]
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-a=23. Shift kanan 2 kali = 23 / 2^2 = 5.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 68 (Left Shift Power)
+### Soal 67
 ```cpp
-int a = 9;
-int res = a << 2;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kiri sejauh 2 langkah setara dengan mengalikan `a` dengan angka berapa?
-3. Apa yang terjadi pada bit-bit angka jika di-shift ke kiri?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **36**
-2. **4**
-3. **Bit bergeser ke kiri, dan muncul angka 0 di sebelah kanan (seperti nambah digit).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[9] --> B["<< 2"]
-    B --> C[36]
-```
-
-**📖 Cara Membaca Diagram:**
-a=9. Shift kiri 2 kali = 9 * 2^2 = 36.
-
----
-### Soal 69 (Left Shift Power)
-```cpp
-int a = 5;
-int res = a << 2;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kiri sejauh 2 langkah setara dengan mengalikan `a` dengan angka berapa?
-3. Apa yang terjadi pada bit-bit angka jika di-shift ke kiri?
-
-**Jawaban & Diagnosis:**
-1. **20**
-2. **4**
-3. **Bit bergeser ke kiri, dan muncul angka 0 di sebelah kanan (seperti nambah digit).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[5] --> B["<< 2"]
-    B --> C[20]
-```
-
-**📖 Cara Membaca Diagram:**
-a=5. Shift kiri 2 kali = 5 * 2^2 = 20.
-
----
-### Soal 70 (Bitwise XOR Trick)
-```cpp
-int x = 73;
-int res = x ^ x ^ 74;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Apa yang terjadi jika angka yang sama di-XOR (`x ^ x`)?
-3. Apa analogi yang cocok untuk XOR?
-
-**Jawaban & Diagnosis:**
-1. **74**
-2. **Hasilnya menjadi 0 (Saling meniadakan).**
-3. **Saklar lampu (Tekan 2x balik ke awal/padam).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["73 ^ 73"] --> B[0]
-    B --> C["0 ^ 74"]
-    C --> D["74"]
-```
-
-**📖 Cara Membaca Diagram:**
-x ^ x = 0. Jadi 0 ^ 74 = 74.
-
----
-### Soal 71 (Right Shift Div)
-```cpp
-int a = 42;
-int res = a >> 1;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kanan sejauh 1 langkah setara dengan membagi `a` dengan angka berapa?
-3. Mengapa shift kanan sering dipakai untuk optimasi?
-
-**Jawaban & Diagnosis:**
-1. **21**
-2. **2**
-3. **Karena pembagian oleh pangkat 2 jauh lebih cepat bagi prosesor daripada operator pembagian biasa.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[42] --> B[">> 1"]
-    B --> C[21]
-```
-
-**📖 Cara Membaca Diagram:**
-a=42. Shift kanan 1 kali = 42 / 2^1 = 21.
-
----
-### Soal 72 (Bitwise XOR Trick)
-```cpp
-int x = 83;
-int res = x ^ x ^ 84;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Apa yang terjadi jika angka yang sama di-XOR (`x ^ x`)?
-3. Apa analogi yang cocok untuk XOR?
-
-**Jawaban & Diagnosis:**
-1. **84**
-2. **Hasilnya menjadi 0 (Saling meniadakan).**
-3. **Saklar lampu (Tekan 2x balik ke awal/padam).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["83 ^ 83"] --> B[0]
-    B --> C["0 ^ 84"]
-    C --> D["84"]
-```
-
-**📖 Cara Membaca Diagram:**
-x ^ x = 0. Jadi 0 ^ 84 = 84.
-
----
-### Soal 73 (Right Shift Div)
-```cpp
-int a = 44;
-int res = a >> 1;
-```
-**Pertanyaan:**
-1. Berapakah nilai akhir `res`?
-2. Shift kanan sejauh 1 langkah setara dengan membagi `a` dengan angka berapa?
-3. Mengapa shift kanan sering dipakai untuk optimasi?
-
-**Jawaban & Diagnosis:**
-1. **22**
-2. **2**
-3. **Karena pembagian oleh pangkat 2 jauh lebih cepat bagi prosesor daripada operator pembagian biasa.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A[44] --> B[">> 1"]
-    B --> C[22]
-```
-
-**📖 Cara Membaca Diagram:**
-a=44. Shift kanan 1 kali = 44 / 2^1 = 22.
-
----
-### Soal 74 (Bitwise AND/OR)
-```cpp
-int a = 4;
-int b = 3;
-int res_and = a & b;
-int res_or = a | b;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b100"] --> C["AND -> 0b0"]
-    B["b=0b11"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-a=4 (0b100), b=3 (0b11). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 75 (Bitwise AND/OR)
+### Soal 68
 ```cpp
-int a = 6;
-int b = 3;
-int res_and = a & b;
-int res_or = a | b;
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res_and`?
-2. Berapakah nilai `res_or`?
-3. Apa guna bitwise AND dalam mengecek angka ganjil?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. **7**
-3. **Untuk mengecek bit terakhir (x & 1). Jika hasilnya 1, maka ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["a=0b110"] --> C["AND -> 0b10"]
-    B["b=0b11"] --> C
-    A --> D["OR  -> 0b111"]
-    B --> D
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=6 (0b110), b=3 (0b11). AND cari yang sama-sama 1. OR lumayan rakus ambil semua 1.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 69
+```cpp
+int x = 62;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=62] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 2]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 62. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 62 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 62 kelereng ke 5 anak. Tiap anak dapat 12 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 70
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+f(3) --> f(2) --> f(1) --> f(0)
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+
+---
+### Soal 71
+```cpp
+int x = 39;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=39] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 4]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 39. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 39 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 39 kelereng ke 5 anak. Tiap anak dapat 7 biji, dan di tanganmu tersisa **4** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 72
+```cpp
+int x = 45;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=45] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 45. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 45 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 45 kelereng ke 5 anak. Tiap anak dapat 9 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 73
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 74
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 75
+```cpp
+int x = 48;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=48] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 48. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 48 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 48 kelereng ke 5 anak. Tiap anak dapat 9 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---

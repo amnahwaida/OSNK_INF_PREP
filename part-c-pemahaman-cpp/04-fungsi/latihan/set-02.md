@@ -4,828 +4,758 @@
 
 # Latihan Soal Part C - Modul 04 - Set 02
 
-### Soal 26 (Swap Trick)
+### Soal 26
 ```cpp
-void tukar(int &a, int &b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-}
-// main: a=7, b=17; tukar(a,b);
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Setelah swap, berapa nilai `a`?
-2. Setelah swap, berapa nilai `b`?
-3. Kenapa tukar ini berhasil tanpa variabel ketiga?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **17**
-2. **7**
-3. **Karena menggunakan trik aritmetika (tambah-kurang) untuk membalas nilai.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 27
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 28
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["a=7, b=17"] --> B["a = a+b (24)"]
-    B --> C["b = a-b (7)"]
-    C --> D["a = a-b (17)"]
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=7, b=17. a=a+b=24. b=a-b=7=7. a=a-b=17=17. Terbalik!
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 27 (Pass By Reference)
+### Soal 29
 ```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 49;
-    silet(y);
-    // y = ?
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: y=49] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
-```
-
-**📖 Cara Membaca Diagram:**
-y=49. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
-
----
-### Soal 28 (Pass By Reference)
-```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 28;
-    silet(y);
-    // y = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: y=28] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
-```
-
-**📖 Cara Membaca Diagram:**
-y=28. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
-
----
-### Soal 29 (Global vs Local)
-```cpp
-int skor = 126; // Global
-
-void cek() {
-    int skor = 6; // Local
-    printf("%d", skor);
-}
-
-// output = ?
-```
-**Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 126 atau skor 6?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. **Skor 6 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Global skor=126] --> B(Fungsi cek)
-    B --> C[Lokal skor=6]
-    C --> D[Cetak Terdalam: 6]
-```
-
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
-
----
-### Soal 30 (Pass By Value)
-```cpp
-void ubah(int a) {
-    a = 100;
-}
-
-int main() {
-    int x = 38;
-    ubah(x);
-    // x = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `x` di dalam `main` setelah fungsi `ubah` selesai?
-2. Apa yang terjadi pada variabel `a` di dalam fungsi `ubah`?
-3. Analogi apa yang cocok untuk Pass-By-Value?
-
-**Jawaban & Diagnosis:**
-1. **38**
-2. **Berubah jadi 100, tapi hanya di dalam fungsi tersebut (lokal).**
-3. **Fotokopi PR (Dicoret-coret temen gak ngaruh ke buku aslimu).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: x=38] --> B["ubah(x) -> Fotokopi 38"]
-    B --> C[Fungsi: a=100]
-    C --> D[Selesai]
-    D --> E[main: x=38]
-```
-
-**📖 Cara Membaca Diagram:**
-x=38. Saat `ubah(x)`, komputer hanya mengirim fotokopi nilai 38. Fungsi merubah fotokopi jadi 100. Di main, dompet asli x tetap 38.
-
----
-### Soal 31 (Pass By Value)
-```cpp
-void ubah(int a) {
-    a = 100;
-}
-
-int main() {
-    int x = 44;
-    ubah(x);
-    // x = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `x` di dalam `main` setelah fungsi `ubah` selesai?
-2. Apa yang terjadi pada variabel `a` di dalam fungsi `ubah`?
-3. Analogi apa yang cocok untuk Pass-By-Value?
-
-**Jawaban & Diagnosis:**
-1. **44**
-2. **Berubah jadi 100, tapi hanya di dalam fungsi tersebut (lokal).**
-3. **Fotokopi PR (Dicoret-coret temen gak ngaruh ke buku aslimu).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: x=44] --> B["ubah(x) -> Fotokopi 44"]
-    B --> C[Fungsi: a=100]
-    C --> D[Selesai]
-    D --> E[main: x=44]
-```
-
-**📖 Cara Membaca Diagram:**
-x=44. Saat `ubah(x)`, komputer hanya mengirim fotokopi nilai 44. Fungsi merubah fotokopi jadi 100. Di main, dompet asli x tetap 44.
-
----
-### Soal 32 (Pass By Value)
-```cpp
-void ubah(int a) {
-    a = 100;
-}
-
-int main() {
-    int x = 19;
-    ubah(x);
-    // x = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `x` di dalam `main` setelah fungsi `ubah` selesai?
-2. Apa yang terjadi pada variabel `a` di dalam fungsi `ubah`?
-3. Analogi apa yang cocok untuk Pass-By-Value?
-
-**Jawaban & Diagnosis:**
-1. **19**
-2. **Berubah jadi 100, tapi hanya di dalam fungsi tersebut (lokal).**
-3. **Fotokopi PR (Dicoret-coret temen gak ngaruh ke buku aslimu).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: x=19] --> B["ubah(x) -> Fotokopi 19"]
-    B --> C[Fungsi: a=100]
-    C --> D[Selesai]
-    D --> E[main: x=19]
-```
-
-**📖 Cara Membaca Diagram:**
-x=19. Saat `ubah(x)`, komputer hanya mengirim fotokopi nilai 19. Fungsi merubah fotokopi jadi 100. Di main, dompet asli x tetap 19.
-
----
-### Soal 33 (Pass By Reference)
-```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 48;
-    silet(y);
-    // y = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: y=48] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
-```
-
-**📖 Cara Membaca Diagram:**
-y=48. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
-
----
-### Soal 34 (Pass By Reference)
-```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 46;
-    silet(y);
-    // y = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: y=46] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
-```
-
-**📖 Cara Membaca Diagram:**
-y=46. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
-
----
-### Soal 35 (Pass By Value)
-```cpp
-void ubah(int a) {
-    a = 100;
-}
-
-int main() {
-    int x = 14;
-    ubah(x);
-    // x = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `x` di dalam `main` setelah fungsi `ubah` selesai?
-2. Apa yang terjadi pada variabel `a` di dalam fungsi `ubah`?
-3. Analogi apa yang cocok untuk Pass-By-Value?
-
-**Jawaban & Diagnosis:**
-1. **14**
-2. **Berubah jadi 100, tapi hanya di dalam fungsi tersebut (lokal).**
-3. **Fotokopi PR (Dicoret-coret temen gak ngaruh ke buku aslimu).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: x=14] --> B["ubah(x) -> Fotokopi 14"]
-    B --> C[Fungsi: a=100]
-    C --> D[Selesai]
-    D --> E[main: x=14]
-```
-
-**📖 Cara Membaca Diagram:**
-x=14. Saat `ubah(x)`, komputer hanya mengirim fotokopi nilai 14. Fungsi merubah fotokopi jadi 100. Di main, dompet asli x tetap 14.
-
----
-### Soal 36 (Pass By Reference)
-```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 33;
-    silet(y);
-    // y = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: y=33] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
-```
-
-**📖 Cara Membaca Diagram:**
-y=33. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
-
----
-### Soal 37 (Pass By Value)
-```cpp
-void ubah(int a) {
-    a = 100;
-}
-
-int main() {
-    int x = 44;
-    ubah(x);
-    // x = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `x` di dalam `main` setelah fungsi `ubah` selesai?
-2. Apa yang terjadi pada variabel `a` di dalam fungsi `ubah`?
-3. Analogi apa yang cocok untuk Pass-By-Value?
-
-**Jawaban & Diagnosis:**
-1. **44**
-2. **Berubah jadi 100, tapi hanya di dalam fungsi tersebut (lokal).**
-3. **Fotokopi PR (Dicoret-coret temen gak ngaruh ke buku aslimu).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: x=44] --> B["ubah(x) -> Fotokopi 44"]
-    B --> C[Fungsi: a=100]
-    C --> D[Selesai]
-    D --> E[main: x=44]
-```
-
-**📖 Cara Membaca Diagram:**
-x=44. Saat `ubah(x)`, komputer hanya mengirim fotokopi nilai 44. Fungsi merubah fotokopi jadi 100. Di main, dompet asli x tetap 44.
-
----
-### Soal 38 (Global vs Local)
-```cpp
-int skor = 143; // Global
-
-void cek() {
-    int skor = 7; // Local
-    printf("%d", skor);
-}
-
-// output = ?
-```
-**Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 143 atau skor 7?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
-
-**Jawaban & Diagnosis:**
-1. **7**
-2. **Skor 7 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Global skor=143] --> B(Fungsi cek)
-    B --> C[Lokal skor=7]
-    C --> D[Cetak Terdalam: 7]
-```
-
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
-
----
-### Soal 39 (Pass By Reference)
-```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 12;
-    silet(y);
-    // y = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
-
-**Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[main: y=12] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
-```
-
-**📖 Cara Membaca Diagram:**
-y=12. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
-
----
-### Soal 40 (Global vs Local)
-```cpp
-int skor = 153; // Global
-
-void cek() {
-    int skor = 9; // Local
-    printf("%d", skor);
-}
-
-// output = ?
-```
-**Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 153 atau skor 9?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
-
-**Jawaban & Diagnosis:**
-1. **9**
-2. **Skor 9 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Global skor=153] --> B(Fungsi cek)
-    B --> C[Lokal skor=9]
-    C --> D[Cetak Terdalam: 9]
-```
-
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
-
----
-### Soal 41 (Global vs Local)
-```cpp
-int skor = 127; // Global
-
-void cek() {
-    int skor = 10; // Local
-    printf("%d", skor);
-}
-
-// output = ?
-```
-**Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 127 atau skor 10?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
-
-**Jawaban & Diagnosis:**
-1. **10**
-2. **Skor 10 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Global skor=127] --> B(Fungsi cek)
-    B --> C[Lokal skor=10]
-    C --> D[Cetak Terdalam: 10]
-```
-
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
-
----
-### Soal 42 (Global vs Local)
-```cpp
-int skor = 112; // Global
-
-void cek() {
-    int skor = 8; // Local
-    printf("%d", skor);
-}
-
-// output = ?
-```
-**Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 112 atau skor 8?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
-
-**Jawaban & Diagnosis:**
-1. **8**
-2. **Skor 8 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Global skor=112] --> B(Fungsi cek)
-    B --> C[Lokal skor=8]
-    C --> D[Cetak Terdalam: 8]
-```
-
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
-
----
-### Soal 43 (Global vs Local)
-```cpp
-int skor = 113; // Global
-
-void cek() {
-    int skor = 1; // Local
-    printf("%d", skor);
-}
-
-// output = ?
-```
-**Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 113 atau skor 1?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
-
-**Jawaban & Diagnosis:**
-1. **1**
-2. **Skor 1 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Global skor=113] --> B(Fungsi cek)
-    B --> C[Lokal skor=1]
-    C --> D[Cetak Terdalam: 1]
-```
-
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
-
----
-### Soal 44 (Swap Trick)
-```cpp
-void tukar(int &a, int &b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-}
-// main: a=2, b=16; tukar(a,b);
-```
-**Pertanyaan:**
-1. Setelah swap, berapa nilai `a`?
-2. Setelah swap, berapa nilai `b`?
-3. Kenapa tukar ini berhasil tanpa variabel ketiga?
-
-**Jawaban & Diagnosis:**
-1. **16**
-2. **2**
-3. **Karena menggunakan trik aritmetika (tambah-kurang) untuk membalas nilai.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["a=2, b=16"] --> B["a = a+b (18)"]
-    B --> C["b = a-b (2)"]
-    C --> D["a = a-b (16)"]
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=2, b=16. a=a+b=18. b=a-b=2=2. a=a-b=16=16. Terbalik!
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 45 (Pass By Reference)
+### Soal 30
 ```cpp
-void silet(int &a) {
-    a = 0;
-}
-
-int main() {
-    int y = 43;
-    silet(y);
-    // y = ?
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai variabel `y` di akhir program?
-2. Apa tanda yang menunjukkan fungsi ini menggunakan 'Reference'?
-3. Analogi apa yang cocok untuk Pass-By-Reference?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. **Tanda Amperstand (&) pada parameter `int &a`.**
-3. **Memberikan Buku Asli (Kalau dicoret, aslinya rusak).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 31
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 32
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[main: y=43] --> B["silet(y) -> Pegang ASLI"]
-    B --> C[Fungsi: a=0]
-    C --> D[Selesai]
-    D --> E[main: y=0]
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-y=43. Karena ada `&`, fungsi `silet` memegang dompet aslimu. Dia pasang 0, maka y di main ikut jadi 0.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
 
 ---
-### Soal 46 (Global vs Local)
+### Soal 33
 ```cpp
-int skor = 122; // Global
-
-void cek() {
-    int skor = 6; // Local
-    printf("%d", skor);
-}
-
-// output = ?
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Angka berapakah yang akan tercetak di layar?
-2. Siapa yang lebih berkuasa: skor 122 atau skor 6?
-3. Apa istilah untuk variabel lokal yang menutupi variabel global?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. **Skor 6 (Lokal/Ketua Kelas) karena letaknya di dalam fungsi.**
-3. **Shadowing (Membayangi).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 34
+```cpp
+int x = 48;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[Global skor=122] --> B(Fungsi cek)
-    B --> C[Lokal skor=6]
-    C --> D[Cetak Terdalam: 6]
+A[x=48] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mesin masuk fungsi. Dia melihat ada dua nama 'skor'. Dia pilih yang terdekat (lokal). Cetak lokal.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 48. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 48 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 48 kelereng ke 5 anak. Tiap anak dapat 9 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 47 (Swap Trick)
+### Soal 35
 ```cpp
-void tukar(int &a, int &b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-}
-// main: a=10, b=12; tukar(a,b);
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Setelah swap, berapa nilai `a`?
-2. Setelah swap, berapa nilai `b`?
-3. Kenapa tukar ini berhasil tanpa variabel ketiga?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **12**
-2. **10**
-3. **Karena menggunakan trik aritmetika (tambah-kurang) untuk membalas nilai.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 36
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 37
+```cpp
+int x = 86;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=86] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 1]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 86. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 86 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 86 kelereng ke 5 anak. Tiap anak dapat 17 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 38
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 39
+```cpp
+int x = 38;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=38] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 38. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 38 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 38 kelereng ke 5 anak. Tiap anak dapat 7 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 40
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 41
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 42
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["a=10, b=12"] --> B["a = a+b (22)"]
-    B --> C["b = a-b (10)"]
-    C --> D["a = a-b (12)"]
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-a=10, b=12. a=a+b=22. b=a-b=10=10. a=a-b=12=12. Terbalik!
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 48 (Swap Trick)
+### Soal 43
 ```cpp
-void tukar(int &a, int &b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-}
-// main: a=2, b=16; tukar(a,b);
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Setelah swap, berapa nilai `a`?
-2. Setelah swap, berapa nilai `b`?
-3. Kenapa tukar ini berhasil tanpa variabel ketiga?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **16**
-2. **2**
-3. **Karena menggunakan trik aritmetika (tambah-kurang) untuk membalas nilai.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["a=2, b=16"] --> B["a = a+b (18)"]
-    B --> C["b = a-b (2)"]
-    C --> D["a = a-b (16)"]
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=2, b=16. a=a+b=18. b=a-b=2=2. a=a-b=16=16. Terbalik!
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 49 (Swap Trick)
+### Soal 44
 ```cpp
-void tukar(int &a, int &b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-}
-// main: a=6, b=17; tukar(a,b);
+int x = 64;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Setelah swap, berapa nilai `a`?
-2. Setelah swap, berapa nilai `b`?
-3. Kenapa tukar ini berhasil tanpa variabel ketiga?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **17**
-2. **6**
-3. **Karena menggunakan trik aritmetika (tambah-kurang) untuk membalas nilai.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=64] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 4]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 64. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 64 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 64 kelereng ke 5 anak. Tiap anak dapat 12 biji, dan di tanganmu tersisa **4** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 45
+```cpp
+int x = 73;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=73] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 73. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 73 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 73 kelereng ke 5 anak. Tiap anak dapat 14 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 46
+```cpp
+int x = 83;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=83] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 83. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 83 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 83 kelereng ke 5 anak. Tiap anak dapat 16 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 47
+```cpp
+int x = 93;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=93] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 93. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 93 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 93 kelereng ke 5 anak. Tiap anak dapat 18 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 48
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["a=6, b=17"] --> B["a = a+b (23)"]
-    B --> C["b = a-b (6)"]
-    C --> D["a = a-b (17)"]
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-a=6, b=17. a=a+b=23. b=a-b=6=6. a=a-b=17=17. Terbalik!
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 50 (Swap Trick)
+### Soal 49
 ```cpp
-void tukar(int &a, int &b) {
-    a = a + b;
-    b = a - b;
-    a = a - b;
-}
-// main: a=8, b=19; tukar(a,b);
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Setelah swap, berapa nilai `a`?
-2. Setelah swap, berapa nilai `b`?
-3. Kenapa tukar ini berhasil tanpa variabel ketiga?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **19**
-2. **8**
-3. **Karena menggunakan trik aritmetika (tambah-kurang) untuk membalas nilai.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["a=8, b=19"] --> B["a = a+b (27)"]
-    B --> C["b = a-b (8)"]
-    C --> D["a = a-b (19)"]
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-a=8, b=19. a=a+b=27. b=a-b=8=8. a=a-b=19=19. Terbalik!
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 50
+```cpp
+int x = 51;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=51] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 1]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 51. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 51 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 51 kelereng ke 5 anak. Tiap anak dapat 10 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---

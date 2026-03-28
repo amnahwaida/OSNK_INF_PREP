@@ -4,788 +4,760 @@
 
 # Latihan Soal Part C - Modul 03 - Set 03
 
-### Soal 51 (While Loop Break)
+### Soal 51
 ```cpp
-int n = 10;
-while (n > 0) {
-    if (n == 3) break;
-    n -= 2;
-}
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **0**
-2. **5**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[n=10] --> B{n > 0?}
-    B -- Ya --> C{n == 3?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-n=10. Kurangi 2 tiap putaran. Jika n=3, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
 
 ---
-### Soal 52 (While Loop Break)
+### Soal 52
 ```cpp
-int n = 5;
-while (n > 0) {
-    if (n == 4) break;
-    n -= 2;
-}
+int x = 97;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **-1**
-2. **3**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[n=5] --> B{n > 0?}
-    B -- Ya --> C{n == 4?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+A[x=97] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 2]
 ```
 
-**📖 Cara Membaca Diagram:**
-n=5. Kurangi 2 tiap putaran. Jika n=4, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 97. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 97 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 97 kelereng ke 5 anak. Tiap anak dapat 19 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 53 (Nested Loop Matrix)
+### Soal 53
 ```cpp
-int count = 0;
-for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 2; j++) {
-        count++;
-    }
-}
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `count`?
-2. Berapa kali perulangan terdalam (`j`) berjalan total?
-3. Analogi apa yang paling cocok untuk perulangan bersarang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. **6**
-3. **Jam Pasir atau Jarum Jam (Jarum panjang harus putar penuh sebelum jarum pendek gerak).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[i Loop: 3x] --> B[j Loop: 2x]
-    B --> C[count++]
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-Baris (3) x Kolom (2) = 6 total eksekusi.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 54 (While Loop Break)
+### Soal 54
 ```cpp
-int n = 5;
-while (n > 0) {
-    if (n == 2) break;
-    n -= 2;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **-1**
-2. **3**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[n=5] --> B{n > 0?}
-    B -- Ya --> C{n == 2?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-n=5. Kurangi 2 tiap putaran. Jika n=2, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 55 (For Loop Trace)
+### Soal 55
 ```cpp
-int total = 0;
-for (int i = 1; i < 7; i += 2) {
-    total += i;
-}
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **9**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[i=1] --> B{i < 7?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 2]
-    D --> B
-    B -- Tidak --> E[Selesai]
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=1. Tiap langkah i bertambah 2. Berhenti saat i >= 7.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 56 (Continue Skip)
+### Soal 56
 ```cpp
-int s = 0;
-for (int i=1; i<=4; i++) {
-    if (i % 2 == 0) continue;
-    s += i;
-}
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Angka berapa saja yang masuk ke dalam `s`?
-2. Berapakah nilai akhir `s`?
-3. Apa arti perintah `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **1 dan 3 (Angka ganjil)**
-2. **4**
-3. **Melewatkan sisa perintah di bawahnya dan langsung lanjut ke putaran berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=1..4] --> B{i Genap?}
-    B -- Ya --> C[CONTINUE: Lompat i++]
-    B -- Tidak --> D[s += i]
-    D --> E[Next i]
-    C --> E
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-i=1 (Ganjil) -> s=1. i=2 (Genap) -> Skip/Continue. i=3 (Ganjil) -> s=1+3=4. i=4 (Genap) -> Skip.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
-### Soal 57 (While Loop Break)
+### Soal 57
 ```cpp
-int n = 5;
-while (n > 0) {
-    if (n == 2) break;
-    n -= 2;
-}
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **-1**
-2. **3**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[n=5] --> B{n > 0?}
-    B -- Ya --> C{n == 2?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-n=5. Kurangi 2 tiap putaran. Jika n=2, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 58 (While Loop Break)
+### Soal 58
 ```cpp
-int n = 9;
-while (n > 0) {
-    if (n == 2) break;
-    n -= 2;
-}
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **-1**
-2. **5**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[n=9] --> B{n > 0?}
-    B -- Ya --> C{n == 2?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-n=9. Kurangi 2 tiap putaran. Jika n=2, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 59 (Continue Skip)
+### Soal 59
 ```cpp
-int s = 0;
-for (int i=1; i<=4; i++) {
-    if (i % 2 == 0) continue;
-    s += i;
-}
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Angka berapa saja yang masuk ke dalam `s`?
-2. Berapakah nilai akhir `s`?
-3. Apa arti perintah `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **1 dan 3 (Angka ganjil)**
-2. **4**
-3. **Melewatkan sisa perintah di bawahnya dan langsung lanjut ke putaran berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[i=1..4] --> B{i Genap?}
-    B -- Ya --> C[CONTINUE: Lompat i++]
-    B -- Tidak --> D[s += i]
-    D --> E[Next i]
-    C --> E
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-i=1 (Ganjil) -> s=1. i=2 (Genap) -> Skip/Continue. i=3 (Ganjil) -> s=1+3=4. i=4 (Genap) -> Skip.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 60 (Continue Skip)
+### Soal 60
 ```cpp
-int s = 0;
-for (int i=1; i<=4; i++) {
-    if (i % 2 == 0) continue;
-    s += i;
-}
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Angka berapa saja yang masuk ke dalam `s`?
-2. Berapakah nilai akhir `s`?
-3. Apa arti perintah `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **1 dan 3 (Angka ganjil)**
-2. **4**
-3. **Melewatkan sisa perintah di bawahnya dan langsung lanjut ke putaran berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[i=1..4] --> B{i Genap?}
-    B -- Ya --> C[CONTINUE: Lompat i++]
-    B -- Tidak --> D[s += i]
-    D --> E[Next i]
-    C --> E
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-i=1 (Ganjil) -> s=1. i=2 (Genap) -> Skip/Continue. i=3 (Ganjil) -> s=1+3=4. i=4 (Genap) -> Skip.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 61 (Nested Loop Matrix)
+### Soal 61
 ```cpp
-int count = 0;
-for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) {
-        count++;
-    }
-}
+int x = 77;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `count`?
-2. Berapa kali perulangan terdalam (`j`) berjalan total?
-3. Analogi apa yang paling cocok untuk perulangan bersarang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. **9**
-3. **Jam Pasir atau Jarum Jam (Jarum panjang harus putar penuh sebelum jarum pendek gerak).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i Loop: 3x] --> B[j Loop: 3x]
-    B --> C[count++]
+A[x=77] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 2]
 ```
 
-**📖 Cara Membaca Diagram:**
-Baris (3) x Kolom (3) = 9 total eksekusi.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 77. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 77 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 77 kelereng ke 5 anak. Tiap anak dapat 15 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 62 (For Loop Trace)
+### Soal 62
 ```cpp
-int total = 0;
-for (int i = 3; i < 9; i += 1) {
-    total += i;
-}
+int x = 54;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. **33**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=3] --> B{i < 9?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 1]
-    D --> B
-    B -- Tidak --> E[Selesai]
+A[x=54] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 4]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=3. Tiap langkah i bertambah 1. Berhenti saat i >= 9.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 54. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 54 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 54 kelereng ke 5 anak. Tiap anak dapat 10 biji, dan di tanganmu tersisa **4** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 63 (Continue Skip)
+### Soal 63
 ```cpp
-int s = 0;
-for (int i=1; i<=4; i++) {
-    if (i % 2 == 0) continue;
-    s += i;
-}
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Angka berapa saja yang masuk ke dalam `s`?
-2. Berapakah nilai akhir `s`?
-3. Apa arti perintah `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **1 dan 3 (Angka ganjil)**
-2. **4**
-3. **Melewatkan sisa perintah di bawahnya dan langsung lanjut ke putaran berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=1..4] --> B{i Genap?}
-    B -- Ya --> C[CONTINUE: Lompat i++]
-    B -- Tidak --> D[s += i]
-    D --> E[Next i]
-    C --> E
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-i=1 (Ganjil) -> s=1. i=2 (Genap) -> Skip/Continue. i=3 (Ganjil) -> s=1+3=4. i=4 (Genap) -> Skip.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
-### Soal 64 (Continue Skip)
+### Soal 64
 ```cpp
-int s = 0;
-for (int i=1; i<=4; i++) {
-    if (i % 2 == 0) continue;
-    s += i;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Angka berapa saja yang masuk ke dalam `s`?
-2. Berapakah nilai akhir `s`?
-3. Apa arti perintah `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **1 dan 3 (Angka ganjil)**
-2. **4**
-3. **Melewatkan sisa perintah di bawahnya dan langsung lanjut ke putaran berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=1..4] --> B{i Genap?}
-    B -- Ya --> C[CONTINUE: Lompat i++]
-    B -- Tidak --> D[s += i]
-    D --> E[Next i]
-    C --> E
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-i=1 (Ganjil) -> s=1. i=2 (Genap) -> Skip/Continue. i=3 (Ganjil) -> s=1+3=4. i=4 (Genap) -> Skip.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 65 (Nested Loop Matrix)
+### Soal 65
 ```cpp
-int count = 0;
-for (int i = 0; i < 2; i++) {
-    for (int j = 0; j < 3; j++) {
-        count++;
-    }
-}
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `count`?
-2. Berapa kali perulangan terdalam (`j`) berjalan total?
-3. Analogi apa yang paling cocok untuk perulangan bersarang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. **6**
-3. **Jam Pasir atau Jarum Jam (Jarum panjang harus putar penuh sebelum jarum pendek gerak).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[i Loop: 2x] --> B[j Loop: 3x]
-    B --> C[count++]
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-Baris (2) x Kolom (3) = 6 total eksekusi.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 66 (For Loop Trace)
+### Soal 66
 ```cpp
-int total = 0;
-for (int i = 1; i < 6; i += 1) {
-    total += i;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **5**
-2. **15**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=1] --> B{i < 6?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 1]
-    D --> B
-    B -- Tidak --> E[Selesai]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=1. Tiap langkah i bertambah 1. Berhenti saat i >= 6.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 67 (For Loop Trace)
+### Soal 67
 ```cpp
-int total = 0;
-for (int i = 4; i < 10; i += 2) {
-    total += i;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **18**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=4] --> B{i < 10?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 2]
-    D --> B
-    B -- Tidak --> E[Selesai]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=4. Tiap langkah i bertambah 2. Berhenti saat i >= 10.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 68 (For Loop Trace)
+### Soal 68
 ```cpp
-int total = 0;
-for (int i = 3; i < 6; i += 2) {
-    total += i;
-}
+int x = 75;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. **8**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=3] --> B{i < 6?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 2]
-    D --> B
-    B -- Tidak --> E[Selesai]
+A[x=75] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=3. Tiap langkah i bertambah 2. Berhenti saat i >= 6.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 75. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 75 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 75 kelereng ke 5 anak. Tiap anak dapat 15 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 69 (For Loop Trace)
+### Soal 69
 ```cpp
-int total = 0;
-for (int i = 2; i < 6; i += 1) {
-    total += i;
-}
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. **14**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=2] --> B{i < 6?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 1]
-    D --> B
-    B -- Tidak --> E[Selesai]
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=2. Tiap langkah i bertambah 1. Berhenti saat i >= 6.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
 
 ---
-### Soal 70 (For Loop Trace)
+### Soal 70
 ```cpp
-int total = 0;
-for (int i = 4; i < 9; i += 1) {
-    total += i;
-}
+int x = 31;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **5**
-2. **30**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=4] --> B{i < 9?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 1]
-    D --> B
-    B -- Tidak --> E[Selesai]
+A[x=31] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 1]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=4. Tiap langkah i bertambah 1. Berhenti saat i >= 9.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 31. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 31 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 31 kelereng ke 5 anak. Tiap anak dapat 6 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 71 (While Loop Break)
+### Soal 71
 ```cpp
-int n = 10;
-while (n > 0) {
-    if (n == 4) break;
-    n -= 2;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. **3**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[n=10] --> B{n > 0?}
-    B -- Ya --> C{n == 4?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-n=10. Kurangi 2 tiap putaran. Jika n=4, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 72 (While Loop Break)
+### Soal 72
 ```cpp
-int n = 9;
-while (n > 0) {
-    if (n == 2) break;
-    n -= 2;
-}
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **-1**
-2. **5**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[n=9] --> B{n > 0?}
-    B -- Ya --> C{n == 2?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-n=9. Kurangi 2 tiap putaran. Jika n=2, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 73 (For Loop Trace)
+### Soal 73
 ```cpp
-int total = 0;
-for (int i = 5; i < 11; i += 2) {
-    total += i;
-}
+int x = 84;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **21**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=5] --> B{i < 11?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 2]
-    D --> B
-    B -- Tidak --> E[Selesai]
+A[x=84] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 4]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=5. Tiap langkah i bertambah 2. Berhenti saat i >= 11.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 84. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 84 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 84 kelereng ke 5 anak. Tiap anak dapat 16 biji, dan di tanganmu tersisa **4** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 74 (For Loop Trace)
+### Soal 74
 ```cpp
-int total = 0;
-for (int i = 2; i < 8; i += 2) {
-    total += i;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
 }
 ```
 **Pertanyaan:**
-1. Berapa kali perulangan `for` tersebut dieksekusi?
-2. Berapakah nilai akhir variabel `total`?
-3. Apa yang terjadi jika kondisi `i < {end}` diganti menjadi `i <= {end}`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **12**
-3. **Perulangan akan berjalan satu kali lebih banyak (jika end tercapai).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[i=2] --> B{i < 8?}
-    B -- Ya --> C[total += i]
-    C --> D[i += 2]
-    D --> B
-    B -- Tidak --> E[Selesai]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai i=2. Tiap langkah i bertambah 2. Berhenti saat i >= 8.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 75 (While Loop Break)
+### Soal 75
 ```cpp
-int n = 5;
-while (n > 0) {
-    if (n == 3) break;
-    n -= 2;
-}
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Berapakah nilai akhir variabel `n`?
-2. Berapa kali blok di dalam `while` dijalankan?
-3. Apa perbedaan `break` dan `continue`?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **1**
-3. **Break keluar dari loop, Continue lompat ke iterasi berikutnya.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[n=5] --> B{n > 0?}
-    B -- Ya --> C{n == 3?}
-    C -- Ya --> D[BREAK: Keluar]
-    C -- Tidak --> E[n -= 2]
-    E --> B
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-n=5. Kurangi 2 tiap putaran. Jika n=3, paku rem (Break) ditekan.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
 
 ---

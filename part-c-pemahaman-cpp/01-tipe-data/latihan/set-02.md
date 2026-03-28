@@ -4,763 +4,764 @@
 
 # Latihan Soal Part C - Modul 01 - Set 02
 
-### Soal 26 (Integer Division)
-```cpp
-int a = 23;
-int b = 5;
-int c = 2;
-int res1 = a / b;
-int res2 = res1 / c;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res1`?
-2. Berapakah nilai `res2`?
-3. Mengapa `res1` tidak menghasilkan angka desimal?
-
-**Jawaban & Diagnosis:**
-1. **4**
-2. **2**
-3. **Karena tipe datanya `int`, setiap ada koma di belakangnya langsung dipangkas habis (Integer Division).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Start: a=23, b=5, c=2] --> B["res1 = a/b (23/5)"]
-    B --> C["Koma DIBUANG -> 4"]
-    C --> D["res2 = res1/c (4/2)"]
-    D --> E["Koma DIBUANG -> 2"]
-```
-
-**📖 Cara Membaca Diagram:**
-Mulai: a=23, b=5, c=2. Di baris `res1 = a / b`, 23/5 = 4.60, tapi karena `int`, koma dibakar jadi 4. Lalu 4/2 = 2.00, dibakar lagi jadi 2.
-
----
-### Soal 27 (Casting War)
-```cpp
-int i = 7;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
-```
-**Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
-
-**Jawaban & Diagnosis:**
-1. **3.0**
-2. **3.5**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A["i=7, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 3.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 3.5"]
-```
-
-**📖 Cara Membaca Diagram:**
-i=7, j=2. `res1`: 7/2 (int) = 3. Masuk double jadi 3.0. `res2`: (double)7 = 7.0. 7.0/2 = 3.5.
-
----
-### Soal 28 (Integer Division)
-```cpp
-int a = 37;
-int b = 6;
-int c = 5;
-int res1 = a / b;
-int res2 = res1 / c;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res1`?
-2. Berapakah nilai `res2`?
-3. Mengapa `res1` tidak menghasilkan angka desimal?
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. **1**
-3. **Karena tipe datanya `int`, setiap ada koma di belakangnya langsung dipangkas habis (Integer Division).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Start: a=37, b=6, c=5] --> B["res1 = a/b (37/6)"]
-    B --> C["Koma DIBUANG -> 6"]
-    C --> D["res2 = res1/c (6/5)"]
-    D --> E["Koma DIBUANG -> 1"]
-```
-
-**📖 Cara Membaca Diagram:**
-Mulai: a=37, b=6, c=5. Di baris `res1 = a / b`, 37/6 = 6.17, tapi karena `int`, koma dibakar jadi 6. Lalu 6/5 = 1.20, dibakar lagi jadi 1.
-
----
-### Soal 29 (ASCII Math)
-```cpp
-char c = 'E';
-int jump = 3;
-char result = c + jump;
-```
-**Pertanyaan:**
-1. Berapakah nilai ASCII batin dari 'E'?
-2. Karakter apa yang tersimpan dalam variabel `result`?
-3. Jika `result` dicetak sebagai `int`, angka berapa yang muncul?
-
-**Jawaban & Diagnosis:**
-1. **69**
-2. **H**
-3. **72**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["'E' (ASCII 69)"] --> B["+ 3"]
-    B --> C["ASCII 72"]
-    C --> D["'H'"]
-```
-
-**📖 Cara Membaca Diagram:**
-Karakter 'E' punya kode batin ASCII 69. Ditambah 3 langkah menjadi 72. Kode 72 adalah huruf 'H'.
-
----
-### Soal 30 (ASCII Math)
-```cpp
-char c = 'B';
-int jump = 2;
-char result = c + jump;
-```
-**Pertanyaan:**
-1. Berapakah nilai ASCII batin dari 'B'?
-2. Karakter apa yang tersimpan dalam variabel `result`?
-3. Jika `result` dicetak sebagai `int`, angka berapa yang muncul?
-
-**Jawaban & Diagnosis:**
-1. **66**
-2. **D**
-3. **68**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["'B' (ASCII 66)"] --> B["+ 2"]
-    B --> C["ASCII 68"]
-    C --> D["'D'"]
-```
-
-**📖 Cara Membaca Diagram:**
-Karakter 'B' punya kode batin ASCII 66. Ditambah 2 langkah menjadi 68. Kode 68 adalah huruf 'D'.
-
----
-### Soal 31 (ASCII Math)
-```cpp
-char c = 'C';
-int jump = 2;
-char result = c + jump;
-```
-**Pertanyaan:**
-1. Berapakah nilai ASCII batin dari 'C'?
-2. Karakter apa yang tersimpan dalam variabel `result`?
-3. Jika `result` dicetak sebagai `int`, angka berapa yang muncul?
-
-**Jawaban & Diagnosis:**
-1. **67**
-2. **E**
-3. **69**
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-    A["'C' (ASCII 67)"] --> B["+ 2"]
-    B --> C["ASCII 69"]
-    C --> D["'E'"]
-```
-
-**📖 Cara Membaca Diagram:**
-Karakter 'C' punya kode batin ASCII 67. Ditambah 2 langkah menjadi 69. Kode 69 adalah huruf 'E'.
-
----
-### Soal 32 (Modulo Magic)
-```cpp
-int x = 58;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
-```
-**Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
-
-**Jawaban & Diagnosis:**
-1. **Genap**
-2. **3**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=58] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 3"]
-```
-
-**📖 Cara Membaca Diagram:**
-x=58. Cek `x % 2`: 58%2 = 0. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 58/5 = 11 sisa 3.
-
----
-### Soal 33 (Casting War)
-```cpp
-int i = 5;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
-```
-**Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
-
-**Jawaban & Diagnosis:**
-1. **2.0**
-2. **2.5**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A["i=5, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 2.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 2.5"]
-```
-
-**📖 Cara Membaca Diagram:**
-i=5, j=2. `res1`: 5/2 (int) = 2. Masuk double jadi 2.0. `res2`: (double)5 = 5.0. 5.0/2 = 2.5.
-
----
-### Soal 34 (Modulo Magic)
-```cpp
-int x = 42;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
-```
-**Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
-
-**Jawaban & Diagnosis:**
-1. **Genap**
-2. **2**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=42] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 2"]
-```
-
-**📖 Cara Membaca Diagram:**
-x=42. Cek `x % 2`: 42%2 = 0. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 42/5 = 8 sisa 2.
-
----
-### Soal 35 (Modulo Magic)
-```cpp
-int x = 63;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
-```
-**Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
-
-**Jawaban & Diagnosis:**
-1. **Ganjil**
-2. **3**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=63] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 3"]
-```
-
-**📖 Cara Membaca Diagram:**
-x=63. Cek `x % 2`: 63%2 = 1. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 63/5 = 12 sisa 3.
-
----
-### Soal 36 (ASCII Math)
+### Soal 26
 ```cpp
 char c = 'A';
-int jump = 3;
-char result = c + jump;
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah nilai ASCII batin dari 'A'?
-2. Karakter apa yang tersimpan dalam variabel `result`?
-3. Jika `result` dicetak sebagai `int`, angka berapa yang muncul?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **65**
-2. **D**
-3. **68**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["'A' (ASCII 65)"] --> B["+ 3"]
-    B --> C["ASCII 68"]
-    C --> D["'D'"]
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-Karakter 'A' punya kode batin ASCII 65. Ditambah 3 langkah menjadi 68. Kode 68 adalah huruf 'D'.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 37 (Casting War)
+### Soal 27
 ```cpp
-int i = 5;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **2.0**
-2. **2.5**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A["i=5, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 2.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 2.5"]
-```
-
-**📖 Cara Membaca Diagram:**
-i=5, j=2. `res1`: 5/2 (int) = 2. Masuk double jadi 2.0. `res2`: (double)5 = 5.0. 5.0/2 = 2.5.
-
----
-### Soal 38 (Casting War)
-```cpp
-int i = 7;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
-```
-**Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
-
-**Jawaban & Diagnosis:**
-1. **3.0**
-2. **3.5**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A["i=7, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 3.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 3.5"]
-```
-
-**📖 Cara Membaca Diagram:**
-i=7, j=2. `res1`: 7/2 (int) = 3. Masuk double jadi 3.0. `res2`: (double)7 = 7.0. 7.0/2 = 3.5.
-
----
-### Soal 39 (Integer Division)
-```cpp
-int a = 15;
-int b = 5;
-int c = 5;
-int res1 = a / b;
-int res2 = res1 / c;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res1`?
-2. Berapakah nilai `res2`?
-3. Mengapa `res1` tidak menghasilkan angka desimal?
-
-**Jawaban & Diagnosis:**
-1. **3**
-2. **0**
-3. **Karena tipe datanya `int`, setiap ada koma di belakangnya langsung dipangkas habis (Integer Division).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Start: a=15, b=5, c=5] --> B["res1 = a/b (15/5)"]
-    B --> C["Koma DIBUANG -> 3"]
-    C --> D["res2 = res1/c (3/5)"]
-    D --> E["Koma DIBUANG -> 0"]
-```
-
-**📖 Cara Membaca Diagram:**
-Mulai: a=15, b=5, c=5. Di baris `res1 = a / b`, 15/5 = 3.00, tapi karena `int`, koma dibakar jadi 3. Lalu 3/5 = 0.60, dibakar lagi jadi 0.
-
----
-### Soal 40 (Casting War)
-```cpp
-int i = 8;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
-```
-**Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
-
-**Jawaban & Diagnosis:**
-1. **4.0**
-2. **4.0**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A["i=8, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 4.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 4.0"]
-```
-
-**📖 Cara Membaca Diagram:**
-i=8, j=2. `res1`: 8/2 (int) = 4. Masuk double jadi 4.0. `res2`: (double)8 = 8.0. 8.0/2 = 4.0.
-
----
-### Soal 41 (Modulo Magic)
-```cpp
-int x = 36;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
-```
-**Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
-
-**Jawaban & Diagnosis:**
-1. **Genap**
-2. **1**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[x=36] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 1"]
-```
-
-**📖 Cara Membaca Diagram:**
-x=36. Cek `x % 2`: 36%2 = 0. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 36/5 = 7 sisa 1.
-
----
-### Soal 42 (Integer Division)
-```cpp
-int a = 46;
-int b = 9;
-int c = 4;
-int res1 = a / b;
-int res2 = res1 / c;
-```
-**Pertanyaan:**
-1. Berapakah nilai `res1`?
-2. Berapakah nilai `res2`?
-3. Mengapa `res1` tidak menghasilkan angka desimal?
-
-**Jawaban & Diagnosis:**
-1. **5**
-2. **1**
-3. **Karena tipe datanya `int`, setiap ada koma di belakangnya langsung dipangkas habis (Integer Division).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[Start: a=46, b=9, c=4] --> B["res1 = a/b (46/9)"]
-    B --> C["Koma DIBUANG -> 5"]
-    C --> D["res2 = res1/c (5/4)"]
-    D --> E["Koma DIBUANG -> 1"]
-```
-
-**📖 Cara Membaca Diagram:**
-Mulai: a=46, b=9, c=4. Di baris `res1 = a / b`, 46/9 = 5.11, tapi karena `int`, koma dibakar jadi 5. Lalu 5/4 = 1.25, dibakar lagi jadi 1.
-
----
-### Soal 43 (ASCII Math)
-```cpp
-char c = 'E';
-int jump = 2;
-char result = c + jump;
-```
-**Pertanyaan:**
-1. Berapakah nilai ASCII batin dari 'E'?
-2. Karakter apa yang tersimpan dalam variabel `result`?
-3. Jika `result` dicetak sebagai `int`, angka berapa yang muncul?
-
-**Jawaban & Diagnosis:**
-1. **69**
-2. **G**
-3. **71**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph LR
-    A["'E' (ASCII 69)"] --> B["+ 2"]
-    B --> C["ASCII 71"]
-    C --> D["'G'"]
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-Karakter 'E' punya kode batin ASCII 69. Ditambah 2 langkah menjadi 71. Kode 71 adalah huruf 'G'.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 44 (Modulo Magic)
+### Soal 28
 ```cpp
-int x = 24;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
 ```
 **Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Genap**
-2. **4**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[x=24] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 4"]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-x=24. Cek `x % 2`: 24%2 = 0. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 24/5 = 4 sisa 4.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 45 (Modulo Magic)
+### Soal 29
 ```cpp
-int x = 92;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
+int x = 93;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Genap**
-2. **2**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[x=92] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 2"]
+A[x=93] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
 ```
 
-**📖 Cara Membaca Diagram:**
-x=92. Cek `x % 2`: 92%2 = 0. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 92/5 = 18 sisa 2.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 93. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 93 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 93 kelereng ke 5 anak. Tiap anak dapat 18 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 46 (Casting War)
+### Soal 30
 ```cpp
-int i = 9;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4.0**
-2. **4.5**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 31
+```cpp
+int x = 70;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["i=9, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 4.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 4.5"]
+A[x=70] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
 ```
 
-**📖 Cara Membaca Diagram:**
-i=9, j=2. `res1`: 9/2 (int) = 4. Masuk double jadi 4.0. `res2`: (double)9 = 9.0. 9.0/2 = 4.5.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 70. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 70 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 70 kelereng ke 5 anak. Tiap anak dapat 14 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 47 (Integer Division)
+### Soal 32
 ```cpp
-int a = 21;
-int b = 5;
-int c = 5;
-int res1 = a / b;
-int res2 = res1 / c;
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res1`?
-2. Berapakah nilai `res2`?
-3. Mengapa `res1` tidak menghasilkan angka desimal?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **4**
-2. **0**
-3. **Karena tipe datanya `int`, setiap ada koma di belakangnya langsung dipangkas habis (Integer Division).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 33
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 34
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 35
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[Start: a=21, b=5, c=5] --> B["res1 = a/b (21/5)"]
-    B --> C["Koma DIBUANG -> 4"]
-    C --> D["res2 = res1/c (4/5)"]
-    D --> E["Koma DIBUANG -> 0"]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai: a=21, b=5, c=5. Di baris `res1 = a / b`, 21/5 = 4.20, tapi karena `int`, koma dibakar jadi 4. Lalu 4/5 = 0.80, dibakar lagi jadi 0.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 48 (Modulo Magic)
+### Soal 36
 ```cpp
-int x = 63;
-int m1 = 2;
-int m2 = 5;
-int res_x = x % m1;
-int res_y = x % m2;
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
 ```
 **Pertanyaan:**
-1. Apakah `x` genap atau ganjil?
-2. Berapakah sisa bagi `x % m2`?
-3. Apa guna operator `%` dalam OSN-K?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Ganjil**
-2. **3**
-3. **Untuk mencari sisa bagi (sisa kelereng) atau mendeteksi pola perulangan/genap-ganjil.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[x=63] --> Bx % 2 == 0?
-    B -- Ya --> C[Genap]
-    B -- Tidak --> D[Ganjil]
-    A --> E["x % 5"]
-    E --> F["Sisa: 3"]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-x=63. Cek `x % 2`: 63%2 = 1. Jika 0 genap, jika 1 ganjil. Cek `x % 5`: 63/5 = 12 sisa 3.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 49 (Integer Division)
+### Soal 37
 ```cpp
-int a = 39;
-int b = 4;
-int c = 3;
-int res1 = a / b;
-int res2 = res1 / c;
+int x = 42;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `res1`?
-2. Berapakah nilai `res2`?
-3. Mengapa `res1` tidak menghasilkan angka desimal?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **9**
-2. **3**
-3. **Karena tipe datanya `int`, setiap ada koma di belakangnya langsung dipangkas habis (Integer Division).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[Start: a=39, b=4, c=3] --> B["res1 = a/b (39/4)"]
-    B --> C["Koma DIBUANG -> 9"]
-    C --> D["res2 = res1/c (9/3)"]
-    D --> E["Koma DIBUANG -> 3"]
+A[x=42] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 2]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai: a=39, b=4, c=3. Di baris `res1 = a / b`, 39/4 = 9.75, tapi karena `int`, koma dibakar jadi 9. Lalu 9/3 = 3.00, dibakar lagi jadi 3.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 42. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 42 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 42 kelereng ke 5 anak. Tiap anak dapat 8 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 50 (Casting War)
+### Soal 38
 ```cpp
-int i = 7;
-int j = 2;
-double res1 = i / j;
-double res2 = (double)i / j;
+int x = 34;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah isi `res1`?
-2. Berapakah isi `res2`?
-3. Kenapa hasil `res1` dan `res2` berbeda padahal rumusnya mirip?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3.0**
-2. **3.5**
-3. **Pada `res1`, pembagian terjadi antar `int` sehingga koma dibantai duluan sebelum masuk double. Pada `res2`, `i` dipaksa jadi `double` dulu, sehingga koma selamat.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A["i=7, j=2"] --> B["res1: int / int"]
-    B --> C["Koma MATI -> 3.0"]
-    A --> D["res2: (double)i / int"]
-    D --> E["Koma SELAMAT -> 3.5"]
+A[x=34] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 4]
 ```
 
-**📖 Cara Membaca Diagram:**
-i=7, j=2. `res1`: 7/2 (int) = 3. Masuk double jadi 3.0. `res2`: (double)7 = 7.0. 7.0/2 = 3.5.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 34. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 34 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 34 kelereng ke 5 anak. Tiap anak dapat 6 biji, dan di tanganmu tersisa **4** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 39
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 40
+```cpp
+int x = 32;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=32] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 2]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 32. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 32 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 32 kelereng ke 5 anak. Tiap anak dapat 6 biji, dan di tanganmu tersisa **2** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 41
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 42
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 43
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 44
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+f(3) --> f(2) --> f(1) --> f(0)
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+
+---
+### Soal 45
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 46
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+f(3) --> f(2) --> f(1) --> f(0)
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+
+---
+### Soal 47
+```cpp
+int f(int n) {
+  if (n==0) return 1;
+  return n * f(n-1);
+}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+f(3) --> f(2) --> f(1) --> f(0)
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
+
+---
+### Soal 48
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 49
+```cpp
+int x = 43;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=43] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 43. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 43 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 43 kelereng ke 5 anak. Tiap anak dapat 8 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 50
+```cpp
+int x = 75;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=75] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 0]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 75. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 75 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 75 kelereng ke 5 anak. Tiap anak dapat 15 biji, dan di tanganmu tersisa **0** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---

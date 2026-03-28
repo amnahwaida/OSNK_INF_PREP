@@ -4,758 +4,754 @@
 
 # Latihan Soal Part C - Modul 05 - Set 08
 
-### Soal 176 (Factorial Trace)
+### Soal 176
 ```cpp
 int f(int n) {
-    if (n == 0) return 1;
-    return n * f(n - 1);
+  if (n==0) return 1;
+  return n * f(n-1);
 }
-// f(3) = ?
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari `f(3)`?
-2. Berapa kali fungsi `f` dipanggil total?
-3. Apa yang terjadi jika baris `if (n == 0) return 1;` dihapus?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. **4**
-3. **Infinite Recursion (Stack Overflow) karena tidak ada pintu keluar.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0) -->|Return 1| End[Base Case]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai f(3). Turun ke f(2)... sampai f(0)=1. Balik lunas: 1 * 2 * ... * 3 = 6.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 177 (Factorial Trace)
+### Soal 177
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 178
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 179
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 180
 ```cpp
 int f(int n) {
-    if (n == 0) return 1;
-    return n * f(n - 1);
+  if (n==0) return 1;
+  return n * f(n-1);
 }
-// f(3) = ?
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari `f(3)`?
-2. Berapa kali fungsi `f` dipanggil total?
-3. Apa yang terjadi jika baris `if (n == 0) return 1;` dihapus?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **6**
-2. **4**
-3. **Infinite Recursion (Stack Overflow) karena tidak ada pintu keluar.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(3) --> f(2) --> f(1) --> f(0) -->|Return 1| End[Base Case]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai f(3). Turun ke f(2)... sampai f(0)=1. Balik lunas: 1 * 2 * ... * 3 = 6.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 178 (Base Case Error)
+### Soal 181
 ```cpp
 int f(int n) {
-    return n + f(n - 1);
+  if (n==0) return 1;
+  return n * f(n-1);
 }
-// main: f(5);
 ```
 **Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 179 (Base Case Error)
+### Soal 182
+```cpp
+int x = 34;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=34] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 4]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 34. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 34 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 34 kelereng ke 5 anak. Tiap anak dapat 6 biji, dan di tanganmu tersisa **4** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 183
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 184
+```cpp
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
+
+---
+### Soal 185
+```cpp
+int x = 51;
+int res = x % 5;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[x=51] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 1]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 51. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 51 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 51 kelereng ke 5 anak. Tiap anak dapat 10 biji, dan di tanganmu tersisa **1** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
+
+---
+### Soal 186
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 187
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 188
 ```cpp
 int f(int n) {
-    return n + f(n - 1);
+  if (n==0) return 1;
+  return n * f(n-1);
 }
-// main: f(5);
 ```
 **Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 180 (Fibonacci Branch)
+### Soal 189
 ```cpp
-int fib(int n) {
-    if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
-}
-// fib(3) = ?
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `fib(3)`?
-2. Mengapa rekursi ini disebut rekursi bercabang?
-3. Apa analogi yang paling tepat untuk rekursi?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. **Karena satu fungsi memanggil dua fungsi lainnya sekaligus.**
-3. **Tugas Berantai Minta Uang Jajan (Mundur ke Ayah, balik cair ke Adik).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[fib(3)] --> B[fib(2)]
-    A --> C[fib(1)]
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-fib(3) pecah jadi fib(2) dan fib(1). Terus pecah sampai n=1 atau n=0 (Base case).
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 181 (Base Case Error)
+### Soal 190
 ```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
-### Soal 182 (Factorial Trace)
+### Soal 191
 ```cpp
-int f(int n) {
-    if (n == 0) return 1;
-    return n * f(n - 1);
-}
-// f(4) = ?
+int a = 20, b = 3, c = 2;
+int res = (a / b) / c;
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari `f(4)`?
-2. Berapa kali fungsi `f` dipanggil total?
-3. Apa yang terjadi jika baris `if (n == 0) return 1;` dihapus?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **24**
-2. **5**
-3. **Infinite Recursion (Stack Overflow) karena tidak ada pintu keluar.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0) -->|Return 1| End[Base Case]
+graph LR
+A[20/3] --> B[6]
+B --> C[/2]
+C --> D[3]
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai f(4). Turun ke f(3)... sampai f(0)=1. Balik lunas: 1 * 2 * ... * 4 = 24.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin membidik `a / b` (20 / 3). Hasil matematidnya adalah 6.67.
+2. Karena bertipe `int`, C++ **membuang paksa** sisa desimalnya, sehingga `res1` menjadi 6.
+3. Selanjutnya, `res1 / c` (6 / 2) dihitung. Hasil matematidnya 3.00.
+4. Lagi-lagi komanya dipangkas habis, menyisakan `res2` bernilai 3. Inilah mengapa pembagian bulat sering menipu mata!
 
 ---
-### Soal 183 (Fibonacci Branch)
+### Soal 192
 ```cpp
-int fib(int n) {
-    if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
-}
-// fib(3) = ?
+int x = 78;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah nilai `fib(3)`?
-2. Mengapa rekursi ini disebut rekursi bercabang?
-3. Apa analogi yang paling tepat untuk rekursi?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **2**
-2. **Karena satu fungsi memanggil dua fungsi lainnya sekaligus.**
-3. **Tugas Berantai Minta Uang Jajan (Mundur ke Ayah, balik cair ke Adik).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[fib(3)] --> B[fib(2)]
-    A --> C[fib(1)]
+A[x=78] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
 ```
 
-**📖 Cara Membaca Diagram:**
-fib(3) pecah jadi fib(2) dan fib(1). Terus pecah sampai n=1 atau n=0 (Base case).
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 78. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 78 % 2 hasilnya 0, maka angka ini dikategorikan sebagai **Genap**.
+3. Untuk `x % 5`, bayangkan membagi 78 kelereng ke 5 anak. Tiap anak dapat 15 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 184 (Power Trace)
+### Soal 193
 ```cpp
-int p(int x, int y) {
-    if (y == 0) return 1;
-    return x * p(x, y-1);
-}
-// p(2, 4) = ?
+int x = 33;
+int res = x % 5;
 ```
 **Pertanyaan:**
-1. Berapakah hasil `p(2, 4)`?
-2. Fungsi di atas sebenarnya menghitung apa?
-3. Berapa nilai `y` pada pemanggilan rekursi paling terakhir (base case)?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **16**
-2. **Perpangkatan (Power).**
-3. **0**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[p(2,3)] --> B[p(2,2)]
-    B --> C[p(2,1)]
-    C --> D[p(2,0)]
-    D -->|1| C
-    C -->|2| B
-    B -->|4| A
-    A -->|8| res
+A[x=33] --> B[x % 2]
+B --> C[Parity]
+A --> D[x % 5]
+D --> E[Sisa: 3]
 ```
 
-**📖 Cara Membaca Diagram:**
-2 * 2 * ... dikalikan 4 kali sampai base case y=0.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Kita punya angka 33. Operator `% 2` mengecek sisa bagi dengan 2.
+2. Karena 33 % 2 hasilnya 1, maka angka ini dikategorikan sebagai **Ganjil**.
+3. Untuk `x % 5`, bayangkan membagi 33 kelereng ke 5 anak. Tiap anak dapat 6 biji, dan di tanganmu tersisa **3** kelereng yang tidak bisa dibagi rata. Itulah hasil Modulonya!
 
 ---
-### Soal 185 (Power Trace)
-```cpp
-int p(int x, int y) {
-    if (y == 0) return 1;
-    return x * p(x, y-1);
-}
-// p(2, 3) = ?
-```
-**Pertanyaan:**
-1. Berapakah hasil `p(2, 3)`?
-2. Fungsi di atas sebenarnya menghitung apa?
-3. Berapa nilai `y` pada pemanggilan rekursi paling terakhir (base case)?
-
-**Jawaban & Diagnosis:**
-1. **8**
-2. **Perpangkatan (Power).**
-3. **0**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[p(2,3)] --> B[p(2,2)]
-    B --> C[p(2,1)]
-    C --> D[p(2,0)]
-    D -->|1| C
-    C -->|2| B
-    B -->|4| A
-    A -->|8| res
-```
-
-**📖 Cara Membaca Diagram:**
-2 * 2 * ... dikalikan 3 kali sampai base case y=0.
-
----
-### Soal 186 (Power Trace)
-```cpp
-int p(int x, int y) {
-    if (y == 0) return 1;
-    return x * p(x, y-1);
-}
-// p(2, 3) = ?
-```
-**Pertanyaan:**
-1. Berapakah hasil `p(2, 3)`?
-2. Fungsi di atas sebenarnya menghitung apa?
-3. Berapa nilai `y` pada pemanggilan rekursi paling terakhir (base case)?
-
-**Jawaban & Diagnosis:**
-1. **8**
-2. **Perpangkatan (Power).**
-3. **0**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[p(2,3)] --> B[p(2,2)]
-    B --> C[p(2,1)]
-    C --> D[p(2,0)]
-    D -->|1| C
-    C -->|2| B
-    B -->|4| A
-    A -->|8| res
-```
-
-**📖 Cara Membaca Diagram:**
-2 * 2 * ... dikalikan 3 kali sampai base case y=0.
-
----
-### Soal 187 (Factorial Trace)
+### Soal 194
 ```cpp
 int f(int n) {
-    if (n == 0) return 1;
-    return n * f(n - 1);
+  if (n==0) return 1;
+  return n * f(n-1);
 }
-// f(4) = ?
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhir dari `f(4)`?
-2. Berapa kali fungsi `f` dipanggil total?
-3. Apa yang terjadi jika baris `if (n == 0) return 1;` dihapus?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **24**
-2. **5**
-3. **Infinite Recursion (Stack Overflow) karena tidak ada pintu keluar.**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-f(4) --> f(3) --> f(2) --> f(1) --> f(0) -->|Return 1| End[Base Case]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Mulai f(4). Turun ke f(3)... sampai f(0)=1. Balik lunas: 1 * 2 * ... * 4 = 24.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 188 (Base Case Error)
+### Soal 195
+```cpp
+int a = 1, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- True --> B[v++]
+A -- False --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 1 adalah 1, syarat ini **TRUE**.
+2. Karena konektornya `&&` (AND), mesin **WAJIB** lanjut mengecek syarat kedua.
+3. Perintah `++visit` dijalankan, sehingga `visit` naik dari 0 menjadi **1**. Seluruh blok `if` pun dianggap berhasil.
+
+---
+### Soal 196
+```cpp
+char c = 'A';
+c = c + 2;
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
+
+---
+### Soal 197
+```cpp
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
+```
+**Pertanyaan:**
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
+
+**Jawaban & Diagnosis:**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
+
+**Mermaid Flowchart:**
+```mermaid
+graph TD
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
+```
+
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
+
+---
+### Soal 198
 ```cpp
 int f(int n) {
-    return n + f(n - 1);
+  if (n==0) return 1;
+  return n * f(n-1);
 }
-// main: f(5);
 ```
 **Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
+f(3) --> f(2) --> f(1) --> f(0)
 ```
 
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Fungsi rekursif memanggil dirinya sendiri secara berantai: f(3) -> f(2) -> ... -> f(0).
+2. Setiap panggilan tertahan di 'Call Stack' (antrian). 
+3. Saat mencapai **Base Case** (f(0)), barulah nilai mulai dikalikan mundur satu persatu.
+4. Operasi akhirnya membuahkan hasil **6**, dengan total **4 kali** pemanggilan fungsi.
 
 ---
-### Soal 189 (Base Case Error)
+### Soal 199
 ```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
+char c = 'A';
+c = c + 2;
 ```
 **Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
-graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
+graph LR
+A['A'] --> B[+ 2]
+B --> C['C']
 ```
 
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Karakter 'A' memiliki kode batin (ASCII) bernilai **65**.
+2. C++ memperlakukan karakter sebagai angka. Operasi `65 + 2` menghasilkan nilai baru **67**.
+3. Jika kita melihat tabel ASCII, angka 67 adalah identitas untuk huruf **'C'**. Jadi, variabel `result` sekarang menyimpan karakter tersebut.
 
 ---
-### Soal 190 (Fibonacci Branch)
+### Soal 200
 ```cpp
-int fib(int n) {
-    if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
-}
-// fib(4) = ?
+int a = 0, v = 0;
+if (a == 1 && ++v > 0) {}
 ```
 **Pertanyaan:**
-1. Berapakah nilai `fib(4)`?
-2. Mengapa rekursi ini disebut rekursi bercabang?
-3. Apa analogi yang paling tepat untuk rekursi?
+1. Berapakah hasil akhir dari variabel utama?
+2. Jelaskan alur eksekusi kodenya!
+3. Apa jebakan yang mungkin ada di soal ini?
 
 **Jawaban & Diagnosis:**
-1. **3**
-2. **Karena satu fungsi memanggil dua fungsi lainnya sekaligus.**
-3. **Tugas Berantai Minta Uang Jajan (Mundur ke Ayah, balik cair ke Adik).**
+1. **Hasil sudah tertera dalam diagnosis.**
+2. **Lihat 'Langkah Tracing' di bawah.**
+3. **Fokus pada aturan batin C++ (bukan matematika biasa).**
 
 **Mermaid Flowchart:**
 ```mermaid
 graph TD
-    A[fib(4)] --> B[fib(3)]
-    A --> C[fib(2)]
+A[a==1?] -- False --> B[v++]
+A -- True --> C[Skip]
 ```
 
-**📖 Cara Membaca Diagram:**
-fib(4) pecah jadi fib(3) dan fib(2). Terus pecah sampai n=1 atau n=0 (Base case).
-
----
-### Soal 191 (Power Trace)
-```cpp
-int p(int x, int y) {
-    if (y == 0) return 1;
-    return x * p(x, y-1);
-}
-// p(2, 3) = ?
-```
-**Pertanyaan:**
-1. Berapakah hasil `p(2, 3)`?
-2. Fungsi di atas sebenarnya menghitung apa?
-3. Berapa nilai `y` pada pemanggilan rekursi paling terakhir (base case)?
-
-**Jawaban & Diagnosis:**
-1. **8**
-2. **Perpangkatan (Power).**
-3. **0**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[p(2,3)] --> B[p(2,2)]
-    B --> C[p(2,1)]
-    C --> D[p(2,0)]
-    D -->|1| C
-    C -->|2| B
-    B -->|4| A
-    A -->|8| res
-```
-
-**📖 Cara Membaca Diagram:**
-2 * 2 * ... dikalikan 3 kali sampai base case y=0.
-
----
-### Soal 192 (Base Case Error)
-```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
-```
-**Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
-
-**Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
-```
-
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
-
----
-### Soal 193 (Base Case Error)
-```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
-```
-**Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
-
-**Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
-```
-
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
-
----
-### Soal 194 (Power Trace)
-```cpp
-int p(int x, int y) {
-    if (y == 0) return 1;
-    return x * p(x, y-1);
-}
-// p(2, 4) = ?
-```
-**Pertanyaan:**
-1. Berapakah hasil `p(2, 4)`?
-2. Fungsi di atas sebenarnya menghitung apa?
-3. Berapa nilai `y` pada pemanggilan rekursi paling terakhir (base case)?
-
-**Jawaban & Diagnosis:**
-1. **16**
-2. **Perpangkatan (Power).**
-3. **0**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[p(2,3)] --> B[p(2,2)]
-    B --> C[p(2,1)]
-    C --> D[p(2,0)]
-    D -->|1| C
-    C -->|2| B
-    B -->|4| A
-    A -->|8| res
-```
-
-**📖 Cara Membaca Diagram:**
-2 * 2 * ... dikalikan 4 kali sampai base case y=0.
-
----
-### Soal 195 (Fibonacci Branch)
-```cpp
-int fib(int n) {
-    if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
-}
-// fib(4) = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai `fib(4)`?
-2. Mengapa rekursi ini disebut rekursi bercabang?
-3. Apa analogi yang paling tepat untuk rekursi?
-
-**Jawaban & Diagnosis:**
-1. **3**
-2. **Karena satu fungsi memanggil dua fungsi lainnya sekaligus.**
-3. **Tugas Berantai Minta Uang Jajan (Mundur ke Ayah, balik cair ke Adik).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[fib(4)] --> B[fib(3)]
-    A --> C[fib(2)]
-```
-
-**📖 Cara Membaca Diagram:**
-fib(4) pecah jadi fib(3) dan fib(2). Terus pecah sampai n=1 atau n=0 (Base case).
-
----
-### Soal 196 (Fibonacci Branch)
-```cpp
-int fib(int n) {
-    if (n <= 1) return n;
-    return fib(n-1) + fib(n-2);
-}
-// fib(3) = ?
-```
-**Pertanyaan:**
-1. Berapakah nilai `fib(3)`?
-2. Mengapa rekursi ini disebut rekursi bercabang?
-3. Apa analogi yang paling tepat untuk rekursi?
-
-**Jawaban & Diagnosis:**
-1. **2**
-2. **Karena satu fungsi memanggil dua fungsi lainnya sekaligus.**
-3. **Tugas Berantai Minta Uang Jajan (Mundur ke Ayah, balik cair ke Adik).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[fib(3)] --> B[fib(2)]
-    A --> C[fib(1)]
-```
-
-**📖 Cara Membaca Diagram:**
-fib(3) pecah jadi fib(2) dan fib(1). Terus pecah sampai n=1 atau n=0 (Base case).
-
----
-### Soal 197 (Base Case Error)
-```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
-```
-**Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
-
-**Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
-```
-
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
-
----
-### Soal 198 (Base Case Error)
-```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
-```
-**Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
-
-**Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
-```
-
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
-
----
-### Soal 199 (Factorial Trace)
-```cpp
-int f(int n) {
-    if (n == 0) return 1;
-    return n * f(n - 1);
-}
-// f(3) = ?
-```
-**Pertanyaan:**
-1. Berapakah hasil akhir dari `f(3)`?
-2. Berapa kali fungsi `f` dipanggil total?
-3. Apa yang terjadi jika baris `if (n == 0) return 1;` dihapus?
-
-**Jawaban & Diagnosis:**
-1. **6**
-2. **4**
-3. **Infinite Recursion (Stack Overflow) karena tidak ada pintu keluar.**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-f(3) --> f(2) --> f(1) --> f(0) -->|Return 1| End[Base Case]
-```
-
-**📖 Cara Membaca Diagram:**
-Mulai f(3). Turun ke f(2)... sampai f(0)=1. Balik lunas: 1 * 2 * ... * 3 = 6.
-
----
-### Soal 200 (Base Case Error)
-```cpp
-int f(int n) {
-    return n + f(n - 1);
-}
-// main: f(5);
-```
-**Pertanyaan:**
-1. Apa output dari pemanggilan `f(5)`?
-2. Apa yang hilang dari fungsi tersebut?
-3. Apa dampak dari 'Base Case' yang hilang?
-
-**Jawaban & Diagnosis:**
-1. **Program Error / Stack Overflow / Tidak Berhenti.**
-2. **Base Case (Kondisi Berhenti).**
-3. **Memory Call Stack penuh dan program hancur (Crash).**
-
-**Mermaid Flowchart:**
-```mermaid
-graph TD
-    A[f(5)] --> B[f(4)]
-    B --> C[f(3)]
-    C --> D[...] 
-    D --> E[Kiamat Memori]
-```
-
-**📖 Cara Membaca Diagram:**
-Fungsi memanggil dirinya sendiri terus menerus tanpa henti sampai memori habis.
+**📖 Penjelasan Komprehensif:**
+**Langkah Tracing:**
+1. Mesin mengecek syarat pertama: `a == 1`. Karena 0 adalah 0, syarat ini **FALSE**.
+2. Karena konektornya `&&` (AND), mesin sudah tahu hasil akhirnya pasti gagal. 
+3. Sifat **Short-Circuit** beraksi: Mesin **langsung berhenti** dan menolak membaca syarat kedua. Perintah `++visit` tidak pernah dijalankan, sehingga `visit` tetap **0**.
 
 ---
