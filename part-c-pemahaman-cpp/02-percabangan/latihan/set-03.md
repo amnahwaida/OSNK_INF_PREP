@@ -1,556 +1,279 @@
-🔙 **[Kembali ke Daftar Soal](./README.md)**
+		🔙 **[Kembali ke Daftar Soal](./README.md)**
 
 ---
 
-# Latihan Soal Part C - Modul 02 - Set 03
+# Latihan Soal Part C - Modul 02 - Set 03 (Premium Edition)
 
-### Soal 51
+---
+
+### Soal 21: Wujud Air (Physics Context)
 ```cpp
-// Web: Short-Circuit AND
-int web = 34, v = 0;
-if (web > 50 && ++v > 0) res = 1;
-else res = 0;
+// Skenario: Menentukan wujud air berdasarkan suhu
+int temp = 105;
+string wujud = "Cair";
+
+if (temp <= 0) wujud = "Padat";
+else if (temp >= 100) wujud = "Gas";
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `wujud` akhir?
+2. Jika suhu **0**, apakah wujudnya?
 
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Web 34 > 50? Tidak (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
+**Jawaban:**
+1. **"Gas"**
+2. **"Padat"**
+
+**📖 Analisis Mendalam:**
+Suhu 105 memenuhi syarat `temp >= 100`. Suhu 0 memenuhi syarat `temp <= 0`. Logika `else if` memastikan satu kategori yang terpilih.
+</details>
 
 ---
-### Soal 52
+
+### Soal 22: Promo Belanja (Buy 2 Get 1)
 ```cpp
-// App: Short-Circuit OR
-int app = 28, v = 0;
-if (app < 50 || ++v > 0) res = 1;
-else res = 0;
+// Beli 3 bayar 2. Harga per item 10rb.
+int qty = 3;
+int harga = 10000;
+int bayar = 0;
+
+if (qty >= 3) {
+    bayar = (qty - 1) * harga;
+} else {
+    bayar = qty * harga;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `bayar`?
+2. Berapa bayar jika `qty = 2`?
 
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. App 28 < 50? Ya (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
+**Jawaban:**
+1. **20000**
+2. **20000**
+
+**📖 Analisis Mendalam:**
+Ini adalah logika promo sederhana. Pembeli mendapatkan 3 barang tapi hanya membayar harga 2 barang.
+</details>
 
 ---
-### Soal 53
+
+### Soal 23: Garis Sumbu (Quadrant Zero)
 ```cpp
-// Mobile: Short-Circuit AND
-int mobile = 25, v = 0;
-if (mobile > 50 && ++v > 0) res = 1;
-else res = 0;
+int x = 0, y = 5;
+bool di_sumbu = false;
+
+if (x == 0 || y == 0) {
+    di_sumbu = true;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `di_sumbu` (true/false)?
+2. Apa maksud dari operator `||` di sini?
 
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Mobile 25 > 50? Tidak (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
+**Jawaban:**
+1. **true**
+2. **OR** (Cukup satu nol, maka titik berada di garis sumbu).
+
+**📖 Analisis Mendalam:**
+Karena `x == 0` adalah true, maka seluruh kondisi menjadi true, meskipun `y` bukan nol.
+</details>
 
 ---
-### Soal 54
+
+### Soal 24: Positif-Negatif (Branching Flow)
 ```cpp
-// Desktop: Short-Circuit OR
-int desktop = 57, v = 0;
-if (desktop < 50 || ++v > 0) res = 1;
-else res = 0;
+int n = -10;
+string hasil = "";
+
+if (n > 0) hasil = "Positif";
+else if (n < 0) hasil = "Negatif";
+else hasil = "Nol";
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `hasil`?
+2. Jika `n = 0`, blok mana yang dieksekusi?
 
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Desktop 57 < 50? Tidak (v naik).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
+**Jawaban:**
+1. **"Negatif"**
+2. **Blok else** (paling bawah).
+
+**📖 Analisis Mendalam:**
+Ini adalah contoh klasik *tricotomy logic*. Angka hanya bisa berada di salah satu dari tiga kategori tersebut.
+</details>
 
 ---
-### Soal 55
+
+### Soal 25: Filter Huruf (Vowel Check)
 ```cpp
-// Cloud: Short-Circuit AND
-int cloud = 21, v = 0;
-if (cloud > 50 && ++v > 0) res = 1;
-else res = 0;
+char c = 'E';
+bool vokal = false;
+
+if (c == 'a' || c == 'i' || c == 'u' || c == 'e' || c == 'o') {
+    vokal = true;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `vokal` (true/false)?
+2. Mengapa hasilnya **False** padahal 'E' adalah huruf vokal?
 
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Cloud 21 > 50? Tidak (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
+**Jawaban:**
+1. **false**
+2. Karena 'E' (besarnya) berbeda dengan 'e' (kecilnya).
+
+**📖 Analisis Mendalam:**
+C++ bersifat **Case Sensitive**. Di draf kodemu, kamu hanya mengecek huruf kecil. 'E' kapitas akan dianggap konsonan rill oleh mesin di atas.
+</details>
 
 ---
-### Soal 56
+
+### Soal 26: Short-Circuit OR (Jebakan++ )
 ```cpp
-// Sinyal: Short-Circuit OR
-int sinyal = 47, v = 0;
-if (sinyal < 50 || ++v > 0) res = 1;
-else res = 0;
+// Skenario: Jika VIP, antrian tidak bertambah.
+bool is_vip = true;
+int antrian = 0;
+
+if (is_vip || ++antrian > 10) {
+    // Diproses
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `antrian` akhir?
+2. Jika `is_vip = false`, berapakah nilai `antrian`?
 
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. Sinyal 47 < 50? Ya (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
+**Jawaban:**
+1. **0**
+2. **1**
+
+**📖 Analisis Mendalam:**
+Inilah **Short-circuit OR**. Karena `is_vip` sudah True, C++ **TIDAK BUTUH** mengecek syarat kedua. Mesin langsung masuk ke blok `if` tanpa mengerjakan `++antrian`.
+</details>
 
 ---
-### Soal 57
+
+### Soal 27: Diskon Akhir Pekan (String Compare)
 ```cpp
-// Wifi: Short-Circuit AND
-int wifi = 62, v = 0;
-if (wifi > 50 && ++v > 0) res = 1;
-else res = 0;
+string hari = "Minggu";
+int diskon = 0;
+
+if (hari == "Sabtu" || hari == "Minggu") {
+    diskon = 50;
+} else {
+    diskon = 0;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `diskon` akhir?
+2. Berapa diskon jika `hari = "Senin"`?
 
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Wifi 62 > 50? Ya (v naik).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
+**Jawaban:**
+1. **50**
+2. **0**
+
+**📖 Analisis Mendalam:**
+Operator `||` di sini bertindak sebagai "Range Filter" untuk hari libur.
+</details>
 
 ---
-### Soal 58
+
+### Soal 28: Nilai Rapor (Conversion Table)
 ```cpp
-// Data: Short-Circuit OR
-int data = 49, v = 0;
-if (data < 50 || ++v > 0) res = 1;
-else res = 0;
+char grade = 'B';
+int poin = 0;
+
+switch(grade) {
+    case 'A': poin = 4; break;
+    case 'B': poin = 3; break;
+    case 'C': poin = 2; break;
+    case 'D': poin = 1; break;
+    default: poin = 0;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `poin`?
+2. Apa yang terjadi jika kita lupa menuliskan kata `break`?
 
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. Data 49 < 50? Ya (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
+**Jawaban:**
+1. **3**
+2. Mesin akan terus "jatuh" ke bawah (*fallthrough*) dan mengambil nilai dari case berikutnya.
+
+**📖 Analisis Mendalam:**
+`switch` sangat efisien untuk pengecekan nilai-nilai tetap (integer/char) yang sudah pasti.
+</details>
 
 ---
-### Soal 59
+
+### Soal 29: Premi Asuransi (Boolean Flag)
 ```cpp
-// Kuota: Short-Circuit AND
-int kuota = 12, v = 0;
-if (kuota > 50 && ++v > 0) res = 1;
-else res = 0;
+bool perokok = true;
+int premi = 100;
+
+if (perokok) {
+    premi += 50;
+} else {
+    premi -= 10;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `premi` akhir?
+2. Jika `perokok = false`, berapakah nilai `premi`?
 
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Kuota 12 > 50? Tidak (v=0).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
+**Jawaban:**
+1. **150**
+2. **90**
+
+**📖 Analisis Mendalam:**
+Branching sering digunakan untuk menghitung biaya berdasarkan profil (flag) pengguna.
+</details>
 
 ---
-### Soal 60
+
+### Soal 30: Validasi Tanggal (Edge Case)
 ```cpp
-// Pulsa: Short-Circuit OR
-int pulsa = 95, v = 0;
-if (pulsa < 50 || ++v > 0) res = 1;
-else res = 0;
+int bln = 2;
+int tgl = 30;
+bool valid = true;
+
+if (bln == 2 && tgl > 29) {
+    valid = false;
+}
 ```
 **Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
+1. Berapakah nilai `valid` (true/false)?
+2. Di bulan apakah tanggal 30 menjadi valid?
 
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Pulsa 95 < 50? Tidak (v naik).
+<details>
+<summary><b>Klik untuk Lihat Jawaban & Diagnosis</b></summary>
 
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
+**Jawaban:**
+1. **false** (0)
+2. Segala bulan selain Februari.
 
----
-### Soal 61
-```cpp
-// Simcard: Short-Circuit AND
-int simcard = 12, v = 0;
-if (simcard > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Simcard 12 > 50? Tidak (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
-
----
-### Soal 62
-```cpp
-// Jaringan: Short-Circuit OR
-int jaringan = 14, v = 0;
-if (jaringan < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. Jaringan 14 < 50? Ya (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
-
----
-### Soal 63
-```cpp
-// Roaming: Short-Circuit AND
-int roaming = 84, v = 0;
-if (roaming > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Roaming 84 > 50? Ya (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
-### Soal 64
-```cpp
-// Bluetooth: Short-Circuit OR
-int bluetooth = 72, v = 0;
-if (bluetooth < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Bluetooth 72 < 50? Tidak (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
-### Soal 65
-```cpp
-// NFC: Short-Circuit AND
-int nfc = 81, v = 0;
-if (nfc > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. NFC 81 > 50? Ya (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
-### Soal 66
-```cpp
-// GPS: Short-Circuit OR
-int gps = 46, v = 0;
-if (gps < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. GPS 46 < 50? Ya (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
-
----
-### Soal 67
-```cpp
-// Maps: Short-Circuit AND
-int maps = 44, v = 0;
-if (maps > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Maps 44 > 50? Tidak (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
-
----
-### Soal 68
-```cpp
-// Lokasi: Short-Circuit OR
-int lokasi = 79, v = 0;
-if (lokasi < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Lokasi 79 < 50? Tidak (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
-### Soal 69
-```cpp
-// Alamat: Short-Circuit AND
-int alamat = 94, v = 0;
-if (alamat > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Alamat 94 > 50? Ya (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
-### Soal 70
-```cpp
-// Jalan: Short-Circuit OR
-int jalan = 28, v = 0;
-if (jalan < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. Jalan 28 < 50? Ya (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
-
----
-### Soal 71
-```cpp
-// Kota: Short-Circuit AND
-int kota = 71, v = 0;
-if (kota > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Kota 71 > 50? Ya (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
-### Soal 72
-```cpp
-// Negara: Short-Circuit OR
-int negara = 32, v = 0;
-if (negara < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. Negara 32 < 50? Ya (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
-
----
-### Soal 73
-```cpp
-// Benua: Short-Circuit AND
-int benua = 46, v = 0;
-if (benua > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=0, v=0**
-2. Benua 46 > 50? Tidak (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=0, v=0]
-```
-
----
-### Soal 74
-```cpp
-// Dunia: Short-Circuit OR
-int dunia = 19, v = 0;
-if (dunia < 50 || ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=0**
-2. Dunia 19 < 50? Ya (v=0).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=0]
-```
-
----
-### Soal 75
-```cpp
-// Orbit: Short-Circuit AND
-int orbit = 77, v = 0;
-if (orbit > 50 && ++v > 0) res = 1;
-else res = 0;
-```
-**Pertanyaan:**
-1. Berapakah hasil akhirnya?
-2. Deskripsikan alur pikir 'Compiler Manusia' untuk soal ini!
-
-**Jawaban & Diagnosis:**
-1. **res=1, v=1**
-2. Orbit 77 > 50? Ya (v naik).
-
-**Mermaid Flowchart:**
-```mermaid
-graph LR
-A[Trace] --> B[Result: res=1, v=1]
-```
-
----
+**📖 Analisis Mendalam:**
+Pengecekan khusus ini sering muncul di soal-soal konversi kalender untuk mencegah input tanggal yang mustahil. 
+</details>
