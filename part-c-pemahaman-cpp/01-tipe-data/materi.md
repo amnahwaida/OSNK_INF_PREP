@@ -34,7 +34,7 @@
  ## 🛠️ B. Boilerplate: Perlengkapan Wajib C++
  
  Pernah lihat baris `#include <iostream>` atau `int main()`? Jangan pusing, anggap itu **Perlengkapan Wajib**:
- - `#include <iostream>`: Seperti membawa **Tas Belanja**. Di dalam tas ini ada alat `cin` dan `cout`.
+ - `#include <iostream>`: Seperti membawa **Tas Belanja**. Di dalam tas ini ada alat `cin` and `cout`.
  - `using namespace std;`: Izin agar kita bisa memanggil `cin` dan `cout` langsung tanpa mendaftarkannya satu-per-satu.
  - `int main() { ... }`: Inilah **Dapur Utama**. Komputer hanya akan memasak apa yang ada di dalam kurung kurawal `{ }` fungsi ini.
  
@@ -186,6 +186,14 @@
  5. **`floor(x)` (Lantai)**: Memaksa pembulatan ke **BAWAH**. `floor(2.9)` jadi `2`. 
  6. **`ceil(x)` (Atap)**: Memaksa pembulatan ke **ATAS**. `ceil(2.1)` jadi `3`. (**Penting untuk soal bus/rak!**)
  
+ ### ⚠️ Tanda Bahaya: INF & NAN
+ Terkadang, robot mengeluarkan kata-kata ajaib di layarmu. Jangan panik, inilah artinya:
+ - **`inf` (Infinity)**: Terjadi jika kamu membagi angka koma dengan nol (misal: `1.0 / 0.0`). Tak hingga!
+ - **`nan` (Not a Number)**: Terjadi jika kamu menaruh perintah yang mustahil (misal: `sqrt(-1.0)`). Akar angka negatif itu tidak ada di dunia nyata robot!
+ 
+ > [!TIP]
+ > Hati-hati! Hasil dari `sqrt`, `pow`, `floor`, dan `ceil` otomatis berwujud **`double`** (angka koma), meskipun kamu memasukkan angka bulat.
+ 
  ---
  
  ## 🚚 J. Operator Assignment & Increment
@@ -231,10 +239,14 @@
  
  ## 🔤 N. Perang Kasta & ASCII Table
  
- ### 1. Kasta Tipe Data
+ ### 1. Kasta Tipe Data (Type Promotion)
  `char` $\rightarrow$ `int` $\rightarrow$ `double`. Saat dicampur, kasta tertinggi selalu menang!
  
- ### 2. Tabel Sakti ASCII
+ ### 🧠 2. Ilmu Perubahan Paksa (Explicit Casting)
+ Terkadang kita ingin memaksa robot mengubah tipe data di tengah jalan. Gunakan kurung `(tipe_tujuan)` di depan angka.
+ - **Trik Jitu Pembagian**: `int a = 5, b = 2; double hasil = (double)a / b;` $\rightarrow$ Hasilnya **2.5**! (Karena `a` dipaksa jadi `double` dulu).
+ 
+ ### 3. Tabel Sakti ASCII
  | Karakter | Kode ASCII | Trik Penting |
  | :--- | :--- | :--- |
  | `'0' s.d '9'` | **48 s.d 57** | `c - '0'` = Mengubah karakter angka jadi angka asli. |
