@@ -124,7 +124,23 @@
  
  ---
  
- ## 🚚 H. Operator Assignment (Pindah Barang)
+ ## 🛠️ H. Alat Hitung Lanjutan (`cmath`)
+ 
+ Selain tambah-kurang-kali-bagi, C++ menyediakan "Kotak Perkakas" tambahan bernama **`cmath`**. 
+ - Untuk memakainya, di baris paling atas (Boilerplate) harus tertulis: `#include <cmath>`.
+ 
+ **Alat Hitung Paling Sering Muncul:**
+ 1. **`abs(x)` (Nilai Mutlak)**: Menghilangkan tanda minus. `abs(-5)` jadi `5`. (Ingat: **Abs**olut).
+ 2. **`sqrt(x)` (Akar Kuadrat)**: Mencari lari akar. `sqrt(16)` jadi `4`. (**S**quare **R**oo**T**).
+ 3. **`pow(a, b)` (Pangkat)**: Menghitung $a$ pangkat $b$. `pow(2, 3)` jadi `8`. (**Pow**er).
+ 4. **`round(x)` (Pembulatan)**: Membulatkan ke angka terdekat. `round(2.6)` jadi `3`.
+ 
+ > [!TIP]
+ > Hati-hati! Hasil dari `sqrt` dan `pow` otomatis berwujud **`double`** (angka koma), meskipun kamu memasukkan angka bulat.
+ 
+ ---
+ 
+ ## 🚚 I. Operator Assignment (Pindah Barang)
  
  Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
  
@@ -157,7 +173,7 @@
  
  ---
  
- ## ⚖️ I. Operator Perbandingan (Timbangan Benar-Salah)
+ ## ⚖️ J. Operator Perbandingan (Timbangan Benar-Salah)
  
  Setelah pandai menghitung, kamu akan sering disuruh membandingkan dua angka. Di sini, hasilnya bukan lagi angka, tapi **Benar (`true`)** atau **Salah (`false`)**.
  
@@ -170,7 +186,7 @@
  
  ---
  
- ## 🚦 J. Operator Logika (Filter Berlapis)
+ ## 🚦 K. Operator Logika (Filter Berlapis)
  
  Jika perbandingan di atas adalah satu pintu, maka operator logika adalah **Pintu Berlapis**.
  
@@ -188,7 +204,7 @@
  
  ---
  
- ## 🧪 K. Tip & Trick Khas OSN-K (Angka Dewa)
+ ## 🧪 L. Tip & Trick Khas OSN-K (Angka Dewa)
  
  Di soal-soal tingkat nasional, kamu akan sering melihat cara penulisan angka yang "aneh". Mari kita bedah rahasianya:
  
@@ -202,7 +218,7 @@
  
  ---
  
- ## 🔤 L. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🔤 M. Perang Kasta Tipe Data (Char, Int, Float, Double)
  
  Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta yang sangat aneh di dalam mesin C++. 
  
@@ -242,9 +258,14 @@
  double gelas = 5.0 / 2;   // HASIL: 2.5 (Ada satu double, kasta pembagian naik level!)
  ```
  
+ ### 3. Misteri Gelas Pecahan (Floating Point Precision)
+ Terkadang komputer memberikan hasil desimal yang sangat aneh, misalnya `0.1 + 0.2` hasilnya `0.30000000000000004`.
+ - **Analogi Gelas Ukur yang Bukan Skala Metrik:** Komputer murni menggunakan **Biner (0 dan 1)**. Ada beberapa angka pecahan yang tidak bisa diterjemahkan sempurna ke biner, sama seperti kita tidak bisa menulis $1/3$ dalam desimal dengan sempurna (hasilnya $0.333333...$ tanpa ujung).
+ - **Pelajaran:** Jangan pernah membandingkan dua `double` secara eksak menggunakan `==`. Karena di mata C++, perbedaan sekecil debu atom ($0.0000000001$) sudah dianggap sebagai **SALAH**.
+ 
  ---
  
- ## 🌍 M. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+ ## 🌍 N. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
  
  Di kodingan OSN-K, juri suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
  
@@ -262,7 +283,7 @@
  
  ---
  
- ## 📦 N. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 O. Analogi Tambahan: Gudang Rahasia Komputer
  
  ### 🛁 1. Long Long vs Int: Gayung vs Bak Mandi
  Kamu butuh **Bak Mandi** (`long long`) saat hasil hitunganmu sangat banyak (misal hasil perkalian `100.000 * 100.000`) agar airnya tidak tumpah lari ke mana-mana (*Overflow*).
@@ -272,7 +293,7 @@
  
  ---
  
- ## 📜 O. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ ## 📜 P. Rangkuman: Cara Berpikir C++ (Resep Masakan)
  
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
