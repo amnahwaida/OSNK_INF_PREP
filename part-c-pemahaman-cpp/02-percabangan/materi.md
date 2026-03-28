@@ -182,6 +182,13 @@
  string label = (x % 2 == 0) ? "GENAP" : "GANJIL";
  ```
  
+ **Diagnosis Logika Kilat:**
+ 1. **Evaluasi Cepat**: Mesin pertama-tama fokus menghitung yang di dalam kurung `()`, misal `80 >= 75`.
+ 2. **Pilih Jalur**:
+    - Jika **BENAR (TRUE)**: Mesin melompat melewati tanda tanya `?` dan mengambil paket data pertama ("LULUS").
+    - Jika **SALAH (FALSE)**: Mesin meluncur melewati titik dua `:` dan mengambil paket data kedua ("REMEDIAL").
+ 3. **Hasil Akhir**: Data yang terpilih itulah yang akan masuk ke laci variabel atau ditampilkan di layar.
+ 
  > [!WARNING]
  > **Jangan Berlebihan!** Ternary memang keren, tapi jangan menumpuk Ternary di dalam Ternary (`? ? : :`). Hal itu akan membuat kodemu terbaca seperti bahasa alien yang membingungkan bagi mata manusia (dan muridmu). Gunakan hanya untuk perbandingan **pendek dan sederhana**.
  
