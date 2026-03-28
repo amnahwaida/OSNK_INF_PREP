@@ -5,6 +5,35 @@ Mereka akan melebar, membelah logika program menjadi berlembar-lembar kotak terp
 
 Di tahap ini, kemampuan matamu bergeser: Melacak bukan saja nilai bilangannya, tapi *siapa melempar nilai ke siapa*, dan **APAKAH NILAI TERSEBUT MURNI DISALIN ATAU DIIKAT BENANG GAIB?**
 
+```mermaid
+graph TD
+    subgraph "🏠 Dunia Main (Pemanggil)"
+        M1["int saldo = 5000"]
+    end
+    
+    subgraph "📋 Pass-by-Value (Fotokopi)"
+        V1["Mesin Fotokopi 📄"] --> V2["Salinan: 5000"]
+        V2 --> V3["Fungsi mengubah <br> salinan → 10jt"]
+        V3 --> V4(["Salinan dibuang 🗑️"])
+    end
+    
+    subgraph "🔗 Pass-by-Reference & (Buku Asli)"
+        R1["Serahkan Kunci 🔑"] --> R2["Fungsi pegang <br> BUKU ASLI"]
+        R2 --> R3["Fungsi coret-coret <br> buku → 0"]
+        R3 --> R4(["Buku asli RUSAK! ⚠️"])
+    end
+    
+    M1 -->|"tanpa &"| V1
+    M1 -->|"pakai &"| R1
+    
+    style V4 fill:#ccffcc,stroke:#333
+    style R4 fill:#ffcccc,stroke:#333
+```
+**📖 Cara Membaca Diagram "*Value vs Reference*":**
+- **Jalur Kiri (Hijau/Aman):** Saat parameter TANPA simbol `&`, mesin C++ memfotokopi nilai lalu melempar salinannya ke fungsi. Apapun yang terjadi pada salinan (diubah, dihapus), **variabel asli di `main` tetap aman sentosa**.
+- **Jalur Kanan (Merah/Bahaya):** Saat parameter PAKAI simbol `&`, mesin menyerahkan kunci brankas asli! Fungsi langsung memegang benda nyata. Setiap coretan di dalam fungsi **menembus balik ke variabel asli** di `main`.
+- Kunci OSN-K: Selalu periksa ada atau tidaknya simbol `&` di parameter fungsi sebelum mulai tracing!
+
 ---
 
 ## 🖨️ A. Pass By Value (Trik Pemalasan Nyontek Fotokopi)

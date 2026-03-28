@@ -56,6 +56,26 @@ Di dalam bahasa OSN-K, soal simulasi biasanya berbentuk seperti ini:
 > *Sebuah bola dijatuhkan dari lantai 10. Setiap detik, jika bola berada di lantai genap, bola akan melorot turun 3 lantai ke bawah. Tapi anehnya jika bola berada jatuh menyentuh di lantai ganjil, bola akan mendadak terbang mantul naik ke atas 1 lantai. Proses ini berhenti mutlak saat bola mencapai lantai 0 atau minus.*
 > *Pertanyaan OSN: Setelah berapa detik bola berhenti memantul-mantul?*
 
+```mermaid
+graph TD
+    A["🏀 Mulai: Lantai 10"] --> B{"Lantai Genap <br> atau Ganjil?"}
+    B -- Genap --> C["Turun 3 Lantai"]
+    B -- Ganjil --> D["Naik 1 Lantai"]
+    C --> E{"Posisi <= 0?"}
+    D --> E
+    E -- Belum --> B
+    E -- Sudah! --> F(("⏱️ BERHENTI!"))
+    
+    style F fill:#ff0000,color:#fff,stroke-width:3px
+    style C fill:#ffcccc,stroke:#333
+    style D fill:#ccffcc,stroke:#333
+```
+**📖 Cara Membaca Diagram Alir Simulasi:**
+- Kotak awal (🏀) menunjukkan posisi start bola. Lalu mesin masuk ke **Belah Ketupat B** (Percabangan Pendeteksi Genap/Ganjil).
+- Jika Genap → ambil jalur merah (turun 3). Jika Ganjil → ambil jalur hijau (naik 1).
+- Setelah bergerak, mesin mengecek **Belah Ketupat E**: "Apakah sudah menyentuh lantai 0 atau minus?" Jika belum, panah memutar balik ke Belah Ketupat B (Loop!). Jika sudah, panah menembus ke Lingkaran Merah (BERHENTI).
+- Jumlah putaran yang kamu lacak di kertas = Jawaban detik total di OSN-K.
+
 **Cara Menjadi Compiler Manusia (Simulasi Atas Kertas):**
 Jangan panik, buka kertas sisa hitungan, dan buat Tabel "Detik" dan "Posisi Lantai" secara *brute force manual*:
 

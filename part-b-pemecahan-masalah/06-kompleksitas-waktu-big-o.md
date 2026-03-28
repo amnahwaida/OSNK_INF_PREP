@@ -9,6 +9,26 @@ Di sinilah **Kompleksitas Waktu (Time Complexity)** dan Notasi **Big O ($O$)** m
 
 Mari kita bedah 5 tingkat "Kengerian" algoritma yang wajib kamu kenali di OSN tanpa harus kehilangan esensi keilmuan aslinya.
 
+```mermaid
+graph LR
+    A["O(1) <br> ⚡ Instan"] --> B["O(log N) <br> 🦅 Penebas"]
+    B --> C["O(N) <br> 🚶 Pejalan Kaki"]
+    C --> D["O(N log N) <br> 🏃 Sprinter"]
+    D --> E["O(N²) <br> 🐢 Kuadrat"]
+    E --> F["O(2^N) <br> ☠️ Kiamat"]
+    
+    style A fill:#00c853,color:#fff,stroke:#333
+    style B fill:#64dd17,color:#000,stroke:#333
+    style C fill:#ffd600,color:#000,stroke:#333
+    style D fill:#ff9100,color:#000,stroke:#333
+    style E fill:#ff3d00,color:#fff,stroke:#333
+    style F fill:#000000,color:#fff,stroke:#333
+```
+**📖 Cara Membaca Diagram Hierarki Big O:**
+- Warna **Hijau** = Sangat Cepat, aman untuk data berukuran raksasa. Warna **Hitam** = Kiamat total, hanya boleh dipakai untuk data kecil ($N < 25$).
+- Panah ke kanan menunjukkan **peningkatan kengerian**. Semakin ke kanan, semakin lambat algoritmamu saat data ($N$) membesar.
+- Di OSN-K, kamu harus bisa mencocokkan **batas $N$** di soal dengan tingkat Big O yang masih aman. Jika $N = 10^6$ tapi algoritmamu $O(N^2)$, maka $10^{12}$ operasi itu jauh melebihi limit $10^8$ → **TLE (Time Limit Exceeded)!**
+
 ---
 
 ## 🏎️ 1. $O(1)$ — Sang Instan Mutlak (Constant Time)

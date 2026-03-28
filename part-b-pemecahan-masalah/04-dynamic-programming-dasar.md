@@ -39,6 +39,29 @@ Lalu si komputer akan kelelahan memecah lagi ke anak tirinya di bawah:
 **Penyakit Kanker Otak Pemula:** 
 Lihat bagaimana Si $F(4)$ ditanya berkali-kali secara rakus bercabang mendalam layaknya dahan raksasa keluarga cemara pohon yang terlahir bodoh. Komputer menghabiskan miliaran hitungan hanya untuk *menjawab pertanyaan bodoh yang hasil akhirnya sebenarnya sama* berulang-ulang dari kanan dan sisi dahan kiri ke turunan anaknya. Hal ini membuat komputermu bakalan hang total alias *Time Limit Exceeded (TLE)* hanya untuk menghitung suku ke $F(40)$. 
 
+```mermaid
+graph TD
+    A["F(6)"] --> B["F(5)"]
+    A --> C["F(4) 🔴"]
+    B --> D["F(4) 🔴"]
+    B --> E["F(3) 🟡"]
+    D --> F["F(3) 🟡"]
+    D --> G["F(2)"]
+    C --> H["F(3) 🟡"]
+    C --> I["F(2)"]
+    
+    style D fill:#ffcccc,stroke:#333
+    style C fill:#ffcccc,stroke:#333
+    style E fill:#fff3cd,stroke:#333
+    style F fill:#fff3cd,stroke:#333
+    style H fill:#fff3cd,stroke:#333
+```
+**📖 Cara Membaca Pohon Rekursi Pemborosan:**
+- Setiap kotak adalah satu pemanggilan fungsi $F(n)$. Panah ke bawah berarti "Mesin harus menghitung anak ini dulu sebelum bisa menjawab pertanyaan induknya".
+- **Lingkaran Merah 🔴 (`F(4)`)**: Perhatikan bahwa `F(4)` muncul **2 KALI** di dua cabang berbeda! Komputer bodoh menghitung ulang $F(4)$ dari nol dua kali.
+- **Lingkaran Kuning 🟡 (`F(3)`)**: Lebih parah! `F(3)` muncul **3 KALI**. Bayangkan pemborosan ini kalau $N = 40$: triliunan duplikasi!
+- **Solusi DP**: Cukup hitung `F(3)` dan `F(4)` SEKALI saja, catat hasilnya di tabel. Kalau ditanya lagi, contek tabel langsung!
+
 ---
 
 ## 📖 B. Penawar Racun: *Memoization* (Mencatat Tabel Jejak)

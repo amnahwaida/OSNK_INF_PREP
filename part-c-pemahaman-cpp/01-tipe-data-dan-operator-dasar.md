@@ -72,6 +72,25 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
 
 Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta dan cara bergaul yang sangat aneh di dalam mesin C++. Mari kita bedah lebih dalam apa yang terjadi jika mereka saling bertabrakan (Type Casting).
 
+```mermaid
+graph LR
+    A["char <br> (1 byte)"] -->|"Promosi Otomatis"| B["int <br> (4 bytes)"]
+    B -->|"Promosi Otomatis"| C["float <br> (4 bytes, 7 digit)"]
+    C -->|"Promosi Otomatis"| D["double <br> (8 bytes, 15 digit)"]
+    
+    D -.->|"Demosi Paksa (bahaya!)"| B
+    B -.->|"Demosi Paksa (bahaya!)"| A
+    
+    style A fill:#ffe0b2,stroke:#333
+    style B fill:#c8e6c9,stroke:#333
+    style C fill:#b3e5fc,stroke:#333
+    style D fill:#e1bee7,stroke:#333
+```
+**📖 Cara Membaca Diagram Hierarki Kasta:**
+- Panah **Garis Padat ke Kanan** = Promosi Otomatis (*Type Promotion*). C++ melakukannya sendiri tanpa disuruh. Aman! Contoh: `char` + `int` → otomatis naik kasta jadi `int`.
+- Panah **Garis Putus-Putus ke Kiri** = Demosi Paksa (*Narrowing*). Berbahaya! Jika kamu memasukkan `double` ke dalam kotak `int`, komanya akan **dibakar hangus** tanpa peringatan (contoh: `int x = 3.9;` → `x` berisi `3`, bukan `4`!).
+- Semakin ke kanan = Semakin "Suci" kastanya. Saat dua tipe berbeda bertarung dalam satu rumus, **kasta tertinggi selalu menang** dan memaksa semua anggota lainnya naik level.
+
 ### 1. `char` vs `int` (Karakter adalah Angka yang Bersembunyi!)
 `char` dikhususkan untuk **Satu Huruf Tunggal** (misal `'A'`, `'x'`, `'9'`). 
 Namun di mata arsitektur memori C++, **Huruf itu sejatinya fiktif! Komputer hanya mengenal angka.** 

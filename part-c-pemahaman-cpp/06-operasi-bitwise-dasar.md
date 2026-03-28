@@ -50,6 +50,21 @@ Jika ada operasi beruntun `A ^ B ^ A`. Kita bongkar paksa:
 Karena ada si `A` muncul DUA kali genap kembar siam, secara gaib mereka akan MELEDAKKAN DIRINYA SENDIRI MENJADI 0 dan Lenyap Tak Bersisa! Rumus mutarnya seketika tuntas tersisa huruf `B` telanjang sendiri. BUM! 
 Inilah alasan mengapa kodingan deteksi Array Mencari Angka Tunggal di Padang Kembar paling cepat dieksekusi pakai `XOR`.
 
+```mermaid
+graph LR
+    A["A = 5"] -->|"XOR"| B["5 ^ 3 = 6"]
+    B1["B = 3"] --> B
+    B -->|"XOR"| C["6 ^ 5 = 3"]
+    A2["A = 5"] --> C
+    C --> D(("Tersisa: B = 3 🎯"))
+    
+    style D fill:#ffff00,stroke:#333,stroke-width:3px
+```
+**📖 Cara Membaca Diagram "*XOR Pair-Killer*":**
+- Perhatikan bahwa `A (5)` muncul **DUA KALI** di dalam rantai XOR (awal dan akhir).
+- Karena XOR memiliki sifat *Self-Destruct* (angka sama yang bertemu akan saling membunuh → jadi `0`), kedua kemunculan `A` saling menghapus.
+- Hasilnya: Hanya `B (3)` yang tersisa utuh di Lingkaran Kuning. Inilah trik OSN-K menemukan angka tunggal di array berpasangan!
+
 ---
 
 ## ⏩ C. SHIFT Kanan Kiri (Membelai Kekuatan Perkalian dan Penebasan)

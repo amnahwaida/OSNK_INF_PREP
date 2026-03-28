@@ -42,6 +42,22 @@ Mari ber-simulasi menelusuri Binary Search Pak Dengklek dalam misinya mencari ID
 Dengan teknik ini, untuk mencari 1 resep dari $1.000$ kemungkinan, beliau hanya butuh **sekitar 10 kali lompatan ngecek (karena $2^{10} = 1024$)!**
 Bandingkan dengan *Linear Search* yang butuh $1.000$ kali cek. Inilah esensi kecanggihan *Tracing Looping* Binary Search. Telinga dan mata harus peka melibas rentang nilai sisa kiri dan kanan ini secara berjenjang di kertasmu saat OSN-K.
 
+```mermaid
+graph TD
+    A["📚 Data: 1 sampai 1000 <br> Target: 614"] --> B{"Tengah = 500 <br> 500 < 614?"}
+    B -- "Ya! Buang KIRI (1-500)" --> C{"Sisa: 501-1000 <br> Tengah = 750 <br> 750 > 614?"}
+    C -- "Ya! Buang KANAN (751-1000)" --> D{"Sisa: 501-750 <br> Tengah = 625 <br> 625 > 614?"}
+    D -- "Ya! Buang KANAN (626-750)" --> E{"Sisa: 501-625 <br> Tengah = 563 <br> 563 < 614?"}
+    E -- "Ya! Buang KIRI" --> F["... dst hingga KETEMU 614 🎯"]
+    
+    style F fill:#ccffcc,stroke:#333,stroke-width:3px
+```
+**📖 Cara Membaca Diagram Binary Search:**
+- Setiap **Belah Ketupat** mewakili satu langkah pengambilan keputusan. Mesin mengambil **Titik Tengah** dari rentang yang tersisa.
+- Panah ke bawah menunjukkan arah eliminasi: Mesin membuang **SEPARUH data** yang mustahil berisi target.
+- Perhatikan betapa drastisnya penyusutan: Dari 1000 → 500 → 250 → 125 → ... Hanya butuh ~10 lompatan untuk menemukan 1 item dari 1000!
+- Ini jauh lebih cepat dari *Linear Search* yang mungkin butuh 614 langkah. Inilah kekuatan $O(\log N)$.
+
 ---
 
 ## 🎲 B. Memahami Anatomi 3 Serangkai Sorter Klasik

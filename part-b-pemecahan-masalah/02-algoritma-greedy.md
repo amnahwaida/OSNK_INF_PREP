@@ -52,6 +52,27 @@ Apa patokan 'Rakus' yang harus digunakan Pak Dengklek?
 Kunci *Hacker Competitive Programming* untuk algoritma Activity Selection adalah:
 **TIDAK PEDULI KAPAN MULAINYA, SELALU PILIH RAPAT YANG "JAM KELAR-NYA" PALING CEPAT!** (Biar Balai Desanya cepat kosong lagi).
 
+```mermaid
+gantt
+    title Jadwal Rapat Bebek (Greedy: Pilih Selesai Tercepat)
+    dateFormat HH:mm
+    axisFormat %H:%M
+    
+    section ✅ Diterima
+    Bebek B (09-10)   :active, b, 09:00, 10:00
+    Bebek C (10-12)   :active, c, 10:00, 12:00
+    Bebek E (13-15)   :active, e, 13:00, 15:00
+    
+    section ❌ Ditolak
+    Bebek A (08-11)   :crit, a, 08:00, 11:00
+    Bebek D (11-14)   :crit, d, 11:00, 14:00
+```
+**📖 Cara Membaca Diagram Timeline Greedy:**
+- Diagram ini menampilkan **garis waktu horizontal** dari jam 08:00 hingga 15:00. Setiap batang warna mewakili satu proposal rapat bebek.
+- **Batang Hijau (Diterima)**: Ini adalah rapat-rapat yang dipilih si Greedy. Perhatikan bahwa bar hijau **TIDAK PERNAH SALING TUMPANG TINDIH** satu sama lain.
+- **Batang Merah (Ditolak)**: Rapat-rapat ini ditolak karena waktu mulainya menabrak jadwal rapat yang sudah diterima. Lihat bar Bebek A yang merangsek masuk ke jadwal B, dan bar Bebek D yang menabrak jadwal C.
+- **Strategi Greedy**: Selalu pilih bar yang **ujung kanannya (jam selesai) paling pendek/cepat** di antara semua bar yang belum dipilih dan tidak bentrok.
+
 Mari kita terapkan *Sortir Kerakusan Berdasarkan Jam Bubar Cepat*:
 - **Pilih Bebek B (09.00 - 10.00)**. Selesai paling awal! Mantap. *+1 Rapat.*
 - Coba lirik Bebek A (Kelar jam 11). Gagal, dia mulai jam 8 nabrak ruangan.
