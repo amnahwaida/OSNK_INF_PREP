@@ -38,7 +38,49 @@
  
  ---
  
- ## 📦 D. Aturan Main Kotak (Tipe Data `int`)
+ ## 🚀 D. Jalur Cepat & Format Jadul (`scanf` & `printf`)
+ 
+ Selain `cin/cout`, terkadang juri OSN-K menggunakan gaya penulisan "Jadul" warisan bahasa C. Kenapa harus dipelajari? Karena lebih **CEPAT** memproses data jutaan angka dan lebih **MUDAH** mengatur tampilan angka (seperti jumlah nol di belakang koma).
+ 
+ ### 🛠️ 1. Analogi "Robot Pelayan Restoran"
+ Jika `cin/cout` itu seperti corong bebas, maka `scanf/printf` adalah **Robot Pelayan**. Kamu tidak bisa asal lempar barang; kamu harus memesan dengan **Kode Meja (Format Specifier)** yang spesifik.
+ 
+ **Kamus Kode Meja (Format Specifier):**
+ | Tipe Data | Kode Meja | Arti |
+ | :--- | :--- | :--- |
+ | `int` | **`%d`** | Bilangan Bulat biasa. |
+ | `long long` | **`%lld`** | Bilangan Bulat raksasa. |
+ | `float` | **`%f`** | Angka Koma. |
+ | `double` | **`%lf`** | Angka Koma Presisi (Long Float).|
+ | `char` | **`%c`** | Satu Huruf Tunggal. |
+ 
+ ### 📝 2. Cara Menulis Output (`printf`)
+ ```cpp
+ printf("Uang saya ada %d rupiah", 5000);
+ ```
+ **Diagnosis Logika:** Robot membaca teks. Begitu ketemu `%d`, ia menengok ke luar tanda petik, mengambil angka `5000`, lalu menaruhnya di posisi ganjalan `%d` tersebut.
+ 
+ ### 📝 3. Cara Menulis Input (`scanf`)
+ ```cpp
+ scanf("%d", &uang);
+ ```
+ **Hati-hati: Jebakan "&" (Alamat GPS)**
+ Pada `scanf`, kamu wajib menaruh simbol **`&`** (Ampersand) sebelum nama variabel. 
+ - **Analoginya**: `scanf` butuh **Alamat GPS** (`&`) untuk tahu di mana laci `uang` berada. Kalau tidak ada `&`, robot akan nyasar dan programmu *crash* (mati mendadak)!
+ 
+ ### 🎯 4. Keajaiban Formatting (Mengatur Comma)
+ Ini adalah alasan utama orang memakai `printf`. Kita bisa memesan berapa angka di belakang koma dengan sangat mudah!
+ - **`%.2f`**: Cetak angka koma, tapi **cukup 2 angka** saja di belakang titik.
+ - **`%.0f`**: Hilangkan semua angka belakang koma (pembulatan tampilan).
+ 
+ ```cpp
+ double pi = 3.14159;
+ printf("%.2lf", pi); // Hasil di layar: 3.14
+ ```
+ 
+ ---
+ 
+ ## 📦 E. Aturan Main Kotak (Tipe Data `int`)
  
  Di bahasa C++, kamu tidak bisa sembarangan menaruh barang ke udara kosong. Kamu butuh **"Kotak Loker"** (Variabel). Kotak ini ada label nama tipe datanya, yang paling sering memakan korban adalah:
  
@@ -63,7 +105,7 @@
  
  ---
  
- ## 🗑️ E. Jebakan Laci Bekas (Garbage Value)
+ ## 🗑️ F. Jebakan Laci Bekas (Garbage Value)
  
  Apa yang terjadi jika kamu membuat laci tapi tidak menaruh angka apa-apa?
  ```cpp
@@ -78,7 +120,7 @@
  
  ---
  
- ## 🔮 F. Sihir Sisa Bagi (Modulo `%`)
+ ## 🔮 G. Sihir Sisa Bagi (Modulo `%`)
  
  Nah, tadi kan sisa 1 permennya dibuang tuh sama operator pembagi `/`. Terus kalau kita mau cari tahu permen sisa yang gak bisa dibagi rata itu berapa, ke mana kita mencarinya?
  Jawabannya adalah **Operator Modulo (Simbolnya `%`)**.
@@ -106,7 +148,7 @@
  
  ---
  
- ## ➕ G. Operator Aritmatika & Hierarki (KABATAKU)
+ ## ➕ H. Operator Aritmatika & Hierarki (KABATAKU)
  
  Karena kamu belajar dari 0, ingatlah bahwa komputer itu seperti kalkulator super cepat. Namun, ia punya aturan "Siapa yang dikerjakan duluan?".
  
@@ -124,7 +166,7 @@
  
  ---
  
- ## 🛠️ H. Alat Hitung Lanjutan (`cmath`)
+ ## 🛠️ I. Alat Hitung Lanjutan (`cmath`)
  
  Selain tambah-kurang-kali-bagi, C++ menyediakan "Kotak Perkakas" tambahan bernama **`cmath`**. 
  - Untuk memakainya, di baris paling atas (Boilerplate) harus tertulis: `#include <cmath>`.
@@ -140,7 +182,7 @@
  
  ---
  
- ## 🚚 I. Operator Assignment (Pindah Barang)
+ ## 🚚 J. Operator Assignment (Pindah Barang)
  
  Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
  
@@ -173,7 +215,7 @@
  
  ---
  
- ## ⚖️ J. Operator Perbandingan (Timbangan Benar-Salah)
+ ## ⚖️ K. Operator Perbandingan (Timbangan Benar-Salah)
  
  Setelah pandai menghitung, kamu akan sering disuruh membandingkan dua angka. Di sini, hasilnya bukan lagi angka, tapi **Benar (`true`)** atau **Salah (`false`)**.
  
@@ -186,7 +228,7 @@
  
  ---
  
- ## 🚦 K. Operator Logika (Filter Berlapis)
+ ## 🚦 L. Operator Logika (Filter Berlapis)
  
  Jika perbandingan di atas adalah satu pintu, maka operator logika adalah **Pintu Berlapis**.
  
@@ -204,7 +246,7 @@
  
  ---
  
- ## 🧪 L. Tip & Trick Khas OSN-K (Angka Dewa)
+ ## 🧪 M. Tip & Trick Khas OSN-K (Angka Dewa)
  
  Di soal-soal tingkat nasional, kamu akan sering melihat cara penulisan angka yang "aneh". Mari kita bedah rahasianya:
  
@@ -218,7 +260,7 @@
  
  ---
  
- ## 🔤 M. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🔤 N. Perang Kasta Tipe Data (Char, Int, Float, Double)
  
  Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta yang sangat aneh di dalam mesin C++. 
  
@@ -265,7 +307,7 @@
  
  ---
  
- ## 🌍 N. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+ ## 🌍 O. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
  
  Di kodingan OSN-K, juri suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
  
@@ -283,7 +325,7 @@
  
  ---
  
- ## 📦 O. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 P. Analogi Tambahan: Gudang Rahasia Komputer
  
  ### 🛁 1. Long Long vs Int: Gayung vs Bak Mandi
  Kamu butuh **Bak Mandi** (`long long`) saat hasil hitunganmu sangat banyak (misal hasil perkalian `100.000 * 100.000`) agar airnya tidak tumpah lari ke mana-mana (*Overflow*).
@@ -293,7 +335,7 @@
  
  ---
  
- ## 📜 P. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ ## 📜 Q. Rangkuman: Cara Berpikir C++ (Resep Masakan)
  
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
