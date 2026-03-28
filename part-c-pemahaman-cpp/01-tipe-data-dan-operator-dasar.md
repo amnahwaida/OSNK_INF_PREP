@@ -68,42 +68,63 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
 
 ---
 
-## 🔤 C. Rahasia Tipe Data Lainnya (Karakter, Pecahan, & Saklar)
+## 🔤 C. Perang Kasta Tipe Data (Char, Int, Float, Double)
 
-Selain kotak semen (`int`), kamu akan sering diteriaki oleh jenis kotak aneh lainnya di OSN-K:
+Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta dan cara bergaul yang sangat aneh di dalam mesin C++. Mari kita bedah lebih dalam apa yang terjadi jika mereka saling bertabrakan (Type Casting).
 
-### 1. `char` (Kartu Pelajar & Rahasia Sandi ASCII)
-`char` hanya bisa menyimpan **Satu Huruf Tunggal** (misal `'A'`, `'x'`, `'9'`). Tapi hati-hati! Di dunia C++, huruf itu sebenarnya **Hanyalah Angka Berbaju Kostum**!
-Komputer menggunakan tabel *ASCII* (American Standard Code).
-- `'A'` itu secara batin setara dengan angka **65**.
-- `'a'` bernilai **97**.
-- Huruf `'0'` (sebagai teks) BUKANLAH bernilai nol mutlak! Dia bernilai **48** di batinnya.
+### 1. `char` vs `int` (Karakter adalah Angka yang Bersembunyi!)
+`char` dikhususkan untuk **Satu Huruf Tunggal** (misal `'A'`, `'x'`, `'9'`). 
+Namun di mata arsitektur memori C++, **Huruf itu sejatinya fiktif! Komputer hanya mengenal angka.** 
+Untuk menerjemahkan angka menjadi huruf, C++ menggunakan buku kamus rahasia bernama **Tabel ASCII** (American Standard Code).
 
-Karena huruf sejatinya adalah angka, Juri C++ bisa seenaknya menyuruhmu **Menambah/Mengurang Huruf layaknya Matematika!!**
+**Fakta ASCII Wajib Hafal Cepat di OSN-K:**
+- Huruf besar `'A'` $\rightarrow$ batin angkanya adalah **65**. (`'B'`=66, `'C'`=67, dst).
+- Huruf kecil `'a'` $\rightarrow$ batin angkanya adalah **97**. (Selisih 32 poin dari huruf besar).
+- Huruf angka `'0'` $\rightarrow$ batin angkanya **BUKAN NOL**, melainkan **48**. (`'1'`=49, dst).
+
+**Tragedi Casting (Perubahan Kasta Otomatis):**
+Apa yang terjadi jika Si Huruf dijodohkan dengan Si Angka? C++ memiliki hukum **Type Promotion** (Kasta rendah otomatis naik ke kasta tinggi). `int` kastanya lebih tinggi dari `char`.
 ```cpp
-char huruf = 'C';
-char huruf_baru = huruf + 2; 
+char huruf = 'C';           // Batin: 67
+int lompat = 2;
+char hasil_huruf = huruf + lompat;  // 67 + 2 = 69. ASCII 69 adalah 'E'.
+int hasil_angka = huruf + lompat;   // 69. Disimpan mentah sebagai wujud aslinya: 69.
 ```
-*Tracing Logika (Maju Alfabet):* `'C'` ditambah 2 langkah ke depan? Murni melompat abjad $\rightarrow$ `'C' \rightarrow 'D' \rightarrow 'E'`. Hasil akhirnya mutlak mencetak huruf **`E`**. (Inilah jantung dari kode pertahanan Sandi Caesar Chiper di OSN-K!).
+*(Ini adalah jurus rahasia Juri untuk mengetes logikamu membuat Mesin Sandi Caesar Cipher).*
 
-### 2. `bool` (Saklar Lampu: Hidup/Mati)
-`bool` (Boolean) cuma bisa nampung 2 takdir: **`true` (1)** atau **`false` (0)**.
-- **Jebakan Batman OSN-K:** Di dunia C++, **SEMUA ANGKA SELAIN `0` DIANGGAP `TRUE`!**
+### 2. `float` vs `double` vs `int` (Gelas Air Pecahan vs Laci Semen)
+Jika `int` hanya mampu menyimpan bilangan bulat, maka **`float` (32-bit)** dan **`double` (64-bit)** adalah Gelas Ukur yang dirancang murni untuk menyimpan tetesan air desimal / angka pecahan ($1.5$, $3.1415$, dll).
+
+- **`float`**: Presisi rendah (Akurat sampai 7 angka di belakang koma).
+- **`double`**: Presisi tinggi (Akurat sampai 15 angka di belakang koma). Di era C++ modern OSN-K, juri **selalu menyarankan menggunakan `double`** ketimbang `float` agar tidak terjadi eror akurasi (*Precision Loss*) saat menghitung miliaran koma.
+
+**Tragedi Pembagian Beda Kasta (Jebakan Terbesar OSN-K!):**
+Komputer C++ itu ibarat hakim yang kaku. Perhatikan 3 kasus mutlak ini baik-baik!
+
+**Kasus A: `int` dibagi `int` (Pembantaian Koma)**
 ```cpp
-int nyawa = -15;
-if (nyawa) {
-   // Blok ini AKAN DIJALANKAN! Kenapa? 
-   // Karena -15 itu BUKAN 0! Selain 0, maka saklar otomatis bernilai TRUE!
-}
+double gelas = 5 / 2;
+// Nilai isi gelasnya adalah 2.0! BUKAN 2.5!
+```
+*Mengapa?* Karena `5` itu `int`, `2` itu `int`. Pertarungannya terjadi di ranah angka bulat. Mesin langsung memanipulasi $5/2 = 2.5 \rightarrow$ komanya dibakar abis jadi mutlak `2`. Setelah pertumpahan darah selesai dan tersisa bangkai mutlak `2`, barulah angka itu dimasukkan ke `double gelas`. Mesin melihat `2` murni, dan meresmikannya jadi `2.0`. Telat!
+
+**Kasus B: Skuad Pertolongan (Salah satu berwujud Koma)**
+```cpp
+double gelas = 5.0 / 2;
+// Nilai isi gelasnya adalah 2.5! SELAMAT!
+```
+*Mengapa?* Terdapat angka `5.0`. Adanya kehadiran titik `.0` mendadak membangkitkan entitas `double`. Sesuai Hukum Kasta: `double` lebih suci dari `int`. Maka angka `2` dipaksa berevolusi (*Type Promotion*) menjadi `2.0`. Jadilah rumus $5.0 / 2.0 = 2.5$. Angka koma sukses terselamatkan!
+
+**Kasus C: Pemaksaan Jasmaniah (Explicit Casting `(double)`)**
+Kadang kita tidak bisa menulis `.0` karena angkanya berasal dari di dalam laci variabel lain. Maka kita pakai sihir pemaksa `(double)` di depannya.
+TAPI LIHAT POSISI KURUNGNYA! Beda kurung = Beda Takdir!
+```cpp
+int a = 5, b = 2;
+double hasil_cerdas = (double) a / b;     // HASIL: 2.5 (a dipaksa koma duluan)
+double hasil_tolol  = (double) (a / b);   // HASIL: 2.0 (Dibunuh di dalam kurung dulu (5/2=2), baru dipaksa koma ke luar jadi 2.0)
 ```
 
-### 3. `double` / `float` (Gelas Air Minum Berkomah)
-Kalau kamu paksa menyiram pecahan ke kotak `int`, komanya dibakar. Nah, kalau kamu butuh komonya diselamatkan, pakailah `double`. Dia kayak Gelas Air Minum yang rela meneteskan nol koma sisa debunya.
-- **Syarat Mutlak Pak Dengklek:** Pembagian koma *hanya* akan muncul jika ADA SALAH SATU elemen di rumusnya yang memang pakai koma.
-```cpp
-double hasil1 = 5 / 2;     // Hasilnya 2.0 (Karena 5 dan 2 diotak int, komanya keburu dibakar sebelum masuk gelas).
-double hasil2 = 5.0 / 2;   // Hasilnya 2.5 (Aman! Ada pengawal '5.0' menjaga takdir pecahannya).
-```
+Selalu ingat: **Koma hanya selamat jika operasinya dikawal oleh minimal satu elemen pecahan (sejarah Kastanya tinggi), sebelum pedang pembagian `/` ditebaskan!**
 
 ---
 
