@@ -166,7 +166,33 @@ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSI
 
 ---
 
-### Siap Di Uji Tracing?
+---
+ 
+ ## 📦 E. Analogi Tambahan: Gudang Rahasia Komputer
+ 
+ Jika analogi di atas masih membuatmu penasaran, mari kita lihat dari sudut pandang lain yang sering ditemui di kehidupan sehari-hari:
+ 
+ ### 💡 1. Bool: Saklar Lampu Ajaib
+ Tipe data **`bool`** adalah yang paling irit. Ia tidak punya angka 2, 3, apalagi 100.
+ - **Analogi:** Ia hanyalah sebuah **Saklar Lampu**. 
+ - Cuma ada dua kondisi: **ON** (Nyala / `true` / 1) atau **OFF** (Mati / `false` / 0). 
+ - Di OSN-K, jika kamu melihat `if (1)`, itu artinya lampunya nyala, perintah di bawahnya pasti dijalankan!
+ 
+ ### 🛁 2. Long Long vs Int: Gayung vs Bak Mandi
+ Mengapa kita butuh `long long` jika sudah ada `int`? 
+ - **Analogi:** `int` adalah sebuah **Gayung**. Cukup untuk mandi satu orang. 
+ - Tapi kalau kamu disuruh menampung air hujan se-RT (misal hasil perkalian `100.000 * 100.000`), gayungmu akan tumpah meluap (*Overflow*).
+ - Kamu butuh **Bak Mandi** (`long long`) yang bisa menampung air jauh lebih banyak tanpa tumpah setetes pun.
+ 
+ ### 🧩 3. Type Casting: Mainan Balok Anak-anak
+ Memasukkan `double` (angka koma) ke dalam `int` (angka bulat).
+ - **Analogi:** Ingat mainan balok anak-anak yang harus memasukkan bentuk ke lubang yang pas? 
+ - `int` adalah **Lubang Kotak**, sedangkan `double` adalah **Balok Bintang** yang punya banyak sudut (koma). 
+ - Kamu bisa memaksa balok bintang masuk ke lubang kotak, tapi kamu harus **memotong/mengamplas** semua sudut bintangnya sampai rata. Hasilnya? Bentuk bintang yang indah tadi (komanya) hilang selamanya, tersisa kotak polos saja. 
+ 
+ ---
+ 
+ ### Siap Di Uji Tracing?
 Diberikan kutipan variabel *Compiler Manusia* berikut ini:
 ```cpp
 int uang_jajan = 15;
