@@ -159,8 +159,31 @@
  
  ## ✂️ K. Cabang Kilat (Ternary Operator `? :`)
  
- Shorthand untuk `if-else` singkat: `(Syarat) ? (Benar) : (Salah)`.
- - **Analogi Kuis Cepat:** "Lulus ga? (Iya) : (Enggak)". Kalau nilaimu di atas 75, ambil "Iya", kalau di bawah ambil "Enggak".
+ Inilah cara orang sibuk menulis `if-else` dalam satu baris. Pikirkan ini sebagai **"Jalan Pintas"** untuk mengisi nilai laci berdasarkan satu syarat singkat.
+ 
+ ### 📐 Struktur Anatomi:
+ `(Kondisi) ? [Nilai Jika Benar] : [Nilai Jika Salah];`
+ 
+ ### 🌍 Pemanasan di Program Nyata:
+ 
+ **1. Mencari Angka Terbesar (The Boss Finder)**
+ Daripada menulis 4 baris `if-else`, kamu cukup satu baris:
+ ```cpp
+ int max_val = (a > b) ? a : b; // Siapa yang menang, dia yang masuk ke laci.
+ ```
+ 
+ **2. Cek Lulus/Gagal (Sistem Raport)**
+ ```cpp
+ printf("%s", (skor >= 75) ? "LULUS" : "REMEDIAL");
+ ```
+ 
+ **3. Penentu Genap-Ganjil (Logistik)**
+ ```cpp
+ string label = (x % 2 == 0) ? "GENAP" : "GANJIL";
+ ```
+ 
+ > [!WARNING]
+ > **Jangan Berlebihan!** Ternary memang keren, tapi jangan menumpuk Ternary di dalam Ternary (`? ? : :`). Hal itu akan membuat kodemu terbaca seperti bahasa alien yang membingungkan bagi mata manusia (dan muridmu). Gunakan hanya untuk perbandingan **pendek dan sederhana**.
  
  ---
  
