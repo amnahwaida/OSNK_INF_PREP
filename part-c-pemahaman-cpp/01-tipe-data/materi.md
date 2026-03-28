@@ -7,7 +7,19 @@ Mari kita bedah dua konsep penjebak massal: **Sifat Kejam Kotak Integer** dan **
 
 ---
 
-## 📦 A. Aturan Main Kotak (Tipe Data `int`)
+---
+ 
+ ## 📋 A. Pemanasan: Aturan Dasar Menulis Kode
+ 
+ Sebelum kita masuk ke angka, ada 3 aturan "Sopan Santun" di C++ yang wajib muridmu tahu:
+ 
+ 1. **Titik Koma (`;`) adalah Titik**: Setiap satu perintah selesai, wajib diakhiri `;`. Tanpa ini, C++ akan bingung mana awal dan mana akhir kalimat.
+ 2. **Komentar (`//`) adalah Catatan**: Tulis apapun setelah `//` tidak akan dibaca oleh komputer. Ini tempat kita curhat atau memberi petunjuk untuk diri sendiri.
+ 3. **Nama Loker (Variabel)**: Nama laci tidak boleh pakai **Spasi** dan tidak boleh diawali **Angka**. (Contoh: `uang jajan` ❌, `uang_jajan` ✅).
+ 
+ ---
+ 
+ ## 📦 B. Aturan Main Kotak (Tipe Data `int`)
 
 Di bahasa C++, kamu tidak bisa sembarangan menaruh barang ke udara kosong. Kamu butuh **"Kotak Loker"** (Variabel). Kotak ini ada label nama tipe datanya, yang paling sering memakan korban adalah:
 
@@ -38,7 +50,7 @@ int hasil = a / b;
 
 ---
 
-## 🔮 B. Sihir Sisa Bagi (Modulo `%`)
+## 🔮 C. Sihir Sisa Bagi (Modulo `%`)
 
 Nah, tadi kan sisa 1 permennya dibuang tuh sama operator pembagi `/`. Terus kalau kita mau cari tahu permen sisa yang gak bisa dibagi rata itu berapa, ke mana kita mencarinya?
 Jawabannya adalah **Operator Modulo (Simbolnya `%`)**.
@@ -70,7 +82,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
 
 ---
  
- ## ➕ C. Operator Aritmatika & Hierarki (KABATAKU)
+ ## ➕ D. Operator Aritmatika & Hierarki (KABATAKU)
  
  Karena kamu belajar dari 0, ingatlah bahwa komputer itu seperti kalkulator super cepat. Namun, ia punya aturan "Siapa yang dikerjakan duluan?".
  
@@ -88,7 +100,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## 🚚 D. Operator Assignment (Pindah Barang)
+ ## 🚚 E. Operator Assignment (Pindah Barang)
  
  Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
  
@@ -108,7 +120,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## 🔤 E. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🔤 F. Perang Kasta Tipe Data (Char, Int, Float, Double)
 
 Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta dan cara bergaul yang sangat aneh di dalam mesin C++. Mari kita bedah lebih dalam apa yang terjadi jika mereka saling bertabrakan (Type Casting).
 
@@ -187,7 +199,7 @@ Selalu ingat: **Koma hanya selamat jika operasinya dikawal oleh minimal satu ele
 
 ---
 
-## 🌍 F. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+## 🌍 G. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
 
 Di kodingan OSN-K, juri sangat benci melihatmu bahagia. Mereka suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
 
@@ -208,7 +220,7 @@ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSI
 
 ---
  
- ## 📦 G. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 H. Analogi Tambahan: Gudang Rahasia Komputer
  
  Jika analogi di atas masih membuatmu penasaran, mari kita lihat dari sudut pandang lain yang sering ditemui di kehidupan sehari-hari:
  
