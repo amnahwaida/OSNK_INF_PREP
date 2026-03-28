@@ -131,7 +131,7 @@
  Di dunia nyata, `switch` adalah pahlawan untuk menu navigasi. Bayangkan kamu membuat **Game Petualangan**:
  ```cpp
  char input;
- cin >> input;
+ cin >> input; // Misal kita ketik 'a'
  
  switch (input) {
      case 'w': y++; break; // Jalan maju
@@ -141,7 +141,11 @@
      default: printf("Tombol Salah!"); // User ngaco
  }
  ```
- *Kenapa pakai Switch?* Kode jadi jauh lebih bersih dibaca daripada menulis `if (input == 'w') { ... } else if (input == 's') { ... }` dst.
+ **Diagnosis Logika Game:**
+ 1. **Pencarian Label**: Begitu `input` berisi `'a'`, mesin segera mencari label `case 'a'`.
+ 2. **Eksekusi Lokal**: Mesin masuk ke baris `x--;` dan mengeksekusinya (koordinat x berkurang).
+ 3. **Rem Aktif**: Karena ada `break;`, mesin berhenti di situ dan langsung melompat keluar gerbang `switch`. Ia tidak akan peduli dengan `case 'd'` atau `default`.
+ 4. **Aksi Darurat**: Jika kita mengetik `'z'`, mesin tidak menemukan label yang cocok, maka ia meluncur ke dasar yaitu `default` dan mengomeli kita dengan "Tombol Salah!".
  
  ---
  
