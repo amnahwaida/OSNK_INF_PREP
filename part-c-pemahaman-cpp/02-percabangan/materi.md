@@ -251,9 +251,39 @@
  
  Mari kita rangkum semua gembok logika tadi ke dalam visualisasi labirin:
  
- 1. **Nested If (Labirin Berlapis)**: Seperti kotak brankas rahasia di dalam bank. Untuk mengambil emas, kamu harus membuka **Pintu Bank** AND **Pintu Brankas** AND **Gembok Kotak**. Salah satu kunci gagal, kamu tidak dapat apa-apa.
- 2. **Else-If Chain (Antrean Soto)**: Seperti antrean makanan. Begitu kamu melihat kuali "Soto" penuh, kamu ambil dan langsung lari ke meja makan. Kamu tidak akan melirik ke kuali "Bakso" atau "Mie Ayam" lagi. 
- 3. **Multi If (Daftar Belanja)**: Seperti belanja di pasar. Kamu bawa daftar: Cabai, Bawang, Tomat. Kamu mendatangi setiap lapak satu per satu secara mandiri. Ada atau tidaknya bawang tidak berpengaruh pada usahamu mencari cabai.
+ ### 1. Nested If (Labirin Berlapis)
+ Seperti kotak brankas rahasia di dalam bank. Untuk mengambil emas, kamu harus membuka **Pintu Bank** AND **Pintu Brankas**. Salah satu kunci gagal, kamu tidak dapat apa-apa.
+ 
+ **Contoh Real Code:**
+ ```cpp
+ if (punya_pin) {
+     if (punya_jari) printf("Emas Diambil!"); // Lapis ke-2
+ }
+ ```
+ **Diagnosis Logika:**
+ - Robot tidak akan pernah mencari sidik jari (`punya_jari`) jika PIN-mu saja sudah salah. Ia tertahan di pintu pertama selamanya.
+ 
+ ### 2. Else-If Chain (Antrean Soto)
+ Seperti antrean makanan. Begitu kamu melihat kuali "Soto" penuh, kamu ambil dan langsung lari ke meja makan. 
+ 
+ **Contoh Real Code:**
+ ```cpp
+ if (menu == "Soto") printf("Makan!");
+ else if (menu == "Bakso") printf("Makan!");
+ ```
+ **Diagnosis Logika:**
+ - Robot bersifat "Kenyang Abadi". Begitu menu Soto ada dan dia makan, ia akan mengabaikan kuali Bakso meskipun isi kualinya sama-sama penuh atau lebih lezat.
+ 
+ ### 3. Multi If (Daftar Belanja Pasar)
+ Seperti belanja di pasar. Kamu mendatangi setiap lapak satu per satu secara mandiri. 
+ 
+ **Contoh Real Code:**
+ ```cpp
+ if (beli_cabai) printf("Beli!");
+ if (beli_bawah) printf("Beli!");
+ ```
+ **Diagnosis Logika:**
+ - Robot adalah pembelanja yang gigih. Dia akan mendatangi lapak Cabai, membelinya, lalu tanpa peduli apa yang terjadi, dia **tetap** mendatangi lapak Bawang untuk melakukan pengecekan ulang.
  
  ---
  
