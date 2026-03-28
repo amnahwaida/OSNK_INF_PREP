@@ -112,7 +112,34 @@ Dalam `A || B`, **JIKA KONDISI `A` SUDAH TRUE (BENAR)**, C++ **BUTA DAN MENOLAK 
 
 ---
 
-### Siap Di Uji Tracing?
+---
+ 
+ ## 🚦 C. Analogi Tambahan: Navigasi Labirin Keputusan
+ 
+ Jika kamu masih sering bingung membedakan kapan `else if` berhenti atau bagaimana `if` di dalam `if` bekerja, mari kita gunakan alat bantu imajinasi berikut:
+ 
+ ### 🚪 1. Nested If: Pintu Keamanan Berlapis
+ Kadang ada `if` yang berada di dalam `if` lain. 
+ - **Analogi:** Bayangkan kamu masuk ke **Ruang Rahasia Bank**.
+ - **Pintu 1:** Kamu harus punya Pin Kartu. Jika salah, kamu bahkan tidak bisa melihat pintu berikutnya.
+ - **Pintu 2 (Nested):** Sudah masuk pintu 1, sekarang kamu harus scan sidik jari. 
+ - **Poin Penting:** Kamu tidak akan pernah ditanya sidik jari kalau Pin Kartu-mu saja sudah salah. Inilah cara `if` bertingkat bekerja: Syarat dalam hanya diperiksa jika syarat luar sudah lolos.
+ 
+ ### 🍜 2. Else-If Chain: Menu Kantin Sekolah
+ Apa bedanya banyak `if` terpisah dengan rangkaian `if - else if - else`?
+ - **Analogi:** Kamu sedang memesan makanan di kantin.
+ - "Saya mau **Soto**. Kalau nggak ada, saya mau **Bakso**. Kalau nggak ada juga, ya sudah makan **Nasi Kuning** saja."
+ - **Poin Penting:** Begitu penjual bilang "Soto ada!", kamu langsung pesan dan **TIDAK AKAN** menanyakan Bakso atau Nasi Kuning lagi. Di C++, sekali satu `else if` terpenuhi, mesin langsung "kenyang" dan melompat keluar dari seluruh rangkaian tersebut.
+ 
+ ### 🙃 3. Operator NOT (`!`): Kacamata Kebalikan
+ Simbol tanda seru `!` sering muncul untuk membalikkan logika.
+ - **Analogi:** Ini adalah **Kacamata Hari Kebalikan**.
+ - Jika `(lapar)` itu benar, maka `(!lapar)` itu salah (kenyang).
+ - Di OSN-K, juri suka menulis `if (!menang)`. Artinya: "Jika TIDAK menang" atau dengan kata lain "Jika kalah". Kadang membaca kalimat kebalikannya jauh lebih mudah daripada men-trace variabelnya!
+ 
+ ---
+ 
+ ### Siap Di Uji Tracing?
 
 Menguji tingkat kewaspadaan matamu sebagai *Compiler*:
 ```cpp
