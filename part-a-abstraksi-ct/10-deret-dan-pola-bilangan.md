@@ -136,7 +136,7 @@ Kasus terpecahkan! Model matematika ini bikin kamu jadi dukun sakti yang bisa ne
 
 ---
 
-## 📝 Daftar Isi Latihan (300 Soal)
+## 📝 Daftar Isi Latihan (300 Soal Pilihan Ganda & Bahas)
 
 Agar makin tajam insting detektif dan aljabarmu, silakan kerjakan 300 latihan soal berikut (dibagi ke 6 bagian):
 
