@@ -214,13 +214,36 @@
  
  Memilih struktur percabangan yang tepat seperti memilih alat makan; salah pilih, makanmu jadi tidak efisien.
  
- ### 1. Kapan Pakai `if - else if` ? (Pilih Salah Satu)
- Pakailah saat pilihan-pilihannya saling meniadakan (exclusive). Jika satu sudah benar, yang lain sudah pasti salah.
- - **Contoh Nyata**: Menentukan kategori umur (Balita, Anak, Remaja, Dewasa). Kamu tidak mungkin anak-anak SEKALIGUS dewasa di saat yang sama, kan?
+ ### 1. Kapan Pakai `if - else if` ? (Pilih Salah Satu / Exclusive)
+ Pakailah saat pilihan-pilihannya saling meniadakan. Jika satu sudah BENAR, yang lain otomatis GHAIB.
  
- ### 2. Kapan Pakai Banyak `if` Terpisah ? (Pilih Sebanyaknya)
- Pakailah saat pilihan-pilihannya bersifat independen (bisa benar semua). 
- - **Contoh Nyata**: Belanja e-commerce. Pengecekan `Gunakan Kupon`, `Gunakan Saldo`, dan `Pakai Asuransi` adalah tiga `if` mandiri. Bisa jadi kamu memakai kupon saja, atau pakai ketiganya sekaligus. Robot C++ harus mengecek semua syarat satu-per-satu tanpa mengabaikan yang lain.
+ **Contoh Real Code (Sistem Kategori Nilai):**
+ ```cpp
+ int skor = 85;
+ if (skor >= 90) printf("Kategori A");
+ else if (skor >= 75) printf("Kategori B"); 
+ else printf("Kategori C");
+ ```
+ **Diagnosis Logika:**
+ - **Saringan 1**: `85 >= 90` is **FALSE**.
+ - **Saringan 2**: `85 >= 75` is **TRUE**. Robot mencetak "Kategori B" dan langsung **MEMBAKAR** saringan `else` di bawahnya. Mesin tidak akan pernah tahu ada "Kategori C" di situ.
+ 
+ ### 2. Kapan Pakai Banyak `if` Terpisah ? (Pilih Sebanyaknya / Independent)
+ Pakailah saat pilihan-pilihannya bersifat mandiri (bisa benar bersamaan).
+ 
+ **Contoh Real Code (Sistem Kasir Toko):**
+ ```cpp
+ int total = 100000;
+ bool punya_member = true;
+ bool punya_kupon = true;
+ 
+ if (punya_member) total -= 10000; // Cek 1
+ if (punya_kupon) total -= 5000;   // Cek 2 (Mandiri)
+ ```
+ **Diagnosis Logika:**
+ - **Cek 1**: `punya_member` is **TRUE**. Total jadi `90000`.
+ - **Cek 2**: Robot tidak malas! Ia tetap masuk ke `if (punya_kupon)`. Karena **TRUE**, total dikurangi lagi jadi `85000`. 
+ - *Beda Nasib:* Jika kamu pakai `else if` di sini, pembeli yang punya member **tidak akan pernah bisa** memakai kuponnya! Kasihan kan?
  
  ---
  
