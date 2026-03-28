@@ -63,7 +63,22 @@
  
  ---
  
- ## 🔮 E. Sihir Sisa Bagi (Modulo `%`)
+ ## 🗑️ E. Jebakan Laci Bekas (Garbage Value)
+ 
+ Apa yang terjadi jika kamu membuat laci tapi tidak menaruh angka apa-apa?
+ ```cpp
+ int saldo;
+ cout << saldo;
+ ```
+ **Analogi Laci Bekas Penghuni Lama:**
+ Bayangkan kamu menyewa loker di sekolah, tapi tidak mengisinya. Saat kamu buka laci itu besok, eh ternyata di dalamnya ada **"Sampah"** berupa angka acak yang sangat besar (misal: `-858993460`).
+ 
+ Komputer tidak otomatis mengosongkan laci. Ia membiarkan angka sisa dari program lain tertinggal di sana.
+ - **Pelajaran:** Selalu biasakan memberi nilai awal (**Inisialisasi**) saat membuat variabel, misalnya: `int saldo = 0;`. 
+ 
+ ---
+ 
+ ## 🔮 F. Sihir Sisa Bagi (Modulo `%`)
  
  Nah, tadi kan sisa 1 permennya dibuang tuh sama operator pembagi `/`. Terus kalau kita mau cari tahu permen sisa yang gak bisa dibagi rata itu berapa, ke mana kita mencarinya?
  Jawabannya adalah **Operator Modulo (Simbolnya `%`)**.
@@ -91,7 +106,7 @@
  
  ---
  
- ## ➕ F. Operator Aritmatika & Hierarki (KABATAKU)
+ ## ➕ G. Operator Aritmatika & Hierarki (KABATAKU)
  
  Karena kamu belajar dari 0, ingatlah bahwa komputer itu seperti kalkulator super cepat. Namun, ia punya aturan "Siapa yang dikerjakan duluan?".
  
@@ -109,7 +124,7 @@
  
  ---
  
- ## 🚚 G. Operator Assignment (Pindah Barang)
+ ## 🚚 H. Operator Assignment (Pindah Barang)
  
  Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
  
@@ -142,7 +157,7 @@
  
  ---
  
- ## ⚖️ H. Operator Perbandingan (Timbangan Benar-Salah)
+ ## ⚖️ I. Operator Perbandingan (Timbangan Benar-Salah)
  
  Setelah pandai menghitung, kamu akan sering disuruh membandingkan dua angka. Di sini, hasilnya bukan lagi angka, tapi **Benar (`true`)** atau **Salah (`false`)**.
  
@@ -155,7 +170,7 @@
  
  ---
  
- ## 🚦 I. Operator Logika (Filter Berlapis)
+ ## 🚦 J. Operator Logika (Filter Berlapis)
  
  Jika perbandingan di atas adalah satu pintu, maka operator logika adalah **Pintu Berlapis**.
  
@@ -168,22 +183,7 @@
  
  ---
  
- ## 🗑️ J. Jebakan Laci Bekas (Garbage Value)
- 
- Apa yang terjadi jika kamu membuat laci tapi tidak menaruh angka apa-apa?
- ```cpp
- int saldo;
- cout << saldo;
- ```
- **Analogi Laci Bekas Penghuni Lama:**
- Bayangkan kamu menyewa loker di sekolah, tapi tidak mengisinya. Saat kamu buka laci itu besok, eh ternyata di dalamnya ada **"Sampah"** berupa angka acak yang sangat besar (misal: `-858993460`).
- 
- Komputer tidak otomatis mengosongkan laci. Ia membiarkan angka sisa dari program lain tertinggal di sana.
- - **Pelajaran:** Selalu biasakan memberi nilai awal (**Inisialisasi**) saat membuat variabel, misalnya: `int saldo = 0;`. 
- 
- ---
- 
- ## 🔤 J. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🔤 K. Perang Kasta Tipe Data (Char, Int, Float, Double)
  
  Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta yang sangat aneh di dalam mesin C++. 
  
@@ -271,7 +271,7 @@
  int jatah_nongkrong = uang_jajan / teman_nabrak;
  int hasil_akhir = (disita_guru + jatah_nongkrong) * (uang_jajan % 2);
  ```
- **Diagnosis Logika Papan Tulis:**
+ **Diagnosis Logika Papan Tulis Juri C++:**
  - `uang_jajan % teman_nabrak` $\rightarrow 15 \pmod 6 = 3$. Makmurnya, `disita_guru = 3`.
  - `uang_jajan / teman_nabrak` $\rightarrow 15 \div 6 = 2$ (Karena `int`, koma dibakar!). `jatah_nongkrong = 2`.
  - `uang_jajan % 2` $\rightarrow 15 \pmod 2 = 1$ (Karena ganjil). 
