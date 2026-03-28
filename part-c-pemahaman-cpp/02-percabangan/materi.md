@@ -105,8 +105,43 @@
  
  ## 🎰 J. Vending Machine (`switch - case`)
  
- Gunakan ini jika pilihannya banyak dan angkanya pasti (misal: tombol lift).
- - **Jurus Bablas:** Jika tidak ada `break;`, mesin akan menjalankan semua `case` di bawahnya sampai ketemu `break` atau pintu keluar. Ini bisa dipakai untuk membuat beberapa tombol punya fungsi yang sama.
+ Gunakan ini jika pilihannya banyak dan angkanya pasti (diskrit). Bedanya dengan `if`, `switch` tidak bisa mengecek rentang (seperti `x > 10`) atau angka koma (`float`). Ia cuma bisa mengecek: "Apakah koin saya **PAS** angka 1? Atau **PAS** angka 2?".
+ 
+ ### 🛠️ Cara Kerja & Komponen:
+ - **`switch (variabel)`**: Masukkan laci yang ingin diperiksa.
+ - **`case 1:`**: Jika isi laci adalah 1, jalankan baris di bawahnya.
+ - **`break;`**: REM darurat! Jika tidak ada ini, mesin akan "Bablas" menjalankan bawahnya.
+ - **`default:`**: Jaring pengaman. Jalankan ini jika tidak ada `case` yang cocok (misalnya user salah pencet tombol).
+ 
+ ### 💡 Tip Pro: Jurus "Bablas" Berjamaah
+ Terkadang kita **sengaja** tidak memasang `break` untuk menangani beberapa pilihan sekaligus.
+ ```cpp
+ switch (hari) {
+     case 1:
+     case 2:
+     case 3:
+     case 4:
+     case 5: printf("Kerja!"); break;
+     case 6:
+     case 7: printf("Libur!"); break;
+ }
+ ```
+ 
+ ### 🌍 Pemanasan di Program Nyata:
+ Di dunia nyata, `switch` adalah pahlawan untuk menu navigasi. Bayangkan kamu membuat **Game Petualangan**:
+ ```cpp
+ char input;
+ cin >> input;
+ 
+ switch (input) {
+     case 'w': y++; break; // Jalan maju
+     case 's': y--; break; // Jalan mundur
+     case 'a': x--; break; // Jalan kiri
+     case 'd': x++; break; // Jalan kanan
+     default: printf("Tombol Salah!"); // User ngaco
+ }
+ ```
+ *Kenapa pakai Switch?* Kode jadi jauh lebih bersih dibaca daripada menulis `if (input == 'w') { ... } else if (input == 's') { ... }` dst.
  
  ---
  
