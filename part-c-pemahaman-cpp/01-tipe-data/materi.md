@@ -19,7 +19,23 @@ Mari kita bedah dua konsep penjebak massal: **Sifat Kejam Kotak Integer** dan **
  
  ---
  
- ## 📦 B. Aturan Main Kotak (Tipe Data `int`)
+ ---
+ 
+ ## 🚪 B. Pintu Masuk & Keluar (Input `cin` & Output `cout`)
+ 
+ Variabel adalah laci, tapi bagaimana cara memasukkan barang ke dalamnya dari dunia nyata? C++ punya dua "Pintu" utama:
+ 
+ 1. **`cin >> laci;` (Input)**: Bayangkan ada **Ban Berjalan** dari keyboard. Tanda `>>` adalah corong yang mengalirkan apa yang kamu ketik ke dalam laci. 
+ 2. **`cout << "Teks";` (Output)**: Tanda `<<` adalah corong yang menyemburkan isi laci atau teks ke arah **Layar Monitor**.
+ 
+ > [!TIP]
+ > **Cara Hafal Panahnya:** 
+ > - `cin >>` $\rightarrow$ Panah masuk ke variabel. 
+ > - `cout <<` $\rightarrow$ Panah keluar dari teks/variabel menuju layar.
+ 
+ ---
+ 
+ ## 📦 C. Aturan Main Kotak (Tipe Data `int`)
 
 Di bahasa C++, kamu tidak bisa sembarangan menaruh barang ke udara kosong. Kamu butuh **"Kotak Loker"** (Variabel). Kotak ini ada label nama tipe datanya, yang paling sering memakan korban adalah:
 
@@ -50,7 +66,7 @@ int hasil = a / b;
 
 ---
 
-## 🔮 C. Sihir Sisa Bagi (Modulo `%`)
+## 🔮 D. Sihir Sisa Bagi (Modulo `%`)
 
 Nah, tadi kan sisa 1 permennya dibuang tuh sama operator pembagi `/`. Terus kalau kita mau cari tahu permen sisa yang gak bisa dibagi rata itu berapa, ke mana kita mencarinya?
 Jawabannya adalah **Operator Modulo (Simbolnya `%`)**.
@@ -82,7 +98,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
 
 ---
  
- ## ➕ D. Operator Aritmatika & Hierarki (KABATAKU)
+ ## ➕ E. Operator Aritmatika & Hierarki (KABATAKU)
  
  Karena kamu belajar dari 0, ingatlah bahwa komputer itu seperti kalkulator super cepat. Namun, ia punya aturan "Siapa yang dikerjakan duluan?".
  
@@ -102,7 +118,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## 🚚 E. Operator Assignment (Pindah Barang)
+ ## 🚚 F. Operator Assignment (Pindah Barang)
  
  Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
  
@@ -122,7 +138,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## ⚖️ F. Operator Perbandingan (Timbangan Benar-Salah)
+ ## ⚖️ G. Operator Perbandingan (Timbangan Benar-Salah)
  
  Setelah pandai menghitung, kamu akan sering disuruh membandingkan dua angka. Di sini, hasilnya bukan lagi angka, tapi **Benar (`true`)** atau **Salah (`false`)**.
  
@@ -135,7 +151,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## 🗑️ G. Jebakan Laci Bekas (Garbage Value)
+ ## 🗑️ H. Jebakan Laci Bekas (Garbage Value)
  
  Apa yang terjadi jika kamu membuat laci tapi tidak menaruh angka apa-apa?
  ```cpp
@@ -150,7 +166,7 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
  
  ---
  
- ## 🔤 H. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🔤 I. Perang Kasta Tipe Data (Char, Int, Float, Double)
 
 Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta dan cara bergaul yang sangat aneh di dalam mesin C++. Mari kita bedah lebih dalam apa yang terjadi jika mereka saling bertabrakan (Type Casting).
 
@@ -229,7 +245,7 @@ Selalu ingat: **Koma hanya selamat jika operasinya dikawal oleh minimal satu ele
 
 ---
 
-## 🌍 I. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+## 🌍 J. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
 
 Di kodingan OSN-K, juri sangat benci melihatmu bahagia. Mereka suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
 
@@ -250,7 +266,7 @@ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSI
 
 ---
  
- ## 📦 J. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 K. Analogi Tambahan: Gudang Rahasia Komputer
  
  Jika analogi di atas masih membuatmu penasaran, mari kita lihat dari sudut pandang lain yang sering ditemui di kehidupan sehari-hari:
  
