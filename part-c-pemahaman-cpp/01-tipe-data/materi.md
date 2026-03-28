@@ -68,7 +68,47 @@ Dan jika `x % 2 != 0`, artinya variabel itu sedang memegang angka saklek **Ganji
 
 ---
 
-## 🔤 C. Perang Kasta Tipe Data (Char, Int, Float, Double)
+---
+ 
+ ## ➕ C. Operator Aritmatika & Hierarki (KABATAKU)
+ 
+ Karena kamu belajar dari 0, ingatlah bahwa komputer itu seperti kalkulator super cepat. Namun, ia punya aturan "Siapa yang dikerjakan duluan?".
+ 
+ **1. Anggota Keluarga Aritmatika:**
+ - `+` (Tambah), `-` (Kurang), `*` (Kali), `/` (Bagi), `%` (Modulo).
+ 
+ **2. Hukum KABATAKU (Kali, Bagi, Tambah, Kurang):**
+ Komputer tidak mengerjakan dari kiri ke kanan saja. Ia punya kasta:
+ 1. Lingkaran Kurung `( )` $\rightarrow$ **Kasta Tertinggi** (Wajib duluan!).
+ 2. Perkalian `*`, Pembagian `/`, dan Modulo `%` $\rightarrow$ **Kasta Menengah**.
+ 3. Penjumlahan `+` dan Pengurangan `-` $\rightarrow$ **Kasta Rakyat**.
+ 
+ > [!TIP]
+ > Jika ada `2 + 3 * 4`, hasilnya adalah **14** (karena $3 \times 4$ dikerjakan duluan), bukan 20!
+ 
+ ---
+ 
+ ## 🚚 D. Operator Assignment (Pindah Barang)
+ 
+ Di matematika, `=` artinya "Sama Dengan". Di kodingan, `=` artinya **"Pindah Barang!"**.
+ 
+ **1. `a = 5` (Assignment Dasar)**
+ - **Analogi:** Ambil angka 5, lalu **masukkan** ke dalam laci bernama `a`.
+ - Isi laci `a` yang lama akan **dibuang** dan diganti total dengan angka 5 yang baru.
+ 
+ **2. Shortcut Penjumlahan (`+=`, `-=`, `*=`)**
+ Seringkali kita ingin menambah isi laci yang sudah ada.
+ - `a = a + 2` $\rightarrow$ Artinya: "Ambil isi laci `a` sekarang, tambahkan 2, lalu masukkan lagi ke laci `a`."
+ - Karena kodingan di atas kepanjangan, pembuat C++ menciptakan shortcut: **`a += 2`**. (Artinya sama persis!).
+ 
+ **3. Increment & Decrement (`++`, `--`)**
+ Ini adalah perintah yang paling sering muncul di perulangan (*looping*).
+ - `a++` $\rightarrow$ "Tambah isi laci `a` sebanyak 1 biji." (Sama dengan `a = a + 1`).
+ - `a--` $\rightarrow$ "Kurangi isi laci `a` sebanyak 1 biji." (Sama dengan `a = a - 1`).
+ 
+ ---
+ 
+ ## 🔤 E. Perang Kasta Tipe Data (Char, Int, Float, Double)
 
 Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta dan cara bergaul yang sangat aneh di dalam mesin C++. Mari kita bedah lebih dalam apa yang terjadi jika mereka saling bertabrakan (Type Casting).
 
@@ -147,7 +187,7 @@ Selalu ingat: **Koma hanya selamat jika operasinya dikawal oleh minimal satu ele
 
 ---
 
-## 🌍 D. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+## 🌍 F. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
 
 Di kodingan OSN-K, juri sangat benci melihatmu bahagia. Mereka suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
 
@@ -168,7 +208,7 @@ Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSI
 
 ---
  
- ## 📦 E. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 G. Analogi Tambahan: Gudang Rahasia Komputer
  
  Jika analogi di atas masih membuatmu penasaran, mari kita lihat dari sudut pandang lain yang sering ditemui di kehidupan sehari-hari:
  
