@@ -18,6 +18,7 @@ Jangan takut istilah seram seperti *Dynamic Programming* atau *Brute Force*. Mod
 3. [Pencarian & Pengurutan (Searching & Sorting Manual)](./03-pencarian-dan-pengurutan.md) (⭐⭐)
 4. [Dynamic Programming Dasar (Seni Mengingat Masa Lalu)](./04-dynamic-programming-dasar.md) (⭐⭐)
 5. [Pemrosesan String dan Array 1D](./05-pemrosesan-string-dan-array.md) (⭐⭐⭐)
+6. [Eksklusif: Mengukur Kompleksitas Waktu (Bahasa Big $O$)](./06-kompleksitas-waktu-big-o.md) (⭐⭐⭐)
 
 ---
 [< Kembali ke Beranda](../README.md)
