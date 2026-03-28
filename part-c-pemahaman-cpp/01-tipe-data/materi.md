@@ -246,7 +246,24 @@
  
  ---
  
- ## 🧪 M. Tip & Trick Khas OSN-K (Angka Dewa)
+ ## 🔢 M. Hasil Akhir Logika (Ujung dari Segalanya: 0 & 1)
+ 
+ Di kodingan OSN-K, kamu terkadang melihat logika dicampur dengan matematika. Bagaimana robot C++ menghadapinya?
+ - **Robot Matematika Logika:** Di matanya, semua hasil perbandingan `(> < == !=)` AND/OR/NOT itu **SELALU** berakhir menjadi angka **0** (Jika Salah) atau **1** (Jika Benar).
+ 
+ **Contoh Real Code:**
+ ```cpp
+ int x = (10 > 5) + (5 > 2); // 1 + 1
+ printf("x = %d", x); // x jadi 2!
+ ```
+ **Diagnosis Logika:**
+ - `(10 > 5)` adalah Benar, maka robot mengubahnya jadi angka **1**.
+ - `(5 > 2)` adalah Benar, maka robot mengubahnya jadi angka **1**.
+ - `1 + 1` hasilnya **2**. Robot ini menggabungkan dua "fakta kebenaran" menjadi sebuah angka murni!
+ 
+ ---
+ 
+ ## 🧪 N. Tip & Trick Khas OSN-K (Angka Dewa)
  
  Di soal-soal tingkat nasional, kamu akan sering melihat cara penulisan angka yang "aneh". Mari kita bedah rahasianya:
  
@@ -260,7 +277,7 @@
  
  ---
  
- ## 🔤 N. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🔤 O. Perang Kasta Tipe Data (Char, Int, Float, Double)
  
  Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta yang sangat aneh di dalam mesin C++. 
  
@@ -300,14 +317,9 @@
  double gelas = 5.0 / 2;   // HASIL: 2.5 (Ada satu double, kasta pembagian naik level!)
  ```
  
- ### 3. Misteri Gelas Pecahan (Floating Point Precision)
- Terkadang komputer memberikan hasil desimal yang sangat aneh, misalnya `0.1 + 0.2` hasilnya `0.30000000000000004`.
- - **Analogi Gelas Ukur yang Bukan Skala Metrik:** Komputer murni menggunakan **Biner (0 dan 1)**. Ada beberapa angka pecahan yang tidak bisa diterjemahkan sempurna ke biner, sama seperti kita tidak bisa menulis $1/3$ dalam desimal dengan sempurna (hasilnya $0.333333...$ tanpa ujung).
- - **Pelajaran:** Jangan pernah membandingkan dua `double` secara eksak menggunakan `==`. Karena di mata C++, perbedaan sekecil debu atom ($0.0000000001$) sudah dianggap sebagai **SALAH**.
- 
  ---
  
- ## 🌍 O. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+ ## 🌍 P. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
  
  Di kodingan OSN-K, juri suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
  
@@ -325,7 +337,7 @@
  
  ---
  
- ## 📦 P. Intipan Masa Depan: Tipe Data Borongan
+ ## 📦 Q. Intipan Masa Depan: Tipe Data Borongan
  
  Di tingkat olimpiade, data yang kamu olah tidak cuma satu permen, tapi sebungkus besar! Di sini kita akan mengintip dua tipe data yang akan dijelaskan di modul selanjutnya:
  
@@ -345,17 +357,17 @@
  
  ---
  
- ## 📦 Q. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 🛁 R. Analogi Tambahan: Gudang Rahasia Komputer
  
- ### 🛁 1. Long Long vs Int: Gayung vs Bak Mandi
+ ### 1. Long Long vs Int: Gayung vs Bak Mandi
  Kamu butuh **Bak Mandi** (`long long`) saat hasil hitunganmu sangat banyak (misal hasil perkalian `100.000 * 100.000`) agar airnya tidak tumpah lari ke mana-mana (*Overflow*).
  
- ### 🧩 2. Type Casting: Mainan Balok Anak-anak
+ ### 2. Type Casting: Mainan Balok Anak-anak
  Memasukkan `double` (angka koma) ke dalam `int` (angka bulat) seperti memaksa **Balok Bintang** masuk ke **Lubang Kotak**. Kamu harus memotong/mengamplas semua sudut komanya sampai rata menjadi kotak polos.
  
  ---
  
- ## 📜 R. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ ## 📜 S. Rangkuman: Mantra "Compiler Manusia"
  
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
@@ -363,21 +375,71 @@
  
  ---
  
- ### Siap Di Uji Tracing?
- Diberikan kutipan variabel *Compiler Manusia* berikut ini:
- ```cpp
- int uang_jajan = 15;
- int teman_nabrak = 6;
+ ### 🧠 Uji Tracing (Level 1: Pembagi Permen)
  
- int disita_guru = uang_jajan % teman_nabrak;
- int jatah_nongkrong = uang_jajan / teman_nabrak;
- int hasil_akhir = (disita_guru + jatah_nongkrong) * (uang_jajan % 2);
+ ```cpp
+ int permen = 11;
+ int anak = 3;
+ int bagian = permen / anak;
+ int sisa = permen % anak;
+ printf("Dapat %d, Sisa %d", bagian, sisa);
  ```
- **Diagnosis Logika Papan Tulis Juri C++:**
- - `uang_jajan % teman_nabrak` $\rightarrow 15 \pmod 6 = 3$. Makmurnya, `disita_guru = 3`.
- - `uang_jajan / teman_nabrak` $\rightarrow 15 \div 6 = 2$ (Karena `int`, koma dibakar!). `jatah_nongkrong = 2`.
- - `uang_jajan % 2` $\rightarrow 15 \pmod 2 = 1$ (Karena ganjil). 
- - `hasil_akhir = (3 + 2) * 1 = 5`.
+ **Diagnosis Logika:**
+ 1. `permen / anak` $\rightarrow 11 \div 3$ aslinya $3.66$, tapi karena `int`, koma dibakar! Hasil: **3**.
+ 2. `permen % anak` $\rightarrow$ Sisa dari $11 - (3 \times 3) = 11 - 9$. Hasil: **2**.
+ 3. Output: **Dapat 3, Sisa 2**.
+ 
+ ---
+ 
+ ### 🧗 Uji Tracing (Level 2: Pre-Post Gaji)
+ 
+ ```cpp
+ int a = 10;
+ int b = a++;
+ int c = ++a;
+ printf("a=%d, b=%d, c=%d", a, b, c);
+ ```
+ **Diagnosis Logika:**
+ 1. `int b = a++` $\rightarrow$ Ambil nilai `a` (10) dulu, masukkan ke `b`. Lalu `a` naik jadi 11. (**b=10**)
+ 2. `int c = ++a` $\rightarrow$ Naikkan `a` dulu (11 jadi 12), baru masukkan ke `c`. (**c=12**)
+ 3. Nilai akhir `a` sekarang resmi **12**.
+ 4. Output: **a=12, b=10, c=12**.
+ 
+ ---
+ 
+ ### 🌋 Uji Tracing (Level 3: Kasta Ksatria)
+ 
+ ```cpp
+ char huruf = 'A';
+ int angka = 5;
+ double hasil = huruf + angka;
+ printf("%.0lf", hasil);
+ ```
+ **Diagnosis Logika:**
+ 1. `huruf` ('A') punya nilai ASCII **65**.
+ 2. `huruf + angka` $\rightarrow 65 + 5 = 70$.
+ 3. Karena dicampur `double`, hasilnya jadi `70.0`.
+ 4. `%.0lf` memerintahkan robot mencetak angka tanpa koma.
+ 5. Output: **70**.
+ 
+ ---
+ 
+ ### 👹 Uji Tracing (Level 4: Kiamat Eksponen)
+ 
+ ```cpp
+ long long x = 1e9;
+ int y = 2000000000;
+ bool cek = (x * 2 > y);
+ int hasil = cek + 10;
+ printf("%d", hasil);
+ ```
+ **Diagnosis Logika:**
+ 1. `x * 2` $\rightarrow 1 \text{ Miliar} \times 2 = 2 \text{ Miliar}$.
+ 2. `y` adalah 2 Miliar.
+ 3. `2 Miliar > 2 Miliar`? Jawabannya **SALAH (False / 0)**.
+ 4. `cek` bernilai **0**.
+ 5. `hasil = 0 + 10 = 10`.
+ 6. Output: **10**.
  
  ---
  
