@@ -29,7 +29,7 @@
  3. **`else`**: Jaring pengaman terakhir. Kalau semua saringan di atas gagal, secara otomatis masuk ke sini.
  
  **Analogi "Pintu VIP":**
- Begitu kamu masuk lewat pintu `if`, pengawal langsung **membakar habis** pintu `else if` and `else`. Kamu tidak bisa (dan tidak perlu) menengok ke pintu-pintu lain lagi.
+ Begitu kamu masuk lewat pintu `if`, pengawal langsung **membakar habis** pintu `else if` dan `else`. Kamu tidak bisa (dan tidak perlu) menengok ke pintu-pintu lain lagi.
  
  ---
  
@@ -64,8 +64,6 @@
    2. Sekarang rumusnya jadi `0 < 20`.
    3. Apakah 0 lebih kecil dari 20? **BETUL BANGET (TRUE)**!
  
- **Pelajaran:** Jangan percaya mata. Kerjakan dari kiri ke kanan, ganti perbandingan jadi angka `0` atau `1`, baru bandingkan lagi dengan angka berikutnya.
- 
  ---
  
  ## ⚡ F. Operator Logika (`&&`, `||`, `!`)
@@ -91,27 +89,24 @@
  **1. Kemalasan AND (`&&`)**: Jika sisi kiri sudah **SALAH**, abaikan sisi kanan. (Gak mungkin benar kalau salah satu udah salah).
  **2. Kemalasan OR (`||`)**: Jika sisi kiri sudah **BENAR**, abaikan sisi kanan. (Hadiah udah dapet, buat apa cek syarat lain?).
  
- *Efek Samping:* Jika di sisi kanan ada perintah `x++`, dan sirkuit pendek terjadi, maka **`x` tidak akan pernah bertambah!** Hati-hati!
- 
  ---
  
  ## 🧬 I. Misteri "Angka adalah Kebenaran"
  
  Mengapa `if(5)` itu benar tapi `if(0)` itu salah?
  - **Filosofi Biner:** Di C++, angka **0** adalah kegelapan (False). Angka lainnya (1, -5, 999) adalah cahaya (True). 
- - Ingat saja: **Cuma NOL yang salah, sisanya benar semua.**
  
  ---
  
  ## 🎰 J. Vending Machine (`switch - case`)
  
- Gunakan ini jika pilihannya banyak dan angkanya pasti (diskrit). Bedanya dengan `if`, `switch` tidak bisa mengecek rentang (seperti `x > 10`) atau angka koma (`float`). Ia cuma bisa mengecek: "Apakah koin saya **PAS** angka 1? Atau **PAS** angka 2?".
+ Gunakan ini jika pilihannya banyak dan angkanya pasti (diskrit).
  
  ### 🛠️ Cara Kerja & Komponen:
  - **`switch (variabel)`**: Masukkan laci yang ingin diperiksa.
  - **`case 1:`**: Jika isi laci adalah 1, jalankan baris di bawahnya.
  - **`break;`**: REM darurat! Jika tidak ada ini, mesin akan "Bablas" menjalankan bawahnya.
- - **`default:`**: Jaring pengaman. Jalankan ini jika tidak ada `case` yang cocok (misalnya user salah pencet tombol).
+ - **`default:`**: Jaring pengaman. Jalankan ini jika tidak ada `case` yang cocok.
  
  ### 💡 Tip Pro: Jurus "Bablas" Berjamaah
  Terkadang kita **sengaja** tidak memasang `break` untuk menangani beberapa pilihan sekaligus.
@@ -126,6 +121,19 @@
      case 7: printf("Libur!"); break;
  }
  ```
+ 
+ ### 🛠️ Kupas Tuntas: Break & Default
+ 
+ **1. Mengapa Perlu `break`? (Aturan Lift)**
+ Bayangkan kamu naik **Lift**. Jika kamu ingin ke lantai 3, kamu menekan tombol 3. Begitu sampai di lantai 3, kamu **KELUAR** dari lift.
+ - Di C++, `break;` adalah perintah untuk **"Keluar dari Lift"**.
+ - Tanpa `break;`, lift tersebut akan **terus berjalan** turun ke lantai di bawahnya secara otomatis. Ia akan menjalankan semua perintah `case` berikutnya sampai ketemu `break` baru atau mentok di ujung.
+ 
+ **2. Mengapa Perlu `default`? (Jaring Pengaman)**
+ `default` adalah bagian yang akan dijalankan jika **TIDAK ADA** satupun `case` yang cocok.
+ - Pikirkan ini sebagai **"Aksi Darurat"**.
+ - Tanpa `default`, jika tidak ada angka yang cocok, programmu hanya akan diam saja dan melompat keluar tanpa kabar. Dengan `default`, kamu bisa memberitahu user: "Woi, pilihan kamu gak ada di menu!".
+ - *Fakta Menarik:* `default` biasanya diletakkan paling bawah, sehingga ia tidak butuh `break;` lagi karena sudah berada di pintu keluar.
  
  ### 🌍 Pemanasan di Program Nyata:
  Di dunia nyata, `switch` adalah pahlawan untuk menu navigasi. Bayangkan kamu membuat **Game Petualangan**:
@@ -159,20 +167,20 @@
  ## 🕵️ L. Misteri "Dangling Else" (Siapa Pemilik Gembok?)
  
  Jika ada `else` nyasar tanpa `{ }`, carilah `if` terdekat tepat di atasnya yang masih jomblo (belum punya pasangan `else`).
- - Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung Berhati-hatilah!
+ - Jangan tertipu tanda spasi atau tab. Juri sengaja menjauhkan `else` dari pasangannya agar kamu bingung. Berhati-hatilah!
  
  ---
  
  ## 🍜 M. Strategi Memilih Gembok (Workflow Terpercaya)
  
- - **Gunakan `if - else if`**: Jika hadiahnya cuma boleh satu (Pilih Soto ATAU Bakso, gaboleh dua-duanya).
- - **Gunakan Banyak `if` mandiri**: Jika hadiahnya boleh banyak (Boleh beli baju sendiri, beli tas sendiri, beli sepatu juga sendiri). Syaratnya tidak saling mengunci.
+ - **Gunakan `if - else if`**: Jika hadiahnya cuma boleh satu (Pilih Soto atau Bakso).
+ - **Gunakan Banyak `if` mandiri**: Jika hadiahnya boleh banyak (Beli baju AND beli tas).
  
  ---
  
  ## 🌀 N. Analogi Labirin Decisional (Rangkuman Visual)
  
- 1. **Nested If**: Seperti masuk ke dalam brankas di dalam bank (Pintu PIN $\rightarrow$ Pintu Sidik Jari).
+ 1. **Nested If**: Seperti masuk ke dalam brankas di dalam bank (Pintu PIN -> Sidik Jari).
  2. **Else-If Chain**: Seperti antre prasmanan (Satu lauk sudah diambil, lanjut ke meja makan).
  
  ---
