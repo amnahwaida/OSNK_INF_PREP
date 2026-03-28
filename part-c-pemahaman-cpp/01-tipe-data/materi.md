@@ -178,12 +178,31 @@
  - `||` (ATAU / OR): Asal ada **Satu Benar** langsung lolos.
  - `!` (TIDAK / NOT): Kacamata kebalikan (Benar jadi Salah, Salah jadi Benar).
  
- **Kasta Operator Logika:**
- `!` (Kasta Tertinggi) $\rightarrow$ `&&` $\rightarrow$ `||` (Kasta Terendah).
+ **Kamus Kebenaran (Truth Table):**
+ | Syarat A | Syarat B | A && B | A \|\| B |
+ | :--- | :--- | :--- | :--- |
+ | ✅ True | ✅ True | **✅ True** | **✅ True** |
+ | ✅ True | ❌ False | **❌ False** | **✅ True** |
+ | ❌ False | ✅ True | **❌ False** | **✅ True** |
+ | ❌ False | ❌ False | **❌ False** | **❌ False** |
  
  ---
  
- ## 🔤 K. Perang Kasta Tipe Data (Char, Int, Float, Double)
+ ## 🧪 K. Tip & Trick Khas OSN-K (Angka Dewa)
+ 
+ Di soal-soal tingkat nasional, kamu akan sering melihat cara penulisan angka yang "aneh". Mari kita bedah rahasianya:
+ 
+ **1. Angka Eksponen (`1e9`)**
+ - `1e9` $\rightarrow$ Artinya $1 \times 10^9$ atau **1 Miliar**.
+ - `2e9` $\rightarrow$ 2 Miliar (Ini adalah **Batas Maksimal `int`**).
+ - `1e18` $\rightarrow$ Artinya $1 \times 10^{18}$ (Sering dipakai untuk nilai tak hingga di `long long`).
+ 
+ **2. Nilai Tak Hingga (INF)**
+ Seringkali juri menulis `int ans = 1e9;`. Ini bukan berarti jawabannya semiliar, tapi juri sedang menyiapkan "Laci Penampung" dengan nilai yang sangat besar agar nanti bisa dibandingkan dan diganti dengan angka yang lebih kecil.
+ 
+ ---
+ 
+ ## 🔤 L. Perang Kasta Tipe Data (Char, Int, Float, Double)
  
  Selain loker semen (`int`), kamu akan berhadapan dengan tipe data lain yang punya hukum kasta yang sangat aneh di dalam mesin C++. 
  
@@ -225,7 +244,7 @@
  
  ---
  
- ## 🌍 L. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
+ ## 🌍 M. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
  
  Di kodingan OSN-K, juri suka menamai **Dua Variabel Berbeda dengan NAMA YANG SAMA PERSIS** untuk mengecoh otakmu!
  
@@ -243,7 +262,7 @@
  
  ---
  
- ## 📦 M. Analogi Tambahan: Gudang Rahasia Komputer
+ ## 📦 N. Analogi Tambahan: Gudang Rahasia Komputer
  
  ### 🛁 1. Long Long vs Int: Gayung vs Bak Mandi
  Kamu butuh **Bak Mandi** (`long long`) saat hasil hitunganmu sangat banyak (misal hasil perkalian `100.000 * 100.000`) agar airnya tidak tumpah lari ke mana-mana (*Overflow*).
@@ -253,7 +272,7 @@
  
  ---
  
- ## 📜 N. Rangkuman: Cara Berpikir C++ (Resep Masakan)
+ ## 📜 O. Rangkuman: Cara Berpikir C++ (Resep Masakan)
  
  1. **Aturan Resep**: Kode dijalankan baris demi baris dari **ATAS ke BAWAH**. 
  2. **Aturan Timpa**: Laci variabel hanya bisa menyimpan **SATU** angka. Jika diisi baru, yang lama terhapus.
