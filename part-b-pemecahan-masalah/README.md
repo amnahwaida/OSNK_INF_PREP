@@ -2,7 +2,8 @@
 
 # 🚀 Part B: Pemecahan Masalah Komputasional
 
-> **Fokus**: Menjadi "Compiler Manusia" 🤖. Menyelesaikan simulasi algoritma (Looping, Array, Greedy, Dynamic Programming) langsung di atas kertas tanpa bantuan IDE/C++.
+> **Fokus**: Menjadi "Compiler Manusia" 🤖. Menyelesaikan simulasi algoritma (Looping, Array, Greedy, Dynamic Programming) langsung di atas kertas tanpa bantuan IDE/C++.  
+> **Kapasitas**: 6 Modul Utama + 36 Set Bank Soal.
 
 Selamat datang di tahap dua perjalanan OSN-K mu! Jika Part A melatih **otak matematikamu** untuk mengenali pola labirin dan sandi rahasia, Part B akan melatih **ketelitianmu mengeksekusi instruksi layaknya sebuah mesin komputer**. 
 
@@ -15,12 +16,18 @@ Jangan takut istilah seram seperti *Dynamic Programming* atau *Brute Force*. Mod
 ## 📚 Daftar Materi & Frekuensi Muncul
 *(⭐⭐⭐ Sangat Sering | ⭐⭐ Sering | ⭐ Kadang-kadang)*
 
-1. [Simulasi dan Brute Force (Pencarian Sangat Lengkap)](./01-simulasi-dan-brute-force.md) (⭐⭐⭐)
-2. [Algoritma Greedy (Si Rakus yang Pintar atau Naif?)](./02-algoritma-greedy.md) (⭐⭐⭐)
-3. [Pencarian & Pengurutan (Searching & Sorting Manual)](./03-pencarian-dan-pengurutan.md) (⭐⭐)
-4. [Dynamic Programming Dasar (Seni Mengingat Masa Lalu)](./04-dynamic-programming-dasar.md) (⭐⭐)
-5. [Pemrosesan String dan Array 1D](./05-pemrosesan-string-dan-array.md) (⭐⭐⭐)
-6. [Eksklusif: Mengukur Kompleksitas Waktu (Bahasa Big $O$)](./06-kompleksitas-waktu-big-o.md) (⭐⭐⭐)
+1. [Simulasi dan Brute Force (Pencarian Sangat Lengkap)](./01-simulasi-dan-brute-force/01-simulasi-dan-brute-force.md) (⭐⭐⭐)
+   *(Latihan: 6 Set Soal Ekstensif ada di dalam foldernya)*
+2. [Algoritma Greedy (Si Rakus yang Pintar atau Naif?)](./02-algoritma-greedy/02-algoritma-greedy.md) (⭐⭐⭐)
+   *(Latihan: 6 Set Soal Ekstensif ada di dalam foldernya)*
+3. [Pencarian & Pengurutan (Searching & Sorting Manual)](./03-pencarian-dan-pengurutan/03-pencarian-dan-pengurutan.md) (⭐⭐)
+   *(Latihan: 6 Set Soal Ekstensif ada di dalam foldernya)*
+4. [Dynamic Programming Dasar (Seni Mengingat Masa Lalu)](./04-dynamic-programming-dasar/04-dynamic-programming-dasar.md) (⭐⭐)
+   *(Latihan: 6 Set Soal Ekstensif ada di dalam foldernya)*
+5. [Pemrosesan String dan Array 1D](./05-pemrosesan-string-dan-array/05-pemrosesan-string-dan-array.md) (⭐⭐⭐)
+   *(Latihan: 6 Set Soal Ekstensif ada di dalam foldernya)*
+6. [Eksklusif: Mengukur Kompleksitas Waktu (Bahasa Big O)](./06-kompleksitas-waktu-big-o/06-kompleksitas-waktu-big-o.md) (⭐⭐⭐)
+   *(Latihan: 6 Set Soal Ekstensif ada di dalam foldernya)*
 
 ---
 [< Kembali ke Beranda](../README.md)

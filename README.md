@@ -4,6 +4,8 @@
 > **Abstraksi CT** • **Problem Solving** • **C++ Comprehension**  
 > 📝 Semua soal dapat diselesaikan "di atas kertas" — tidak perlu coding!
 
+Repositori ini berisi bank soal masif dengan total **~6 MB konten latihan** (ratusan studi kasus dan kode tracing) yang dirancang khusus untuk format Ujian OSN-K.
+
 ## 📊 Format Ujian OSN-K
 
 | Parameter | Detail |
@@ -28,23 +30,24 @@ graph LR
 
 ## 📚 Mulai Belajar
 
-| Part | Fokus | Link Masuk | Progress |
-|:---:|--------|-----------|----------|
-| 🔹 A | Berpikir Komputasional | [Masuk](./part-a-abstraksi-ct/) | 🟡 Draft |
-| 🔹 B | Analisis Studi Kasus | [Masuk](./part-b-pemecahan-masalah/) | ✅ Lengkap |
-| 🔹 C | Dry Run Kode C++ | [Masuk](./part-c-pemahaman-cpp/) | ✅ Lengkap |
+| Part | Fokus | Keterangan | Link Masuk | Progress |
+|:---:|--------|------------|-----------|----------|
+| 🔹 A | Berpikir Komputasional | 11 Modul & Ratusan Latihan | [Masuk](./part-a-abstraksi-ct/) | ✅ Lengkap |
+| 🔹 B | Analisis Studi Kasus | 6 Modul & Bank Soal Masif | [Masuk](./part-b-pemecahan-masalah/) | ✅ Lengkap |
+| 🔹 C | Dry Run Kode C++ | 6 Modul & 30 Set Latihan | [Masuk](./part-c-pemahaman-cpp/) | ✅ Lengkap |
 
 ## 🎯 Simulasi Ujian
 | Paket | Link | Durasi | Status |
 |-------|------|--------|--------|
-| Tryout #01 | [Mulai](./simulasi-osnk/paket-01/) | 150 menit | 🟡 Draft |
-| Tryout #02 | [Mulai](./simulasi-osnk/paket-02/) | 150 menit | 🔒 Coming Soon |
+| Tryout #01 | [Mulai](./simulasi-osnk/) | 150 menit | 🟡 Draft |
+| Tryout #02 | [Mulai](./simulasi-osnk/) | 150 menit | 🔒 Coming Soon |
 
 ## ⚡ Strategi Cepat
 - [Manajemen Waktu 150 Menit](./strategi-ujian/manajemen-waktu-150menit.md)
 - [Tips Part A: Coret yang Tidak Relevan](./strategi-ujian/teknik-mengerjakan-part-a.md)
 - [Tips Part B: Tabel Trace Wajib](./strategi-ujian/teknik-mengerjakan-part-b.md)
 - [Tips Part C: Dry Run Step-by-Step](./strategi-ujian/teknik-mengerjakan-part-c.md)
+- [Common Mistakes (Kesalahan Umum)](./strategi-ujian/common-mistakes.md)
 
 ## 🤝 Kontribusi
 Temu typo, soal kurang jelas, atau ingin tambah materi?  
