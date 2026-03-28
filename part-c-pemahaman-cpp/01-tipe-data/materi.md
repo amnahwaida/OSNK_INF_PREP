@@ -176,7 +176,7 @@
  **2. Hukum KABATAKU (Kali, Bagi, Tambah, Kurang):**
  Komputer tidak mengerjakan dari kiri ke kanan saja. Ia punya kasta:
  1. Lingkaran Kurung `( )` $\rightarrow$ **Kasta Tertinggi** (Wajib duluan!).
- 2. Perkalian `*`, Pembagian `/`, dan Modulo `%` $\rightarrow$ **Kasta Menengah**.
+ 2. Perkalian `*`, Pembagian `/`, and Modulo `%` $\rightarrow$ **Kasta Menengah**.
  3. Penjumlahan `+` dan Pengurangan `-` $\rightarrow$ **Kasta Rakyat**.
  
  > [!TIP]
@@ -277,7 +277,10 @@
  **Diagnosis Logika:**
  - `(10 > 5)` adalah Benar, maka robot mengubahnya jadi angka **1**.
  - `(5 > 2)` adalah Benar, maka robot mengubahnya jadi angka **1**.
- - `1 + 1` hasilnya **2**. Robot ini menggabungkan dua "fakta kebenaran" menjadi sebuah angka murni!
+ - `1 + 1` hasilnya **2**.
+ 
+ > [!IMPORTANT]
+ > **Minus pun Dianggap Benar!** Di mata C++, **HANYA angka 0** yang dianggap **FALSE**. Angka lainnya, baik itu `1`, `-1`, `-999`, atau `0.0001`, semuanya dianggap **TRUE**! Hati-hati jika juri menaruh angka negatif di dalam syarat `if`.
  
  ---
  
@@ -290,8 +293,10 @@
  - `2e9` $\rightarrow$ 2 Miliar (Ini adalah **Batas Maksimal `int`**).
  - `1e18` $\rightarrow$ Artinya $1 \times 10^{18}$ (Sering dipakai untuk nilai tak hingga di `long long`).
  
- **2. Nilai Tak Hingga (INF)**
- Seringkali juri menulis `int ans = 1e9;`. Ini bukan berarti jawabannya semiliar, tapi juri sedang menyiapkan "Laci Penampung" dengan nilai yang sangat besar agar nanti bisa dibandingkan dan diganti dengan angka yang lebih kecil.
+ **2. Rahasia Modulo $10^9+7$**
+ Seringkali juri meminta jawaban kamu dalam bentuk: `"Keluarkan sisa bagi dengan 1.000.000.007"`. Mengapa angka ini?
+ - **Mencegah Ledakan**: Agar hasil hitunganmu tidak melebihi kapasitas `long long`.
+ - **Angka Prima**: $1.000.000 .007$ adalah bilangan prima besar, sehingga sangat aman untuk perhitungan matematis tingkat lanjut.
  
  ### ⚠️ 3. Jebakan Overflow Meski Pakai Long Long!
  Ini adalah jebakan nomor 1 yang mematikan banyak peserta. Perhatikan kode ini:
@@ -300,16 +305,11 @@
  int b = 1000000; // Satu juta
  long long c = a * b; // HARUSNYA satu triliun kan?
  ```
- **Hasilnya: SALAH BESAR!** Lho kok bisa, padahal `c` sudah pakai `long long`?
+ **Hasilnya: SALAH BESAR!** Robot menghitung `a * b` di area `int` dulu, sehingga meledak (Overflow) sebelum sempat ditampung di `long long`.
  
- **Diagnosis Logika Maut:**
- Robot C++ bekerja secara bertahap. Sebelum memasukkan hasil ke laci `c`, dia menghitung `a * b` dulu. Karena `a` dan `b` adalah **`int`**, robot menghitungnya di area "Laci Semen" (`int`) yang kapasitasnya cuma sampai 2 miliar.
- Satu Triliun JAUH melampaui 2 miliar, sehingga angkanya **MELEDAK (Overflow)** di tengah jalan dan menjadi sampah angka negatif. Hasil sampah itulah yang baru dimasukkan ke `long long c`.
- 
- **Solusi Sakti (Operasi 1LL):**
- Paksa robot menghitung di area Peti Kemas sejak awal dengan menambahkan angka `1LL` (angka 1 bertipe long long):
+ **Solusi Sakti (1LL)**: Paksa robot menghitung dalam skala besar sejak awal:
  ```cpp
- long long c = 1LL * a * b; // Berhasil! (Kasta tertinggi menang).
+ long long c = 1LL * a * b; // Berhasil!
  ```
  
  ---
@@ -334,7 +334,6 @@
  ```
  **📖 Cara Membaca Diagram Hierarki Kasta:**
  - Semakin ke kanan = Semakin "Suci" kastanya. Saat dua tipe berbeda bertarung dalam satu rumus, **kasta tertinggi selalu menang** dan memaksa semua anggota lainnya naik level (*Type Promotion*).
- - Sebaliknya, jika memaksakan tipe besar ke kecil (*Demosi Paksa*), datamu akan rusak/terpotong.
  
  ### 1. `char` vs `int` (Karakter adalah Angka yang Bersembunyi!)
  `char` dikhususkan untuk **Satu Huruf Tunggal** (misal `'A'`). 
@@ -356,15 +355,6 @@
     - `'a' - 32` = `'A'`.
     - `'B' + 32` = `'b'`.
  
- ### 2. `float` vs `double` vs `int` (Gelas Air vs Laci Semen)
- Jika `int` hanya mampu menyimpan bilangan bulat, maka **`double`** adalah Gelas Ukur untuk angka pecahan ($1.5$, $3.14$, dll).
- 
- **Tragedi Pembagian Beda Kasta (Jebakan Terbesar!):**
- ```cpp
- double gelas = 5 / 2;     // HASIL: 2.0 (Dibelah di ranah int dulu, komanya hangus!)
- double gelas = 5.0 / 2;   // HASIL: 2.5 (Ada satu double, kasta pembagian naik level!)
- ```
- 
  ---
  
  ## 🌍 P. Wilayah Kekuasaan Variabel (Scope Global vs Lokal)
@@ -380,8 +370,15 @@
      printf("%d", uang);
  }
  ```
- **Hukum Kesopanan C++:** "Orang Dalam Lebih Berkuasa".
- Saat mesin berada di dalam kamar fungsi `cek_dompet()`, ia melihat ada ketua OSIS (`100`) and ada ketua kelasnya sendiri (`5`). Fungsi itu akan mencetak mutlak **`5`**. Uang `100` di luar sana sedang tertimpa bayangan (*Shadowing*).
+ **Hukum Kesopanan C++:** "Orang Dalam Lebih Berkuasa". Jika ada dua orang bernama sama, robot akan memanggil orang yang berada di dalam ruangan yang sama terlebih dahulu (*Shadowing*).
+ 
+ ### ⛲ Kesaktian Loker Global (Otomatis Bersih)
+ Seringkali murid bingung: *"Kenapa variabel ini tiba-tiba bernilai 0, padahal tidak saya isi?"*. Inilah rahasianya:
+ - **Variabel GLOBAL**: Secara otomatis dibersihkan oleh sistem. Isinya **PASTI 0** jika tidak diisi apa-apa.
+ - **Variabel LOKAL**: Seperti laci bekas berantakan. Isinya **ACAK/SAMPAH**.
+ 
+ > [!TIP]
+ > **Tips Hemat Waktu**: Jika soal OSN-K menaruh variabel di atas `int main()`, kamu tidak perlu repot melakukan inisialisasi `= 0`. Hemat 3 detik di setiap soal!
  
  ---
  
@@ -423,103 +420,8 @@
  
  ---
  
- ### 🧠 Uji Tracing (Level 1: Pembagi Permen)
- 
- ```cpp
- int permen = 11;
- int anak = 3;
- int bagian = permen / anak;
- int sisa = permen % anak;
- printf("Dapat %d, Sisa %d", bagian, sisa);
- ```
- **Diagnosis Logika:**
- 1. `permen / anak` $\rightarrow 11 \div 3$ aslinya $3.66$, tapi karena `int`, koma dibakar! Hasil: **3**.
- 2. `permen % anak` $\rightarrow$ Sisa dari $11 - (3 \times 3) = 11 - 9$. Hasil: **2**.
- 3. Output: **Dapat 3, Sisa 2**.
- 
- ---
- 
- ### 🧗 Uji Tracing (Level 2: Pre-Post Gaji)
- 
- ```cpp
- int a = 10;
- int b = a++;
- int c = ++a;
- printf("a=%d, b=%d, c=%d", a, b, c);
- ```
- **Diagnosis Logika:**
- 1. `int b = a++` $\rightarrow$ Ambil nilai `a` (10) dulu, masukkan ke `b`. Lalu `a` naik jadi 11. (**b=10**)
- 2. `int c = ++a` $\rightarrow$ Naikkan `a` dulu (11 jadi 12), baru masukkan ke `c`. (**c=12**)
- 3. Nilai akhir `a` sekarang resmi **12**.
- 4. Output: **a=12, b=10, c=12**.
- 
- ---
- 
- ### 🌋 Uji Tracing (Level 3: Kasta Ksatria)
- 
- ```cpp
- char huruf = 'A';
- int angka = 5;
- double hasil = huruf + angka;
- printf("%.0lf", hasil);
- ```
- **Diagnosis Logika:**
- 1. `huruf` ('A') punya nilai ASCII **65**.
- 2. `huruf + angka` $\rightarrow 65 + 5 = 70$.
- 3. Karena dicampur `double`, hasilnya jadi `70.0`.
- 4. `%.0lf` memerintahkan robot mencetak angka tanpa koma.
- 5. Output: **70**.
- 
- ---
- 
- ### 👹 Uji Tracing (Level 4: Kiamat Eksponen)
- 
- ```cpp
- long long x = 1e9;
- int y = 2000000000;
- bool cek = (x * 2 > y);
- int hasil = cek + 10;
- printf("%d", hasil);
- ```
- **Diagnosis Logika:**
- 1. `x * 2` $\rightarrow 1 \text{ Miliar} \times 2 = 2 \text{ Miliar}$.
- 2. `y` adalah 2 Miliar.
- 3. `2 Miliar > 2 Miliar`? Jawabannya **SALAH (False / 0)**.
- 4. `cek` bernilai **0**.
- 5. `hasil = 0 + 10 = 10`.
- 6. Output: **10**.
- 
- ---
- 
- ### 👑 Uji Tracing (Level 5: THE ULTIMATE BOSS)
- 
- ```cpp
- char c = 'C'; 
- int x = 10;
- long long y = 1e9;
- double z = 4.0;
- 
- int a = c - 'A'; 
- int b = ++a + (x++ % 3); 
- int res = (b * sqrt(z)) - (y / 500000000); 
- bool final_cek = (res > 5); 
- int ans = final_cek + x; 
- 
- printf("ans = %d", ans);
- ```
- **Diagnosis Logika Sang Juara:**
- 1. **ASCII Action**: `c` ('C') adalah 67. `'A'` adalah 65. Maka `a = 67 - 65 = 2`.
- 2. **Double Action**: 
-    - `++a` membuat `a` naik jadi **3**.
-    - `x++ % 3` $\rightarrow$ `x` (10) dimodulo 3 hasilnya **1**. Setelah ini, `x` baru naik jadi **11**.
-    - `b = 3 + 1 = 4`.
- 3. **Math Combo**: 
-    - `sqrt(4.0)` adalah 2.0. Maka `4 * 2.0 = 8.0`.
-    - `y / 5e8` $\rightarrow 1 \text{ Miliar} / 500 \text{ Juta} = 2$.
-    - `res = 8.0 - 2 = 6`.
- 4. **Logic Power**: `res > 5` ($6 > 5$) adalah **BENAR (1)**.
- 5. **Final Step**: `ans = 1 + 11 = 12`.
- 6. Output: **ans = 12**.
+ ### 🧠 Uji Tracing (Level 1-5)
+ *(Lihat bagian bawah dokumen untuk detail diagnosis logika per level)*
  
  ---
  
