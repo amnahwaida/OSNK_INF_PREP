@@ -304,10 +304,21 @@
  `char` dikhususkan untuk **Satu Huruf Tunggal** (misal `'A'`). 
  Untuk menerjemahkan angka menjadi huruf, C++ menggunakan buku kamus rahasia bernama **Tabel ASCII**.
  
- **Fakta ASCII Wajib Hafal Cepat:**
- - Huruf besar `'A'` $\rightarrow$ **65**.
- - Huruf kecil `'a'` $\rightarrow$ **97**. (Selisih 32 poin).
- - Huruf angka `'0'` $\rightarrow$ **48**. (Bukan Nol!).
+ **Tabel Sakti ASCII (Wajib Ingat Rentang):**
+ | Kelompok Karakter | Karakter | Kode ASCII (Desimal) | Jarak/Keterangan |
+ | :--- | :--- | :--- | :--- |
+ | **Simbol Angka** | `'0'` s.d. `'9'` | **48 s.d. 57** | Ingat: `'0'` bukan 0 murni! |
+ | **Huruf Besar** | `'A'` s.d. `'Z'` | **65 s.d. 90** | `'A'` = 65 |
+ | **Huruf Kecil** | `'a'` s.d. `'z'` | **97 s.d. 122** | `'a'` = 97 |
+ | **Spasi** | `' '` | **32** | Sering terlupa saat tracing. |
+ 
+ **Kenapa HarusSequential (Berurutan)?**
+ Robot C++ menaruh huruf demi huruf secara rapi berurutan. Ini memungkinkan kita memakai trik **"Matematika Huruf"**:
+ 1. **Mencari Urutan Abjad**: `char c = 'C'; int urutan = c - 'A';` $\rightarrow 67 - 65 = 2$. (Artinya 'C' adalah orang ke-2 setelah 'A').
+  2. **Konversi Angka Teks**: `char c = '5'; int asli = c - '0';` $\rightarrow 53 - 48 = 5$.
+ 3. **The Magic 32**: Jarak antara Huruf Kecil dan Huruf Besar SELALU **32**. 
+    - `'a' - 32` = `'A'`.
+    - `'B' + 32` = `'b'`.
  
  ### 2. `float` vs `double` vs `int` (Gelas Air vs Laci Semen)
  Jika `int` hanya mampu menyimpan bilangan bulat, maka **`double`** adalah Gelas Ukur untuk angka pecahan ($1.5$, $3.14$, dll).
