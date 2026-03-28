@@ -17,7 +17,7 @@ Ada beberapa operator yang sering muncul di OSN-K:
 | Operator | Simbol | Penjelasan Sederhana |
 | :--- | :--- | :--- |
 | **AND** | `&&` / `DAN` | Bernilai BENAR hanya jika **SEMUA** syarat terpenuhi. |
-| **OR** | `||` / `ATAU` | Bernilai BENAR jika **SALAH SATU** saja syarat terpenuhi. |
+| **OR** | `\|\|` / `ATAU` | Bernilai BENAR jika **SALAH SATU** saja syarat terpenuhi. |
 | **NOT** | `!` / `TIDAK` | Membalikkan nilai (Benar jadi Salah, Salah jadi Benar). |
 | **XOR** | `^` / `EKS-OR` | Bernilai BENAR jika **HANYA SATU** yang benar (Beda nilai = Benar, Sama nilai = Salah). |
 | **NAND** | `!AND` | Kebalikan dari AND (Bernilai SALAH hanya jika semua BENAR). |
