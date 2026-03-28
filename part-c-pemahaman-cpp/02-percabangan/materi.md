@@ -75,8 +75,6 @@
  1. Kerjakan di dalam kurung dulu: `(a = 1)`. Artinya: "Laci `a` dibongkar isinya, diganti jadi angka **1**."
  2. Gunakan angka baru tersebut (`1`) untuk dibandingkan: `1 > 0`.
  3. Apakah `1 > 0`? **BENAR (TRUE)**!
- 4. Hasil cetaknya: **`a sekarang = 1`**. 
- *(Jangan terjebak mengira `a` masih 20! Juri baru saja "mencuci otak" variabelmu).*
  
  ---
  
@@ -87,8 +85,6 @@
    1. `10 < 5` dihitung duluan, hasilnya **0** (False).
    2. Sekarang rumusnya jadi `0 < 20`.
    3. Apakah 0 lebih kecil dari 20? **BETUL BANGET (TRUE)**!
- 
- **Pelajaran:** Jangan pernah menggabung perbandingan seperti gerbong kereta api. Gunakan `&&` jika ingin mengecek rentang angka. (Contoh: `if (10 < 5 && 5 < 20)`).
  
  ---
  
@@ -117,11 +113,9 @@
  
  **1. Kemalasan AND (`&&`)**
  Dalam `A && B`, **JIKA KONDISI `A` SUDAH FALSE**, C++ **MENOLAK MEMBACA KONDISI `B`!**
- - *Analogi:* Jika syarat masuk klub adalah (Bawa KTP && Bawa Tiket). Begitu kamu bilang "Saya gak bawa KTP", penjaga pintu langsung mengusirmu tanpa peduli kamu bawa tiket atau tidak.
  
  **2. Kemalasan OR (`||`)**
  Dalam `A || B`, **JIKA KONDISI `A` SUDAH TRUE**, C++ **MENOLAK MEMBACA KONDISI `B`!**
- - *Analogi:* Jika syarat dapet permen adalah (Punya Kupon Biru || Punya Kupon Merah). Begitu kamu sodorkan Kupon Biru, kamu langsung dapet permen. Penjaga gak akan tanya lagi kamu punya kupon merah atau nggak. Hadiah sudah di tangan!
  
  ---
  
@@ -150,6 +144,21 @@
  ```
  **Jebakan `break`:** Jika ada `case` yang lupa dikasih `break`, mesin akan "Bablas" menjalankan perintah di bawahnya secara berurutan sampai ketemu `break` berikutnya!
  
+ ### 💡 Tip Pro: Jurus "Bablas" Berjamaah
+ Terkadang kita **sengaja** tidak memasang `break` untuk menangani beberapa pilihan sekaligus.
+ ```cpp
+ switch (hari) {
+     case 1:
+     case 2:
+     case 3:
+     case 4:
+     case 5: printf("Kerja!"); break;
+     case 6:
+     case 7: printf("Libur!"); break;
+ }
+ ```
+ Ini jauh lebih rapi daripada menulis `if (hari == 1 || hari == 2 || ...)` yang panjang!
+ 
  ---
  
  ## ✂️ K. Cabang Kilat (Ternary Operator `? :`)
@@ -158,8 +167,7 @@
  ```cpp
  int hasil = (uang > 10) ? 100 : 0;
  ```
- **Cara Baca:** `"Apakah uang > 10? Jika IYA ambil 100, Jika TIDAK ambil 0"`.
- Struktur: `(Kondisi) ? [Jika Benar] : [Jika Salah];`
+ **Struktur:** `(Kondisi) ? [Jika Benar] : [Jika Salah];`
  
  ---
  
@@ -173,13 +181,21 @@
  else
      printf("Zonk!");
  ```
- - **Insting Murid:** "Kalau `a > 5` salah, pasti lari ke `else Zonk!`."
  - **Hukum C++ (Dangling Else):** "`else` akan selalu menempel pada `if` paling dekat di atasnya yang belum punya pasangan."
- - Jadi, `else Zonk!` di atas adalah milik `if (b > 10)`. Kalau `a > 5` saja sudah salah, program **TIDAK AKAN MENCETAK APAPUN** (Karena `else` ikut hilang bersama `if` induknya yang dia tempel).
+ - Jadi, `else Zonk!` di atas adalah milik `if (b > 10)`. Kalau `a > 5` saja sudah salah, program **TIDAK AKAN MENCETAK APAPUN**.
  
  ---
  
- ## 🌀 M. Analogi Labirin Keputusan
+ ## 🌀 M. Strategi Memilih Gembok (Banyak If vs Logika &&)
+ 
+ Seringkali murid bingung kapan harus pakai `if` bertingkat dan kapan pakai `&&` atau banyak `if` terpisah.
+ 
+ 1. **`if (A) if (B)` (Pintu Berlapis)**: Sama persis dengan `if (A && B)`. Syarat B hanya dicek kalau A sudah lulus.
+ 2. **Banyak `if` Terpisah**: Jika ada 3 `if` tanpa `else`, mesin akan mengecek **KETIGANYA** secara mandiri. Ini beda dengan `if - else if` di mana cuma satu yang bisa tembus.
+ 
+ ---
+ 
+ ## 🌀 N. Analogi Labirin Keputusan
  
  ### 🚪 1. Nested If: Pintu Keamanan Berlapis
  Syarat di dalam hanya diperiksa jika syarat luar sudah lolos. (Sidik jari hanya diminta jika PIN kartu sudah benar).
@@ -189,10 +205,10 @@
  
  ---
  
- ## 📜 N. Rangkuman: Cara Berpikir Cabang
+ ## 📜 O. Rangkuman: Cara Berpikir Cabang
  
  1. **Pintu Tunggal**: Dalam satu blok `if-else if-else`, **Cuma ada SATU** blok yang bisa tembus.
- 2. **Sirkuit Pendek**: Selalu cek sisi kiri `&&` atau `||` dulu. Kalau sudah cukup menentukan hasil, abaikan sisi kanan (jangan di-trace!).
+ 2. **Sirkuit Pendek**: Selalu cek sisi kiri `&&` atau `||` dulu. Kalau sudah cukup menentukan hasil, abaikan sisi kanan.
  3. **Indentasi Menipu**: Jangan percaya spasi/tab. Percayalah pada `{ }`. Kalau tidak ada, cuma 1 baris di bawahnya yang dikuasai.
  
  ---
